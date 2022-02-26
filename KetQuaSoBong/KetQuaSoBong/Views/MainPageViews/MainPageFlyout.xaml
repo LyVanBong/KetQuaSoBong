@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.MainPageViews.MainPageFlyout"
+             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
+             x:DataType="viewmodels:MainPageFlyoutViewModel"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Title="Flyout">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              RowDefinitions="10,6*,2*,2*,10">
+             <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.layer.png}"
+                    Aspect="AspectFill"
+                    Grid.RowSpan="5"/>
+            <Frame Padding="0"
+                   CornerRadius="100"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Row="1">
+                <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-1.png}"/>
+            </Frame>
+            <Label Text="US_013123"
+                    Grid.Row="2"
+                    VerticalOptions="Center"
+                    FontSize="Body"
+                   FontFamily="RM"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                    />
+            <Button Grid.Row="3"
+                    HeightRequest="80"
+                    WidthRequest="180"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    Text="Đăng ký"
+                    TextColor="{StaticResource primaryColor}"
+                    Padding="0,0,0,3"
+                    FontSize="Default"
+                    FontFamily="RM">
+                
+            </Button>
+        </Grid>
+        <StackLayout
+            Grid.Row="1"
+            BindableLayout.ItemsSource="{Binding ListItem}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="md:MainPageFlyoutMenuItem">
+                    <StackLayout
+                        Spacing="0"
+                        Padding="0,5,0,5">
+                        <Grid ColumnDefinitions="40,*"
+                              HeightRequest="40"
+                              Margin="10,0,0,10">
+                            <Image Source="{Binding Icon}"
+                                   Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Aspect="AspectFill"
+                                   />
+                            <Label Text="{Binding Title}"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   FontSize="Body"
+                                   FontFamily="RM"
+                                   TextColor="Black"
+                                   Margin="10,0,0,0"
+                                   />
+                        </Grid>
+                        <BoxView HeightRequest="0.5" Color="Gray"/>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+            
+        </StackLayout>
+        </Grid>
+</ContentPage>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KetQuaSoBong.Views.MainPageViews.MainPageDetail"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="Kết quả số bóng">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate
+                x:Key="TabItemTemplate">
+                <Grid
+                    RowSpacing="0"
+                    Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+                        Grid.Row="0"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        Margin="6"
+                        Source="{TemplateBinding CurrentIcon}" />
+                    <!--set ` TextTransform="Lowercase"` for Label here-->
+                    <Label
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        FontSize="{TemplateBinding FontSize}"
+                        Text="{TemplateBinding Text}"
+                        TextTransform="None"
+                        FontFamily="RBo"
+                        TextColor="{TemplateBinding CurrentTextColor}" />
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <views:TabView
+        TabStripBackgroundColor="White"
+        TabStripHeight="60"
+        TabStripPlacement="Bottom">
+        <views:TabViewItem
+            Text="Xổ số"
+            Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_xo_so_0.png}"
+            FontSize="12"
+            TextColorSelected="{StaticResource primaryColor}"
+            ControlTemplate="{StaticResource TabItemTemplate}">
+            <Grid BackgroundColor="Gray">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="TabContent1"
+                    VerticalOptions="Center" />
+            </Grid>
+            <views:TabViewItem.Triggers>
+                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+                    <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_xo_so_1.png}"/>
+                </Trigger>
+            </views:TabViewItem.Triggers>
+        </views:TabViewItem>
+        
+        <views:TabViewItem
+            Text="Bóng đá"
+            Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_bong_da_0.png}"
+            FontSize="12"
+            TextColorSelected="{StaticResource primaryColor}"
+            ControlTemplate="{StaticResource TabItemTemplate}">
+            <Grid BackgroundColor="Gray">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="TabContent1"
+                    VerticalOptions="Center" />
+            </Grid>
+            <views:TabViewItem.Triggers>
+                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+                    <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_bong_da_1.png}"/>
+                </Trigger>
+            </views:TabViewItem.Triggers>
+        </views:TabViewItem>
+        <views:TabViewItem
+            Text="Tin tức"
+            Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_tin_tuc_0.png}"
+            FontSize="12"
+            TextColorSelected="{StaticResource primaryColor}"
+            ControlTemplate="{StaticResource TabItemTemplate}">
+            <Grid BackgroundColor="Gray">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="TabContent1"
+                    VerticalOptions="Center" />
+            </Grid>
+            <views:TabViewItem.Triggers>
+                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+                    <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_tin_tuc_1.png}"/>
+                </Trigger>
+            </views:TabViewItem.Triggers>
+        </views:TabViewItem>
+
+        <views:TabViewItem
+            Text="Group"
+            Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_group_0.png}"
+            FontSize="12"
+            TextColorSelected="{StaticResource primaryColor}"
+            ControlTemplate="{StaticResource TabItemTemplate}">
+            <Grid BackgroundColor="Gray">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="TabContent1"
+                    VerticalOptions="Center" />
+            </Grid>
+            <views:TabViewItem.Triggers>
+                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+                    <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_group_1.png}"/>
+                </Trigger>
+            </views:TabViewItem.Triggers>
+        </views:TabViewItem>
+        <views:TabViewItem
+            Text="Hỗ trợ"    
+            Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_ho_tro_0.png}"         
+            FontSize="12"
+            TextColorSelected="{StaticResource primaryColor}"
+            ControlTemplate="{StaticResource TabItemTemplate}">
+            <Grid BackgroundColor="Gray">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="TabContent1"
+                    VerticalOptions="Center" />
+            </Grid>
+            <views:TabViewItem.Triggers>
+                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+                    <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_ho_tro_1.png}"/>
+                </Trigger>
+            </views:TabViewItem.Triggers>
+        </views:TabViewItem>
+
+    </views:TabView>
+</ContentPage>

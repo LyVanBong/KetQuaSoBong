@@ -3,7 +3,7 @@
     x:Class="KetQuaSoBong.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:KetQuaSoBong.Views">
+    xmlns:pages="clr-namespace:KetQuaSoBong.Views.MainPageViews">
     <FlyoutPage.Flyout>
         <pages:MainPageFlyout x:Name="FlyoutPage" />
     </FlyoutPage.Flyout>

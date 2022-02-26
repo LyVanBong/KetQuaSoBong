@@ -26,11 +26,17 @@
                            WidthRequest="120"
                            HeightRequest="120"
                            />
-                    <Label Text="{Binding LblLoading}"
-                           TextColor="White"
+                    <Label TextColor="White"
                            Margin="0,10,0,10"
-                           Style="{StaticResource lblLoadingStyle}"/>
-            </StackLayout>
+                           Style="{StaticResource lblLoadingStyle}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Đang tải"/>
+                                    <Span Text="{Binding LblLoading}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                    </Label>
+        </StackLayout>
         
     </Grid>
 </ContentPage>

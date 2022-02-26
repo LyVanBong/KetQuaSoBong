@@ -204,6 +204,9 @@
     <PackageReference Include="RestSharp">
       <Version>107.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView">
+      <Version>19.4.0.53</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.CommunityToolkit">
       <Version>1.3.2</Version>
     </PackageReference>

@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="107.1.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.4.0.53" />
   </ItemGroup>
 
 </Project>
