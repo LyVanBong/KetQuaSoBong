@@ -1,7 +1,9 @@
 # KetQuaSoBong
 Ket Qua Xo So Bong
-Đã hoàn thành:
+
+Đã dựng xong:
 - SplashScreen
 - FlyoutMenu
+
 Đang thực hiện:
 - MainPageTabView
