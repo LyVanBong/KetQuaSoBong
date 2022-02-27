@@ -1,5 +1,6 @@
 ﻿using KetQuaSoBong.Models;
 using KetQuaSoBong.ViewModels;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,12 +18,14 @@ namespace KetQuaSoBong.Views.MainPageViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPageFlyout : ContentPage
     {
-        public ListView ListView;
+        INavigationService navigation;
 
         public MainPageFlyout()
         {
             InitializeComponent();
-           
+            BindingContext = new MainPageFlyoutViewModel(navigation, this);
+
+
         }
 
        

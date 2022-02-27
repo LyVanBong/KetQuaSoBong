@@ -1,4 +1,5 @@
 ﻿using KetQuaSoBong.Models;
+using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace KetQuaSoBong.ViewModels
     public class MainPageFlyoutViewModel : ViewModelBase
     {
         public ObservableCollection<MainPageFlyoutMenuItem> ListItem { get; set; }
-        public MainPageFlyoutViewModel(INavigationService navigationService) : base(navigationService)
+        public MainPageFlyoutViewModel(INavigationService navigationService, Page page) : base(navigationService)
         {
             ListItem = new ObservableCollection<MainPageFlyoutMenuItem>()
             {
@@ -22,6 +23,11 @@ namespace KetQuaSoBong.ViewModels
                 new MainPageFlyoutMenuItem {Id = 0, Title="Điện toán", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.dien_toan.png")},
                 new MainPageFlyoutMenuItem {Id = 0, Title="Hướng dẫn", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.huong_dan.png")}
             };
+            CollapseMenuCommand = new DelegateCommand(() =>
+            {
+                (page.Parent as FlyoutPage).IsPresented = false;
+            });
         }
+        public DelegateCommand CollapseMenuCommand { get; }
     }
 }

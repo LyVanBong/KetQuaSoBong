@@ -29,22 +29,31 @@
     <None Remove="Resources\Images\28_Group-11.png" />
     <None Remove="Resources\Images\29_down-2.png" />
     <None Remove="Resources\Images\30_menu.png" />
-    <None Remove="Resources\Images\31_homepage-banner_bg.png" />
     <None Remove="Resources\Images\bac.png" />
     <None Remove="Resources\Images\back-btn.png" />
     <None Remove="Resources\Images\dien_toan.png" />
     <None Remove="Resources\Images\huong-dan.png" />
     <None Remove="Resources\Images\huong_dan.png" />
+    <None Remove="Resources\Images\ic_bac_2.png" />
     <None Remove="Resources\Images\ic_bong_da_0.png" />
     <None Remove="Resources\Images\ic_bong_da_1.png" />
+    <None Remove="Resources\Images\ic_calendar_1.png" />
+    <None Remove="Resources\Images\ic_checked.png" />
+    <None Remove="Resources\Images\ic_down.png" />
     <None Remove="Resources\Images\ic_group_0.png" />
     <None Remove="Resources\Images\ic_group_1.png" />
     <None Remove="Resources\Images\ic_ho_tro_0.png" />
     <None Remove="Resources\Images\ic_ho_tro_1.png" />
+    <None Remove="Resources\Images\ic_nam_2.png" />
+    <None Remove="Resources\Images\ic_soi_cau_2.png" />
     <None Remove="Resources\Images\ic_tin_tuc_0.png" />
     <None Remove="Resources\Images\ic_tin_tuc_1.png" />
+    <None Remove="Resources\Images\ic_trung_2.png" />
+    <None Remove="Resources\Images\ic_uncheck.png" />
+    <None Remove="Resources\Images\ic_up.png" />
     <None Remove="Resources\Images\ic_xo_so_0.png" />
     <None Remove="Resources\Images\ic_xo_so_1.png" />
+    <None Remove="Resources\Images\img_banner.png" />
     <None Remove="Resources\Images\layer.png" />
     <None Remove="Resources\Images\logo-1.png" />
     <None Remove="Resources\Images\logo-slash.png" />
@@ -70,6 +79,15 @@
     <EmbeddedResource Include="Resources\Fonts\Roboto-ThinItalic.ttf" />
     <EmbeddedResource Include="Resources\Images\dien_toan.png" />
     <EmbeddedResource Include="Resources\Images\huong_dan.png" />
+    <EmbeddedResource Include="Resources\Images\ic_bac_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_calendar_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_checked.png" />
+    <EmbeddedResource Include="Resources\Images\ic_down.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nam_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_soi_cau_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_trung_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_uncheck.png" />
+    <EmbeddedResource Include="Resources\Images\ic_up.png" />
     <EmbeddedResource Include="Resources\Images\nam.png" />
     <EmbeddedResource Include="Resources\Images\soi_cau.png" />
     <EmbeddedResource Include="Resources\Images\trung.png" />
@@ -97,7 +115,7 @@
     <EmbeddedResource Include="Resources\Images\28_Group-11.png" />
     <EmbeddedResource Include="Resources\Images\29_down-2.png" />
     <EmbeddedResource Include="Resources\Images\30_menu.png" />
-    <EmbeddedResource Include="Resources\Images\31_homepage-banner_bg.png" />
+    <EmbeddedResource Include="Resources\Images\img_banner.png" />
     <EmbeddedResource Include="Resources\Images\back-btn.png" />
     <EmbeddedResource Include="Resources\Images\huong-dan.png" />
     <EmbeddedResource Include="Resources\Images\logo-1.png" />
@@ -117,6 +135,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\TabViews\LotteryTabViews\NorthLotteryView.xaml.cs">
+      <DependentUpon>NorthLotteryView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -124,6 +148,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPageViews\MainPageFlyout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\LotteryTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\LotteryTabViews\NorthLotteryView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

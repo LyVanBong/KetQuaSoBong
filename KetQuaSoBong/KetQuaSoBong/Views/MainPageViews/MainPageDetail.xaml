@@ -3,9 +3,15 @@
     x:Class="KetQuaSoBong.Views.MainPageViews.MainPageDetail"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="http://xamarin.com/schemas/2020/toolkit"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:tabs="clr-namespace:KetQuaSoBong.Views.TabViews"
     Title="Kết quả số bóng">
+    <NavigationPage.TitleView>
+        <Label Text="Kết quả số bóng"
+               FontSize="20"
+               TextColor="White"
+               FontFamily="RBo"/>
+    </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate
@@ -25,7 +31,6 @@
                         HeightRequest="24"
                         Margin="6"
                         Source="{TemplateBinding CurrentIcon}" />
-                    <!--set ` TextTransform="Lowercase"` for Label here-->
                     <Label
                         Grid.Row="1"
                         HorizontalOptions="Center"
@@ -38,30 +43,27 @@
             </ControlTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <views:TabView
+    <xct:TabView
+       IsSwipeEnabled="False"
+        IsTabTransitionEnabled="False"
         TabStripBackgroundColor="White"
         TabStripHeight="60"
         TabStripPlacement="Bottom">
-        <views:TabViewItem
+        <xct:TabViewItem
             Text="Xổ số"
             Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_xo_so_0.png}"
             FontSize="12"
             TextColorSelected="{StaticResource primaryColor}"
             ControlTemplate="{StaticResource TabItemTemplate}">
-            <Grid BackgroundColor="Gray">
-                <Label
-                    HorizontalOptions="Center"
-                    Text="TabContent1"
-                    VerticalOptions="Center" />
-            </Grid>
-            <views:TabViewItem.Triggers>
-                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+            <tabs:LotteryTab/>
+            <xct:TabViewItem.Triggers>
+                <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_xo_so_1.png}"/>
                 </Trigger>
-            </views:TabViewItem.Triggers>
-        </views:TabViewItem>
+            </xct:TabViewItem.Triggers>
+        </xct:TabViewItem>
         
-        <views:TabViewItem
+        <xct:TabViewItem
             Text="Bóng đá"
             Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_bong_da_0.png}"
             FontSize="12"
@@ -73,13 +75,13 @@
                     Text="TabContent1"
                     VerticalOptions="Center" />
             </Grid>
-            <views:TabViewItem.Triggers>
-                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+            <xct:TabViewItem.Triggers>
+                <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_bong_da_1.png}"/>
                 </Trigger>
-            </views:TabViewItem.Triggers>
-        </views:TabViewItem>
-        <views:TabViewItem
+            </xct:TabViewItem.Triggers>
+        </xct:TabViewItem>
+        <xct:TabViewItem
             Text="Tin tức"
             Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_tin_tuc_0.png}"
             FontSize="12"
@@ -91,14 +93,14 @@
                     Text="TabContent1"
                     VerticalOptions="Center" />
             </Grid>
-            <views:TabViewItem.Triggers>
-                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+            <xct:TabViewItem.Triggers>
+                <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_tin_tuc_1.png}"/>
                 </Trigger>
-            </views:TabViewItem.Triggers>
-        </views:TabViewItem>
+            </xct:TabViewItem.Triggers>
+        </xct:TabViewItem>
 
-        <views:TabViewItem
+        <xct:TabViewItem
             Text="Group"
             Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_group_0.png}"
             FontSize="12"
@@ -110,13 +112,13 @@
                     Text="TabContent1"
                     VerticalOptions="Center" />
             </Grid>
-            <views:TabViewItem.Triggers>
-                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+            <xct:TabViewItem.Triggers>
+                <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_group_1.png}"/>
                 </Trigger>
-            </views:TabViewItem.Triggers>
-        </views:TabViewItem>
-        <views:TabViewItem
+            </xct:TabViewItem.Triggers>
+        </xct:TabViewItem>
+        <xct:TabViewItem
             Text="Hỗ trợ"    
             Icon="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_ho_tro_0.png}"         
             FontSize="12"
@@ -128,12 +130,12 @@
                     Text="TabContent1"
                     VerticalOptions="Center" />
             </Grid>
-            <views:TabViewItem.Triggers>
-                <Trigger TargetType="views:TabViewItem" Property="IsSelected" Value="True">
+            <xct:TabViewItem.Triggers>
+                <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_ho_tro_1.png}"/>
                 </Trigger>
-            </views:TabViewItem.Triggers>
-        </views:TabViewItem>
+            </xct:TabViewItem.Triggers>
+        </xct:TabViewItem>
 
-    </views:TabView>
+    </xct:TabView>
 </ContentPage>
