@@ -34,23 +34,54 @@
     <None Remove="Resources\Images\dien_toan.png" />
     <None Remove="Resources\Images\huong-dan.png" />
     <None Remove="Resources\Images\huong_dan.png" />
+    <None Remove="Resources\Images\ic_afc_cl.png" />
+    <None Remove="Resources\Images\ic_asian.png" />
     <None Remove="Resources\Images\ic_bac_2.png" />
     <None Remove="Resources\Images\ic_bong_da_0.png" />
     <None Remove="Resources\Images\ic_bong_da_1.png" />
+    <None Remove="Resources\Images\ic_caf.png" />
     <None Remove="Resources\Images\ic_calendar_1.png" />
+    <None Remove="Resources\Images\ic_ccc_cl.png" />
     <None Remove="Resources\Images\ic_checked.png" />
+    <None Remove="Resources\Images\ic_copa.png" />
     <None Remove="Resources\Images\ic_down.png" />
+    <None Remove="Resources\Images\ic_down_2.png" />
+    <None Remove="Resources\Images\ic_euro.png" />
+    <None Remove="Resources\Images\ic_fire.png" />
+    <None Remove="Resources\Images\ic_f_p.png" />
     <None Remove="Resources\Images\ic_group_0.png" />
     <None Remove="Resources\Images\ic_group_1.png" />
+    <None Remove="Resources\Images\ic_heart.png" />
     <None Remove="Resources\Images\ic_ho_tro_0.png" />
     <None Remove="Resources\Images\ic_ho_tro_1.png" />
+    <None Remove="Resources\Images\ic_messi.png" />
+    <None Remove="Resources\Images\ic_more_f.png" />
+    <None Remove="Resources\Images\ic_more_l.png" />
     <None Remove="Resources\Images\ic_nam_2.png" />
+    <None Remove="Resources\Images\ic_nc_bunesliga.png" />
+    <None Remove="Resources\Images\ic_nc_jleague.png" />
+    <None Remove="Resources\Images\ic_nc_kleague.png" />
+    <None Remove="Resources\Images\ic_nc_laliga.png" />
+    <None Remove="Resources\Images\ic_nc_league1.png" />
+    <None Remove="Resources\Images\ic_nc_premier.png" />
+    <None Remove="Resources\Images\ic_nc_serieA.png" />
+    <None Remove="Resources\Images\ic_nc_thaileague.png" />
+    <None Remove="Resources\Images\ic_nc_vleague.png" />
+    <None Remove="Resources\Images\ic_ofc.png" />
+    <None Remove="Resources\Images\ic_pause.png" />
+    <None Remove="Resources\Images\ic_play.png" />
     <None Remove="Resources\Images\ic_soi_cau_2.png" />
+    <None Remove="Resources\Images\ic_stop.png" />
     <None Remove="Resources\Images\ic_tin_tuc_0.png" />
     <None Remove="Resources\Images\ic_tin_tuc_1.png" />
     <None Remove="Resources\Images\ic_trung_2.png" />
+    <None Remove="Resources\Images\ic_uefa_cl.png" />
+    <None Remove="Resources\Images\ic_uefa_el.png" />
+    <None Remove="Resources\Images\ic_uefa_sc.png" />
     <None Remove="Resources\Images\ic_uncheck.png" />
     <None Remove="Resources\Images\ic_up.png" />
+    <None Remove="Resources\Images\ic_up_2.png" />
+    <None Remove="Resources\Images\ic_wc.png" />
     <None Remove="Resources\Images\ic_xo_so_0.png" />
     <None Remove="Resources\Images\ic_xo_so_1.png" />
     <None Remove="Resources\Images\img_banner.png" />
@@ -79,15 +110,46 @@
     <EmbeddedResource Include="Resources\Fonts\Roboto-ThinItalic.ttf" />
     <EmbeddedResource Include="Resources\Images\dien_toan.png" />
     <EmbeddedResource Include="Resources\Images\huong_dan.png" />
+    <EmbeddedResource Include="Resources\Images\ic_afc_cl.png" />
+    <EmbeddedResource Include="Resources\Images\ic_asian.png" />
     <EmbeddedResource Include="Resources\Images\ic_bac_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_caf.png" />
     <EmbeddedResource Include="Resources\Images\ic_calendar_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ccc_cl.png" />
     <EmbeddedResource Include="Resources\Images\ic_checked.png" />
+    <EmbeddedResource Include="Resources\Images\ic_copa.png" />
     <EmbeddedResource Include="Resources\Images\ic_down.png" />
+    <EmbeddedResource Include="Resources\Images\ic_down_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_euro.png" />
+    <EmbeddedResource Include="Resources\Images\ic_fire.png" />
+    <EmbeddedResource Include="Resources\Images\ic_f_p.png" />
+    <EmbeddedResource Include="Resources\Images\ic_heart.png" />
+    <EmbeddedResource Include="Resources\Images\ic_messi.png" />
+    <EmbeddedResource Include="Resources\Images\ic_more_f.png" />
+    <EmbeddedResource Include="Resources\Images\ic_more_l.png" />
     <EmbeddedResource Include="Resources\Images\ic_nam_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_bunesliga.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_jleague.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_kleague.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_laliga.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_league1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_premier.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_serieA.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_thaileague.png" />
+    <EmbeddedResource Include="Resources\Images\ic_nc_vleague.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ofc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_pause.png" />
+    <EmbeddedResource Include="Resources\Images\ic_play.png" />
     <EmbeddedResource Include="Resources\Images\ic_soi_cau_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_stop.png" />
     <EmbeddedResource Include="Resources\Images\ic_trung_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_uefa_cl.png" />
+    <EmbeddedResource Include="Resources\Images\ic_uefa_el.png" />
+    <EmbeddedResource Include="Resources\Images\ic_uefa_sc.png" />
     <EmbeddedResource Include="Resources\Images\ic_uncheck.png" />
     <EmbeddedResource Include="Resources\Images\ic_up.png" />
+    <EmbeddedResource Include="Resources\Images\ic_up_2.png" />
+    <EmbeddedResource Include="Resources\Images\ic_wc.png" />
     <EmbeddedResource Include="Resources\Images\nam.png" />
     <EmbeddedResource Include="Resources\Images\soi_cau.png" />
     <EmbeddedResource Include="Resources\Images\trung.png" />
@@ -150,10 +212,28 @@
     <EmbeddedResource Update="Views\MainPageViews\MainPageFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\FootballTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\FootballTabViews\MathPlaying.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\FootballTabViews\UpdateScoreView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\TabViews\LotteryTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TabViews\LotteryTabViews\NorthLotteryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\NewsTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\NewsTabViews\FootballNewsTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\NewsTabViews\LotteryNewsTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

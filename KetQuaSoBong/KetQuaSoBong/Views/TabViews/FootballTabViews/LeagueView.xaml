@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.LeagueView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models" 
+             xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+             x:DataType="footballtabviews:LeagueViewVM"
+             Margin="10"
+             CornerRadius="10"
+             Padding="0">
+    <Frame.Resources>
+        <ResourceDictionary>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_more_f.png" x:Key="MF"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_more_l.png" x:Key="ML"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_heart.png" x:Key="Hearth"/>
+        </ResourceDictionary>
+    </Frame.Resources>
+    <Frame.Content>
+      <StackLayout >
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Gold"
+                         HeightRequest="50">
+                <Label Text="GIẢI ĐẤU"
+                 Margin="10"
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                 FontFamily="RB"
+                 />
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{StaticResource Hearth}"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="10,6,0,0"/>
+                <Label Text="Yêu thích"
+                 Margin="0,5,10,0"
+                       FontSize="16"
+                       HorizontalOptions="Start"
+                       TextColor="{StaticResource primaryColor}"
+                 FontFamily="RBo"
+                 />
+            </StackLayout>
+            
+            <Grid HeightRequest="70">
+
+                <ScrollView Orientation="Horizontal"
+                    HeightRequest="70">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView WidthRequest="5"/>
+                        <StackLayout Orientation="Horizontal"
+                                 BindableLayout.ItemsSource="{Binding FavouriteLeagues}"
+                                     Spacing="10">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:League">
+                                    <Frame HeightRequest="70"
+                                       WidthRequest="70"
+                                       Padding="0"
+                                       CornerRadius="80"
+                                       HasShadow="False"
+                                       BackgroundColor="{StaticResource placeholderColor}">
+                                        <Image Source="{Binding Icon}"
+                                           Aspect="AspectFit"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           Margin="10"
+                                           />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                        <BoxView WidthRequest="10"/>
+                    </StackLayout>
+
+                </ScrollView>
+
+            </Grid>
+            <StackLayout IsVisible="{Binding IsShowMore}">
+
+            <Label Text="Châu lục"
+                 Margin="10,5,10,0"
+                   FontSize="16"
+                       HorizontalOptions="Start"
+                       TextColor="Black"
+                 FontFamily="RM"
+                 />
+            <Grid HeightRequest="70">
+                
+                <ScrollView Orientation="Horizontal"
+                    HeightRequest="70">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView WidthRequest="5"/>
+                        <StackLayout Orientation="Horizontal"
+                                 BindableLayout.ItemsSource="{Binding WorldLeagues}"
+                                     Spacing="10">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:League">
+                                    <Frame HeightRequest="70"
+                                       WidthRequest="70"
+                                       Padding="0"
+                                       CornerRadius="80"
+                                       HasShadow="False"
+                                       BackgroundColor="{StaticResource placeholderColor}">
+                                        <Image Source="{Binding Icon}"
+                                           Aspect="AspectFit"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           Margin="10"
+                                           />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                        <BoxView WidthRequest="10"/>
+                    </StackLayout>
+                    
+                </ScrollView>
+              
+            </Grid>
+
+            <Label Text="Câu lạc bộ"
+                 Margin="10,5,10,0"
+                   FontSize="16"
+                       HorizontalOptions="Start"
+                       TextColor="Black"
+                 FontFamily="RM"
+                 />
+            <Grid HeightRequest="70">
+
+                <ScrollView Orientation="Horizontal"
+                    HeightRequest="70">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView WidthRequest="5"/>
+                        <StackLayout Orientation="Horizontal"
+                                 BindableLayout.ItemsSource="{Binding  ClubLeagues}"
+                                     Spacing="10">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:League">
+                                    <Frame HeightRequest="70"
+                                       WidthRequest="70"
+                                       Padding="0"
+                                       CornerRadius="80"
+                                       HasShadow="False"
+                                       BackgroundColor="{StaticResource placeholderColor}">
+                                        <Image Source="{Binding Icon}"
+                                           Aspect="AspectFit"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           Margin="10"
+                                           />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                        <BoxView WidthRequest="10"/>
+                    </StackLayout>
+
+                </ScrollView>
+
+            </Grid>
+
+            <Label Text="Vô địch quốc gia"
+                 Margin="10,5,10,0"
+                   FontSize="16"
+                       HorizontalOptions="Start"
+                       TextColor="Black"
+                 FontFamily="RM"
+                 />
+            <Grid HeightRequest="70"
+                  Margin="0,0,0,10">
+
+                <ScrollView Orientation="Horizontal"
+                    HeightRequest="70">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView WidthRequest="5"/>
+                        <StackLayout Orientation="Horizontal"
+                                 BindableLayout.ItemsSource="{Binding NationLeagues}"
+                                     Spacing="10">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:League">
+                                    <Frame HeightRequest="70"
+                                       WidthRequest="70"
+                                       Padding="0"
+                                       CornerRadius="80"
+                                       HasShadow="False"
+                                       BackgroundColor="{StaticResource placeholderColor}">
+                                        <Image Source="{Binding Icon}"
+                                           Aspect="AspectFit"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           Margin="10"
+                                           />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                        <BoxView WidthRequest="10"/>
+                    </StackLayout>
+
+                </ScrollView>
+
+            </Grid>
+            </StackLayout>
+            <Frame BackgroundColor="{StaticResource primaryColor}"
+                   WidthRequest="150"
+                   HeightRequest="40"
+                   Padding="0"
+                   Margin="0,10,0,10"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   CornerRadius="15"
+                   HasShadow="False"
+                   BorderColor="Transparent"
+                   >
+                <StackLayout HorizontalOptions="Center"
+                             Orientation="Horizontal"
+                             VerticalOptions="Center"
+                             Margin="10,0,0,0">
+                    <Label Text="Mở rộng"
+                           TextColor="White"
+                           FontFamily="RBo">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding IsShowMore}" Value="True">
+                                <Setter Property="Text" Value="Thu gọn"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Image Source="{StaticResource IconDown}"
+                           WidthRequest="15"
+                           Aspect="AspectFill"
+                           HeightRequest="15">
+                        <Image.Triggers>
+                            <DataTrigger TargetType="Image" Binding="{Binding IsShowMore}" Value="True">
+                                <Setter Property="Source" Value="{StaticResource IconUp}"/>
+                            </DataTrigger>
+                        </Image.Triggers>
+                    </Image>
+                </StackLayout>
+
+                <Frame.Triggers>
+                    <DataTrigger TargetType="Frame" Binding="{Binding IsShowMore}" Value="True">
+                        <Setter Property="BackgroundColor" Value="White"/>
+                        <Setter Property="BorderColor" Value="Black"/>
+                    </DataTrigger>
+                </Frame.Triggers>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowMoreCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+  </Frame.Content>
+</Frame>

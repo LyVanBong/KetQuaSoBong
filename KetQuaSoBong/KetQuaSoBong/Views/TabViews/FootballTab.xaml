@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.TabViews.FootballTab"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:footballTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+             BackgroundColor="{StaticResource placeholderColor}">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_messi.png" x:Key="Messi"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_f_p.png" x:Key="FootballPlayer"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <AbsoluteLayout>
+                <Grid AbsoluteLayout.LayoutBounds="0,0,1,200"
+                      AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                    <Image Source="{StaticResource Layer}"
+                       Grid.Row="0"
+                       Aspect="AspectFill"
+                       />
+                   
+                    <Image Source="{StaticResource FootballPlayer}"
+                           HeightRequest="100"
+                           WidthRequest="120"
+                           HorizontalOptions="Start"
+                           Margin="50,0,0,0"
+                       Grid.Row="0"
+                       />
+                    <Image Source="{StaticResource Messi}"
+                           HeightRequest="80"
+                           WidthRequest="90"
+                           HorizontalOptions="Start"
+                           
+                       Grid.Row="0"
+                           Margin="20,0,0,0"
+                       />
+                    <Label TextColor="White"
+                           VerticalOptions="EndAndExpand"
+                           Margin="160,0,0,30"
+                           LineHeight="1.1"
+                           HorizontalOptions="Start"
+                           VerticalTextAlignment="End">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="KẾT QUẢ BÓNG ĐÁ" FontFamily="RBo" FontSize="Large"/>
+                                <Span Text="&#x0a;"/>
+                                <Span Text="      Cập nhật ngày: " FontFamily="RL"/>
+                                <Span Text="{Binding DateTimeNow}" FontFamily="RL"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </Grid>
+                <StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
+                             AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                    <footballTabViews:LeagueView/>
+                    <footballTabViews:MathPlaying/>
+                    <footballTabViews:UpdateScoreView/>
+                </StackLayout>
+
+
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

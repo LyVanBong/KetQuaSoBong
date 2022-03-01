@@ -4,7 +4,7 @@
              x:Class="KetQuaSoBong.Views.TabViews.LotteryTab"
              xmlns:views="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             >
+             BackgroundColor="{StaticResource placeholderColor}">
     
     <ContentView.Resources>
         <ResourceDictionary>

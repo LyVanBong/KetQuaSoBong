@@ -23,7 +23,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public NorthLotteryView()
         {
             InitializeComponent();
-            BindingContext = new NorthLoterryViewVM(navigation);
+            BindingContext = new NorthLoterryViewVM(navigation, this);
         }
     }
     class NorthLoterryViewVM : ViewModelBase
@@ -65,8 +65,8 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public string[] FirstNum { get; set; }
         public string[] LastNum { get; set; }
         public string[] NumberTemp { get; set; }
-        
-        public NorthLoterryViewVM(INavigationService navigationService) : base(navigationService)
+        public string[] ArrLoto { get; set; }
+        public NorthLoterryViewVM(INavigationService navigationService, Frame view) : base(navigationService)
         {
             DateTime now = DateTime.Now;
             DateTimeNow = DateTimeHelper.StandardWeekDays(now.DayOfWeek.ToString()) + ", " + now.ToString("dd/MM/yyyy");
@@ -74,7 +74,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             FirstNum = new string[10];
             LastNum = new string[10];
             SetSource(StandardArray(0));
-            GetFirstLast();
+            GetFirstLast(view);
             
             //Commands
             ShowMoreCommand = new DelegateCommand(() =>
@@ -97,23 +97,57 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public Command ChangeDisplayNumberCommand { get; set; }
         
        
-        private void GetFirstLast()
+        private void GetFirstLast(Frame v)
         {
             string[] result = App.NorthLotteryResultTest;
+            ArrLoto = new string[result.Length];
+           
             List<double> temp = new List<double>();
             for (int i = 0; i < result.Length; i++)
             {
                 string str = result[i].Substring(result[i].Length - 2);
+               
                 temp.Add(double.Parse(str));
             }
+            
             //Sắp xếp danh sách
             temp.Sort();
             //Tách lấy đầu đuôi
             for (int i = 0; i < result.Length; i++)
             {
                 result[i] = temp[i] < 10 ? "0" + temp[i] : temp[i].ToString();
+                ArrLoto[i] = result[i];
                 LastNum[int.Parse(result[i].Substring(0, 1))] = String.IsNullOrEmpty(LastNum[int.Parse(result[i].Substring(0, 1))]) ? LastNum[int.Parse(result[i].Substring(0, 1))] += result[i].Substring(1, 1) : LastNum[int.Parse(result[i].Substring(0, 1))] += ", " + result[i].Substring(1, 1);
                 FirstNum[int.Parse(result[i].Substring(1, 1))] = String.IsNullOrEmpty(FirstNum[int.Parse(result[i].Substring(1, 1))]) ? FirstNum[int.Parse(result[i].Substring(1, 1))] += result[i].Substring(0, 1) : FirstNum[int.Parse(result[i].Substring(1, 1))] += ", " + result[i].Substring(0, 1);
+            }
+            //
+            int count = -1;
+            var gridLoto = v.FindByName<Grid>("gridLoto");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    count++;
+                    Label lb = new Label()
+                    {
+                        Text = ArrLoto[count],
+                        FontFamily = "RBo",
+                        TextColor = Color.Black,
+                        FontSize = 16,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center
+                    };
+                    Frame frame = new Frame()
+                    {
+                        Padding = 0,
+                        CornerRadius = 0,
+                        BorderColor = Color.LightGray,
+                        HasShadow = false,
+                        Content = lb
+
+                    };
+                    gridLoto.Children.Add(frame, j, i);
+                }
             }
         }
 
