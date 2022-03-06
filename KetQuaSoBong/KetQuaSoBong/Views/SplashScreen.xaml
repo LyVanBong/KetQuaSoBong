@@ -7,7 +7,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="KetQuaSoBong.Views.SplashScreen"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             BackgroundColor="{StaticResource primaryColor}">
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label" x:Key="lblLoadingStyle">
@@ -20,6 +20,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
+        <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.layer.png}"
+               Aspect="Fill"/>
         <StackLayout HorizontalOptions="Center"
                      VerticalOptions="Center"
                      Margin="0,0,0,70">

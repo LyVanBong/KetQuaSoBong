@@ -2,13 +2,13 @@
 <Frame xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.MathPlaying"
-       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-       xmlns:md="clr-namespace:KetQuaSoBong.Models" 
-       xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
-       x:DataType="footballtabviews:MatchPlayingVM"
-       Margin="10"
-             CornerRadius="10"
-             Padding="0">
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models" 
+             xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+             x:DataType="footballtabviews:MatchPlayingVM"
+      
+             Padding="0"
+             BackgroundColor="Transparent">
     <Frame.Content>
       <StackLayout>
             <StackLayout Orientation="Horizontal"
@@ -25,7 +25,8 @@
                
 
             </StackLayout>
-            <ScrollView Orientation="Horizontal">
+            <ScrollView Orientation="Horizontal"
+                        HorizontalScrollBarVisibility="Never">
                 <StackLayout Orientation="Horizontal"
                              Margin="0,0,0,10">
                     <BoxView WidthRequest="10"/>
@@ -40,7 +41,7 @@
                                        Margin="0,10"
                                        CornerRadius="10"
                                        HasShadow="False"
-                                       BackgroundColor="{StaticResource placeholderColor}"
+                                       BackgroundColor="White"
                                        >
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal"

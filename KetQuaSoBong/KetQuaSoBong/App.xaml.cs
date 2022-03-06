@@ -597,6 +597,105 @@ namespace KetQuaSoBong
             }
             
         };
+        public static ObservableCollection<ItemChat> ItemChatsDemo2 = new ObservableCollection<ItemChat>()
+        {
+            new ItemChat()
+            {
+                Icon = "https://cdn.24h.com.vn/upload/4-2021/images/2021-10-23/Moi-ngay-co-bao-nhieu-nguoi-trung-thuong-xo-so-so-xo-1-1634961228-677-width600height338.jpg",
+                NameUser="Admin",
+                DateTimeUpdate= new DateTime(2022,03,06,16,02,00),
+                Content = "Hello, có ai ở đây không???"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.tuoitre.vn/thumb_w/586/2020/2/19/photo-1-15821031354031418608241.jpg",
+                NameUser="Thái Văn",
+                DateTimeUpdate= new DateTime(2022,03,06,16,03,00),
+                Content = "Trận tối hôm qua hay đúng không cả nhà???"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.tuoitre.vn/thumb_w/586/2020/2/19/photo-1-15821031354031418608241.jpg",
+                NameUser="Thái Văn",
+                DateTimeUpdate= new DateTime(2022,03,06,16,03,00),
+                Content = "Không biết trận hôm nay thế nào?"
+            },
+            new ItemChat()
+            {
+                Icon = "https://media.vietlott.vn/vi/12.2021/system/archivedate/fhne.png",
+                NameUser="Đào Vũ",
+                DateTimeUpdate= new DateTime(2022,03,06,16,04,00),
+                Content = "Tôi nghĩ là 3-1 :)))))))))"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.24h.com.vn/upload/4-2021/images/2021-10-23/Moi-ngay-co-bao-nhieu-nguoi-trung-thuong-xo-so-so-xo-1-1634961228-677-width600height338.jpg",
+                NameUser="Admin",
+                DateTimeUpdate= new DateTime(2022,03,06,16,05,00),
+                Content = "Tôi nghĩ ngược lại. Hahahha"
+            },
+            new ItemChat()
+            {
+                Icon = "https://media.vietlott.vn/vi/12.2021/system/archivedate/fhne.png",
+                NameUser="Đào Vũ",
+                DateTimeUpdate= new DateTime(2022,03,06,16,07,00),
+                Content = "Ở nhà không dám đi đâu"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.tuoitre.vn/thumb_w/586/2020/2/19/photo-1-15821031354031418608241.jpg",
+                NameUser="Thái Văn",
+                DateTimeUpdate= new DateTime(2022,03,06,16,08,00),
+                Content = "Ở nhà là lành nhất các ông ơi!!!"
+            },
+
+        };
+        public static ObservableCollection<ItemChat> ItemChatsDemo = new ObservableCollection<ItemChat>()
+        {
+            new ItemChat()
+            {
+                Icon = "https://cdn.24h.com.vn/upload/4-2021/images/2021-10-23/Moi-ngay-co-bao-nhieu-nguoi-trung-thuong-xo-so-so-xo-1-1634961228-677-width600height338.jpg",
+                NameUser="Admin",
+                DateTimeUpdate= new DateTime(2022,03,06,16,02,00),
+                Content = "Con số gì ra, cra con mấy, con mấy gì ra?"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.tuoitre.vn/thumb_w/586/2020/2/19/photo-1-15821031354031418608241.jpg",
+                NameUser="Thái Văn",
+               DateTimeUpdate= new DateTime(2022,03,06,16,03,00),
+                Content = "Con 23, Chắc chắn con 23."
+            },
+            new ItemChat()
+            {
+                Icon = "https://media.vietlott.vn/vi/12.2021/system/archivedate/fhne.png",
+                NameUser="Đào Vũ",
+                DateTimeUpdate= new DateTime(2022,03,06,16,04,00),
+                Content = "23 cả tháng nay chưa về. Nhưng nay tôi đánh con 32. :)))))))))"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.24h.com.vn/upload/4-2021/images/2021-10-23/Moi-ngay-co-bao-nhieu-nguoi-trung-thuong-xo-so-so-xo-1-1634961228-677-width600height338.jpg",
+                NameUser="Admin",
+                DateTimeUpdate= new DateTime(2022,03,06,16,05,00),
+                Content = "Còn tôi đánh cả cặp xD"
+            },
+            new ItemChat()
+            {
+                Icon = "https://media.vietlott.vn/vi/12.2021/system/archivedate/fhne.png",
+                NameUser="Đào Vũ",
+                DateTimeUpdate= new DateTime(2022,03,06,16,07,00),
+                Content = "Khôn như ông nhà tôi cũng có =))))))"
+            },
+            new ItemChat()
+            {
+                Icon = "https://cdn.tuoitre.vn/thumb_w/586/2020/2/19/photo-1-15821031354031418608241.jpg",
+                NameUser="Thái Văn",
+                DateTimeUpdate= new DateTime(2022,03,06,16,08,00),
+                Content = "xD"
+            },
+
+        };
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {

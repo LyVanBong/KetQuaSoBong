@@ -41,12 +41,14 @@
     <None Remove="Resources\Images\ic_bong_da_1.png" />
     <None Remove="Resources\Images\ic_caf.png" />
     <None Remove="Resources\Images\ic_calendar_1.png" />
+    <None Remove="Resources\Images\ic_call.png" />
     <None Remove="Resources\Images\ic_ccc_cl.png" />
     <None Remove="Resources\Images\ic_checked.png" />
     <None Remove="Resources\Images\ic_copa.png" />
     <None Remove="Resources\Images\ic_down.png" />
     <None Remove="Resources\Images\ic_down_2.png" />
     <None Remove="Resources\Images\ic_euro.png" />
+    <None Remove="Resources\Images\ic_fb.png" />
     <None Remove="Resources\Images\ic_fire.png" />
     <None Remove="Resources\Images\ic_f_p.png" />
     <None Remove="Resources\Images\ic_group_0.png" />
@@ -84,6 +86,7 @@
     <None Remove="Resources\Images\ic_wc.png" />
     <None Remove="Resources\Images\ic_xo_so_0.png" />
     <None Remove="Resources\Images\ic_xo_so_1.png" />
+    <None Remove="Resources\Images\ic_zalo.png" />
     <None Remove="Resources\Images\img_banner.png" />
     <None Remove="Resources\Images\layer.png" />
     <None Remove="Resources\Images\logo-1.png" />
@@ -115,12 +118,14 @@
     <EmbeddedResource Include="Resources\Images\ic_bac_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_caf.png" />
     <EmbeddedResource Include="Resources\Images\ic_calendar_1.png" />
+    <EmbeddedResource Include="Resources\Images\ic_call.png" />
     <EmbeddedResource Include="Resources\Images\ic_ccc_cl.png" />
     <EmbeddedResource Include="Resources\Images\ic_checked.png" />
     <EmbeddedResource Include="Resources\Images\ic_copa.png" />
     <EmbeddedResource Include="Resources\Images\ic_down.png" />
     <EmbeddedResource Include="Resources\Images\ic_down_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_euro.png" />
+    <EmbeddedResource Include="Resources\Images\ic_fb.png" />
     <EmbeddedResource Include="Resources\Images\ic_fire.png" />
     <EmbeddedResource Include="Resources\Images\ic_f_p.png" />
     <EmbeddedResource Include="Resources\Images\ic_heart.png" />
@@ -150,6 +155,7 @@
     <EmbeddedResource Include="Resources\Images\ic_up.png" />
     <EmbeddedResource Include="Resources\Images\ic_up_2.png" />
     <EmbeddedResource Include="Resources\Images\ic_wc.png" />
+    <EmbeddedResource Include="Resources\Images\ic_zalo.png" />
     <EmbeddedResource Include="Resources\Images\nam.png" />
     <EmbeddedResource Include="Resources\Images\soi_cau.png" />
     <EmbeddedResource Include="Resources\Images\trung.png" />
@@ -221,6 +227,15 @@
     <EmbeddedResource Update="Views\TabViews\FootballTabViews\UpdateScoreView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\GroupTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\GroupTabViews\FootballChatView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\GroupTabViews\LotteryChatView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\TabViews\LotteryTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -236,6 +251,13 @@
     <EmbeddedResource Update="Views\TabViews\NewsTabViews\LotteryNewsTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabViews\SupportTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\TabViews\SupportTabViews\" />
   </ItemGroup>
 
 </Project>

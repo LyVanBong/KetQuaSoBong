@@ -96,12 +96,7 @@
             FontSize="12"
             TextColorSelected="{StaticResource primaryColor}"
             ControlTemplate="{StaticResource TabItemTemplate}">
-            <Grid BackgroundColor="Gray">
-                <Label
-                    HorizontalOptions="Center"
-                    Text="TabContent1"
-                    VerticalOptions="Center" />
-            </Grid>
+            <tabs:GroupTab/>
             <xct:TabViewItem.Triggers>
                 <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_group_1.png}"/>
@@ -114,12 +109,7 @@
             FontSize="12"
             TextColorSelected="{StaticResource primaryColor}"
             ControlTemplate="{StaticResource TabItemTemplate}">
-            <Grid BackgroundColor="Gray">
-                <Label
-                    HorizontalOptions="Center"
-                    Text="TabContent1"
-                    VerticalOptions="Center" />
-            </Grid>
+            <tabs:SupportTab/>
             <xct:TabViewItem.Triggers>
                 <Trigger TargetType="xct:TabViewItem" Property="IsSelected" Value="True">
                     <Setter Property="Icon" Value="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_ho_tro_1.png}"/>

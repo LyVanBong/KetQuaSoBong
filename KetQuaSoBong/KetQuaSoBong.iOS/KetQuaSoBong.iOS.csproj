@@ -104,6 +104,8 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <LinkDescription Include="LinkerSettings.xml" />
+    <Compile Include="MyEditorRenderer.cs" />
+    <Compile Include="MyEntryRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +205,9 @@
     </PackageReference>
     <PackageReference Include="RestSharp">
       <Version>107.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="SolrNet.Core">
+      <Version>1.0.19</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfTabView">
       <Version>19.4.0.53</Version>

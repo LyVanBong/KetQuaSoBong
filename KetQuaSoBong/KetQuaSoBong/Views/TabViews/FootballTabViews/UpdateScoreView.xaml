@@ -4,8 +4,7 @@
              x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.UpdateScoreView"
        xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
        xmlns:md="clr-namespace:KetQuaSoBong.Models" xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews" x:DataType="footballtabviews:UpdateScoreViewVM"
-       Margin="10"
-             CornerRadius="10"
+
              Padding="0">
     <Frame.Resources>
         <ResourceDictionary>
@@ -673,7 +672,8 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-
+            <BoxView HeightRequest="0.5"
+                         Color="LightGray"/>
         </StackLayout>
        
     </Frame.Content>
