@@ -1,8 +1,6 @@
 ﻿using KetQuaSoBong.Models.FootballModel;
 using Prism.Mvvm;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.Models
@@ -13,17 +11,18 @@ namespace KetQuaSoBong.Models
         public Team Team1 { get; set; }
         public Team Team2 { get; set; }
         private int _status;
-        public int Status { 
-            get => _status; 
-            set 
+        public int Status
+        {
+            get => _status;
+            set
             {
                 StatusLightSource = value == 0 ? ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_play.png") : (value == 1 ? ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_pause.png") : ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_stop.png"));
                 SetProperty(ref _status, value);
-            } 
+            }
         }
         public DateTime TimeStart { get; set; }
         private double _timePlaying;
-        public double TimePlaying { get=> _timePlaying; set =>SetProperty(ref _timePlaying, value); }
+        public double TimePlaying { get => _timePlaying; set => SetProperty(ref _timePlaying, value); }
         private double _timePlus;
         public double TimePlus { get => _timePlus; set => SetProperty(ref _timePlus, value); }
         private double _timeDelay;
@@ -67,7 +66,7 @@ namespace KetQuaSoBong.Models
             get => _foldT1;
             set => SetProperty(ref _foldT1, value);
         }
-        
+
         public int _yellowCardT1;
         public int YellowCardT1
         {
@@ -133,7 +132,7 @@ namespace KetQuaSoBong.Models
         }
         public string NoteMatch { get; set; }
 
-        private ImageSource _statusLightSource; 
+        private ImageSource _statusLightSource;
         public ImageSource StatusLightSource
         {
             get => _statusLightSource;
@@ -141,37 +140,37 @@ namespace KetQuaSoBong.Models
         }
 
         public void SetTime()
-        {   
-        
+        {
+
             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
-            {   
-                
+            {
+
                 DateTime now = DateTime.Now;
-                if(Status != 3)
+                if (Status != 3)
                 {
-                    if(Status == 0)
+                    if (Status == 0)
                     {
                         TimeSpan span = now.Subtract(TimeStart);
-                        
+
                         if (span.TotalMinutes <= 45)
-                        {  
-                            
+                        {
+
                             TimePlaying += span.TotalMinutes;
-                            
+
                         }
-                        else 
+                        else
                         {
                             TimeSpan span2 = now.Subtract(TimeStart.AddSeconds(2700));
                             TimePlus = span2.TotalMinutes;
                         }
                     }
-                    else if(Status == 1)
+                    else if (Status == 1)
                     {
                         TimeSpan span = now.Subtract(TimeStart.AddSeconds(2700).AddMinutes(TimePlus));
                         TimeDelay = span.TotalMinutes;
-                    }    
+                    }
                     return true;
-                } 
+                }
                 else
                 {
                     return false;

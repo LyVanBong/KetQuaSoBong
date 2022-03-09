@@ -5,13 +5,8 @@ using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
@@ -28,7 +23,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
     }
     class NorthLoterryViewVM : ViewModelBase
     {
-        private string _datetimeNow; 
+        private string _datetimeNow;
         public string DateTimeNow
         {
             get => _datetimeNow;
@@ -41,13 +36,13 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             set => SetProperty(ref _IsShowMore, value);
         }
         private string _db;
-        public string DB { get => _db; set=> SetProperty(ref _db, value); }
+        public string DB { get => _db; set => SetProperty(ref _db, value); }
         private string _g1;
-        public string G1 { get=>_g1; set=>SetProperty(ref _g1, value); }
+        public string G1 { get => _g1; set => SetProperty(ref _g1, value); }
         private string[] _arrG2;
-        public string[] ArrG2 { get=>_arrG2; set=>SetProperty(ref _arrG2,value); }
+        public string[] ArrG2 { get => _arrG2; set => SetProperty(ref _arrG2, value); }
         private string[] _arrG31;
-        public string[] ArrG31 { get=> _arrG31; set=> SetProperty(ref _arrG31,value); }
+        public string[] ArrG31 { get => _arrG31; set => SetProperty(ref _arrG31, value); }
         private string[] _arrG32;
         public string[] ArrG32 { get => _arrG32; set => SetProperty(ref _arrG32, value); }
         private string[] _arrG4;
@@ -70,19 +65,19 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         {
             DateTime now = DateTime.Now;
             DateTimeNow = DateTimeHelper.StandardWeekDays(now.DayOfWeek.ToString()) + ", " + now.ToString("dd/MM/yyyy");
-            NumberTemp = new string[] { "0","1","2","3","4","5","6","7","8","9" }; 
+            NumberTemp = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             FirstNum = new string[10];
             LastNum = new string[10];
             SetSource(StandardArray(0));
-            GetFirstLast(view);
-            
+            GetFirstLast();
+
             //Commands
             ShowMoreCommand = new DelegateCommand(() =>
-            {    
-                
+            {
+
                 IsShowMore = !IsShowMore;
             });
-            ChangeDisplayNumberCommand = new Command((x) => 
+            ChangeDisplayNumberCommand = new Command((x) =>
             {
                 var button = (x as RadioButton);
                 switch (button.ClassId)
@@ -95,21 +90,21 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         }
         public DelegateCommand ShowMoreCommand { get; set; }
         public Command ChangeDisplayNumberCommand { get; set; }
-        
-       
-        private void GetFirstLast(Frame v)
+
+
+        private void GetFirstLast()
         {
             string[] result = App.NorthLotteryResultTest;
             ArrLoto = new string[result.Length];
-           
+
             List<double> temp = new List<double>();
             for (int i = 0; i < result.Length; i++)
             {
                 string str = result[i].Substring(result[i].Length - 2);
-               
+
                 temp.Add(double.Parse(str));
             }
-            
+
             //Sắp xếp danh sách
             temp.Sort();
             //Tách lấy đầu đuôi
@@ -121,34 +116,6 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
                 FirstNum[int.Parse(result[i].Substring(1, 1))] = String.IsNullOrEmpty(FirstNum[int.Parse(result[i].Substring(1, 1))]) ? FirstNum[int.Parse(result[i].Substring(1, 1))] += result[i].Substring(0, 1) : FirstNum[int.Parse(result[i].Substring(1, 1))] += ", " + result[i].Substring(0, 1);
             }
             //
-            int count = -1;
-            var gridLoto = v.FindByName<Grid>("gridLoto");
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    count++;
-                    Label lb = new Label()
-                    {
-                        Text = ArrLoto[count],
-                        FontFamily = "RBo",
-                        TextColor = Color.Black,
-                        FontSize = 16,
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.Center
-                    };
-                    Frame frame = new Frame()
-                    {
-                        Padding = 0,
-                        CornerRadius = 0,
-                        BorderColor = Color.LightGray,
-                        HasShadow = false,
-                        Content = lb
-
-                    };
-                    gridLoto.Children.Add(frame, j, i);
-                }
-            }
         }
 
         private string[] StandardArray(int type)
@@ -156,15 +123,15 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             string[] arr = App.NorthLotteryResultTest;
             for (int i = 0; i < arr.Length; i++)
             {
-                if(type == 0)
+                if (type == 0)
                 {
                     arr[i] = arr[i];
                 }
-                else if(type == 2)
+                else if (type == 2)
                 {
                     arr[i] = arr[i].Substring(arr[i].Length - 2);
                 }
-                else 
+                else
                 {
                     arr[i] = arr[i].Length > 3 ? arr[i].Substring(arr[i].Length - 3) : arr[i];
                 }
@@ -188,6 +155,6 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
 
 
 
-       
+
     }
 }

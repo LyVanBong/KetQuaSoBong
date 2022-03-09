@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:votepageviews="clr-namespace:KetQuaSoBong.Views.VotePageViews" x:DataType="votepageviews:NorthVoteTabVM"
+             x:Class="KetQuaSoBong.Views.VotePageViews.NorthVoteTab"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentView.Resources>
+        
+    </ContentView.Resources>
+    <ContentView.Content>
+        
+        <Grid>
+           
+            <StackLayout IsVisible="{Binding IsVisibleResult}">
+            <Label HorizontalTextAlignment="Center"
+                 
+                    Text="HÃY BÌNH CHỌN 3 CON SỐ" 
+                              FontSize="16" 
+                              TextColor="{StaticResource primaryColor}"
+                              FontFamily="RBo"/>
+            <Label Text="NHỮNG CON SỐ BẠN MUỐN DỰ ĐOÁN HÔM NÀY LÀ GÌ?"
+                              FontSize="11"
+                              FontFamily="R"/>
+            <Label Text="(Nhấn 1 lần nữa để hủy)"
+                              FontSize="11"
+                              FontFamily="RI"
+                   HorizontalTextAlignment="Center"/>
+               
+            <Frame BackgroundColor="{StaticResource placeholderColor}"
+                   HeightRequest="360"
+                   CornerRadius="10"
+                   Margin="0,10,0,10"
+                   Padding="10"
+                   HasShadow="False">
+
+                <CollectionView ItemsSource="{Binding Numbers}"
+                                ItemSizingStrategy="MeasureAllItems"
+                                 x:Name="ListLottery"  
+                                >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Span="10"
+                                         Orientation="Vertical"
+                                             HorizontalItemSpacing="2"
+                                             VerticalItemSpacing="9">
+
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <Button HeightRequest="25"
+                                        WidthRequest="25"
+                                        BackgroundColor="White"
+                                        Margin="1.1"
+                                        Text="{Binding .}"
+                                        FontSize="13"
+                                        FontFamily="RBo"
+                                        BorderColor="Black"
+                                        BorderWidth="0.5"
+                                        CornerRadius="25"
+                                        ClassId="0"
+                                        x:Name="LotteryBall"
+                                        Command="{Binding BindingContext.SelectCommand, Source={x:Reference ListLottery}}" CommandParameter="{x:Reference LotteryBall}">
+                                <Button.Padding>
+                                    <Thickness>0</Thickness>
+                                </Button.Padding>
+                                <Button.Triggers>
+                                    <Trigger TargetType="Button" Property="ClassId" Value="1">
+                                        <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                                        <Setter Property="TextColor" Value="White"/>
+                                        <Setter Property="BorderWidth" Value="0"/>
+                                    </Trigger>
+                                </Button.Triggers>
+                            </Button>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+                <Button BackgroundColor="{StaticResource primaryColor}"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    CornerRadius="50"
+                    HeightRequest="45"
+                    Text="XEM KẾT QUẢ"
+                    Margin="0,0,0,15"
+                    TextColor="White"
+                    FontFamily="RBo"
+                    Command="{Binding ShowHideResultCommand}"/>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsVisibleResult, Converter={xct:InvertedBoolConverter}}">
+                <Label HorizontalTextAlignment="Center"
+                 
+                    Text="KẾT QUẢ TỔNG SỐ NGƯỜI BÌNH CHỌN HÔM NAY:" 
+                              FontSize="16" 
+                              TextColor="{StaticResource primaryColor}"
+                              FontFamily="RBo"/>
+                <Frame Margin="0,10"
+                       Padding="10"
+                       CornerRadius="10"
+                       BackgroundColor="{StaticResource placeholderColor}"
+                       HasShadow="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Button HeightRequest="25"
+                                WidthRequest="25"
+                                BackgroundColor="{StaticResource primaryColor}"
+                                Text="10"
+                                TextColor="White"
+                                FontSize="13"
+                                FontFamily="RBo"
+                                CornerRadius="25"
+                                HorizontalOptions="Start">
+                            <Button.Padding>
+                                <Thickness>0</Thickness>
+                            </Button.Padding>
+                        </Button>
+                        <Label Text="1232"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="Black"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center"
+                               />
+                    </StackLayout>
+                    
+                </Frame>
+                <Frame Margin="0,0,0,10"
+                       Padding="10"
+                       CornerRadius="10"
+                       BackgroundColor="{StaticResource placeholderColor}"
+                       HasShadow="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Button HeightRequest="25"
+                                WidthRequest="25"
+                                BackgroundColor="{StaticResource primaryColor}"
+                                Text="15"
+                                TextColor="White"
+                                FontSize="13"
+                                FontFamily="RBo"
+                                CornerRadius="25"
+                                HorizontalOptions="Start"
+                                Command="{Binding ShowHideResultCommand}">
+                            <Button.Padding>
+                                <Thickness>0</Thickness>
+                            </Button.Padding>
+                        </Button>
+                        <Label Text="108"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="Black"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center"
+                               />
+                    </StackLayout>
+
+                </Frame>
+                <Frame Margin="0,0,0,20"
+                       Padding="10"
+                       CornerRadius="10"
+                       BackgroundColor="{StaticResource placeholderColor}"
+                       HasShadow="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Button HeightRequest="25"
+                                WidthRequest="25"
+                                BackgroundColor="{StaticResource primaryColor}"
+                                Text="70"
+                                TextColor="White"
+                                FontSize="13"
+                                FontFamily="RBo"
+                                CornerRadius="25"
+                                HorizontalOptions="Start">
+                            <Button.Padding>
+                                <Thickness>0</Thickness>
+                            </Button.Padding>
+                        </Button>
+                        <Label Text="232"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="Black"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center"
+                               />
+                    </StackLayout>
+
+                </Frame>
+                <Grid ColumnDefinitions="*,*">
+                    <Button BackgroundColor="Black"
+                            Grid.Column="0"
+                            WidthRequest="120"
+                            HorizontalOptions="Center"
+                            CornerRadius="40"
+                            HeightRequest="40"
+                            Text="QUAY VỀ"
+                            Margin="0,0,0,15"
+                            Command="{Binding ShowHideResultCommand}"
+                            TextColor="White"
+                            FontFamily="RBo"/>
+                    <Button BackgroundColor="{StaticResource primaryColor}"
+                            Grid.Column="1"
+                            WidthRequest="120"
+                            HorizontalOptions="Center"
+                            CornerRadius="40"
+                            HeightRequest="40"
+                            Text="CHIA SẺ"
+                            Margin="0,0,0,15"
+                            TextColor="White"
+                            FontFamily="RBo"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

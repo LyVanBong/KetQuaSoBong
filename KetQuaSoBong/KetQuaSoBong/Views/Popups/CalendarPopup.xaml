@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.Popups.CalendarPopup"
+               xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+           xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar" xmlns:popups="clr-namespace:KetQuaSoBong.Views.Popups" x:DataType="popups:CalendarPopup"
+               Size="300,380"
+           >
+    <xct:Popup.Content>
+        <Grid>
+            <xc:CalendarView x:Name="CalendarView"
+                             AutoRows="True"
+                             AutoRowsIsConsistent="True"
+                             SelectedDates="{StaticResource primaryColor}"
+                             SelectionType="Single"
+                             DateSelectionChanged="CalendarView_DateSelectionChanged"
+                             >
+
+
+            </xc:CalendarView>
+            
+        </Grid>
+    </xct:Popup.Content>
+</xct:Popup>

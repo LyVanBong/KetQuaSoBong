@@ -1,12 +1,8 @@
 ﻿using KetQuaSoBong.Models;
 using KetQuaSoBong.ViewModels;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,14 +20,14 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
         }
     }
     class UpdateScoreViewVM : ViewModelBase
-    {   
+    {
         public ObservableCollection<Match> PremierScores { get; set; }
         public ObservableCollection<Match> League1Scores { get; set; }
         public ObservableCollection<Match> LaligaScores { get; set; }
         public ObservableCollection<Match> BunesligaScores { get; set; }
         public ObservableCollection<Match> SerieAScores { get; set; }
-      
-        
+
+
         public UpdateScoreViewVM(INavigationService navigationService) : base(navigationService)
         {
             SetSource();

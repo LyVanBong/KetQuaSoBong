@@ -1,10 +1,5 @@
-﻿using Foundation;
-using KetQuaSoBong.iOS;
+﻿using KetQuaSoBong.iOS;
 using KetQuaSoBong.Views.CustomViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;

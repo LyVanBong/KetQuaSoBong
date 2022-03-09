@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer"/>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.back-btn.png" x:Key="Back"/>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView VerticalScrollBarVisibility="Never">
@@ -44,6 +45,9 @@
                    VerticalOptions="Center"
                    Grid.Row="1">
                     <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-1.png}"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowUserProfilePage}"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
                 <Label Text="US_013123"
                     Grid.Row="2"
@@ -60,6 +64,7 @@
                     BackgroundColor="White"
                     CornerRadius="40"
                     Text="Đăng ký"
+                    Command="{Binding ShowSignUpPage}"
                     TextColor="{StaticResource primaryColor}"
                     Padding="0,0,0,3"
                     FontSize="Default"
@@ -69,13 +74,15 @@
             </Grid>
             <StackLayout
             Grid.Row="1"
+                x:Name="ListItem"
             BindableLayout.ItemsSource="{Binding ListItem}"
             Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:MainPageFlyoutMenuItem">
                         <StackLayout
                         Spacing="0"
-                        Padding="0,5,0,5">
+                        Padding="0,5,0,5"
+                            x:Name="MenuItem">
                             <Grid ColumnDefinitions="40,*"
                               HeightRequest="40"
                               Margin="10,0,0,10">
@@ -95,6 +102,9 @@
                                    />
                             </Grid>
                             <BoxView HeightRequest="0.5" Color="Gray"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectedMenuItemCommand, Source={x:Reference ListItem}}" CommandParameter="{Binding Source={x:Reference MenuItem}, Path=BindingContext}"/>
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

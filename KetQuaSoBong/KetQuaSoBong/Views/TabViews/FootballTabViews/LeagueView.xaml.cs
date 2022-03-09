@@ -2,12 +2,7 @@
 using KetQuaSoBong.ViewModels;
 using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,24 +16,24 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
         public LeagueView()
         {
             InitializeComponent();
-            BindingContext = new LeagueViewVM(navigationService, this); 
+            BindingContext = new LeagueViewVM(navigationService, this);
         }
-        
+
     }
     class LeagueViewVM : ViewModelBase
     {
         private ObservableCollection<League> _favouriteLeague;
-        public ObservableCollection<League> FavouriteLeagues {get => _favouriteLeague; set=>SetProperty(ref _favouriteLeague, value);}
-        public ObservableCollection<League> WorldLeagues {get; set;}
-        public ObservableCollection<League> ClubLeagues {get; set;}
-        public ObservableCollection<League> NationLeagues {get; set;}
+        public ObservableCollection<League> FavouriteLeagues { get => _favouriteLeague; set => SetProperty(ref _favouriteLeague, value); }
+        public ObservableCollection<League> WorldLeagues { get; set; }
+        public ObservableCollection<League> ClubLeagues { get; set; }
+        public ObservableCollection<League> NationLeagues { get; set; }
         private bool _IsShowMore = false;
         public bool IsShowMore
         {
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
-        public LeagueViewVM(INavigationService navigationService, Frame frame): base(navigationService)
+        public LeagueViewVM(INavigationService navigationService, Frame frame) : base(navigationService)
         {
             SetSource();
             //Commands

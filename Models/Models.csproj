@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.4.0.53" />
-  </ItemGroup>
-
 </Project>

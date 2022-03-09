@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KetQuaSoBong.Helper
+﻿namespace KetQuaSoBong.Helper
 {
     public static class DateTimeHelper
     {

@@ -510,7 +510,7 @@
                       ColumnSpacing="0"
                       RowSpacing="0"
                       Margin="10">
-                    
+
                     <BoxView Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Color="Gray"/>
                     <BoxView Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
                     <BoxView Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Color="Gray"/>
@@ -528,15 +528,41 @@
                            VerticalOptions="Center"/>
 
                     <Grid x:Name="gridLoto"
-                          HeightRequest="120"
+                          HeightRequest="125"
                           ColumnSpacing="0"
                           RowSpacing="0"
                           Grid.Row="3"
                           Grid.Column="1">
+                        <CollectionView ItemsSource="{Binding ArrLoto}"
+                                    ItemSizingStrategy="MeasureAllItems"
+                                    >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical"
+                                Span="9">
+
+                                </GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+                                    <Frame Padding="0,10"
+                                       CornerRadius="0"
+                                       BorderColor="LightGray">
+                                        <Label Text="{Binding .}"
+                                           HorizontalTextAlignment="Center"
+                                           FontFamily="RB"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                    </Frame>
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
 
                     </Grid>
+                    
                 </Grid>
-                
                 <Grid ColumnDefinitions="0.75,0.5*,0.75,*,0.15,*,0.75,0.5*,0.75"
                   RowDefinitions="0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75"
                   RowSpacing="0"

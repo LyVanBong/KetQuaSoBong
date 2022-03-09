@@ -1,12 +1,7 @@
 ﻿using KetQuaSoBong.Models;
 using KetQuaSoBong.ViewModels;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,9 +19,9 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
         }
     }
     class MatchPlayingVM : ViewModelBase
-    {   
+    {
         public ObservableCollection<Match> MacthPlayings { get; set; }
-        public MatchPlayingVM(INavigationService navigationService, Frame frame): base(navigationService)
+        public MatchPlayingVM(INavigationService navigationService, Frame frame) : base(navigationService)
         {
             MacthPlayings = App.MatchePlayings;
         }

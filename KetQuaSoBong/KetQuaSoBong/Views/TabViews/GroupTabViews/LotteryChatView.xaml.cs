@@ -2,11 +2,7 @@
 using KetQuaSoBong.ViewModels;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -51,9 +47,9 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
                 }
             });
-            
+
         }
         public Command SendCommand { get; set; }
-        
+
     }
 }

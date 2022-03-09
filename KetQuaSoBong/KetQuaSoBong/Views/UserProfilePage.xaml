@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="KetQuaSoBong.Views.UserProfilePage"
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             BackgroundColor="{StaticResource placeholderColor}">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Label Text="THÔNG TIN CÁ NHÂN" 
+                   TextColor="White"
+                   FontFamily="R"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="-50,0,0,0"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+        <Grid>
+            <Frame Padding="0"
+               Margin="10"
+               HasShadow="False"
+               CornerRadius="10">
+            
+                <StackLayout>
+                    <Frame HeightRequest="120"
+                           WidthRequest="120"
+                           Padding="0"
+                           CornerRadius="100"
+                           HorizontalOptions="Center"
+                           Margin="0,50,0,0"
+                           HasShadow="False"
+                           BackgroundColor="#B02019">
+
+                    </Frame>
+                    <Frame HeightRequest="55"
+                       CornerRadius="10"
+                       BorderColor="LightGray"
+                       Padding="0"
+                       Margin="40,40,40,10"
+                       HasShadow="False">
+                        <customView:CustomEntry Placeholder="Tên đăng nhập"
+                                            FontSize="14"
+                                            FontFamily="RSeBo"
+                                            Margin="10,2,0,0">
+
+                        </customView:CustomEntry>
+                    </Frame>
+                    <Frame HeightRequest="55"
+                       CornerRadius="10"
+                       BorderColor="LightGray"
+                       Padding="0"
+                       Margin="40,0,40,10"
+                       HasShadow="False">
+                        <customView:CustomEntry Placeholder="Ngày sinh"
+                                            FontSize="14"
+                                            FontFamily="RSeBo"
+                                            Margin="10,2,0,0">
+
+                        </customView:CustomEntry>
+                    </Frame>
+                    <Frame HeightRequest="55"
+                       CornerRadius="10"
+                       BorderColor="LightGray"
+                       Padding="0"
+                       Margin="40,0,40,10"
+                       HasShadow="False">
+                        <customView:CustomEntry Placeholder="Số điện thoại"
+                                            FontSize="14"
+                                            FontFamily="RSeBo"
+                                            Margin="10,2,0,0">
+
+                        </customView:CustomEntry>
+                    </Frame>
+                    <Frame HeightRequest="55"
+                       CornerRadius="10"
+                       BorderColor="LightGray"
+                       Padding="0"
+                       Margin="40,0,40,10"
+                       HasShadow="False">
+                        <customView:CustomEntry Placeholder="Email"
+                                            FontSize="14"
+                                            FontFamily="RSeBo"
+                                            Margin="10,2,0,0">
+
+                        </customView:CustomEntry>
+                    </Frame>
+                    <Button Margin="40,10"
+                            HeightRequest="55"
+                            BackgroundColor="{StaticResource primaryColor}"
+                            CornerRadius="10"
+                            TextColor="White"
+                            Text="CẬP NHẬT"
+                            FontFamily="RB"
+                            FontSize="16">
+                        
+                    </Button>
+                    <Label HorizontalOptions="End"
+                           Text="Bạn có thể đổi mật khẩu?"
+                           Margin="40,0,40,50"
+                           FontFamily="R"
+                           FontSize="14">
+                        
+                    </Label>
+                </StackLayout>
+            
+        </Frame>
+        </Grid>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+  
+</ContentPage>

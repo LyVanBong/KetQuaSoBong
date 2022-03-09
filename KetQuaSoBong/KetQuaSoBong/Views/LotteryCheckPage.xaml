@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="KetQuaSoBong.Views.LotteryCheckPage"
+             Title="Soi cầu mỗi ngày"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels" x:DataType="viewmodels:LotteryCheckPageViewModel"
+             BackgroundColor="{StaticResource placeholderColor}"
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             xmlns:lotteryCheckPageViews ="clr-namespace:KetQuaSoBong.Views.LotteryCheckPageViews">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Label Text="SOI CẦU MỖI NGÀY" 
+                   TextColor="White"
+                   FontFamily="R"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="-50,0,0,0"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up_2.png" x:Key="IconUp"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down_2.png" x:Key="IconDown"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_2.png" x:Key="Calendar"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_plus.png" x:Key="Plus"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_sub.png" x:Key="Sub"/>
+        </ResourceDictionary>
+        <ControlTemplate x:Key="FrameRadioTemplate"
+                         >
+            <Frame Padding="0" HasShadow="False" VerticalOptions="Start"
+               HeightRequest="40" HorizontalOptions="Fill"
+                   Margin="2,2">
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid Margin="4" WidthRequest="100">
+                    <ContentPresenter/>
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+        <ControlTemplate x:Key="FrameRadioTemplate2"
+                         x:Name="FrameRadioTemplate2">
+            <Frame Padding="0" HasShadow="False" VerticalOptions="Fill" HorizontalOptions="Fill"
+                   CornerRadius="0">
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Orange"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#0DB02019"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowSpacing="0"
+                      ColumnSpacing="0">
+                    <ContentPresenter/>
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="300,Auto">
+                <Frame Grid.Row="0"
+                   Padding="0"
+                   Margin="10"
+                   CornerRadius="10"
+                   HasShadow="False">
+                    <AbsoluteLayout >
+                        <Label Text="Chọn tỉnh"
+                           AbsoluteLayout.LayoutBounds="10,20"
+                           AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="Chọn loại"
+                           AbsoluteLayout.LayoutBounds="10,70"
+                           AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="Chọn ngày"
+                           AbsoluteLayout.LayoutBounds="10,120"
+                           AbsoluteLayout.LayoutFlags="None"/>
+                        <Label Text="Chọn biên độ"
+                           AbsoluteLayout.LayoutBounds="10,170"
+                           AbsoluteLayout.LayoutFlags="None"/>
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,10,0.65,40"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="False"
+                           BorderColor="LightGray"
+                           CornerRadius="5"
+                           x:Name="layoutMien"
+                           ClassId="popupMien">
+                            <StackLayout Orientation="Horizontal"
+                                      Margin="15,0,15,0">
+                                <Label Text="{Binding Mien}"
+                                   FontFamily="R"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"    
+                                   HorizontalOptions="StartAndExpand"/>
+                                <Image Source="{StaticResource IconUp}"
+                                   WidthRequest="15"
+                                   HeightRequest="15"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center">
+                                    <Image.Triggers>
+                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference popupMien}, Path=IsVisible}" Value="False">
+                                            <Setter Property="Source" Value="{StaticResource IconDown}"/>
+                                        </DataTrigger>
+                                    </Image.Triggers>
+                                </Image>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowHidePopupCommand}" CommandParameter="{x:Reference layoutMien}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,60,0.65,40"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="False"
+                           BorderColor="LightGray"
+                           CornerRadius="5"
+                           x:Name="layoutLoai"
+                           ClassId="popupLoai">
+                            <StackLayout Orientation="Horizontal"
+                                      Margin="15,0,15,0">
+                                <Label Text="{Binding Type}"
+                                   FontFamily="R"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"    
+                                   HorizontalOptions="StartAndExpand"/>
+                                <Image Source="{StaticResource IconUp}"
+                                   WidthRequest="15"
+                                   HeightRequest="15"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center">
+                                    <Image.Triggers>
+                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference popupLoai}, Path=IsVisible}" Value="False">
+                                            <Setter Property="Source" Value="{StaticResource IconDown}"/>
+                                        </DataTrigger>
+                                    </Image.Triggers>
+                                </Image>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowHidePopupCommand}" CommandParameter="{x:Reference layoutLoai}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,110,0.65,40"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="False"
+                           BorderColor="LightGray"
+                           CornerRadius="5"
+                           x:Name="layoutDate"
+                           ClassId="popupDate">
+                            <StackLayout Orientation="Horizontal"
+                                      Margin="15,0,15,0">
+                                <Label Text="{Binding Date}"
+                                   FontFamily="R"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"    
+                                   HorizontalOptions="StartAndExpand"/>
+                                <Image Source="{StaticResource Calendar}"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center">
+
+                                </Image>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowHidePopupCommand}" CommandParameter="{x:Reference layoutDate}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,160,0.65,40"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="False"
+                           BorderColor="LightGray"
+                           CornerRadius="5"
+                           x:Name="layoutBiendo"
+                           ClassId="popupBiendo">
+                            <StackLayout Orientation="Horizontal"
+                                      Margin="10,0,10,0">
+                                <Image Source="{StaticResource Sub}"
+                                   WidthRequest="25"
+                                   HeightRequest="25"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DownAmpCommand}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <customView:CustomEntry Text="{Binding Amplitude}"
+                                   FontFamily="R"
+                                                    Keyboard="Numeric"
+                                                    HorizontalTextAlignment="Center"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"    
+                                   HorizontalOptions="CenterAndExpand"/>
+                                <Image Source="{StaticResource Plus}"
+                                   WidthRequest="25"
+                                   HeightRequest="25"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding UpAmpCommand}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                        </Frame>
+                        <Button AbsoluteLayout.LayoutBounds="0.5,1,1,70"
+                            CornerRadius="5"
+                            Text="XEM KẾT QUẢ"
+                            FontFamily="R"
+                            TextColor="White"
+                            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                            Margin="10"
+                            BackgroundColor="{StaticResource primaryColor}">
+
+                        </Button>
+
+                        <!--Popup-->
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,52,0.65,AutoSize"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="True"
+                           BorderColor="LightGray"
+                           CornerRadius="0"
+                           x:Name="popupMien"
+                           IsVisible="False">
+                            <StackLayout Spacing="0">
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         IsChecked="True"
+                                         x:Name="rdMienBac"
+                                         ClassId="rdMienBac">
+                                    <RadioButton.Content>
+                                        <Label Text="Miền Bắc"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdMienBac}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdMienBac}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         x:Name="rdMienTrung"
+                                         ClassId="rdMienTrung">
+                                    <RadioButton.Content>
+                                        <Label Text="Miền Trung"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0"
+                                           >
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdMienTrung}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdMienTrung}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         x:Name="rdMienNam"
+                                         ClassId="rdMienNam">
+                                    <RadioButton.Content>
+                                        <Label Text="Miền Nam"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0"
+                                           >
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdMienNam}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdMienNam}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Padding="0"
+                           AbsoluteLayout.LayoutBounds="0.9,102,0.65,AutoSize"
+                           AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                           HasShadow="True"
+                           BorderColor="LightGray"
+                           CornerRadius="0"
+                           x:Name="popupLoai"
+                           IsVisible="False">
+                            <StackLayout Spacing="0">
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         IsChecked="True"
+                                         x:Name="rdBachthu"
+                                         ClassId="rdBachthu">
+                                    <RadioButton.Content>
+                                        <Label Text="Bạch thủ"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdBachthu}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdBachthu}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         x:Name="rdLoroi"
+                                         ClassId="rdLoroi">
+                                    <RadioButton.Content>
+                                        <Label Text="Lô rơi"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0"
+                                           >
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdLoroi}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdLoroi}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         x:Name="rdLokep"
+                                         ClassId="rdLokep">
+                                    <RadioButton.Content>
+                                        <Label Text="Lô kép"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0"
+                                           >
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdLokep}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdLokep}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
+                                         x:Name="rdLoxien"
+                                         ClassId="rdLoxien">
+                                    <RadioButton.Content>
+                                        <Label Text="Lô xiên"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           Margin="10,0,0,0"
+                                           >
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdLoxien}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="TextColor" Value="White"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </RadioButton.Content>
+                                    <RadioButton.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectedFilter}" CommandParameter="{x:Reference rdLoxien}"/>
+                                    </RadioButton.GestureRecognizers>
+                                </RadioButton>
+                            </StackLayout>
+                        </Frame>
+
+
+
+                    </AbsoluteLayout>
+                </Frame>
+                
+                
+                
+                
+                
+                <Frame Grid.Row="1"
+                       Padding="0"
+                       >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Gold"
+                         HeightRequest="50">
+                            <Label 
+                             Margin="10"
+                           FontSize="14"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="{StaticResource primaryColor}"
+                           VerticalOptions="Center"
+                         FontFamily="R"
+                         >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Kết quả soi cầu xổ số Miền Bắc "/>
+                                        <Span Text="{Binding Date}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                        
+                        
+                        
+                        <Grid ColumnDefinitions="0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05"
+                              RowDefinitions="0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05,*,0.05"
+                              HeightRequest="400"
+                              RowSpacing="0"
+                              ColumnSpacing="0"
+                              Margin="10"
+                              x:Name="grid">
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="0"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="2"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="4"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="6"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="8"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="10"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="12"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="14"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="16"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="18"/>
+                            <BoxView Color="LightGray" Grid.ColumnSpan="21" Grid.Column="0" Grid.Row="20"/>
+
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="0"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="2"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="4"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="6"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="8"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="10"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="12"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="14"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="16"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="18"/>
+                            <BoxView Color="LightGray" Grid.RowSpan="21" Grid.Row="0" Grid.Column="20"/>
+
+
+
+
+
+
+
+                        </Grid>
+                        <StackLayout BackgroundColor="Gold"
+                                     Spacing="0"
+                                     Padding="10">
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Cặp số " FontSize="14" FontFamily="RSBo" TextColor="Black"/>
+                                        <Span Text="56" FontSize="14" FontFamily="RSBo" TextColor="{StaticResource primaryColor}"/>
+                                        <Span Text=" xuất hiện " FontSize="14" FontFamily="RSBo" TextColor="Black"/>
+                                        <Span Text="1" FontSize="14" FontFamily="RSBo" TextColor="{StaticResource primaryColor}"/>
+                                        <Span Text=" lần" FontSize="14" FontFamily="RSBo" TextColor="Black"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Vị trí ghép cầu >> Vị trí 1:  " FontSize="13" FontFamily="RSBo" TextColor="Black"/>
+                                        <Span Text="23" FontSize="13" FontFamily="RSBo" TextColor="{StaticResource primaryColor}"/>
+                                        <Span Text=", vị trí 2: " FontSize="13" FontFamily="RSBo" TextColor="Black"/>
+                                        <Span Text="60" FontSize="13" FontFamily="RSBo" TextColor="{StaticResource primaryColor}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                        <Label HorizontalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Ký hiệu trúng ĐB:  " FontSize="18" FontFamily="RBoI" TextColor="Black"/>
+                                    <Span Text="5EM" FontSize="18" FontFamily="RBoI" TextColor="{StaticResource primaryColor}"/>
+                                    <Span Text=" -  " FontSize="18" FontFamily="RBoI" TextColor="Black"/>
+                                    <Span Text="10EM" FontSize="18" FontFamily="RBoI" TextColor="{StaticResource primaryColor}"/>
+                                    <Span Text=" -  " FontSize="18" FontFamily="RBoI" TextColor="Black"/>
+                                    <Span Text="14EM" FontSize="18" FontFamily="RBoI" TextColor="{StaticResource primaryColor}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <lotteryCheckPageViews:LotteryRessultView/>
+                    </StackLayout>
+                    
+                    
+
+                </Frame>
+            </Grid>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

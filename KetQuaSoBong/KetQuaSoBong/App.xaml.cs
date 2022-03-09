@@ -1,4 +1,5 @@
 ﻿using KetQuaSoBong.Models;
+using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.ViewModels;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.MainPageViews;
@@ -415,7 +416,7 @@ namespace KetQuaSoBong
                   "Việc Tammy Abraham chuyển sang AS Roma làm học trò của Jose Mourinho vào mùa hè năm ngoái đã chiếm 21% trong tổng số 175 triệu bảng mà Chelsea thu về. Các CLB lớn khác ở Premier League nằm trong Top 50 lần lượt là Liverpool (11), Man City (18), Aston Villa (23), Tottenham (31), Leicester City (39) và MU (49).",
                 TypeTemplate = 0
             },new NewsItem()
-            {   
+            {
                 ListPicture = new ObservableCollection<string>(){ "https://photo-cms-tpo.zadn.vn/w645/Uploaded/2022/lzwlzsg-eafzljmgfy/2022_03_01/afc-5077.jpg", "https://photo-cms-tpo.zadn.vn/w645/Uploaded/2022/lzwlzsg-eafzljmgfy/2022_03_01/afc-2-1664.jpg", },
                 Title = "CLB Trung Quốc rút khỏi Champions League, lỡ cơ hội đối đầu HAGL",
                 SubTitle = "TPO - CLB Changchun Yatai của Trung Quốc vừa đi đến quyết định rút lui khỏi trận play-off AFC Champions League 2022.",
@@ -514,9 +515,9 @@ namespace KetQuaSoBong
         };
 
         public static ObservableCollection<NewsItem> LotteryNews = new ObservableCollection<NewsItem>()
-        {   
+        {
             new NewsItem() {
-                TitleSource = ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_fire.png"), 
+                TitleSource = ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_fire.png"),
                 Title = "Tin nóng xổ số",
                 TypeTemplate = 3
             },
@@ -582,7 +583,7 @@ namespace KetQuaSoBong
                 "Tình tới nay, Việt Nam ghi nhận ông Q. là đã là chủ nhân của giải thưởng Jackpot khủng nhất, trị giá lên tới gần 304 tỉ đồng tại kỳ quay số mở thưởng 119 diễn ra tối ngày 05 tháng 5 năm 2018. Ông Q. sau đó cũng đã lấy ra số tiền 03 tỉ đồng để làm từ thiện với hy vọng chia sẻ sự may mắn với mọi người có hoàn cảnh khó khăn.",
                 TypeTemplate= 0
             },
-            
+
             new NewsItem()
             {
                 Picture = "https://cdn.24h.com.vn/upload/4-2021/images/2021-10-23/Moi-ngay-co-bao-nhieu-nguoi-trung-thuong-xo-so-so-xo-1-1634961228-677-width600height338.jpg",
@@ -595,7 +596,7 @@ namespace KetQuaSoBong
                 "Đối với giải khuyến khích, giải có số lượng nhiều, lên tới 15. 000 vé cho phép người tham gia sở hữu nhiều cơ hội trúng giải hơn. Hơn thế nữa, cơ cấu giải thưởng cũng 'dễ thở' hơn khi chỉ yêu cầu 02 số cuối của tấm vé trùng với giải đặc biệt của ngày quay thưởng.",
                 TypeTemplate=0
             }
-            
+
         };
         public static ObservableCollection<ItemChat> ItemChatsDemo2 = new ObservableCollection<ItemChat>()
         {
@@ -696,6 +697,189 @@ namespace KetQuaSoBong
             },
 
         };
+        public static ObservableCollection<LotteryCheckItem> LotteryCheckItems = new ObservableCollection<LotteryCheckItem>()
+        {
+            new LotteryCheckItem() { Number = "10", Time=1},
+            new LotteryCheckItem() { Number = "12", Time=1},
+            new LotteryCheckItem() { Number = "16", Time=1},
+            new LotteryCheckItem() { Number = "31", Time=1},
+            new LotteryCheckItem() { Number = "33", Time=1},
+            new LotteryCheckItem() { Number = "36", Time=1},
+            new LotteryCheckItem() { Number = "37", Time=1},
+            new LotteryCheckItem() { Number = "40", Time=1},
+            new LotteryCheckItem() { Number = "42", Time=1},
+            new LotteryCheckItem() { Number = "46", Time=1},
+            new LotteryCheckItem() { Number = "51", Time=1},
+            new LotteryCheckItem() { Number = "53", Time=1},
+            new LotteryCheckItem() { Number = "55", Time=1},
+            new LotteryCheckItem() { Number = "56", Time=1},
+            new LotteryCheckItem() { Number = "73", Time=1},
+            new LotteryCheckItem() { Number = "75", Time=1},
+            new LotteryCheckItem() { Number = "79", Time=1},
+            new LotteryCheckItem() { Number = "84", Time=1},
+            new LotteryCheckItem() { Number = "86", Time=1},
+            new LotteryCheckItem() { Number = "88", Time=1},
+            new LotteryCheckItem() { Number = "89", Time=1}
+        };
+        public static ObservableCollection<LotteryResult> NorthLotteryResults = new ObservableCollection<LotteryResult>()
+        {
+            new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+                
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+              new LotteryResult()
+            {
+                Id = "Datetime1",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+                //PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+
+            },
+             new LotteryResult()
+            {
+                Id = "Datetime2",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            },
+             new LotteryResult()
+            {
+                 Id = "Datetime3",
+                Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
+               // PageSource = new NorthLotteryPage(),
+                DateResult = new DateTime(2022,03,22)
+            }
+
+
+        };
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -716,6 +900,12 @@ namespace KetQuaSoBong
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SplashScreen, SplashScreenViewModel>();
             containerRegistry.RegisterForNavigation<MainPageFlyout, MainPageFlyoutViewModel>();
+            containerRegistry.RegisterForNavigation<LotteryCheckPage, LotteryCheckPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserProfilePage, UserProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<SignUpPage, SignUpPageViewModel>();
+            containerRegistry.RegisterForNavigation<NorthLotteryPage, NorthLotteryPageViewModel>();
+            containerRegistry.RegisterForNavigation<VotePage, VotePageViewModel>();
         }
     }
 }
