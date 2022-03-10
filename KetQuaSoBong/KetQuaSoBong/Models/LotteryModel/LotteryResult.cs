@@ -11,7 +11,7 @@ namespace KetQuaSoBong.Models.LotteryModel
     {   
         public string Id { get; set; }
         public DateTime DateResult { get; set; }
-        private string[] _result = new string[10];
+        private string[] _result;
         public string[] Result
         { 
             get => _result;
@@ -19,7 +19,31 @@ namespace KetQuaSoBong.Models.LotteryModel
             { 
                 if (value != null) 
                 {
-                    SetSource(value);
+                    if(value.Length == 27)
+                    {
+                        DB = value[0];
+                        G1 = value[1];
+                        ArrG2 = value.SubArray(2, 2);
+                        ArrG31 = value.SubArray(4, 3);
+                        ArrG32 = value.SubArray(7, 3);
+                        ArrG4 = value.SubArray(10, 4);
+                        ArrG51 = value.SubArray(14, 3);
+                        ArrG52 = value.SubArray(17, 3);
+                        ArrG6 = value.SubArray(20, 3);
+                        ArrG7 = value.SubArray(23, 4);
+                    }
+                    else
+                    {
+                        G8 = value[0];
+                        G7 = value[1];
+                        ArrG6 = value.SubArray(2, 3);
+                        G5 = value[5];
+                        ArrG4 = value.SubArray(6, 7);
+                        ArrG31 = value.SubArray(13, 2);
+                        G2 = value[15];
+                        G1 = value[16];
+                        DB = value[17];
+                    }
                     ArrAll = value;
                     GetFirstLast(ArrAll);
                    
@@ -27,9 +51,6 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _result, value);
             } 
         }
-      
-
-        
         private string _db;
         public string DB { get => _db; set => SetProperty(ref _db, value); }
         private string _g1;
@@ -55,26 +76,46 @@ namespace KetQuaSoBong.Models.LotteryModel
         private string[] _lastNum = new string[10];
         public string[] LastNum { get => _lastNum; set => SetProperty(ref _lastNum, value); }
         public string[] NumberTemp { get => new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }; }
-        private string[] _arrLoto = new string[27];
+        private string[] _arrLoto;
         public string[] ArrLoto { get => _arrLoto; set => SetProperty(ref _arrLoto, value); }
         private string[] _arrAll;
         public string[] ArrAll { get => _arrAll; set => SetProperty(ref _arrAll, value); }
+        private string _g8;
+        public string G8 { get => _g8; set => SetProperty(ref _g8, value); }
+        private string _g7;
+        public string G7 { get => _g7; set => SetProperty(ref _g7, value); }
+        private string _g5;
+        public string G5 { get => _g5; set => SetProperty(ref _g5, value); }
+        private string _g2;
+        public string G2 { get => _g2; set => SetProperty(ref _g2, value); }
         private int _type = 0;
+
         public int Type
         {
             get => _type;
             set
             {
-               
-                ArrAll = StandardArray(value);
+
+                
+                
                 SetProperty(ref _type, value);
                 
             }
         }
+        private int _region = 0;
+        public int Region 
+        { 
+            get => _region; 
+            set {
+                SetProperty(ref _region, value);
 
+            }
+        }
+        public string Province { get; set; }
 
        private void GetFirstLast(string[] result)
         {
+            ArrLoto = new string[result.Length];
             List<double> temp = new List<double>();
             for (int i = 0; i < result.Length; i++)
             {
@@ -97,9 +138,9 @@ namespace KetQuaSoBong.Models.LotteryModel
            
         }
 
-        private string[] StandardArray(int type)
+        private string[] StandardArray(string[] arr,  int type)
         {
-            string[] arr = Result;
+            
             for (int i = 0; i < arr.Length; i++)
             {
                 if (type == 0)
@@ -119,17 +160,16 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         public void SetSource(string[] arr)
-        {
-            DB = arr[0];
-            G1 = arr[1];
-            ArrG2 = arr.SubArray(2, 2);
-            ArrG31 = arr.SubArray(4, 3);
-            ArrG32 = arr.SubArray(7, 3);
-            ArrG4 = arr.SubArray(10, 4);
-            ArrG51 = arr.SubArray(14, 3);
-            ArrG52 = arr.SubArray(17, 3);
-            ArrG6 = arr.SubArray(20, 3);
-            ArrG7 = arr.SubArray(23, 4);
+        {  
+            if(Region == 0)
+            {   
+                
+               
+            }
+            else
+            {
+                 
+            }
         }
 
 

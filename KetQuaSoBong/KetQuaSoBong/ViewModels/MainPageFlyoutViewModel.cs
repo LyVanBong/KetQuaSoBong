@@ -37,6 +37,14 @@ namespace KetQuaSoBong.ViewModels
                         await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new NorthLotteryPage());
                         (page.Parent as FlyoutPage).IsPresented = false;
                         break;
+                    case 1:
+                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new CentralLotteryPage());
+                        (page.Parent as FlyoutPage).IsPresented = false;
+                        break;
+                    case 2:
+                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new SouthLotteryPage());
+                        (page.Parent as FlyoutPage).IsPresented = false;
+                        break;
                     case 3:
                         await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new LotteryCheckPage());
                         (page.Parent as FlyoutPage).IsPresented = false;

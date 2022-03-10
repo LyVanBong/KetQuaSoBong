@@ -16,6 +16,11 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Margin="-50,0,0,0"/>
+            <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_calendar_3.png}"
+                   HeightRequest="20"
+                   WidthRequest="20"
+                   HorizontalOptions="End"
+                   Margin="0,0,10,0"/>
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Resources>

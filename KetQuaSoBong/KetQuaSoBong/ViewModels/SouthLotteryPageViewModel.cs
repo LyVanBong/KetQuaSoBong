@@ -10,12 +10,13 @@ using Xamarin.Forms.Internals;
 
 namespace KetQuaSoBong.ViewModels
 {
-    public class NorthLotteryPageViewModel : BindableBase
+    public class SouthLotteryPageViewModel : BindableBase
     {   
-        public ObservableCollection<LotteryResult> LotteryResults { get; set; }
-        public NorthLotteryPageViewModel()
+        public ObservableCollection<LotteryCollectionResult> SouthLotteryResult { get; set; }
+        
+        public SouthLotteryPageViewModel()
         {
-            LotteryResults = new ObservableCollection<LotteryResult>(App.LotteryResults.Where(x => x.Region == 0));
+            SouthLotteryResult = App.SouthLotteryResults;
             ChangeDisplayAllNum = new Command((x) =>
             {
                 var item = x as LotteryCollectionResult;
@@ -37,3 +38,4 @@ namespace KetQuaSoBong.ViewModels
         public Command ChangeDisplayAllNum { get; set; }
     }
 }
+
