@@ -70,10 +70,12 @@
     <None Remove="Resources\Images\ic_nc_serieA.png" />
     <None Remove="Resources\Images\ic_nc_thaileague.png" />
     <None Remove="Resources\Images\ic_nc_vleague.png" />
+    <None Remove="Resources\Images\ic_next.png" />
     <None Remove="Resources\Images\ic_ofc.png" />
     <None Remove="Resources\Images\ic_pause.png" />
     <None Remove="Resources\Images\ic_play.png" />
     <None Remove="Resources\Images\ic_plus.png" />
+    <None Remove="Resources\Images\ic_prev.png" />
     <None Remove="Resources\Images\ic_soi_cau_2.png" />
     <None Remove="Resources\Images\ic_stop.png" />
     <None Remove="Resources\Images\ic_sub.png" />
@@ -119,6 +121,8 @@
     <EmbeddedResource Include="Resources\Images\11_down.png" />
     <EmbeddedResource Include="Resources\Images\12_Rectangle-696.png" />
     <EmbeddedResource Include="Resources\Images\13_signup-icon.png" />
+    <EmbeddedResource Include="Resources\Images\ic_next.png" />
+    <EmbeddedResource Include="Resources\Images\ic_prev.png" />
     <EmbeddedResource Include="Resources\Images\ic_vote.png" />
     <EmbeddedResource Include="Resources\Images\logo.png" />
     <EmbeddedResource Include="Resources\Images\23_phone-icon.png" />

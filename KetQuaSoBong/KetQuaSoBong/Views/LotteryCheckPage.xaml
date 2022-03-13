@@ -131,7 +131,7 @@
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
-                            </StackLayout>
+                            </StackLayout> 
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ShowHidePopupCommand}" CommandParameter="{x:Reference layoutMien}"/>
                             </Frame.GestureRecognizers>
@@ -253,7 +253,7 @@
                            BorderColor="LightGray"
                            CornerRadius="0"
                            x:Name="popupMien"
-                           IsVisible="False">
+                           IsVisible="{Binding PopupMienIsVisible}">
                             <StackLayout Spacing="0">
                                 <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
                                          IsChecked="True"
@@ -328,7 +328,7 @@
                            BorderColor="LightGray"
                            CornerRadius="0"
                            x:Name="popupLoai"
-                           IsVisible="False">
+                           IsVisible="{Binding PopupLoaiIsVisible}">
                             <StackLayout Spacing="0">
                                 <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
                                          IsChecked="True"

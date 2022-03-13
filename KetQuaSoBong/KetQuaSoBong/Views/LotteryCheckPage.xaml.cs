@@ -10,11 +10,19 @@ namespace KetQuaSoBong.Views
     public partial class LotteryCheckPage : ContentPage
     {
         INavigationService navigationService;
+        LotteryCheckPageViewModel lotteryCheckPageViewModel;
         public LotteryCheckPage()
         {
             InitializeComponent();
             SetLotteryCheck();
-            BindingContext = new LotteryCheckPageViewModel(navigationService, this);
+           
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lotteryCheckPageViewModel = BindingContext as LotteryCheckPageViewModel;
+            lotteryCheckPageViewModel.page = this;
+
         }
         private void SetLotteryCheck()
         {

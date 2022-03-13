@@ -1,10 +1,12 @@
 ﻿using KetQuaSoBong.Models.LotteryModel;
+using KetQuaSoBong.Views.Popups;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -17,25 +19,19 @@ namespace KetQuaSoBong.ViewModels
         public SouthLotteryPageViewModel()
         {
             SouthLotteryResult = App.SouthLotteryResults;
-            ChangeDisplayAllNum = new Command((x) =>
+            ShowDialog = new Command(() =>
             {
-                var item = x as LotteryCollectionResult;
-                item.LotteryResults.ForEach(z => z.Type = 0);
-            });
-            ChangeDisplay2Num = new Command((x) =>
-            {
-                var item = x as LotteryCollectionResult;
-                item.LotteryResults.ForEach(z => z.Type = 2);
-            });
-            ChangeDisplay3Num = new Command((x) =>
-            {
-                var item = x as LotteryCollectionResult;
-                item.LotteryResults.ForEach(z => z.Type = 0);
+                Application.Current.MainPage.Navigation.ShowPopup(new CalendarPopup());
             });
         }
-        public Command ChangeDisplay3Num { get; set; }
-        public Command ChangeDisplay2Num { get; set; }
-        public Command ChangeDisplayAllNum { get; set; }
+        private string _date;
+        public string Date
+        {
+            get => _date;
+            set => SetProperty(ref _date, value);
+        }
+        public Command ShowDialog { get; set; }
     }
 }
+
 

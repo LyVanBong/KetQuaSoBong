@@ -3,10 +3,12 @@ using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.ViewModels;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.MainPageViews;
+using KetQuaSoBong.Views.Popups;
 using Prism;
 using Prism.Ioc;
 using System;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
@@ -967,6 +969,7 @@ namespace KetQuaSoBong
             InitializeComponent();
 
             await NavigationService.NavigateAsync("/SplashScreen");
+            Preferences.Set("Date", DateTime.Now.ToString("dd/MM/yyyy"));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

@@ -1,6 +1,7 @@
 ﻿using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.Views.Popups;
 using Prism.Navigation;
+using Prism.Services.Dialogs;
 using System;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
@@ -8,7 +9,7 @@ using Xamarin.Forms;
 namespace KetQuaSoBong.ViewModels
 {
     public class LotteryCheckPageViewModel : ViewModelBase
-    {
+    {   
         private string _mien = "Miền Bắc";
         public string Mien
         {
@@ -33,35 +34,39 @@ namespace KetQuaSoBong.ViewModels
             get => _amplitude;
             set => SetProperty(ref _amplitude, value);
         }
-        public LotteryCheckPageViewModel(INavigationService navigationService, Page page) : base(navigationService)
+        private bool _popupMienIsVisible;
+        public bool PopupMienIsVisible{ get => _popupMienIsVisible; set =>SetProperty(ref _popupMienIsVisible, value); }
+        private bool _popupLoaiIsVisible;
+        public bool PopupLoaiIsVisible { get => _popupLoaiIsVisible; set => SetProperty(ref _popupLoaiIsVisible, value); }
+        IDialogService _dialogService { get; }
+        public Page page { get; set; }
+        public LotteryCheckPageViewModel(INavigationService navigationService, IDialogService dialogService) : base(navigationService)
         {
+            _dialogService = dialogService;
             Date = DateTime.Now.ToString("dd/MM/yyyy");
             ShowHidePopupCommand = new Command(async (x) =>
             {
-                var popupMien = page.FindByName<Frame>("popupMien");
-                var popupLoai = page.FindByName<Frame>("popupLoai");
+                
                 var layout = x as Frame;
                 switch (layout.ClassId)
                 {
-                    case "popupMien": popupMien.IsVisible = !popupMien.IsVisible; popupLoai.IsVisible = false;  break;
-                    case "popupLoai": popupLoai.IsVisible = !popupLoai.IsVisible; popupMien.IsVisible = false;  break;
+                    case "popupMien": PopupMienIsVisible = !PopupMienIsVisible; PopupLoaiIsVisible = false;  break;
+                    case "popupLoai": PopupLoaiIsVisible = !PopupLoaiIsVisible; PopupMienIsVisible = false;  break;
                     case "popupDate": Date = (string)await page.Navigation.ShowPopupAsync(new CalendarPopup()); break;
                 }
             });
             SelectedFilter = new Command((x) =>
             {
-                var popupMien = page.FindByName<Frame>("popupMien");
-                var popupLoai = page.FindByName<Frame>("popupLoai");
                 var item = x as RadioButton;
                 switch (item.ClassId)
                 {
-                    case "rdMienBac": Mien = "Miền Bắc"; popupMien.IsVisible = false; break;
-                    case "rdMienTrung": Mien = "Miền Trung"; popupMien.IsVisible = false; break;
-                    case "rdMienNam": Mien = "Miền Nam"; popupMien.IsVisible = false; break;
-                    case "rdBachthu": Type = "Bạch thủ"; popupLoai.IsVisible = false; break;
-                    case "rdLoroi": Type = "Lô rơi"; popupLoai.IsVisible = false; break;
-                    case "rdLokep": Type = "Lô kép"; popupLoai.IsVisible = false; break;
-                    case "rdLoxien": Type = "Lô xiên"; popupLoai.IsVisible = false; break;
+                    case "rdMienBac": Mien = "Miền Bắc"; PopupMienIsVisible = false; break;
+                    case "rdMienTrung": Mien = "Miền Trung"; PopupMienIsVisible = false; break;
+                    case "rdMienNam": Mien = "Miền Nam"; PopupMienIsVisible = false; break;
+                    case "rdBachthu": Type = "Bạch thủ"; PopupLoaiIsVisible = false; break;
+                    case "rdLoroi": Type = "Lô rơi"; PopupLoaiIsVisible = false; break;
+                    case "rdLokep": Type = "Lô kép"; PopupLoaiIsVisible = false; break;
+                    case "rdLoxien": Type = "Lô xiên"; PopupLoaiIsVisible = false; break;
                 }
             });
             UpAmpCommand = new Command(() => {
