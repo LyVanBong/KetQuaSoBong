@@ -26,19 +26,9 @@
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_ho_tro_0.png" x:Key="HoTro"/>
         </ResourceDictionary>
     </TabbedPage.Resources>
-    <ContentPage Title="Xổ số" IconImageSource="{StaticResource XoSo}">
-        <local:LotteryTab/>
-    </ContentPage>
-    <ContentPage Title="Bóng đá" IconImageSource="{StaticResource BongDa}">
-        <local:FootballTab/>
-    </ContentPage>
-    <ContentPage Title="Tin tức" IconImageSource="{StaticResource TinTuc}">
-        <local:NewsTab/>
-    </ContentPage>
-    <ContentPage Title="Group" IconImageSource="{StaticResource Group}">
-        <local:GroupTab/>
-    </ContentPage>
-    <ContentPage Title="Hỗ trợ" IconImageSource="{StaticResource HoTro}">
-        <local:SupportTab/>
-    </ContentPage>
+    <local:LotteryTab Title="Xổ số" IconImageSource="{StaticResource XoSo}"/>
+    <local:FootballTab Title="Bóng đá" IconImageSource="{StaticResource BongDa}"/>
+    <local:NewsTab Title="Tin tức" IconImageSource="{StaticResource TinTuc}"/>
+    <local:GroupTab Title="Group" IconImageSource="{StaticResource Group}"/>
+    <local:SupportTab Title="Hỗ trợ" IconImageSource="{StaticResource HoTro}"/>
 </TabbedPage>

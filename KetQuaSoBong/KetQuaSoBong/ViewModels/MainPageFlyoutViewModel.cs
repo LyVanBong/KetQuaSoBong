@@ -3,6 +3,7 @@ using KetQuaSoBong.Views;
 using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
@@ -11,6 +12,7 @@ namespace KetQuaSoBong.ViewModels
     {
         INavigationService navigation;
         public ObservableCollection<MainPageFlyoutMenuItem> ListItem { get; set; }
+        
         public MainPageFlyoutViewModel(INavigationService navigationService, Page page) : base(navigationService)
         {
           
@@ -31,27 +33,31 @@ namespace KetQuaSoBong.ViewModels
             SelectedMenuItemCommand = new Command(async (x) =>
             {
                 var menuItem = x as MainPageFlyoutMenuItem;
-                switch(menuItem.Id)
+                FlyoutPage p = page.Parent as FlyoutPage;
+                p.IsPresented = false;
+                p.IsVisible = false;
+                switch (menuItem.Id)
                 {
-                    case 0:
-                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new NorthLotteryPage());
-                        (page.Parent as FlyoutPage).IsPresented = false;
+                    case 0: 
+                         
+                        await p.Navigation.PushAsync(new NorthLotteryPage());
+                        
                         break;
                     case 1:
-                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new CentralLotteryPage());
-                        (page.Parent as FlyoutPage).IsPresented = false;
+                        await p.Navigation.PushAsync(new CentralLotteryPage());
+                        
                         break;
                     case 2:
-                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new SouthLotteryPage());
-                        (page.Parent as FlyoutPage).IsPresented = false;
+                        await p.Navigation.PushAsync(new SouthLotteryPage());
+                        
                         break;
                     case 3:
-                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new LotteryCheckPage());
-                        (page.Parent as FlyoutPage).IsPresented = false;
+                        await p.Navigation.PushAsync(new LotteryCheckPage());
+                       
                         break;
                     case 4:
-                        await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new VotePage());
-                        (page.Parent as FlyoutPage).IsPresented = false;
+                        await p.Navigation.PushAsync(new VotePage());
+                       
                         break;
 
                 }

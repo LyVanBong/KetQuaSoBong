@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.GroupTab"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:groupTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
              BackgroundColor="{StaticResource placeholderColor}">
-    <ContentView.Resources>
+    <ContentPage.Resources>
         <ControlTemplate x:Key="FrameRadioTemplate">
             <Frame Padding="0" HasShadow="False" CornerRadius="8" VerticalOptions="Start"
                HeightRequest="40" WidthRequest="150" HorizontalOptions="Start">
@@ -32,8 +32,8 @@
                 </Grid>
             </Frame>
         </ControlTemplate>
-    </ContentView.Resources>
-    <ContentView.Content>
+    </ContentPage.Resources>
+    <ContentPage.Content>
         <ScrollView>
             <Grid RowDefinitions="60,Auto">
                 <StackLayout Orientation="Horizontal"
@@ -79,5 +79,5 @@
                                            IsVisible="{Binding Source={x:Reference rdBD}, Path=IsChecked}"/>
             </Grid>
         </ScrollView>
-    </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

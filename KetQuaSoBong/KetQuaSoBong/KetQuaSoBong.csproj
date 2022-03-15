@@ -35,6 +35,8 @@
     <None Remove="Resources\Images\huong_dan.png" />
     <None Remove="Resources\Images\ic_afc_cl.png" />
     <None Remove="Resources\Images\ic_asian.png" />
+    <None Remove="Resources\Images\ic_back_android.png" />
+    <None Remove="Resources\Images\ic_back_ios.png" />
     <None Remove="Resources\Images\ic_bac_2.png" />
     <None Remove="Resources\Images\ic_bong_da_0.png" />
     <None Remove="Resources\Images\ic_bong_da_1.png" />
@@ -121,6 +123,8 @@
     <EmbeddedResource Include="Resources\Images\11_down.png" />
     <EmbeddedResource Include="Resources\Images\12_Rectangle-696.png" />
     <EmbeddedResource Include="Resources\Images\13_signup-icon.png" />
+    <EmbeddedResource Include="Resources\Images\ic_back_android.png" />
+    <EmbeddedResource Include="Resources\Images\ic_back_ios.png" />
     <EmbeddedResource Include="Resources\Images\ic_next.png" />
     <EmbeddedResource Include="Resources\Images\ic_prev.png" />
     <EmbeddedResource Include="Resources\Images\ic_vote.png" />
@@ -310,6 +314,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\CentralLotteryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmptyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">

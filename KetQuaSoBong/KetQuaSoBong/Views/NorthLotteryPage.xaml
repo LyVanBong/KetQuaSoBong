@@ -5,8 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:lmd="clr-namespace:KetQuaSoBong.Models.LotteryModel"
              x:Class="KetQuaSoBong.Views.NorthLotteryPage"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             >
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <NavigationPage.TitleView>
         <Grid>
             <Label Text="XỔ SỐ MIỀN BẮC" 
@@ -51,7 +50,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding LotteryResults}"
-                        ItemSizingStrategy="MeasureAllItems">
+                        ItemSizingStrategy="MeasureAllItems"
+                        IsVisible="True">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="lmd:LotteryResult">
                         <StackLayout Spacing="0">

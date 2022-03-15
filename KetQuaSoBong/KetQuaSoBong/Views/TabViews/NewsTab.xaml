@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.NewsTab"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:newsTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.NewsTabViews">
-  <ContentView.Content>
+  <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource placeholderColor}">
             <xct:TabView IsSwipeEnabled="False"
                     TabStripBackgroundColor="{StaticResource placeholderColor}"
@@ -51,5 +51,5 @@
                 </xct:TabViewItem>
             </xct:TabView>
         </Grid>
-    </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

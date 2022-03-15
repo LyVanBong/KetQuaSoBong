@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace KetQuaSoBong.Views.TabViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FootballTab : ContentView
+    public partial class FootballTab : ContentPage
     {
         public string DateTimeNow { get; set; }
         public FootballTab()

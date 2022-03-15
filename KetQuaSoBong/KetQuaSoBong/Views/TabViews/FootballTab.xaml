@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.FootballTab"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:footballTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
              BackgroundColor="{StaticResource placeholderColor}">
-    <ContentView.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer"/>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_messi.png" x:Key="Messi"/>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_f_p.png" x:Key="FootballPlayer"/>
         </ResourceDictionary>
-    </ContentView.Resources>
-  <ContentView.Content>
+    </ContentPage.Resources>
+    <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
             <AbsoluteLayout>
                 <Grid AbsoluteLayout.LayoutBounds="0,0,1,200"
@@ -65,5 +65,5 @@
 
             </AbsoluteLayout>
         </ScrollView>
-    </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

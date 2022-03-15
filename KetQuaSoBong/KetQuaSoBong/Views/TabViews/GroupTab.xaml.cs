@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 namespace KetQuaSoBong.Views.TabViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GroupTab : ContentView
+    public partial class GroupTab : ContentPage
     {
         public GroupTab()
         {

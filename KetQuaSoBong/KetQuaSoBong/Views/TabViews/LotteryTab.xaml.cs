@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace KetQuaSoBong.Views.TabViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LotteryTab : ContentView
+    public partial class LotteryTab : ContentPage
     {
         public string DateTimeNow { get; set; }
         public LotteryTab()

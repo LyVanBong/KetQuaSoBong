@@ -11,5 +11,10 @@ namespace KetQuaSoBong.Views
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.IsVisible = true;
+        }
     }
 }

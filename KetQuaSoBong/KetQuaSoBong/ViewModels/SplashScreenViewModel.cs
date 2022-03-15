@@ -28,7 +28,7 @@ namespace KetQuaSoBong.ViewModels
                     {
                         stopWatch.Stop();
 
-                        navigationService.NavigateAsync("/MainPage");
+                        navigationService.NavigateAsync("/NavigationPage/MainPage");
                         return false;
                     }
                     return true;

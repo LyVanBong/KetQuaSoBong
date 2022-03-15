@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.LotteryTab"
              xmlns:views="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              BackgroundColor="{StaticResource placeholderColor}">
     
-    <ContentView.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <xct:ImageResource Id="KetQuaSoBong.Resources.Images.img_banner.png" x:Key="Banner"/>
         </ResourceDictionary>
-    </ContentView.Resources>
-  <ContentView.Content>
+    </ContentPage.Resources>
+  <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
             <AbsoluteLayout>
                 <Grid AbsoluteLayout.LayoutBounds="0,0,1,200"
@@ -43,5 +43,5 @@
                 
             </AbsoluteLayout>
         </ScrollView>
-  </ContentView.Content>
-</ContentView>
+  </ContentPage.Content>
+</ContentPage>
