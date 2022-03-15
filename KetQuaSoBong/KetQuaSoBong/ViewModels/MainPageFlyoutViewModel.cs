@@ -35,27 +35,31 @@ namespace KetQuaSoBong.ViewModels
                 var menuItem = x as MainPageFlyoutMenuItem;
                 FlyoutPage p = page.Parent as FlyoutPage;
                 p.IsPresented = false;
-                p.IsVisible = false;
+                
                 switch (menuItem.Id)
                 {
-                    case 0: 
-                         
+                    case 0:
+                        p.IsVisible = false;
                         await p.Navigation.PushAsync(new NorthLotteryPage());
                         
                         break;
                     case 1:
+                        p.IsVisible = false;
                         await p.Navigation.PushAsync(new CentralLotteryPage());
                         
                         break;
                     case 2:
+                        p.IsVisible = false;
                         await p.Navigation.PushAsync(new SouthLotteryPage());
                         
                         break;
                     case 3:
+                        p.IsVisible = false;
                         await p.Navigation.PushAsync(new LotteryCheckPage());
                        
                         break;
                     case 4:
+                        p.IsVisible = false;
                         await p.Navigation.PushAsync(new VotePage());
                        
                         break;
