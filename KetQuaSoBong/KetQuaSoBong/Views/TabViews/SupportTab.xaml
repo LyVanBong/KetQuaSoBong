@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KetQuaSoBong.Views.TabViews.SupportTab"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews">
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             BackgroundColor="{StaticResource placeholderColor}">
     <ContentView.Resources>
         <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_fb.png" x:Key="Facebook"/>
         <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_zalo.png" x:Key="Zalo"/>
