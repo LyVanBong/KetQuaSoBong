@@ -1,11 +1,11 @@
-﻿
-using CustomRenderer.iOS;
+﻿using CustomRenderer.iOS;
 using KetQuaSoBong.Views.CustomViews;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(MyEntryRenderer))]
+
 namespace CustomRenderer.iOS
 {
     public class MyEntryRenderer : EntryRenderer

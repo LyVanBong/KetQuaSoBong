@@ -2,24 +2,23 @@
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
 
 namespace KetQuaSoBong.Models.LotteryModel
 {
     public class LotteryResult : BindableBase
-    {   
+    {
         public string Id { get; set; }
         public DateTime DateResult { get; set; }
         private string[] _result;
+
         public string[] Result
-        { 
+        {
             get => _result;
             set
-            { 
-                if (value != null) 
+            {
+                if (value != null)
                 {
-                    if(value.Length == 27)
+                    if (value.Length == 27)
                     {
                         DB = value[0];
                         G1 = value[1];
@@ -46,11 +45,11 @@ namespace KetQuaSoBong.Models.LotteryModel
                     }
                     ArrAll = value;
                     GetFirstLast(ArrAll);
-                   
-                } 
+                }
                 SetProperty(ref _result, value);
-            } 
+            }
         }
+
         private string _db;
         public string DB { get => _db; set => SetProperty(ref _db, value); }
         private string _g1;
@@ -72,7 +71,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         private string[] _arrG7;
         public string[] ArrG7 { get => _arrG7; set => SetProperty(ref _arrG7, value); }
         private string[] _firstNum = new string[10];
-        public string[] FirstNum { get => _firstNum; set => SetProperty(ref _firstNum,value); }
+        public string[] FirstNum { get => _firstNum; set => SetProperty(ref _firstNum, value); }
         private string[] _lastNum = new string[10];
         public string[] LastNum { get => _lastNum; set => SetProperty(ref _lastNum, value); }
         public string[] NumberTemp { get => new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }; }
@@ -95,25 +94,24 @@ namespace KetQuaSoBong.Models.LotteryModel
             get => _type;
             set
             {
-
-                
-                
                 SetProperty(ref _type, value);
-                
             }
         }
-        private int _region = 0;
-        public int Region 
-        { 
-            get => _region; 
-            set {
-                SetProperty(ref _region, value);
 
+        private int _region = 0;
+
+        public int Region
+        {
+            get => _region;
+            set
+            {
+                SetProperty(ref _region, value);
             }
         }
+
         public string Province { get; set; }
 
-       private void GetFirstLast(string[] result)
+        private void GetFirstLast(string[] result)
         {
             ArrLoto = new string[result.Length];
             List<double> temp = new List<double>();
@@ -135,12 +133,10 @@ namespace KetQuaSoBong.Models.LotteryModel
                 FirstNum[int.Parse(result[i].Substring(1, 1))] = String.IsNullOrEmpty(FirstNum[int.Parse(result[i].Substring(1, 1))]) ? FirstNum[int.Parse(result[i].Substring(1, 1))] += result[i].Substring(0, 1) : FirstNum[int.Parse(result[i].Substring(1, 1))] += ", " + result[i].Substring(0, 1);
             }
             //
-           
         }
 
-        private string[] StandardArray(string[] arr,  int type)
+        private string[] StandardArray(string[] arr, int type)
         {
-            
             for (int i = 0; i < arr.Length; i++)
             {
                 if (type == 0)
@@ -160,19 +156,13 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         public void SetSource(string[] arr)
-        {  
-            if(Region == 0)
-            {   
-                
-               
+        {
+            if (Region == 0)
+            {
             }
             else
             {
-                 
             }
         }
-
-
-
     }
 }

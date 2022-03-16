@@ -11,16 +11,19 @@ namespace KetQuaSoBong.Views.TabViews.NewsTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LotteryNewsTab : ContentView
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public LotteryNewsTab()
         {
             InitializeComponent();
             BindingContext = new LotteryNewsTabVM(navigation, this);
         }
     }
-    class LotteryNewsTabVM : ViewModelBase
+
+    internal class LotteryNewsTabVM : ViewModelBase
     {
         public ObservableCollection<NewsItem> LotteryNews { get; set; }
+
         public LotteryNewsTabVM(INavigationService navigationService, ContentView contentView) : base(navigationService)
         {
             LotteryNews = App.LotteryNews;

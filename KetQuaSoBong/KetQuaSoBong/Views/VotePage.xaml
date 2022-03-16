@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KetQuaSoBong.Views.VotePage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:votePageViews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="KetQuaSoBong.Views.VotePage"
              BackgroundColor="{StaticResource placeholderColor}">
     <NavigationPage.TitleView>
         <Grid>
-            <Label Text="BÌNH CHỌN" 
+            <Label Text="BÌNH CHỌN"
                    TextColor="White"
                    FontFamily="R"
                    FontSize="18"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   Margin="-50,0,0,0"/>
+                   Margin="-50,0,0,0" />
         </Grid>
     </NavigationPage.TitleView>
     <ScrollView>
@@ -28,7 +28,7 @@
                 <xct:TabView TabStripBackgroundColor="{StaticResource placeholderColor}"
                              TabStripHeight="33"
                              xct:CornerRadiusEffect.CornerRadius="10">
-                    
+
                     <xct:TabViewItem
                         x:Name="tabBac">
                         <xct:TabViewItem.ControlTemplate>
@@ -43,14 +43,14 @@
                                        HorizontalTextAlignment="Center">
                                     <Label.Triggers>
                                         <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabBac}, Path=IsSelected}" Value="True">
-                                            <Setter Property="TextColor" Value="White"/>
-                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                                            <Setter Property="TextColor" Value="White" />
+                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
                             </ControlTemplate>
                         </xct:TabViewItem.ControlTemplate>
-                        <votePageViews:NorthVoteTab/>
+                        <votePageViews:NorthVoteTab />
                     </xct:TabViewItem>
                     <xct:TabViewItem
                         x:Name="tabTrung">
@@ -66,14 +66,14 @@
                                        HorizontalTextAlignment="Center">
                                     <Label.Triggers>
                                         <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabTrung}, Path=IsSelected}" Value="True">
-                                            <Setter Property="TextColor" Value="White"/>
-                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                                            <Setter Property="TextColor" Value="White" />
+                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
                             </ControlTemplate>
                         </xct:TabViewItem.ControlTemplate>
-                        <votePageViews:NorthVoteTab/>
+                        <votePageViews:NorthVoteTab />
                     </xct:TabViewItem>
                     <xct:TabViewItem x:Name="tabNam">
                         <xct:TabViewItem.ControlTemplate>
@@ -88,14 +88,14 @@
                                        HorizontalTextAlignment="Center">
                                     <Label.Triggers>
                                         <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabNam}, Path=IsSelected}" Value="True">
-                                            <Setter Property="TextColor" Value="White"/>
-                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                                            <Setter Property="TextColor" Value="White" />
+                                            <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
                             </ControlTemplate>
                         </xct:TabViewItem.ControlTemplate>
-                        <votePageViews:NorthVoteTab/>
+                        <votePageViews:NorthVoteTab />
                     </xct:TabViewItem>
                 </xct:TabView>
             </Frame>

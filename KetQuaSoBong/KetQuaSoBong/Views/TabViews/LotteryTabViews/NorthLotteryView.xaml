@@ -1,39 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       x:Class="KetQuaSoBong.Views.TabViews.LotteryTabViews.NorthLotteryView"
-       xmlns:customviews="clr-namespace:KetQuaSoBong.Views.CustomViews"
-       xmlns:model="clr-namespace:KetQuaSoBong.Models" 
-       xmlns:lotterytabviews="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews" 
-       x:DataType="lotterytabviews:NorthLoterryViewVM"
        xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+       xmlns:lotterytabviews="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
+       x:Class="KetQuaSoBong.Views.TabViews.LotteryTabViews.NorthLotteryView"
+       x:DataType="lotterytabviews:NorthLoterryViewVM"
        Margin="10"
        CornerRadius="10"
        Padding="0">
     <Frame.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" x:Key="MLottery"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" x:Key="MLottery" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar" />
             <ControlTemplate x:Key="RadioButton">
-                <Frame Padding="0" 
+                <Frame Padding="0"
                        VerticalOptions="Start"
                        BackgroundColor="Transparent"
                        HeightRequest="30" WidthRequest="70" HorizontalOptions="Start">
                     <Grid Margin="4" WidthRequest="70">
-                        <ContentPresenter/>
+                        <ContentPresenter />
                     </Grid>
                 </Frame>
             </ControlTemplate>
         </ResourceDictionary>
     </Frame.Resources>
     <Frame.Content>
-      <StackLayout Spacing="0">
+        <StackLayout Spacing="0">
             <Label HorizontalOptions="Fill"
                    Padding="10,15,10,15"
                    HorizontalTextAlignment="Center"
@@ -41,8 +39,8 @@
                    FontSize="Default">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="XSMB " FontFamily="RBo" TextColor="{StaticResource primaryColor}"/>
-                        <Span Text="{Binding DateTimeNow}" FontFamily="RM" TextColor="White"/>
+                        <Span Text="XSMB " FontFamily="RBo" TextColor="{StaticResource primaryColor}" />
+                        <Span Text="{Binding DateTimeNow}" FontFamily="RM" TextColor="White" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -52,30 +50,30 @@
                   ColumnSpacing="0"
                   Margin="10">
                 <!--BackgroundColor-->
-                <BoxView Grid.ColumnSpan="5" Grid.Row="3" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="7" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="9" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="13" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="15" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="19" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                
-                <BoxView Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="2" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="4" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="6" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="8" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="10" Grid.Column="0" Color="Gray"/>
+                <BoxView Grid.ColumnSpan="5" Grid.Row="3" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="7" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="9" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="13" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="15" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="19" Grid.Column="0" Color="{StaticResource placeholderColor}" />
 
-                <BoxView Grid.ColumnSpan="5" Grid.Row="12" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="14" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="16" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="18" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.ColumnSpan="5" Grid.Row="20" Grid.Column="0" Color="Gray"/>
+                <BoxView Grid.ColumnSpan="5" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="2" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="4" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="6" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="8" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="10" Grid.Column="0" Color="Gray" />
 
-                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="2" Color="Gray"/>
-                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="4" Color="Gray"/>
-                
+                <BoxView Grid.ColumnSpan="5" Grid.Row="12" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="14" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="16" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="18" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.ColumnSpan="5" Grid.Row="20" Grid.Column="0" Color="Gray" />
+
+                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="2" Color="Gray" />
+                <BoxView Grid.RowSpan="20" Grid.Row="0" Grid.Column="4" Color="Gray" />
+
                 <!--Title-->
 
                 <Label Text="ĐB" Grid.Column="1"
@@ -84,8 +82,7 @@
                        FontFamily="RBo"
                        TextColor="{StaticResource primaryColor}"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
 
                 <Label Text="G1" Grid.Column="1"
                        Grid.Row="3"
@@ -93,8 +90,7 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
 
                 <Label Text="G2" Grid.Column="1"
                        Grid.Row="5"
@@ -102,8 +98,7 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
 
                 <Label Text="G3" Grid.Column="1"
                        Grid.Row="7"
@@ -115,8 +110,7 @@
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill"
                        HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       />
+                       VerticalTextAlignment="Center" />
 
                 <Label Text="G4" Grid.Column="1"
                        Grid.Row="11"
@@ -124,8 +118,7 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
 
                 <Label Text="G5" Grid.Column="1"
                        Grid.Row="13"
@@ -137,8 +130,7 @@
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill"
                        HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       />
+                       VerticalTextAlignment="Center" />
 
                 <Label Text="G6" Grid.Column="1"
                        Grid.Row="17"
@@ -147,18 +139,16 @@
                        Margin="0,3,0,0"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
-                
+                       VerticalOptions="Center" />
+
                 <Label Text="G7" Grid.Column="1"
                        Grid.Row="19"
                        FontSize="18"
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
-                
+                       VerticalOptions="Center" />
+
                 <!--Content-->
                 <!--ĐB-->
                 <Label Text="{Binding DB}" Grid.Column="3"
@@ -167,8 +157,7 @@
                        FontFamily="RBo"
                        TextColor="{StaticResource primaryColor}"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
                 <!--G1-->
                 <Label Text="{Binding G1}" Grid.Column="3"
                        Grid.Row="3"
@@ -176,8 +165,7 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       />
+                       VerticalOptions="Center" />
                 <!--G2-->
                 <StackLayout
                       Grid.Column="3"
@@ -195,15 +183,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />           
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-                           
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                    
                 </StackLayout>
                 <!--G3-->
                 <StackLayout
@@ -222,15 +206,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />       
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--G4-->
@@ -250,15 +230,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--G5-->
@@ -276,17 +252,13 @@
                                    HorizontalTextAlignment="Center"
                                    FontSize="16"
                                    FontFamily="RBo"
-                                   TextColor="Black" 
+                                   TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--G6-->
@@ -306,15 +278,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />   
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--G7-->
@@ -334,15 +302,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />   
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--GK1-->
@@ -362,15 +326,11 @@
                                    FontFamily="RBo"
                                    TextColor="Black"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />   
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
 
                 <!--GK2-->
@@ -390,19 +350,12 @@
                                    FontFamily="RBo"
                                    TextColor="{StaticResource primaryColor}"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   />
-                                <BoxView Grid.Column="1" Color="Gray"/>
+                                   VerticalOptions="Center" />
+                                <BoxView Grid.Column="1" Color="Gray" />
                             </Grid>
-
-
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-
                 </StackLayout>
-
-
-
             </Grid>
             <StackLayout IsVisible="{Binding IsShowMore}">
                 <StackLayout Orientation="Horizontal"
@@ -421,7 +374,7 @@
                                HorizontalOptions="Start">
                                     <Image.Triggers>
                                         <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rdAllNum}, Path=IsChecked}" Value="True">
-                                            <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                            <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
@@ -429,26 +382,25 @@
                                    TextColor="White"
                                    FontFamily="RM"
                                    Margin="0,2,0,0"
-                                   FontSize="13"/>
+                                   FontSize="13" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rdAllNum}"/>
+                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rdAllNum}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
                     <RadioButton x:Name="rd2Num"
                                  ClassId="2Num"
                              ControlTemplate="{StaticResource RadioButton}">
                         <RadioButton.Content>
-                            <StackLayout Orientation="Horizontal"
-                                         >
+                            <StackLayout Orientation="Horizontal">
                                 <Image Source="{StaticResource Uncheck}"
                                WidthRequest="13"
                                HeightRequest="13"
                                HorizontalOptions="Start">
                                     <Image.Triggers>
                                         <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd2Num}, Path=IsChecked}" Value="True">
-                                            <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                            <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
@@ -456,11 +408,11 @@
                                    TextColor="White"
                                    FontFamily="RM"
                                    Margin="0,2,0,0"
-                                   FontSize="13"/>
+                                   FontSize="13" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd2Num}"/>
+                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd2Num}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
                     <RadioButton x:Name="rd3Num"
@@ -474,7 +426,7 @@
                                HorizontalOptions="Start">
                                     <Image.Triggers>
                                         <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd3Num}, Path=IsChecked}" Value="True">
-                                            <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                            <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
@@ -482,11 +434,11 @@
                                    TextColor="White"
                                    FontFamily="RM"
                                    Margin="0,2,0,0"
-                                   FontSize="13"/>
+                                   FontSize="13" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd3Num}"/>
+                            <TapGestureRecognizer Command="{Binding ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd3Num}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
                     <StackLayout Orientation="Horizontal"
@@ -501,9 +453,8 @@
                                    FontSize="13"
                                Padding="0"
                                HorizontalOptions="Start"
-                               VerticalOptions="Center"/>
+                               VerticalOptions="Center" />
                     </StackLayout>
-                    
                 </StackLayout>
                 <Grid RowDefinitions="0.75,40,0.375,Auto,0.75"
                       ColumnDefinitions="0.75,*,0.75"
@@ -511,12 +462,12 @@
                       RowSpacing="0"
                       Margin="10">
 
-                    <BoxView Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
-                    <BoxView Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.RowSpan="5" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.RowSpan="5" Grid.Row="0" Grid.Column="2" Color="Gray"/>
+                    <BoxView Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="0" Color="{StaticResource placeholderColor}" />
+                    <BoxView Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.RowSpan="5" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.RowSpan="5" Grid.Row="0" Grid.Column="2" Color="Gray" />
 
                     <Label Text="Lô tô trực tiếp"
                            Grid.Column="1"
@@ -525,7 +476,7 @@
                            FontFamily="RBo"
                            TextColor="Black"
                            HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+                           VerticalOptions="Center" />
 
                     <Grid x:Name="gridLoto"
                           HeightRequest="125"
@@ -534,12 +485,10 @@
                           Grid.Row="3"
                           Grid.Column="1">
                         <CollectionView ItemsSource="{Binding ArrLoto}"
-                                    ItemSizingStrategy="MeasureAllItems"
-                                    >
+                                    ItemSizingStrategy="MeasureAllItems">
                             <CollectionView.ItemsLayout>
                                 <GridItemsLayout Orientation="Vertical"
                                 Span="9">
-
                                 </GridItemsLayout>
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
@@ -551,17 +500,12 @@
                                            HorizontalTextAlignment="Center"
                                            FontFamily="RB"
                                            TextColor="Black"
-                                           FontSize="16"/>
+                                           FontSize="16" />
                                     </Frame>
-
-
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-
-
                     </Grid>
-                    
                 </Grid>
                 <Grid ColumnDefinitions="0.75,0.5*,0.75,*,0.15,*,0.75,0.5*,0.75"
                   RowDefinitions="0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75,40,0.75"
@@ -569,27 +513,27 @@
                   ColumnSpacing="0"
                   Margin="10,10,10,10">
                     <!--Border-->
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="1" Grid.Column="0" Color="{StaticResource placeholderColor}"/>
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="1" Grid.Column="0" Color="{StaticResource placeholderColor}" />
 
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="2" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="4" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="6" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="8" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="10" Grid.Column="0" Color="Gray"/>
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="2" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="4" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="6" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="8" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="10" Grid.Column="0" Color="Gray" />
 
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="12" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="14" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="16" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="18" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="20" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.ColumnSpan="9" Grid.Row="22" Grid.Column="0" Color="Gray"/>
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="12" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="14" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="16" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="18" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="20" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.ColumnSpan="9" Grid.Row="22" Grid.Column="0" Color="Gray" />
 
-                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="0" Color="Gray"/>
-                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="2" Color="Gray"/>
-                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="4" Color="Gray"/>
-                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="6" Color="Gray"/>
-                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="8" Color="Gray"/>
+                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="0" Color="Gray" />
+                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="2" Color="Gray" />
+                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="4" Color="Gray" />
+                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="6" Color="Gray" />
+                    <BoxView Grid.RowSpan="22" Grid.Row="0" Grid.Column="8" Color="Gray" />
                     <!--Title-->
 
                     <Label Text="Đầu" Grid.Column="1"
@@ -598,15 +542,14 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
+                       VerticalOptions="Center" />
                     <Label Text="Đầu" Grid.Column="5"
                        Grid.Row="1"
                        FontSize="16"
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
-
+                       VerticalOptions="Center" />
 
                     <Label Text="Đuôi" Grid.Column="7"
                        Grid.Row="1"
@@ -614,7 +557,7 @@
                        FontFamily="RBo"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
+                       VerticalOptions="Center" />
                     <Label Text="Đuôi" Grid.Column="3"
                        Grid.Row="1"
                        FontSize="16"
@@ -622,25 +565,21 @@
                        Margin="10,0,0,0"
                        TextColor="Black"
                        HorizontalOptions="Start"
-                       VerticalOptions="Center"/>
-
-
-
+                       VerticalOptions="Center" />
 
                     <StackLayout Grid.Column="3"
                              Grid.Row="3"
                              Grid.RowSpan="19"
                              Spacing="0"
                              Background="White"
-                             BindableLayout.ItemsSource="{Binding LastNum}"
-                             >
+                             BindableLayout.ItemsSource="{Binding LastNum}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <Grid RowSpacing="0"
                                   RowDefinitions="0.375,*,0.375"
                                   HeightRequest="40.75">
                                     <BoxView Color="Gray"
-                                         Grid.Row="0"/>
+                                         Grid.Row="0" />
                                     <Label Text="{Binding .}"
                                        Grid.Row="1"
                                        TextColor="Black"
@@ -649,12 +588,10 @@
                                        LineHeight="1"
                                        Margin="10,0,0,0"
                                        HorizontalOptions="Start"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center" />
                                     <BoxView Color="Gray"
-                                         Grid.Row="2"/>
+                                         Grid.Row="2" />
                                 </Grid>
-
-
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
@@ -663,15 +600,14 @@
                              Grid.RowSpan="19"
                              Spacing="0"
                              Background="White"
-                             BindableLayout.ItemsSource="{Binding NumberTemp}"
-                             >
+                             BindableLayout.ItemsSource="{Binding NumberTemp}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <Grid RowSpacing="0"
                                   RowDefinitions="0.375,*,0.375"
                                   HeightRequest="40.75">
                                     <BoxView Color="Gray"
-                                         Grid.Row="0"/>
+                                         Grid.Row="0" />
                                     <Label Text="{Binding .}"
                                        Grid.Row="1"
                                        TextColor="{StaticResource primaryColor}"
@@ -679,16 +615,12 @@
                                        FontFamily="RBo"
                                        LineHeight="1"
                                        HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center" />
                                     <BoxView Color="Gray"
-                                         Grid.Row="2"/>
+                                         Grid.Row="2" />
                                 </Grid>
-
-
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-
-
                     </StackLayout>
 
                     <StackLayout Grid.Column="7"
@@ -696,15 +628,14 @@
                              Grid.RowSpan="19"
                              Spacing="0"
                              Background="White"
-                             BindableLayout.ItemsSource="{Binding NumberTemp}"
-                             >
+                             BindableLayout.ItemsSource="{Binding NumberTemp}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <Grid RowSpacing="0"
                                   RowDefinitions="0.375,*,0.375"
                                   HeightRequest="40.75">
                                     <BoxView Color="Gray"
-                                         Grid.Row="0"/>
+                                         Grid.Row="0" />
                                     <Label Text="{Binding .}"
                                        Grid.Row="1"
                                        TextColor="{StaticResource primaryColor}"
@@ -712,16 +643,12 @@
                                        FontFamily="RBo"
                                        LineHeight="1"
                                        HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center" />
                                     <BoxView Color="Gray"
-                                         Grid.Row="2"/>
+                                         Grid.Row="2" />
                                 </Grid>
-
-
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-
-
                     </StackLayout>
 
                     <StackLayout Grid.Column="5"
@@ -729,15 +656,14 @@
                              Grid.RowSpan="19"
                              Spacing="0"
                              Background="White"
-                             BindableLayout.ItemsSource="{Binding FirstNum}"
-                             >
+                             BindableLayout.ItemsSource="{Binding FirstNum}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <Grid RowSpacing="0"
                                   RowDefinitions="0.375,*,0.375"
                                   HeightRequest="40.75">
                                     <BoxView Color="Gray"
-                                         Grid.Row="0"/>
+                                         Grid.Row="0" />
                                     <Label Text="{Binding .}"
                                        Grid.Row="1"
                                        TextColor="Black"
@@ -746,21 +672,13 @@
                                        LineHeight="1"
                                        Margin="0,0,10,0"
                                        HorizontalOptions="End"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center" />
                                     <BoxView Color="Gray"
-                                         Grid.Row="2"/>
+                                         Grid.Row="2" />
                                 </Grid>
-
-
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-
-
                     </StackLayout>
-
-
-
-
                 </Grid>
                 <Grid HeightRequest="120"
                       BackgroundColor="{StaticResource placeholderColor}"
@@ -775,13 +693,13 @@
                            LineHeight="1"
                            Margin="10,0,0,0"
                            HorizontalOptions="Start"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="EndAndExpand" />
                     <StackLayout VerticalOptions="Center"
                                  Grid.Column="0"
                                  Grid.Row="1"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                        <Frame 
+                        <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -789,20 +707,18 @@
                               BorderColor="CornflowerBlue">
                             <Image Source="{StaticResource SLottery}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                         </Frame>
-                        <Label Text="Xổ số miền Nam" 
+                        <Label Text="Xổ số miền Nam"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                     </StackLayout>
                     <StackLayout VerticalOptions="Center"
                                  Grid.Column="1"
                                  Grid.Row="1"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                        <Frame 
+                        <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -810,20 +726,18 @@
                               BorderColor="CornflowerBlue">
                             <Image Source="{StaticResource MLottery}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                         </Frame>
-                        <Label Text="Xổ số miền Trung" 
+                        <Label Text="Xổ số miền Trung"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                     </StackLayout>
                     <StackLayout VerticalOptions="Center"
                                  Grid.Column="0"
                                  Grid.Row="2"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                        <Frame 
+                        <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -831,20 +745,18 @@
                               BorderColor="CornflowerBlue">
                             <Image Source="{StaticResource LotteryBall}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                         </Frame>
-                        <Label Text="Soi cầu mỗi ngày" 
+                        <Label Text="Soi cầu mỗi ngày"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                     </StackLayout>
                     <StackLayout VerticalOptions="Center"
                                  Grid.Column="1"
                                  Grid.Row="2"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                        <Frame 
+                        <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -852,18 +764,15 @@
                               BorderColor="CornflowerBlue">
                             <Image Source="{StaticResource Calendar}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                         </Frame>
-                        <Label Text="Thống kê 30 ngày" 
+                        <Label Text="Thống kê 30 ngày"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                     </StackLayout>
-
                 </Grid>
             </StackLayout>
-            
+
             <Frame BackgroundColor="{StaticResource primaryColor}"
                    WidthRequest="150"
                    HeightRequest="40"
@@ -873,8 +782,7 @@
                    VerticalOptions="Center"
                    CornerRadius="15"
                    HasShadow="False"
-                   BorderColor="Transparent"
-                   >
+                   BorderColor="Transparent">
                 <StackLayout HorizontalOptions="Center"
                              Orientation="Horizontal"
                              VerticalOptions="Center"
@@ -884,8 +792,8 @@
                            FontFamily="RBo">
                         <Label.Triggers>
                             <DataTrigger TargetType="Label" Binding="{Binding IsShowMore}" Value="True">
-                                <Setter Property="Text" Value="Thu gọn"/>
-                                <Setter Property="TextColor" Value="Black"/>
+                                <Setter Property="Text" Value="Thu gọn" />
+                                <Setter Property="TextColor" Value="Black" />
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
@@ -895,7 +803,7 @@
                            HeightRequest="15">
                         <Image.Triggers>
                             <DataTrigger TargetType="Image" Binding="{Binding IsShowMore}" Value="True">
-                                <Setter Property="Source" Value="{StaticResource IconUp}"/>
+                                <Setter Property="Source" Value="{StaticResource IconUp}" />
                             </DataTrigger>
                         </Image.Triggers>
                     </Image>
@@ -903,14 +811,14 @@
 
                 <Frame.Triggers>
                     <DataTrigger TargetType="Frame" Binding="{Binding IsShowMore}" Value="True">
-                        <Setter Property="BackgroundColor" Value="White"/>
-                        <Setter Property="BorderColor" Value="Black"/>
+                        <Setter Property="BackgroundColor" Value="White" />
+                        <Setter Property="BorderColor" Value="Black" />
                     </DataTrigger>
                 </Frame.Triggers>
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ShowMoreCommand}"/>
+                    <TapGestureRecognizer Command="{Binding ShowMoreCommand}" />
                 </Frame.GestureRecognizers>
             </Frame>
         </StackLayout>
-  </Frame.Content>
+    </Frame.Content>
 </Frame>

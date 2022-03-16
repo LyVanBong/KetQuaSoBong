@@ -12,15 +12,16 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LeagueView : Frame
     {
-        INavigationService navigationService;
+        private INavigationService navigationService;
+
         public LeagueView()
         {
             InitializeComponent();
             BindingContext = new LeagueViewVM(navigationService, this);
         }
-
     }
-    class LeagueViewVM : ViewModelBase
+
+    internal class LeagueViewVM : ViewModelBase
     {
         private ObservableCollection<League> _favouriteLeague;
         public ObservableCollection<League> FavouriteLeagues { get => _favouriteLeague; set => SetProperty(ref _favouriteLeague, value); }
@@ -28,22 +29,25 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
         public ObservableCollection<League> ClubLeagues { get; set; }
         public ObservableCollection<League> NationLeagues { get; set; }
         private bool _IsShowMore = false;
+
         public bool IsShowMore
         {
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
+
         public LeagueViewVM(INavigationService navigationService, Frame frame) : base(navigationService)
         {
             SetSource();
             //Commands
             ShowMoreCommand = new DelegateCommand(() =>
             {
-
                 IsShowMore = !IsShowMore;
             });
         }
+
         public DelegateCommand ShowMoreCommand { get; set; }
+
         public void SetSource()
         {
             FavouriteLeagues = new ObservableCollection<League>()
@@ -84,7 +88,6 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
                 new League(){ Id="kl", Name="K-League", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_nc_kleague.png") },
                 new League(){ Id="tl", Name="Thai League", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_nc_thaileague.png") }
             };
-
         }
     }
 }

@@ -15,26 +15,32 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
     public partial class NorthLotteryView : Frame
     {
         private INavigationService navigation;
+
         public NorthLotteryView()
         {
             InitializeComponent();
             BindingContext = new NorthLoterryViewVM(navigation, this);
         }
     }
-    class NorthLoterryViewVM : ViewModelBase
+
+    internal class NorthLoterryViewVM : ViewModelBase
     {
         private string _datetimeNow;
+
         public string DateTimeNow
         {
             get => _datetimeNow;
             set => SetProperty(ref _datetimeNow, value);
         }
+
         private bool _IsShowMore = false;
+
         public bool IsShowMore
         {
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
+
         private string _db;
         public string DB { get => _db; set => SetProperty(ref _db, value); }
         private string _g1;
@@ -61,6 +67,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public string[] LastNum { get; set; }
         public string[] NumberTemp { get; set; }
         public string[] ArrLoto { get; set; }
+
         public NorthLoterryViewVM(INavigationService navigationService, Frame view) : base(navigationService)
         {
             DateTime now = DateTime.Now;
@@ -74,7 +81,6 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             //Commands
             ShowMoreCommand = new DelegateCommand(() =>
             {
-
                 IsShowMore = !IsShowMore;
             });
             ChangeDisplayNumberCommand = new Command((x) =>
@@ -88,9 +94,9 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
                 }
             });
         }
+
         public DelegateCommand ShowMoreCommand { get; set; }
         public Command ChangeDisplayNumberCommand { get; set; }
-
 
         private void GetFirstLast()
         {
@@ -152,9 +158,5 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             ArrG6 = arr.SubArray(20, 3);
             ArrG7 = arr.SubArray(23, 4);
         }
-
-
-
-
     }
 }

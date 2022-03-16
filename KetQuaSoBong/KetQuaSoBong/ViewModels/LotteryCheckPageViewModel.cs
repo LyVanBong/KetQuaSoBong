@@ -1,5 +1,4 @@
-﻿using KetQuaSoBong.Models.LotteryModel;
-using KetQuaSoBong.Views.Popups;
+﻿using KetQuaSoBong.Views.Popups;
 using Prism.Navigation;
 using Prism.Services.Dialogs;
 using System;
@@ -9,49 +8,57 @@ using Xamarin.Forms;
 namespace KetQuaSoBong.ViewModels
 {
     public class LotteryCheckPageViewModel : ViewModelBase
-    {   
+    {
         private string _mien = "Miền Bắc";
+
         public string Mien
         {
             get => _mien;
             set => SetProperty(ref _mien, value);
         }
+
         private string _type = "Bạch thủ";
+
         public string Type
         {
             get => _type;
             set => SetProperty(ref _type, value);
         }
+
         private string _date;
+
         public string Date
         {
             get => _date;
             set => SetProperty(ref _date, value);
         }
+
         private int _amplitude = 1;
+
         public int Amplitude
         {
             get => _amplitude;
             set => SetProperty(ref _amplitude, value);
         }
+
         private bool _popupMienIsVisible;
-        public bool PopupMienIsVisible{ get => _popupMienIsVisible; set =>SetProperty(ref _popupMienIsVisible, value); }
+        public bool PopupMienIsVisible { get => _popupMienIsVisible; set => SetProperty(ref _popupMienIsVisible, value); }
         private bool _popupLoaiIsVisible;
         public bool PopupLoaiIsVisible { get => _popupLoaiIsVisible; set => SetProperty(ref _popupLoaiIsVisible, value); }
-        IDialogService _dialogService { get; }
+        private IDialogService _dialogService { get; }
         public Page page { get; set; }
+
         public LotteryCheckPageViewModel(INavigationService navigationService, IDialogService dialogService) : base(navigationService)
         {
             _dialogService = dialogService;
             Date = DateTime.Now.ToString("dd/MM/yyyy");
             ShowHidePopupCommand = new Command(async (x) =>
             {
-                
                 var layout = x as Frame;
                 switch (layout.ClassId)
                 {
-                    case "popupMien": PopupMienIsVisible = !PopupMienIsVisible; PopupLoaiIsVisible = false;  break;
-                    case "popupLoai": PopupLoaiIsVisible = !PopupLoaiIsVisible; PopupMienIsVisible = false;  break;
+                    case "popupMien": PopupMienIsVisible = !PopupMienIsVisible; PopupLoaiIsVisible = false; break;
+                    case "popupLoai": PopupLoaiIsVisible = !PopupLoaiIsVisible; PopupMienIsVisible = false; break;
                     case "popupDate": Date = (string)await page.Navigation.ShowPopupAsync(new CalendarPopup()); break;
                 }
             });
@@ -69,22 +76,19 @@ namespace KetQuaSoBong.ViewModels
                     case "rdLoxien": Type = "Lô xiên"; PopupLoaiIsVisible = false; break;
                 }
             });
-            UpAmpCommand = new Command(() => {
-                Amplitude = Amplitude < 7 ? Amplitude+1 : 7;
+            UpAmpCommand = new Command(() =>
+            {
+                Amplitude = Amplitude < 7 ? Amplitude + 1 : 7;
             });
             DownAmpCommand = new Command(() =>
             {
-                Amplitude = Amplitude > 1 ? Amplitude-1 : 1;
+                Amplitude = Amplitude > 1 ? Amplitude - 1 : 1;
             });
-            
         }
-       
 
         public Command ShowHidePopupCommand { get; }
         public Command SelectedFilter { get; }
         public Command UpAmpCommand { get; }
         public Command DownAmpCommand { get; }
-
     }
-
 }

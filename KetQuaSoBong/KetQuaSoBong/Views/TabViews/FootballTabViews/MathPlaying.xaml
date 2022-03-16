@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.MathPlaying"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:md="clr-namespace:KetQuaSoBong.Models" 
-             xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
-             x:DataType="footballtabviews:MatchPlayingVM"
-      
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:md="clr-namespace:KetQuaSoBong.Models"
+       xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+       x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.MathPlaying"
+       x:DataType="footballtabviews:MatchPlayingVM"
+
              Padding="0"
              BackgroundColor="Transparent">
     <Frame.Content>
-      <StackLayout>
+        <StackLayout>
             <StackLayout Orientation="Horizontal"
                          BackgroundColor="Gold"
                          HeightRequest="50">
@@ -20,16 +19,13 @@
                        HorizontalOptions="CenterAndExpand"
                        TextColor="White"
                        VerticalOptions="Center"
-                 FontFamily="RB"
-                 />
-               
-
+                 FontFamily="RB" />
             </StackLayout>
             <ScrollView Orientation="Horizontal"
                         HorizontalScrollBarVisibility="Never">
                 <StackLayout Orientation="Horizontal"
                              Margin="0,0,0,10">
-                    <BoxView WidthRequest="10"/>
+                    <BoxView WidthRequest="10" />
                     <StackLayout Orientation="Horizontal"
                                  BindableLayout.ItemsSource="{Binding MacthPlayings}"
                                  Spacing="10">
@@ -41,27 +37,26 @@
                                        Margin="0,10"
                                        CornerRadius="10"
                                        HasShadow="False"
-                                       BackgroundColor="White"
-                                       >
+                                       BackgroundColor="White">
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal"
                                                      Margin="10">
                                             <Label Text="{Binding TimePlaying}"
                                                    FontFamily="RBo"
-                                                   TextColor="Black"/>
+                                                   TextColor="Black" />
                                             <Label Text="{Binding TimePlus, StringFormat='+{0}'}"
                                                    FontFamily="RBo">
                                                 <Label.Triggers>
                                                     <DataTrigger TargetType="Label" Binding="{Binding TimePlus}" Value="0">
-                                                        <Setter Property="IsVisible" Value="False"/>
+                                                        <Setter Property="IsVisible" Value="False" />
                                                     </DataTrigger>
                                                 </Label.Triggers>
                                             </Label>
                                             <Label Text="'"
                                                    FontFamily="RBo"
-                                                   TextColor="Black"/>
+                                                   TextColor="Black" />
                                             <Frame HeightRequest="20"
-                                                   Padding="0" 
+                                                   Padding="0"
                                                    WidthRequest="50"
                                                    CornerRadius="5"
                                                    HasShadow="False"
@@ -72,11 +67,11 @@
                                                     <Label Text="Live"
                                                        FontFamily="RBo"
                                                        TextColor="Black"
-                                                       FontSize="13"/>
+                                                       FontSize="13" />
                                                     <Image Source="{Binding StatusLightSource}"
                                                            WidthRequest="9"
                                                            Margin="5,0"
-                                                           HeightRequest="5"/>
+                                                           HeightRequest="5" />
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
@@ -87,51 +82,48 @@
                                                    HeightRequest="50"
                                                    Margin="10"
                                                    Aspect="AspectFit"
-                                                   HorizontalOptions="StartAndExpand"/>
+                                                   HorizontalOptions="StartAndExpand" />
                                             <Image Source="{Binding Team2.Logo}"
                                                    WidthRequest="50"
                                                    HeightRequest="50"
                                                    Margin="10"
                                                    Aspect="AspectFit"
-                                                   HorizontalOptions="EndAndExpand"/>
+                                                   HorizontalOptions="EndAndExpand" />
                                         </StackLayout>
                                         <Label Text="{Binding NoteMatch}"
                                                    FontFamily="RMI"
                                                    FontSize="10"
-                                               HorizontalOptions="Center"/>
+                                               HorizontalOptions="Center" />
                                         <StackLayout Margin="20,0"
                                                      Orientation="Horizontal">
                                             <Label Text="{Binding Team1.Name}"
                                                    FontFamily="RBo"
                                                    FontSize="13"
-                                                   HorizontalOptions="StartAndExpand"/>
+                                                   HorizontalOptions="StartAndExpand" />
                                             <Label Text="{Binding PointT1}"
                                                    FontFamily="RBo"
                                                    FontSize="15"
-                                                   HorizontalOptions="End"/>
+                                                   HorizontalOptions="End" />
                                         </StackLayout>
                                         <StackLayout Margin="20,0"
                                                      Orientation="Horizontal">
                                             <Label Text="{Binding Team2.Name}"
                                                    FontFamily="RBo"
                                                    FontSize="13"
-                                                   HorizontalOptions="StartAndExpand"/>
+                                                   HorizontalOptions="StartAndExpand" />
                                             <Label Text="{Binding PointT2}"
                                                    FontFamily="RBo"
                                                    FontSize="15"
-                                                   HorizontalOptions="End"/>
+                                                   HorizontalOptions="End" />
                                         </StackLayout>
                                     </StackLayout>
-                                    
                                 </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <BoxView WidthRequest="10"/>
+                    <BoxView WidthRequest="10" />
                 </StackLayout>
             </ScrollView>
-            
-            
         </StackLayout>
-  </Frame.Content>
+    </Frame.Content>
 </Frame>

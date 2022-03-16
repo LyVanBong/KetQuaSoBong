@@ -1,12 +1,12 @@
-﻿using KetQuaSoBong.ViewModels;
-using Prism.Navigation;
+﻿using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.Views
 {
     public partial class SignUpPage : ContentPage
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public SignUpPage()
         {
             InitializeComponent();

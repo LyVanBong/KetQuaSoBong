@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KetQuaSoBong.Views.TabViews.SupportTab"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             x:Class="KetQuaSoBong.Views.TabViews.SupportTab"
              BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_fb.png" x:Key="Facebook"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_zalo.png" x:Key="Zalo"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_call.png" x:Key="Call"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_fb.png" x:Key="Facebook" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_zalo.png" x:Key="Zalo" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_call.png" x:Key="Call" />
     </ContentPage.Resources>
-  <ContentPage.Content>
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Label Text="Liên hệ với chúng tôi qua:"
                    FontFamily="RBo"
                    FontSize="16"
                    HorizontalOptions="Center"
-                   Margin="10"/>
+                   Margin="10" />
                 <Grid ColumnDefinitions="*,*,*"
                 ColumnSpacing="0"
                   HeightRequest="80">
@@ -28,12 +28,12 @@
                         <Image Source="{StaticResource Facebook}"
                            HeightRequest="60"
                            WidthRequest="60"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                         <Label Text="Fanpage"
                            FontSize="16"
                            TextColor="Black"
                            FontFamily="RBo"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="Center"
@@ -43,12 +43,12 @@
                         <Image Source="{StaticResource Zalo}"
                            HeightRequest="60"
                            WidthRequest="60"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                         <Label Text="Zalo"
                            FontSize="16"
                            TextColor="Black"
                            FontFamily="RBo"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                     </StackLayout>
 
                     <StackLayout HorizontalOptions="Center"
@@ -58,29 +58,29 @@
                         <Image Source="{StaticResource Call}"
                            HeightRequest="60"
                            WidthRequest="60"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                         <Label Text="Số điện thoại"
                            FontSize="16"
                            TextColor="Black"
                            FontFamily="RBo"
-                           HorizontalOptions="Center"/>
+                           HorizontalOptions="Center" />
                     </StackLayout>
                 </Grid>
                 <Label Text="Hoặc gửi thư cho chúng tôi:"
                    FontFamily="R"
                    HorizontalOptions="Center"
                    TextColor="Black"
-                   Margin="10"/>
+                   Margin="10" />
                 <StackLayout>
                     <StackLayout>
-                        <Label 
+                        <Label
                            FontFamily="RBo"
                            FontSize="14"
                            Margin="10,0,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Tên tài khoản: "/>
-                                    <Span Text="*" TextColor="Red"/>
+                                    <Span Text="Tên tài khoản: " />
+                                    <Span Text="*" TextColor="Red" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -88,23 +88,21 @@
                            Padding="10,0"
                            BorderColor="Black"
                            Margin="10,0"
-                           HasShadow="False"
-                           >
+                           HasShadow="False">
                             <customView:CustomEntry Placeholder="Nhập tên tài khoản...."
                                                 FontSize="14">
-
                             </customView:CustomEntry>
                         </Frame>
                     </StackLayout>
                     <StackLayout>
-                        <Label 
+                        <Label
                            FontFamily="RBo"
                            FontSize="14"
                            Margin="10,0,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Email: "/>
-                                    <Span Text="*" TextColor="Red"/>
+                                    <Span Text="Email: " />
+                                    <Span Text="*" TextColor="Red" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -112,24 +110,22 @@
                            Padding="10,0"
                            BorderColor="Black"
                            Margin="10,0"
-                           HasShadow="False"
-                           >
+                           HasShadow="False">
                             <customView:CustomEntry Placeholder="Nhập email của bạn...."
                                                 FontSize="14">
-
                             </customView:CustomEntry>
                         </Frame>
                     </StackLayout>
 
                     <StackLayout>
-                        <Label 
+                        <Label
                            FontFamily="RBo"
                            FontSize="14"
                            Margin="10,0,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Góp ý của bạn: "/>
-                                    <Span Text="*" TextColor="Red"/>
+                                    <Span Text="Góp ý của bạn: " />
+                                    <Span Text="*" TextColor="Red" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -137,11 +133,9 @@
                            Padding="10,0"
                            BorderColor="Black"
                            Margin="10,0"
-                           HasShadow="False"
-                           >
+                           HasShadow="False">
                             <customView:CustomEditor Placeholder="Nhập tên tài khoản...."
                                                 FontSize="14">
-
                             </customView:CustomEditor>
                         </Frame>
                     </StackLayout>
@@ -150,9 +144,8 @@
                            Padding="10,0"
                        BackgroundColor="{StaticResource primaryColor}"
                            Margin="10,0"
-                           HasShadow="False"
-                           >
-                    <Label 
+                           HasShadow="False">
+                    <Label
                            FontFamily="RBo"
                            FontSize="16"
                             TextColor="White"
@@ -161,7 +154,7 @@
                            Margin="10,0,0,0">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Gửi "/>
+                                <Span Text="Gửi " />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

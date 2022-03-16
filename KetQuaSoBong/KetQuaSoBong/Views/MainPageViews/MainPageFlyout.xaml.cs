@@ -9,16 +9,12 @@ namespace KetQuaSoBong.Views.MainPageViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPageFlyout : ContentPage
     {
-        INavigationService navigation;
+        private INavigationService navigation;
 
         public MainPageFlyout()
         {
             InitializeComponent();
             BindingContext = new MainPageFlyoutViewModel(navigation, this);
-
-
         }
-
-
     }
 }

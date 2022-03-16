@@ -8,6 +8,5 @@ namespace KetQuaSoBong.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public ImageSource Icon { get; set; }
-
     }
 }

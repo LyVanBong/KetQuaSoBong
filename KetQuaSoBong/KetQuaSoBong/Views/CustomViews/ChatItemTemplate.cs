@@ -14,5 +14,4 @@ namespace KetQuaSoBong.Views.CustomViews
             return name == "Admin" ? MyChat : YourChat;
         }
     }
-
 }

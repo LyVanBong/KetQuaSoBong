@@ -1,37 +1,35 @@
 ﻿using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.ViewModels;
 using Prism.Navigation;
-using System.Collections.Generic;
 using Xamarin.Forms;
-
 
 namespace KetQuaSoBong.Views
 {
     public partial class LotteryCheckPage : ContentPage
     {
-        INavigationService navigationService;
-        LotteryCheckPageViewModel lotteryCheckPageViewModel;
+        private INavigationService navigationService;
+        private LotteryCheckPageViewModel lotteryCheckPageViewModel;
+
         public LotteryCheckPage()
         {
             InitializeComponent();
             SetLotteryCheck();
-           
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             lotteryCheckPageViewModel = BindingContext as LotteryCheckPageViewModel;
             lotteryCheckPageViewModel.page = this;
-
         }
+
         private void SetLotteryCheck()
         {
-
             foreach (LotteryCheckItem x in App.LotteryCheckItems)
             {
                 int row = StandardRowColumn(x.Number[0]);
                 int column = StandardRowColumn(x.Number[1]);
-                
+
                 Label label = new Label()
                 {
                     Text = x.Number,
@@ -39,14 +37,13 @@ namespace KetQuaSoBong.Views
                     HorizontalOptions = LayoutOptions.Center,
                     TextColor = Color.Black,
                     FontFamily = "Roboto-Bold.ttf"
-
                 };
                 Label label1 = new Label()
                 {
                     Text = x.Time + " lần",
                     FontSize = 12,
                     HorizontalOptions = LayoutOptions.Center,
-                    TextColor = Color.FromHex("#B02019"), 
+                    TextColor = Color.FromHex("#B02019"),
                     FontFamily = "Roboto-Regular.ttf"
                 };
                 StackLayout stackLayout = new StackLayout()
@@ -64,8 +61,8 @@ namespace KetQuaSoBong.Views
                 };
                 grid.Children.Add(rd, column, row);
             }
-
         }
+
         public int StandardRowColumn(char number)
         {
             switch (number)
@@ -83,6 +80,7 @@ namespace KetQuaSoBong.Views
                 default: return 0; break;
             }
         }
+
         public string LotteryControlTemplate => "<ControlTemplate x:Key=\"FrameRadioTemplate\">\n" +
             "<Frame Padding = \"0\" HasShadow=\"False\" VerticalOptions=\"Fill\"\n" +
                "HorizontalOptions=\"Fill\"\n" +
@@ -109,6 +107,5 @@ namespace KetQuaSoBong.Views
                 "</Grid>\n" +
             "</Frame>\n" +
         "</ControlTemplate>";
-
     }
 }

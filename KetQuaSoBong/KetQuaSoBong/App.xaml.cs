@@ -3,7 +3,6 @@ using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.ViewModels;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.MainPageViews;
-using KetQuaSoBong.Views.Popups;
 using Prism;
 using Prism.Ioc;
 using System;
@@ -34,6 +33,7 @@ namespace KetQuaSoBong
         {
             get => new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" };
         }
+
         public static ObservableCollection<Match> MatchePlayings = new ObservableCollection<Match>()
         {
             new Match()
@@ -53,7 +53,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch = "Vòng 40, Premier League"
-
             },
             new Match()
             {
@@ -73,7 +72,6 @@ namespace KetQuaSoBong
                PointT1 = 2,
                PointT2 = 2,
                NoteMatch = "Vòng 35, La Liga"
-
             }
             ,
             new Match()
@@ -93,7 +91,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch = "Vòng 22, League 1"
-
             },
             new Match()
             {
@@ -112,10 +109,9 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Vòng 42, Bunesliga"
-
             }
-
         };
+
         public static ObservableCollection<Match> LeagueScores = new ObservableCollection<Match>()
         {
             new Match()
@@ -136,7 +132,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
             new Match()
             {
@@ -156,7 +151,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
             new Match()
             {
@@ -176,7 +170,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
             new Match()
             {
@@ -197,7 +190,6 @@ namespace KetQuaSoBong
                PointT1 = 2,
                PointT2 = 2,
                NoteMatch = "Hết giờ"
-
             }
             ,
             new Match()
@@ -219,7 +211,6 @@ namespace KetQuaSoBong
                PointT1 = 2,
                PointT2 = 2,
                NoteMatch = "Hết giờ"
-
             }
             ,
             new Match()
@@ -259,7 +250,6 @@ namespace KetQuaSoBong
                PointT1 = 3,
                PointT2 = 1,
                NoteMatch ="Hết giờ"
-
             },
             new Match()
             {
@@ -279,7 +269,6 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
              new Match()
             {
@@ -299,7 +288,6 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
               new Match()
             {
@@ -319,7 +307,6 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
                new Match()
             {
@@ -339,7 +326,6 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             },
                new Match()
             {
@@ -359,9 +345,7 @@ namespace KetQuaSoBong
                PointT1 = 0,
                PointT2 = 1,
                NoteMatch = "Hết giờ"
-
             }
-
         };
 
         public static ObservableCollection<NewsItem> FootballNews = new ObservableCollection<NewsItem>()
@@ -513,7 +497,6 @@ namespace KetQuaSoBong
                 Content="",
                 TypeTemplate = 1
             },
-
         };
 
         public static ObservableCollection<NewsItem> LotteryNews = new ObservableCollection<NewsItem>()
@@ -598,8 +581,8 @@ namespace KetQuaSoBong
                 "Đối với giải khuyến khích, giải có số lượng nhiều, lên tới 15. 000 vé cho phép người tham gia sở hữu nhiều cơ hội trúng giải hơn. Hơn thế nữa, cơ cấu giải thưởng cũng 'dễ thở' hơn khi chỉ yêu cầu 02 số cuối của tấm vé trùng với giải đặc biệt của ngày quay thưởng.",
                 TypeTemplate=0
             }
-
         };
+
         public static ObservableCollection<ItemChat> ItemChatsDemo2 = new ObservableCollection<ItemChat>()
         {
             new ItemChat()
@@ -651,8 +634,8 @@ namespace KetQuaSoBong
                 DateTimeUpdate= new DateTime(2022,03,06,16,08,00),
                 Content = "Ở nhà là lành nhất các ông ơi!!!"
             },
-
         };
+
         public static ObservableCollection<ItemChat> ItemChatsDemo = new ObservableCollection<ItemChat>()
         {
             new ItemChat()
@@ -697,8 +680,8 @@ namespace KetQuaSoBong
                 DateTimeUpdate= new DateTime(2022,03,06,16,08,00),
                 Content = "xD"
             },
-
         };
+
         public static ObservableCollection<LotteryCheckItem> LotteryCheckItems = new ObservableCollection<LotteryCheckItem>()
         {
             new LotteryCheckItem() { Number = "10", Time=1},
@@ -723,6 +706,7 @@ namespace KetQuaSoBong
             new LotteryCheckItem() { Number = "88", Time=1},
             new LotteryCheckItem() { Number = "89", Time=1}
         };
+
         public static ObservableCollection<LotteryResult> LotteryResults = new ObservableCollection<LotteryResult>()
         {
             new LotteryResult()
@@ -730,10 +714,9 @@ namespace KetQuaSoBong
                 Id = "Datetime1",
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
-                DateResult = new DateTime(2022,03,22), 
-                
+                DateResult = new DateTime(2022,03,22),
+
                 Region = 0
-
             },
              new LotteryResult()
             {
@@ -755,7 +738,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -777,7 +759,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -799,7 +780,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -821,7 +801,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -843,7 +822,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -865,7 +843,6 @@ namespace KetQuaSoBong
                 Result = new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" },
                 //PageSource = new NorthLotteryPage(),
                 DateResult = new DateTime(2022,03,22), Region = 0
-
             },
              new LotteryResult()
             {
@@ -944,9 +921,8 @@ namespace KetQuaSoBong
                  Region = 1,
                  DateResult =new DateTime(2022,03,09)
              }
-
-
         };
+
         public static ObservableCollection<LotteryCollectionResult> SouthLotteryResults = new ObservableCollection<LotteryCollectionResult>()
         {
             new LotteryCollectionResult() { RegionResult = 2, DateTimeResult = new DateTime(2022,03,09) },
@@ -954,6 +930,7 @@ namespace KetQuaSoBong
             new LotteryCollectionResult() { RegionResult = 2, DateTimeResult = new DateTime(2022,03,09) },
             new LotteryCollectionResult() { RegionResult = 2, DateTimeResult = new DateTime(2022,03,08) }
         };
+
         public static ObservableCollection<LotteryCollectionResult> CentralLotteryResults = new ObservableCollection<LotteryCollectionResult>()
         {
             new LotteryCollectionResult() { RegionResult = 1, DateTimeResult = new DateTime(2022,03,09) }

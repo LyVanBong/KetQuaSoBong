@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.iOS;
 
 namespace KetQuaSoBong.iOS
 {
-    class CustomEditorRenderer : EditorRenderer
+    internal class CustomEditorRenderer : EditorRenderer
     {
         public CustomEditorRenderer()
         {

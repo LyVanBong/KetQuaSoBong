@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grouptabviews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews" x:DataType="grouptabviews:LotteryChatViewVM"
-             x:Class="KetQuaSoBong.Views.TabViews.GroupTabViews.LotteryChatView"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:md="clr-namespace:KetQuaSoBong.Models"
              xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+             xmlns:grouptabviews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
+             x:DataType="grouptabviews:LotteryChatViewVM"
+             x:Class="KetQuaSoBong.Views.TabViews.GroupTabViews.LotteryChatView">
     <ContentView.Resources>
         <DataTemplate x:DataType="md:ItemChat" x:Key="myChatTemplate">
             <ViewCell>
@@ -19,7 +21,7 @@
                     <Label Text="{Binding Content}"
                                    FontSize="14"
                                    FontFamily="RM"
-                                   TextColor="White"/>
+                                   TextColor="White" />
                 </Frame>
             </ViewCell>
         </DataTemplate>
@@ -30,7 +32,7 @@
                       HorizontalOptions="Start"
                       RowSpacing="0"
                       Margin="{Binding MarginThickness}">
-                    
+
                     <Frame BackgroundColor="{StaticResource placeholderColor}"
                            HorizontalOptions="StartAndExpand"
                            HasShadow="False"
@@ -44,11 +46,11 @@
                                    FontSize="14"
                                    FontFamily="RBo"
                                    HorizontalTextAlignment="Start"
-                                   IsVisible="{Binding NameVisible}"/>
+                                   IsVisible="{Binding NameVisible}" />
                             <Label Text="{Binding Content}"
                                    FontSize="14"
                                    FontFamily="RM"
-                                   TextColor="Black"/>
+                                   TextColor="Black" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Column="0"
@@ -57,18 +59,16 @@
                            CornerRadius="40"
                            IsVisible="{Binding AvatarVisible}">
                         <Image Source="{Binding Icon}"
-                               Aspect="AspectFill"
-                           />
+                               Aspect="AspectFill" />
                     </Frame>
-
                 </Grid>
             </ViewCell>
         </DataTemplate>
         <customView:ChatItemTemplate x:Key="ChatItemTemplate"
                                      MyChat="{StaticResource myChatTemplate}"
-                                     YourChat="{StaticResource yourChatTemplate}"/>
+                                     YourChat="{StaticResource yourChatTemplate}" />
     </ContentView.Resources>
-  <ContentView.Content>
+    <ContentView.Content>
         <Frame Padding="0"
                    CornerRadius="10"
                    BackgroundColor="White"
@@ -76,20 +76,20 @@
                    Margin="10,0,10,10"
                    Grid.Row="1"
                    HeightRequest="500">
-            
+
             <Grid RowSpacing="0"
                   RowDefinitions="50,*, Auto">
                 <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.layer.png}"
                        Aspect="AspectFill"
-                       Grid.Row="0"/>
-                <Label Text="CỘNG ĐỒNG XỔ SỐ" 
+                       Grid.Row="0" />
+                <Label Text="CỘNG ĐỒNG XỔ SỐ"
                            FontFamily="RBo"
                            Grid.Row="0"
                            HorizontalOptions="Center"
                            Padding="15"
                            TextColor="White"
-                           VerticalOptions="Center"/>
-                
+                           VerticalOptions="Center" />
+
                 <ListView ItemsSource="{Binding ItemChats}"
                           ItemTemplate="{StaticResource ChatItemTemplate}"
                           VerticalOptions="StartAndExpand"
@@ -99,14 +99,14 @@
                           SelectionMode="None"
                           BackgroundColor="White"
                           Grid.Row="1"
-                          x:Name="listChat"/>
+                          x:Name="listChat" />
 
                 <Grid ColumnDefinitions="*,80"
                       MinimumHeightRequest="100"
                       RowDefinitions="Auto"
                       VerticalOptions="EndAndExpand"
                       Grid.Row="2">
-                    <Frame 
+                    <Frame
                                HeightRequest="40"
                                Padding="0"
                                Margin="10"
@@ -115,14 +115,13 @@
                                HasShadow="False"
                                CornerRadius="10">
                         <customView:CustomEntry HorizontalOptions="Fill"
-                               
+
                                Text="{Binding ContentChat}"
                                        Placeholder="Nhập tại đây..."
                                        FontFamily="RM"
                                        PlaceholderColor="Black"
                                        FontSize="14"
-                                       Margin="10,0,10,0"
-                                       />
+                                       Margin="10,0,10,0" />
                     </Frame>
                     <Button Text="Gửi"
                                     Grid.Column="1"
@@ -133,13 +132,11 @@
                             VerticalOptions="EndAndExpand"
                                     BackgroundColor="{StaticResource primaryColor}">
                         <Button.Behaviors>
-                            <xct:EventToCommandBehavior EventName="Clicked" Command="{Binding SendCommand}"/>
+                            <xct:EventToCommandBehavior EventName="Clicked" Command="{Binding SendCommand}" />
                         </Button.Behaviors>
                     </Button>
                 </Grid>
-
             </Grid>
-
         </Frame>
     </ContentView.Content>
 </ContentView>

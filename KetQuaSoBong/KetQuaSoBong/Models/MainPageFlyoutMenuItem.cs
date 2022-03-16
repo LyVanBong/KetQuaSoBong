@@ -6,8 +6,8 @@ namespace KetQuaSoBong.Models
     {
         public MainPageFlyoutMenuItem()
         {
-
         }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public ImageSource Icon { get; set; }

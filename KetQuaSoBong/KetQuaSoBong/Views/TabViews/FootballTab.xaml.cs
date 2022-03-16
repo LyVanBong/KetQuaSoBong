@@ -9,6 +9,7 @@ namespace KetQuaSoBong.Views.TabViews
     public partial class FootballTab : ContentPage
     {
         public string DateTimeNow { get; set; }
+
         public FootballTab()
         {
             InitializeComponent();

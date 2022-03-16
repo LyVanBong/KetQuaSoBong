@@ -1,32 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KetQuaSoBong.Views.MainPageViews.MainPageFlyout"
-             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
-             x:DataType="viewmodels:MainPageFlyoutViewModel"
              xmlns:prism="http://prismlibrary.com"
-             xmlns:md="clr-namespace:KetQuaSoBong.Models"
-             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models"
+             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
+             x:Class="KetQuaSoBong.Views.MainPageViews.MainPageFlyout"
+             x:DataType="viewmodels:MainPageFlyoutViewModel"
+             prism:ViewModelLocator.AutowireViewModel="True"
              Title="Flyout">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer"/>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.back-btn.png" x:Key="Back"/>
-            
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer" />
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.back-btn.png" x:Key="Back" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView VerticalScrollBarVisibility="Never">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition Height="7*"/>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="7*" />
             </Grid.RowDefinitions>
             <Grid Grid.Row="0"
               RowDefinitions="10,6*,2*,2*,10">
                 <Image Source="{StaticResource Layer}"
                     Aspect="AspectFill"
-                    Grid.RowSpan="5"/>
+                    Grid.RowSpan="5" />
                 <Image Source="{StaticResource Back}"
                        Aspect="AspectFit"
                        WidthRequest="20"
@@ -36,7 +35,7 @@
                        VerticalOptions="Start"
                        Grid.RowSpan="5">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding CollapseMenuCommand}"/>
+                        <TapGestureRecognizer Command="{Binding CollapseMenuCommand}" />
                     </Image.GestureRecognizers>
                 </Image>
                 <Frame Padding="0"
@@ -44,9 +43,9 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Grid.Row="1">
-                    <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-1.png}"/>
+                    <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-1.png}" />
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ShowUserProfilePage}"/>
+                        <TapGestureRecognizer Command="{Binding ShowUserProfilePage}" />
                     </Frame.GestureRecognizers>
                 </Frame>
                 <Label Text="US_013123"
@@ -55,8 +54,7 @@
                     FontSize="Body"
                    FontFamily="RM"
                    TextColor="White"
-                   HorizontalOptions="Center"
-                    />
+                   HorizontalOptions="Center" />
                 <Button Grid.Row="3"
                     HeightRequest="80"
                     WidthRequest="180"
@@ -69,7 +67,6 @@
                     Padding="0,0,0,3"
                     FontSize="Default"
                     FontFamily="RM">
-
                 </Button>
             </Grid>
             <StackLayout
@@ -90,27 +87,23 @@
                                    Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Aspect="AspectFill"
-                                   />
+                                   Aspect="AspectFill" />
                                 <Label Text="{Binding Title}"
                                    Grid.Column="1"
                                    VerticalOptions="Center"
                                    FontSize="Body"
                                    FontFamily="RM"
                                    TextColor="Black"
-                                   Margin="10,0,0,0"
-                                   />
+                                   Margin="10,0,0,0" />
                             </Grid>
-                            <BoxView HeightRequest="0.5" Color="Gray"/>
+                            <BoxView HeightRequest="0.5" Color="Gray" />
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding BindingContext.SelectedMenuItemCommand, Source={x:Reference ListItem}}" CommandParameter="{Binding Source={x:Reference MenuItem}, Path=BindingContext}"/>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectedMenuItemCommand, Source={x:Reference ListItem}}" CommandParameter="{Binding Source={x:Reference MenuItem}, Path=BindingContext}" />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-
             </StackLayout>
         </Grid>
     </ScrollView>
 </ContentPage>
-       

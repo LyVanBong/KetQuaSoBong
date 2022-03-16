@@ -2,8 +2,8 @@
 <prism:PrismApplication
     x:Class="KetQuaSoBong.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com">
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <Color x:Key="primaryColor">#B02019</Color>
         <Color x:Key="placeholderColor">#F0F0F0</Color>

@@ -11,16 +11,19 @@ namespace KetQuaSoBong.Views.TabViews.NewsTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FootballNewsTab : ContentView
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public FootballNewsTab()
         {
             InitializeComponent();
             BindingContext = new FootballnewsTabVM(navigation, this);
         }
     }
-    class FootballnewsTabVM : ViewModelBase
+
+    internal class FootballnewsTabVM : ViewModelBase
     {
         public ObservableCollection<NewsItem> FootballNews { get; set; }
+
         public FootballnewsTabVM(INavigationService navigationService, ContentView contentView) : base(navigationService)
         {
             FootballNews = App.FootballNews;

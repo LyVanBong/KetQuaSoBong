@@ -16,6 +16,7 @@
                 default: return ""; break;
             }
         }
+
         public static string StandardDayMonths(double dayOrMonth) => dayOrMonth < 10 ? "0" + dayOrMonth : dayOrMonth.ToString();
     }
 }

@@ -5,9 +5,6 @@ using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,27 +14,33 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LotteryRessultView : ContentView
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public LotteryRessultView()
         {
             InitializeComponent();
             BindingContext = new LotteryRessultViewVM(navigation, this);
         }
     }
-    class LotteryRessultViewVM : ViewModelBase
+
+    internal class LotteryRessultViewVM : ViewModelBase
     {
         private string _datetimeNow;
+
         public string DateTimeNow
         {
             get => _datetimeNow;
             set => SetProperty(ref _datetimeNow, value);
         }
+
         private bool _IsShowMore = false;
+
         public bool IsShowMore
         {
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
+
         private string _db;
         public string DB { get => _db; set => SetProperty(ref _db, value); }
         private string _g1;
@@ -64,6 +67,7 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
         public string[] LastNum { get; set; }
         public string[] NumberTemp { get; set; }
         public string[] ArrLoto { get; set; }
+
         public LotteryRessultViewVM(INavigationService navigationService, ContentView view) : base(navigationService)
         {
             DateTime now = DateTime.Now;
@@ -77,7 +81,6 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
             //Commands
             ShowMoreCommand = new DelegateCommand(() =>
             {
-
                 IsShowMore = !IsShowMore;
             });
             ChangeDisplayNumberCommand = new Command((x) =>
@@ -91,9 +94,9 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
                 }
             });
         }
+
         public DelegateCommand ShowMoreCommand { get; set; }
         public Command ChangeDisplayNumberCommand { get; set; }
-
 
         private void GetFirstLast(ContentView v)
         {
@@ -142,7 +145,6 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
                         BorderColor = Color.LightGray,
                         HasShadow = false,
                         Content = lb
-
                     };
                     gridLoto.Children.Add(frame, j, i);
                 }
@@ -183,9 +185,5 @@ namespace KetQuaSoBong.Views.LotteryCheckPageViews
             ArrG6 = arr.SubArray(20, 3);
             ArrG7 = arr.SubArray(23, 4);
         }
-
-
-
-
     }
 }

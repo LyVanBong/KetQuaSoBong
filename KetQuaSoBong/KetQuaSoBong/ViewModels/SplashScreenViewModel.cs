@@ -9,11 +9,13 @@ namespace KetQuaSoBong.ViewModels
     {
         private int _dem;
         private string _lblLoading = "";
+
         public string LblLoading
         {
             get => _lblLoading;
             set => SetProperty(ref _lblLoading, value);
         }
+
         public SplashScreenViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "SplashScreen";
@@ -33,8 +35,6 @@ namespace KetQuaSoBong.ViewModels
                     }
                     return true;
                 });
-
-
         }
     }
 }

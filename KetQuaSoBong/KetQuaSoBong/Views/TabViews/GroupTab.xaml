@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KetQuaSoBong.Views.TabViews.GroupTab"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:groupTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
+             x:Class="KetQuaSoBong.Views.TabViews.GroupTab"
              BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
         <ControlTemplate x:Key="FrameRadioTemplate">
@@ -14,21 +13,21 @@
                     <VisualStateGroup x:Name="CheckedStates">
                         <VisualState x:Name="Checked">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                             </VisualState.Setters>
                         </VisualState>
 
                         <VisualState x:Name="Unchecked">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="White"/>
-                                <Setter Property="BorderColor" Value="{StaticResource primaryColor}"/>
+                                <Setter Property="BackgroundColor" Value="White" />
+                                <Setter Property="BorderColor" Value="{StaticResource primaryColor}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
 
                 <Grid Margin="4" WidthRequest="100">
-                    <ContentPresenter/>
+                    <ContentPresenter />
                 </Grid>
             </Frame>
         </ControlTemplate>
@@ -50,12 +49,11 @@
                                VerticalOptions="Center">
                                 <Label.Triggers>
                                     <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdXS}, Path=IsChecked}" Value="False">
-                                        <Setter Property="TextColor" Value="{StaticResource primaryColor}"/>
+                                        <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                     </DataTrigger>
                                 </Label.Triggers>
                             </Label>
                         </RadioButton.Content>
-
                     </RadioButton>
                     <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
                              x:Name="rdBD">
@@ -66,7 +64,7 @@
                                VerticalOptions="Center">
                                 <Label.Triggers>
                                     <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdBD}, Path=IsChecked}" Value="False">
-                                        <Setter Property="TextColor" Value="{StaticResource primaryColor}"/>
+                                        <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                     </DataTrigger>
                                 </Label.Triggers>
                             </Label>
@@ -74,9 +72,9 @@
                     </RadioButton>
                 </StackLayout>
                 <groupTabViews:LotteryChatView Grid.Row="1"
-                                           IsVisible="{Binding Source={x:Reference rdXS}, Path=IsChecked}"/>
+                                           IsVisible="{Binding Source={x:Reference rdXS}, Path=IsChecked}" />
                 <groupTabViews:FootballChatView Grid.Row="1"
-                                           IsVisible="{Binding Source={x:Reference rdBD}, Path=IsChecked}"/>
+                                           IsVisible="{Binding Source={x:Reference rdBD}, Path=IsChecked}" />
             </Grid>
         </ScrollView>
     </ContentPage.Content>

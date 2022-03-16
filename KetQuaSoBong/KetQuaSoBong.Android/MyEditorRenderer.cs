@@ -10,7 +10,9 @@ namespace XFTest.Droid.Renderers
 {
     public class MyEditorRenderer : EditorRenderer
     {
-        public MyEditorRenderer(Context context) : base(context) { }
+        public MyEditorRenderer(Context context) : base(context)
+        {
+        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {

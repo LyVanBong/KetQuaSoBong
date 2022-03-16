@@ -11,16 +11,19 @@ namespace KetQuaSoBong.Views.TabViews.FootballTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MathPlaying : Frame
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public MathPlaying()
         {
             InitializeComponent();
             BindingContext = new MatchPlayingVM(navigation, this);
         }
     }
-    class MatchPlayingVM : ViewModelBase
+
+    internal class MatchPlayingVM : ViewModelBase
     {
         public ObservableCollection<Match> MacthPlayings { get; set; }
+
         public MatchPlayingVM(INavigationService navigationService, Frame frame) : base(navigationService)
         {
             MacthPlayings = App.MatchePlayings;

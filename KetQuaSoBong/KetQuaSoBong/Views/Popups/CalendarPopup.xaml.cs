@@ -1,10 +1,8 @@
 ﻿using KetQuaSoBong.Helper;
 using KetQuaSoBong.Models;
 using Prism.Mvvm;
-using Prism.Services.Dialogs;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -16,51 +14,62 @@ namespace KetQuaSoBong.Views.Popups
     public partial class CalendarPopup : Popup
     {
         public ObservableCollection<string> Days { get; set; }
+
         public CalendarPopup()
         {
-
             InitializeComponent();
             BindingContext = new CalendarPopupVM(this);
         }
     }
-    class CalendarPopupVM : BindableBase
+
+    internal class CalendarPopupVM : BindableBase
     {
         public CalendarHelper c = new CalendarHelper();
 
         private ObservableCollection<ItemCalendar> _calendar;
+
         public ObservableCollection<ItemCalendar> Calendar
         {
             get => _calendar;
             set => SetProperty(ref _calendar, value);
         }
+
         private string _day;
+
         public string Day
         {
             get => _day;
             set => SetProperty(ref _day, value);
         }
+
         private string _month;
+
         public string Month
         {
             get => _month;
             set => SetProperty(ref _month, value);
         }
+
         private string _year;
+
         public string Year
         {
             get => _year;
             set => SetProperty(ref _year, value);
         }
+
         private string _dateTimeResult;
+
         public string DateTimeResult
         {
             get => _dateTimeResult;
             set => SetProperty(ref _dateTimeResult, value);
         }
+
         public CalendarPopupVM(Popup popup)
         {
             string[] tmp = Preferences.Get("Date", DateTimeResult).Split('/');
-            DateTime date = new DateTime(int.Parse(tmp[2]),int.Parse(tmp[1]), int.Parse(tmp[0]));
+            DateTime date = new DateTime(int.Parse(tmp[2]), int.Parse(tmp[1]), int.Parse(tmp[0]));
             SetDayMonthYear(date.Day, date.Month, date.Year);
             Calendar = c.InitCalendar(int.Parse(Day), int.Parse(Month), int.Parse(Year));
             SelectDateCommand = new Command((x) =>
@@ -70,7 +79,7 @@ namespace KetQuaSoBong.Views.Popups
                 Day = item.Number < 10 ? "0" + item.Number : item.Number.ToString();
                 foreach (ItemCalendar i in Calendar)
                 {
-                    if(i != item && i.IsEnable != false)
+                    if (i != item && i.IsEnable != false)
                     {
                         i.IsChecked = false;
                     }
@@ -84,7 +93,7 @@ namespace KetQuaSoBong.Views.Popups
                 int day = int.Parse(Day);
                 int month = int.Parse(Month);
                 int year = int.Parse(Year);
-                if(month - 1 > 0)
+                if (month - 1 > 0)
                 {
                     month = month - 1;
                 }
@@ -114,9 +123,11 @@ namespace KetQuaSoBong.Views.Popups
                 Calendar = c.InitCalendar(int.Parse(Day), int.Parse(Month), int.Parse(Year));
             });
         }
+
         public Command SelectDateCommand { get; set; }
         public Command PrevMonthCommand { get; set; }
         public Command NextMonthCommand { get; set; }
+
         public void SetDayMonthYear(int day, int month, int year)
         {
             Day = day < 10 ? "0" + day : day.ToString();
@@ -124,5 +135,4 @@ namespace KetQuaSoBong.Views.Popups
             Year = year.ToString();
         }
     }
-    
 }

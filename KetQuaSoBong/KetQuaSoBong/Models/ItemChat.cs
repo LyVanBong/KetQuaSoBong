@@ -8,14 +8,17 @@ namespace KetQuaSoBong.Models
     {
         public string Icon { get; set; }
         private string _nameUser;
-        public string NameUser { get => _nameUser; set { SetVisible(value); SetProperty(ref _nameUser, value); } }
+        public string NameUser
+        { get => _nameUser; set { SetVisible(value); SetProperty(ref _nameUser, value); } }
         public DateTime DateTimeUpdate { get; set; }
         private Thickness _thickness = new Thickness(10);
+
         public Thickness MarginThickness
         {
             get => _thickness;
             set => SetProperty(ref _thickness, value);
         }
+
         private string _content;
         public string Content { get => _content; set => SetProperty(ref _content, value); }
         public LayoutOptions LayoutOptions { get => NameUser != "Admin" ? LayoutOptions.StartAndExpand : LayoutOptions.EndAndExpand; }
@@ -23,6 +26,7 @@ namespace KetQuaSoBong.Models
         public bool NameVisible { get => _nameVisible; set => SetProperty(ref _nameVisible, value); }
         private bool _avatarVisible = true;
         public bool AvatarVisible { get => _avatarVisible; set => SetProperty(ref _avatarVisible, value); }
+
         public void SetVisible(string userName)
         {
             if (App.ItemChatsDemo != null)
@@ -35,7 +39,6 @@ namespace KetQuaSoBong.Models
                     this.MarginThickness = new Thickness(10, 0, 10, 5);
                 }
             }
-
         }
     }
 }

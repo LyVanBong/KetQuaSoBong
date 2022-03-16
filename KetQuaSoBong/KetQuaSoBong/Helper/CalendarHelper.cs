@@ -1,8 +1,6 @@
 ﻿using KetQuaSoBong.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.Helper
@@ -34,33 +32,32 @@ namespace KetQuaSoBong.Helper
                 arr[k] = dem;
                 dem++;
             }
-            for(int i = 0; i<arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 ItemCalendar item;
-                if(i<startDay || i >= startDay + numberDay)
+                if (i < startDay || i >= startDay + numberDay)
                 {
                     item = new ItemCalendar() { Number = arr[i], NumberColor = Color.LightGray, IsEnable = false };
                 }
-                else 
+                else
                 {
                     item = new ItemCalendar() { Number = arr[i], NumberColor = Color.Black, IsEnable = true };
 
-                   
-                    if(item.Number == days )
+                    if (item.Number == days)
                     {
                         item.IsChecked = true;
                     }
-                  
                 }
                 Calendar.Add(item);
             }
             return Calendar;
         }
+
         public int StandarDayOfWeek(string day)
         {
-            switch(day)
+            switch (day)
             {
-                case "Monday": return 0; break; 
+                case "Monday": return 0; break;
                 case "Tuesday": return 1; break;
                 case "Wednesday": return 2; break;
                 case "Thursday": return 3; break;

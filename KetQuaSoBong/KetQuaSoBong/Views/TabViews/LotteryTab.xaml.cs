@@ -10,6 +10,7 @@ namespace KetQuaSoBong.Views.TabViews
     public partial class LotteryTab : ContentPage
     {
         public string DateTimeNow { get; set; }
+
         public LotteryTab()
         {
             InitializeComponent();

@@ -5,9 +5,10 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(MyEntryRenderer))]
+
 namespace CustomRenderer.Android
 {
-    class MyEntryRenderer : EntryRenderer
+    internal class MyEntryRenderer : EntryRenderer
     {
         public MyEntryRenderer(Context context) : base(context)
         {

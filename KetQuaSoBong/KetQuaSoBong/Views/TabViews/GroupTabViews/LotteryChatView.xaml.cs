@@ -12,22 +12,26 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LotteryChatView : ContentView
     {
-        INavigationService navigation;
+        private INavigationService navigation;
+
         public LotteryChatView()
         {
             InitializeComponent();
             BindingContext = new LotteryChatViewVM(navigation, this);
         }
     }
-    class LotteryChatViewVM : ViewModelBase
+
+    internal class LotteryChatViewVM : ViewModelBase
     {
         public ObservableCollection<ItemChat> ItemChats { get; set; }
         private string _contentChat = "";
+
         public string ContentChat
         {
             get => _contentChat;
             set => SetProperty(ref _contentChat, value);
         }
+
         public LotteryChatViewVM(INavigationService navigationService, ContentView contentView) : base(navigationService)
         {
             ItemChats = App.ItemChatsDemo;
@@ -47,9 +51,8 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
                 }
             });
-
         }
-        public Command SendCommand { get; set; }
 
+        public Command SendCommand { get; set; }
     }
 }

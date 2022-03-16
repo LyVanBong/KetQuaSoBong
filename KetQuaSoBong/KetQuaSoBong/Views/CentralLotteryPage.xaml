@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel"
+             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="KetQuaSoBong.Views.CentralLotteryPage"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel" 
-             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels" 
              x:DataType="viewmodels:CentralLotteryPageViewModel">
     <NavigationPage.TitleView>
         <Grid>
-            <Label Text="XỔ SỐ MIỀN TRUNG" 
+            <Label Text="XỔ SỐ MIỀN TRUNG"
                    TextColor="White"
                    FontFamily="R"
                    FontSize="18"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   Margin="-50,0,0,0"/>
+                   Margin="-50,0,0,0" />
             <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_calendar_3.png}"
                    HeightRequest="20"
                    WidthRequest="20"
                    HorizontalOptions="End"
                    Margin="0,0,10,0">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ShowDialog}"/>
+                    <TapGestureRecognizer Command="{Binding ShowDialog}" />
                 </Image.GestureRecognizers>
             </Image>
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_bac_2.png" x:Key="NLottery"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall"/>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_bac_2.png" x:Key="NLottery" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar" />
         <ControlTemplate x:Key="RadioButton">
-            <Frame Padding="0" 
+            <Frame Padding="0"
                        VerticalOptions="Start"
                        BackgroundColor="Transparent"
                        HeightRequest="30" WidthRequest="70" HorizontalOptions="Start">
                 <Grid Margin="4" WidthRequest="70">
-                    <ContentPresenter/>
+                    <ContentPresenter />
                 </Grid>
             </Frame>
         </ControlTemplate>
@@ -63,8 +63,8 @@
                                Grid.Row="0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="XSMT " FontFamily="RBo" TextColor="{StaticResource primaryColor}"/>
-                                    <Span Text="{Binding DateTimeResult, StringFormat='{0: dddd, dd/MM/yyyy}'}" FontFamily="R" TextColor="Black"/>
+                                    <Span Text="XSMT " FontFamily="RBo" TextColor="{StaticResource primaryColor}" />
+                                    <Span Text="{Binding DateTimeResult, StringFormat='{0: dddd, dd/MM/yyyy}'}" FontFamily="R" TextColor="Black" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -79,7 +79,6 @@
                                    CornerRadius="0"
                                    BackgroundColor="{StaticResource placeholderColor}"
                                    Padding="0">
-
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="1"
@@ -92,7 +91,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="2"
@@ -105,7 +104,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="3"
@@ -118,7 +117,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="4"
@@ -131,7 +130,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="5"
@@ -144,7 +143,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="6"
@@ -157,7 +156,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="7"
@@ -170,7 +169,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="8"
@@ -183,7 +182,7 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
                             <Frame Grid.Column="0"
                                    Grid.Row="9"
@@ -196,24 +195,22 @@
                                         VerticalOptions="Center"
                                         FontFamily="R"
                                        TextColor="Black"
-                                        FontSize="16"/>
+                                        FontSize="16" />
                             </Frame>
 
-
-
-                            <CollectionView Grid.Column="1" 
+                            <CollectionView Grid.Column="1"
                                             Grid.RowSpan="10"
                                             ItemsSource="{Binding LotteryResults}">
                                 <CollectionView.ItemsLayout>
                                     <GridItemsLayout Span="{Binding LotteryResults.Count}"
                                                      Orientation="Vertical"
-                                                     HorizontalItemSpacing="1"/>
+                                                     HorizontalItemSpacing="1" />
                                 </CollectionView.ItemsLayout>
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate x:DataType="md:LotteryResult">
                                         <Grid
                                               RowDefinitions="35,50,40,100,40,240,70,40,50,80"
-                                              
+
                                               ColumnSpacing="1"
                                               RowSpacing="1">
                                             <Frame Grid.Column="0"
@@ -228,9 +225,7 @@
                                                        TextColor="CornflowerBlue"
                                                        TextDecorations="Underline"
                                                        FontFamily="RBo">
-
                                                 </Label>
-
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                    Grid.Row="1"
@@ -243,8 +238,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="20"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
-
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                Grid.Row="2"
@@ -257,7 +251,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="18"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                    Grid.Row="3"
@@ -273,7 +267,7 @@
                                                                    FontFamily="RBo"
                                                                    FontSize="18"
                                                                    HorizontalOptions="Center"
-                                                                   VerticalOptions="FillAndExpand"/>
+                                                                   VerticalOptions="FillAndExpand" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
@@ -289,7 +283,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="18"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                    Grid.Row="5"
@@ -305,7 +299,7 @@
                                                                    FontFamily="RBo"
                                                                    FontSize="18"
                                                                    HorizontalOptions="Center"
-                                                                   VerticalOptions="FillAndExpand"/>
+                                                                   VerticalOptions="FillAndExpand" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
@@ -324,7 +318,7 @@
                                                                    FontFamily="RBo"
                                                                    FontSize="18"
                                                                    HorizontalOptions="Center"
-                                                                   VerticalOptions="FillAndExpand"/>
+                                                                   VerticalOptions="FillAndExpand" />
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
@@ -340,7 +334,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="18"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                    Grid.Row="8"
@@ -353,7 +347,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="18"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                             <Frame Grid.Column="0"
                                                    Grid.Row="9"
@@ -366,7 +360,7 @@
                                                        FontFamily="RBo"
                                                        FontSize="18"
                                                        HorizontalOptions="Center"
-                                                       VerticalOptions="Center"/>
+                                                       VerticalOptions="Center" />
                                             </Frame>
                                         </Grid>
                                     </DataTemplate>
@@ -390,7 +384,7 @@
                                                HorizontalOptions="Start">
                                             <Image.Triggers>
                                                 <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rdAllNum}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                    <Setter Property="Source" Value="{StaticResource Checked}" />
                                                 </DataTrigger>
                                             </Image.Triggers>
                                         </Image>
@@ -398,7 +392,7 @@
                                                TextColor="White"
                                                FontFamily="RM"
                                                Margin="0,2,0,0"
-                                               FontSize="13"/>
+                                               FontSize="13" />
                                     </StackLayout>
                                 </RadioButton.Content>
                                 <RadioButton.GestureRecognizers>
@@ -408,15 +402,14 @@
                                  ClassId="2Num"
                              ControlTemplate="{StaticResource RadioButton}">
                                 <RadioButton.Content>
-                                    <StackLayout Orientation="Horizontal"
-                                         >
+                                    <StackLayout Orientation="Horizontal">
                                         <Image Source="{StaticResource Uncheck}"
                                                WidthRequest="13"
                                                HeightRequest="13"
                                                HorizontalOptions="Start">
                                             <Image.Triggers>
                                                 <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd2Num}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                    <Setter Property="Source" Value="{StaticResource Checked}" />
                                                 </DataTrigger>
                                             </Image.Triggers>
                                         </Image>
@@ -424,7 +417,7 @@
                                    TextColor="White"
                                    FontFamily="RM"
                                    Margin="0,2,0,0"
-                                   FontSize="13"/>
+                                   FontSize="13" />
                                     </StackLayout>
                                 </RadioButton.Content>
                                 <RadioButton.GestureRecognizers>
@@ -441,7 +434,7 @@
                                                HorizontalOptions="Start">
                                             <Image.Triggers>
                                                 <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd3Num}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                    <Setter Property="Source" Value="{StaticResource Checked}" />
                                                 </DataTrigger>
                                             </Image.Triggers>
                                         </Image>
@@ -449,7 +442,7 @@
                                    TextColor="White"
                                    FontFamily="RM"
                                    Margin="0,2,0,0"
-                                   FontSize="13"/>
+                                   FontSize="13" />
                                     </StackLayout>
                                 </RadioButton.Content>
                                 <RadioButton.GestureRecognizers>
@@ -467,7 +460,7 @@
                                    FontSize="13"
                                Padding="0"
                                HorizontalOptions="Start"
-                               VerticalOptions="Center"/>
+                               VerticalOptions="Center" />
                             </StackLayout>
                         </StackLayout>
                         <Grid ColumnDefinitions="80,*"
@@ -486,14 +479,14 @@
                                        FontFamily="RBo"
                                        FontSize="18"
                                        HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center" />
                             </Frame>
                             <CollectionView
                                 Grid.Row="1"
                                 HeightRequest="409">
                                 <CollectionView.ItemsLayout>
                                     <LinearItemsLayout ItemSpacing="1"
-                                                       Orientation="Vertical"/>
+                                                       Orientation="Vertical" />
                                 </CollectionView.ItemsLayout>
                                 <CollectionView.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
@@ -519,9 +512,7 @@
                                                    HeightRequest="40"
                                                    FontSize="18"
                                                    FontFamily="RSeBo"
-                                                   TextColor="{StaticResource primaryColor}"
-                                                   />
-
+                                                   TextColor="{StaticResource primaryColor}" />
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
@@ -534,7 +525,6 @@
                                     <GridItemsLayout Span="{Binding LotteryResults.Count}"
                                                      Orientation="Vertical"
                                                      HorizontalItemSpacing="1">
-
                                     </GridItemsLayout>
                                 </CollectionView.ItemsLayout>
                                 <CollectionView.ItemTemplate>
@@ -553,9 +543,7 @@
                                                        TextColor="CornflowerBlue"
                                                        TextDecorations="Underline"
                                                        FontFamily="RBo">
-
                                                 </Label>
-
                                             </Frame>
                                             <CollectionView
                                                     Grid.Row="1"
@@ -563,7 +551,7 @@
                                                 ItemsSource="{Binding LastNum}">
                                                 <CollectionView.ItemsLayout>
                                                     <LinearItemsLayout ItemSpacing="1"
-                                                       Orientation="Vertical"/>
+                                                       Orientation="Vertical" />
                                                 </CollectionView.ItemsLayout>
                                                 <CollectionView.ItemTemplate>
                                                     <DataTemplate x:DataType="x:String">
@@ -575,17 +563,13 @@
                                                                 HeightRequest="40"
                                                                 FontSize="18"
                                                                 FontFamily="RBo"
-                                                                TextColor="Black"
-                                                                />
-
+                                                                TextColor="Black" />
                                                     </DataTemplate>
                                                 </CollectionView.ItemTemplate>
                                             </CollectionView>
                                         </Grid>
                                     </DataTemplate>
-
                                 </CollectionView.ItemTemplate>
-
                             </CollectionView>
                         </Grid>
                         <Grid HeightRequest="120"
@@ -602,13 +586,13 @@
                            LineHeight="1"
                            Margin="10,0,0,0"
                            HorizontalOptions="Start"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="EndAndExpand" />
                             <StackLayout VerticalOptions="Center"
                                  Grid.Column="0"
                                  Grid.Row="1"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                                <Frame 
+                                <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -616,20 +600,18 @@
                               BorderColor="CornflowerBlue">
                                     <Image Source="{StaticResource NLottery}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                                 </Frame>
-                                <Label Text="Xổ số miền Bắc" 
+                                <Label Text="Xổ số miền Bắc"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                             </StackLayout>
                             <StackLayout VerticalOptions="Center"
                                  Grid.Column="1"
                                  Grid.Row="1"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                                <Frame 
+                                <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -637,20 +619,18 @@
                               BorderColor="CornflowerBlue">
                                     <Image Source="{StaticResource SLottery}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                                 </Frame>
-                                <Label Text="Xổ số miền Nam" 
+                                <Label Text="Xổ số miền Nam"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                             </StackLayout>
                             <StackLayout VerticalOptions="Center"
                                  Grid.Column="0"
                                  Grid.Row="2"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                                <Frame 
+                                <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -658,20 +638,18 @@
                               BorderColor="CornflowerBlue">
                                     <Image Source="{StaticResource LotteryBall}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                                 </Frame>
-                                <Label Text="Soi cầu mỗi ngày" 
+                                <Label Text="Soi cầu mỗi ngày"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                             </StackLayout>
                             <StackLayout VerticalOptions="Center"
                                  Grid.Column="1"
                                  Grid.Row="2"
                                  Margin="10,0,0,0"
                                  Orientation="Horizontal">
-                                <Frame 
+                                <Frame
                               WidthRequest="15"
                               HeightRequest="15"
                                Padding="2"
@@ -679,15 +657,12 @@
                               BorderColor="CornflowerBlue">
                                     <Image Source="{StaticResource Calendar}"
                                WidthRequest="20"
-                               HeightRequest="20"/>
+                               HeightRequest="20" />
                                 </Frame>
-                                <Label Text="Thống kê 30 ngày" 
+                                <Label Text="Thống kê 30 ngày"
                                FontSize="15"
-                               TextColor="CornflowerBlue"
-                               />
-
+                               TextColor="CornflowerBlue" />
                             </StackLayout>
-
                         </Grid>
                     </Grid>
                 </DataTemplate>
