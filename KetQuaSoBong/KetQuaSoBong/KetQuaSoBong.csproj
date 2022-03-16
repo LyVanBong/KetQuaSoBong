@@ -297,6 +297,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Plugin.XCalendar" Version="2.1.0" />
     <PackageReference Include="RestSharp" Version="107.3.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.4.0.56" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
