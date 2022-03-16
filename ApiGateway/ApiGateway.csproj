@@ -16,4 +16,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.4.0.56" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\MongoDbConnect\MongoDbServices.csproj" />
+  </ItemGroup>
+
 </Project>
