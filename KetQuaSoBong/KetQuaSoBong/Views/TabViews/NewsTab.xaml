@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.TabViews.NewsTab"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:newsTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.NewsTabViews">
+  <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource placeholderColor}">
+            <xct:TabView IsSwipeEnabled="False"
+                    TabStripBackgroundColor="{StaticResource placeholderColor}"
+                    TabIndicatorColor="{StaticResource primaryColor}">
+                <xct:TabViewItem
+                        x:Name="tabBongDa">
+                    <xct:TabViewItem.ControlTemplate>
+                        <ControlTemplate>
+                            <Label Text="Bóng đá"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontFamily="RBo">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabBongDa}, Path=IsSelected}" Value="True">
+                                        <Setter Property="TextColor" Value="{StaticResource primaryColor}"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </ControlTemplate>
+                    </xct:TabViewItem.ControlTemplate>
+                    <newsTabViews:FootballNewsTab/>
+                </xct:TabViewItem>
+                <xct:TabViewItem
+                        x:Name="tabXoSo"
+                        IsSelected="True"
+                        >
+                    <xct:TabViewItem.ControlTemplate>
+                        <ControlTemplate>
+                            <Grid Padding="0">
+                                <Label Text="Xổ số"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontFamily="RBo">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabXoSo}, Path=IsSelected}" Value="True">
+                                            <Setter Property="TextColor" Value="{StaticResource primaryColor}"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                            </Grid>
+                        </ControlTemplate>
+                    </xct:TabViewItem.ControlTemplate>
+                    <newsTabViews:LotteryNewsTab/>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels" x:DataType="viewmodels:SouthLotteryPageViewModel"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel"
+             x:Class="KetQuaSoBong.Views.SouthLotteryPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Label Text="XỔ SỐ MIỀN NAM" 
+                   TextColor="White"
+                   FontFamily="R"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="-50,0,0,0"/>
+            <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_calendar_3.png}"
+                   HeightRequest="20"
+                   WidthRequest="20"
+                   HorizontalOptions="End"
+                   Margin="0,0,10,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowDialog}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" x:Key="MLottery"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_bac_2.png" x:Key="NLottery"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar"/>
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_3.png" x:Key="Calendar3"/>
+        <ControlTemplate x:Key="RadioButton">
+            <Frame Padding="0" 
+                       VerticalOptions="Start"
+                       BackgroundColor="Transparent"
+                       HeightRequest="30" WidthRequest="70" HorizontalOptions="Start">
+                <Grid Margin="4" WidthRequest="70">
+                    <ContentPresenter/>
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding SouthLotteryResult}"
+                        x:Name="listResult">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="md:LotteryCollectionResult">
+                    <Grid RowDefinitions="50,Auto,40,Auto,Auto"
+                          BackgroundColor="LightGray"
+                          RowSpacing="1"
+                          x:Name="ItemResult">
+                        <Label HorizontalOptions="Fill"
+                               Padding="10,15,10,15"
+                               HorizontalTextAlignment="Center"
+                               BackgroundColor="Gold"
+                               FontSize="Default"
+                               Grid.Row="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="XSMN " FontFamily="RBo" TextColor="{StaticResource primaryColor}"/>
+                                    <Span Text="{Binding DateTimeResult, StringFormat='{0: dddd, dd/MM/yyyy}'}" FontFamily="R" TextColor="Black"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Grid ColumnDefinitions="80,*"
+                              RowDefinitions="35,50,40,100,40,240,70,40,50,80"
+                              Grid.Row="1"
+                              ColumnSpacing="1"
+                              RowSpacing="1">
+                            <Frame Grid.Column="0"
+                                   Grid.Row="0"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0">
+                                
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="1"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="White"
+                                   Padding="0">
+                                <Label Text="G8"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="2"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0">
+                                <Label Text="G7"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="3"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="White"
+                                   Padding="0">
+                                <Label Text="G6"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="4"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0">
+                                <Label Text="G5"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="5"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="White"
+                                   Padding="0">
+                                <Label Text="G4"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="6"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0">
+                                <Label Text="G3"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="7"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="White"
+                                   Padding="0">
+                                <Label Text="G2"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="8"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0">
+                                <Label Text="G1"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            <Frame Grid.Column="0"
+                                   Grid.Row="9"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="White"
+                                   Padding="0">
+                                <Label Text="ĐB"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontFamily="R"
+                                       TextColor="Black"
+                                        FontSize="16"/>
+                            </Frame>
+                            
+                            
+
+                            <CollectionView Grid.Column="1" 
+                                            Grid.RowSpan="10"
+                                            ItemsSource="{Binding LotteryResults}">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Span="{Binding LotteryResults.Count}"
+                                                     Orientation="Vertical"
+                                                     HorizontalItemSpacing="1"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="md:LotteryResult">
+                                        <Grid
+                                              RowDefinitions="35,50,40,100,40,240,70,40,50,80"
+                                              
+                                              ColumnSpacing="1"
+                                              RowSpacing="1">
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="0"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="{StaticResource placeholderColor}"
+                                                   Padding="0">
+                                                <Label Text="{Binding Province}"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       TextColor="CornflowerBlue"
+                                                       TextDecorations="Underline"
+                                                       FontFamily="RBo">
+                                                    
+                                                </Label>
+
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="1"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="White"
+                                                   Padding="0">
+                                                <Label Text="{Binding G8}"
+                                                       TextColor="{StaticResource primaryColor}"
+                                                       FontFamily="RBo"
+                                                       FontSize="20"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                               Grid.Row="2"
+                                               HasShadow="False"
+                                               CornerRadius="0"
+                                               BackgroundColor="{StaticResource placeholderColor}"
+                                               Padding="0">
+                                                <Label Text="{Binding G7}"
+                                                       TextColor="Black"
+                                                       FontFamily="RBo"
+                                                       FontSize="18"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="3"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="White"
+                                                   Padding="5">
+                                                <StackLayout BindableLayout.ItemsSource="{Binding ArrG6}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate x:DataType="x:String">
+                                                            <Label Text="{Binding .}"
+                                                                   TextColor="Black"
+                                                                   FontFamily="RBo"
+                                                                   FontSize="18"
+                                                                   HorizontalOptions="Center"
+                                                                   VerticalOptions="FillAndExpand"/>   
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="4"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="{StaticResource placeholderColor}"
+                                                   Padding="0">
+                                                <Label Text="{Binding G5}"
+                                                       TextColor="Black"
+                                                       FontFamily="RBo"
+                                                       FontSize="18"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="5"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="White"
+                                                   Padding="5">
+                                                <StackLayout BindableLayout.ItemsSource="{Binding ArrG4}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate x:DataType="x:String">
+                                                            <Label Text="{Binding .}"
+                                                                   TextColor="Black"
+                                                                   FontFamily="RBo"
+                                                                   FontSize="18"
+                                                                   HorizontalOptions="Center"
+                                                                   VerticalOptions="FillAndExpand"/>
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="6"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="{StaticResource placeholderColor}"
+                                                   Padding="0,5">
+                                                <StackLayout BindableLayout.ItemsSource="{Binding ArrG31}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate x:DataType="x:String">
+                                                            <Label Text="{Binding .}"
+                                                                   TextColor="Black"
+                                                                   FontFamily="RBo"
+                                                                   FontSize="18"
+                                                                   HorizontalOptions="Center"
+                                                                   VerticalOptions="FillAndExpand"/>
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="7"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="White"
+                                                   Padding="0">
+                                                <Label Text="{Binding G2}"
+                                                       TextColor="Black"
+                                                       FontFamily="RBo"
+                                                       FontSize="18"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="8"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="{StaticResource placeholderColor}"
+                                                   Padding="0">
+                                                <Label Text="{Binding G1}"
+                                                       TextColor="Black"
+                                                       FontFamily="RBo"
+                                                       FontSize="18"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="9"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="White"
+                                                   Padding="0">
+                                                <Label Text="{Binding DB}"
+                                                       TextColor="{StaticResource primaryColor}"
+                                                       FontFamily="RBo"
+                                                       FontSize="18"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Grid>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="5"
+                                     Grid.Row="2"
+                                     BackgroundColor="Red"
+                                     Spacing="0">
+                            <RadioButton x:Name="rdAllNum"
+                                         ClassId="AllNum"
+                                         ControlTemplate="{StaticResource RadioButton}"
+                                         IsChecked="True">
+                                <RadioButton.Content>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{StaticResource Uncheck}"
+                                               WidthRequest="13"
+                                               HeightRequest="13"
+                                               HorizontalOptions="Start">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rdAllNum}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                        <Label Text="Đầy đủ"
+                                               TextColor="White"
+                                               FontFamily="RM"
+                                               Margin="0,2,0,0"
+                                               FontSize="13"/>
+                                    </StackLayout>
+                                </RadioButton.Content>
+                                <RadioButton.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ChangeDisplayAll, Source={x:Reference listResult}}" CommandParameter="{Binding Source={x:Reference ItemResult}, Path=BindingContext}"/>
+                                </RadioButton.GestureRecognizers>
+                            </RadioButton>
+                            <RadioButton x:Name="rd2Num"
+                                 ClassId="2Num"
+                             ControlTemplate="{StaticResource RadioButton}">
+                                <RadioButton.Content>
+                                    <StackLayout Orientation="Horizontal"
+                                         >
+                                        <Image Source="{StaticResource Uncheck}"
+                                               WidthRequest="13"
+                                               HeightRequest="13"
+                                               HorizontalOptions="Start">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd2Num}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                        <Label Text="2 số"
+                                   TextColor="White"
+                                   FontFamily="RM"
+                                   Margin="0,2,0,0"
+                                   FontSize="13"/>
+                                    </StackLayout>
+                                </RadioButton.Content>
+                                <RadioButton.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ChangeDisplay2Num, Source={x:Reference listResult}}" CommandParameter="{Binding Source={x:Reference ItemResult}, Path=BindingContext}"/>
+                            </RadioButton.GestureRecognizers>
+                            </RadioButton>
+                            <RadioButton x:Name="rd3Num"
+                                         ClassId="3Num"
+                                         ControlTemplate="{StaticResource RadioButton}">
+                                <RadioButton.Content>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{StaticResource Uncheck}"
+                                               WidthRequest="13"
+                                               HeightRequest="13"
+                                               HorizontalOptions="Start">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd3Num}, Path=IsChecked}" Value="True">
+                                                    <Setter Property="Source" Value="{StaticResource Checked}"/>
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                        <Label Text="3 số"
+                                   TextColor="White"
+                                   FontFamily="RM"
+                                   Margin="0,2,0,0"
+                                   FontSize="13"/>
+                                    </StackLayout>
+                                </RadioButton.Content>
+                                <RadioButton.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ChangeDisplay3Num, Source={x:Reference listResult}}" CommandParameter="{Binding Source={x:Reference ItemResult}, Path=BindingContext}"/>
+                                </RadioButton.GestureRecognizers>
+                            </RadioButton>
+                            <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand">
+                                <Switch Margin="0"
+                                ThumbColor="White"
+                                OnColor="Yellow"></Switch>
+                                <Label Text="Thông báo"
+                                   TextColor="White"
+                                   FontFamily="RM"
+                                   Margin="0,1,0,0"
+                                   FontSize="13"
+                               Padding="0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Grid ColumnDefinitions="80,*"
+                              RowDefinitions="40,Auto"
+                              RowSpacing="1"
+                              ColumnSpacing="1"
+                              Grid.Row="3">
+                            <Frame Grid.Column="0"
+                                   Grid.Row="0"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource placeholderColor}"
+                                   Padding="0"> 
+                                <Label Text="Đầu"
+                                       TextColor="Black"
+                                       FontFamily="RBo"
+                                       FontSize="18"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Frame>
+                            <CollectionView
+                                Grid.Row="1"
+                                HeightRequest="409">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout ItemSpacing="1"
+                                                       Orientation="Vertical"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>0</x:String>
+                                        <x:String>1</x:String>
+                                        <x:String>2</x:String>
+                                        <x:String>3</x:String>
+                                        <x:String>4</x:String>
+                                        <x:String>5</x:String>
+                                        <x:String>6</x:String>
+                                        <x:String>7</x:String>
+                                        <x:String>8</x:String>
+                                        <x:String>9</x:String>
+                                    </x:Array>
+                                </CollectionView.ItemsSource>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        
+                                            <Label Text="{Binding .}"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   BackgroundColor="White"
+                                                   HeightRequest="40"
+                                                   FontSize="18"
+                                                   FontFamily="RSeBo"
+                                                   TextColor="{StaticResource primaryColor}"
+                                                   />
+                                        
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <CollectionView Grid.Row="0"
+                                            Grid.Column="1"
+                                            Grid.RowSpan="2"
+                                            HeightRequest="450"
+                                            ItemsSource="{Binding LotteryResults}">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Span="{Binding LotteryResults.Count}"
+                                                     Orientation="Vertical"
+                                                     HorizontalItemSpacing="1">
+                                        
+                                    </GridItemsLayout>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="md:LotteryResult">
+                                        <Grid RowDefinitions="40, Auto"
+                                              RowSpacing="1">
+                                            <Frame Grid.Column="0"
+                                                   Grid.Row="0"
+                                                   HasShadow="False"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="{StaticResource placeholderColor}"
+                                                   Padding="0">
+                                                <Label Text="{Binding Province}"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       TextColor="CornflowerBlue"
+                                                       TextDecorations="Underline"
+                                                       FontFamily="RBo">
+
+                                                </Label>
+
+                                            </Frame>
+                                            <CollectionView
+                                                    Grid.Row="1"
+                                                    HeightRequest="409"
+                                                ItemsSource="{Binding LastNum}">
+                                                <CollectionView.ItemsLayout>
+                                                    <LinearItemsLayout ItemSpacing="1"
+                                                       Orientation="Vertical"/>
+                                                </CollectionView.ItemsLayout>
+                                                <CollectionView.ItemTemplate>
+                                                    <DataTemplate x:DataType="x:String">
+
+                                                        <Label Text="{Binding .}"
+                                                                HorizontalTextAlignment="Center"
+                                                                VerticalTextAlignment="Center"
+                                                                BackgroundColor="White"
+                                                                HeightRequest="40"
+                                                                FontSize="18"
+                                                                FontFamily="RBo"
+                                                                TextColor="Black"
+                                                                />   
+
+                                                    </DataTemplate>
+                                                </CollectionView.ItemTemplate>
+                                            </CollectionView>
+                                        </Grid>
+                                    </DataTemplate>
+                                    
+                                </CollectionView.ItemTemplate>
+                                
+                            </CollectionView>
+                        </Grid>
+                        <Grid HeightRequest="120"
+                              Grid.Row="4"
+                      BackgroundColor="{StaticResource placeholderColor}"
+                      RowDefinitions="*,*,*"
+                      ColumnDefinitions="*,*"
+                      RowSpacing="0">
+                            <Label Text="XEM THÊM:"
+                           Grid.Row="0"
+                           TextColor="Black"
+                           FontSize="20"
+                           FontFamily="RBo"
+                           LineHeight="1"
+                           Margin="10,0,0,0"
+                           HorizontalOptions="Start"
+                           VerticalOptions="EndAndExpand"/>
+                            <StackLayout VerticalOptions="Center"
+                                 Grid.Column="0"
+                                 Grid.Row="1"
+                                 Margin="10,0,0,0"
+                                 Orientation="Horizontal">
+                                <Frame 
+                              WidthRequest="15"
+                              HeightRequest="15"
+                               Padding="2"
+                              BackgroundColor="Transparent"
+                              BorderColor="CornflowerBlue">
+                                    <Image Source="{StaticResource NLottery}"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+                                </Frame>
+                                <Label Text="Xổ số miền Bắc" 
+                               FontSize="15"
+                               TextColor="CornflowerBlue"
+                               />
+
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 Margin="10,0,0,0"
+                                 Orientation="Horizontal">
+                                <Frame 
+                              WidthRequest="15"
+                              HeightRequest="15"
+                               Padding="2"
+                              BackgroundColor="Transparent"
+                              BorderColor="CornflowerBlue">
+                                    <Image Source="{StaticResource MLottery}"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+                                </Frame>
+                                <Label Text="Xổ số miền Trung" 
+                               FontSize="15"
+                               TextColor="CornflowerBlue"
+                               />
+
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center"
+                                 Grid.Column="0"
+                                 Grid.Row="2"
+                                 Margin="10,0,0,0"
+                                 Orientation="Horizontal">
+                                <Frame 
+                              WidthRequest="15"
+                              HeightRequest="15"
+                               Padding="2"
+                              BackgroundColor="Transparent"
+                              BorderColor="CornflowerBlue">
+                                    <Image Source="{StaticResource LotteryBall}"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+                                </Frame>
+                                <Label Text="Soi cầu mỗi ngày" 
+                               FontSize="15"
+                               TextColor="CornflowerBlue"
+                               />
+
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="2"
+                                 Margin="10,0,0,0"
+                                 Orientation="Horizontal">
+                                <Frame 
+                              WidthRequest="15"
+                              HeightRequest="15"
+                               Padding="2"
+                              BackgroundColor="Transparent"
+                              BorderColor="CornflowerBlue">
+                                    <Image Source="{StaticResource Calendar}"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+                                </Frame>
+                                <Label Text="Thống kê 30 ngày" 
+                               FontSize="15"
+                               TextColor="CornflowerBlue"
+                               />
+
+                            </StackLayout>
+
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

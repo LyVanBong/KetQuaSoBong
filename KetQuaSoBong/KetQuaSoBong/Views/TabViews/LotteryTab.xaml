@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.TabViews.LotteryTab"
+             xmlns:views="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="{StaticResource placeholderColor}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.img_banner.png" x:Key="Banner"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <AbsoluteLayout>
+                <Grid AbsoluteLayout.LayoutBounds="0,0,1,200"
+                      AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                    <Image Source="{StaticResource Banner}"
+                       Grid.Row="0"
+                       Aspect="AspectFill"
+                       />
+                    <Label TextColor="White"
+                           VerticalOptions="EndAndExpand"
+                           Margin="10,0,0,30"
+                           LineHeight="1.1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="XỔ SỐ KIẾN THIẾT" FontFamily="RBo" FontSize="Large"/>
+                                <Span Text="&#x0a;"/>
+                                <Span Text="{Binding DateTimeNow}" FontFamily="RL"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+                <StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
+                             AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                    <views:NorthLotteryView/>
+                  
+                </StackLayout>
+                
+               
+                
+            </AbsoluteLayout>
+        </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

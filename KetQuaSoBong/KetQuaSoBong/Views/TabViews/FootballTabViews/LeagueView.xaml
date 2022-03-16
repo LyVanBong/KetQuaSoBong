@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.LeagueView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:md="clr-namespace:KetQuaSoBong.Models" 
+             xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+             x:DataType="footballtabviews:LeagueViewVM"
+             HasShadow="False"
+             Padding="0"
+       BackgroundColor="Transparent">
+    <Frame.Resources>
+        <ResourceDictionary>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_more_f.png" x:Key="MF"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_more_l.png" x:Key="ML"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown"/>
+            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_heart.png" x:Key="Hearth"/>
+        </ResourceDictionary>
+    </Frame.Resources>
+    <Frame.Content>
+      <StackLayout >
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Gold"
+                         HeightRequest="50">
+                <Label Text="GIẢI ĐẤU"
+                 Margin="10"
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                 FontFamily="RB"
+                 />
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{StaticResource Hearth}"
+                       WidthRequest="15"
+                       HeightRequest="15"
+                       Margin="10,6,0,0"/>
+                <Label Text="Yêu thích"
+                 Margin="0,5,10,0"
+                       FontSize="16"
+                       HorizontalOptions="Start"
+                       TextColor="Black"
+                 FontFamily="RBo"
+                 />
+                <Label Text="Xem tất cả..."
+                 Margin="0,5,10,0"
+                       FontSize="16"
+                       HorizontalOptions="EndAndExpand"
+                       TextColor="{StaticResource primaryColor}"
+                 FontFamily="RM"
+                 />
+            </StackLayout>
+
+            <ScrollView Orientation="Horizontal"
+                    HeightRequest="90"
+                             HorizontalScrollBarVisibility="Never">
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="10">
+                        <BoxView WidthRequest="5"/>
+                        <StackLayout Orientation="Horizontal"
+                                 BindableLayout.ItemsSource="{Binding FavouriteLeagues}"
+                                     Spacing="10">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="md:League">
+                                    <Frame HeightRequest="70"
+                                       WidthRequest="70"
+                                       Padding="0"
+                                       CornerRadius="80"
+                                       HasShadow="False"
+                                       BackgroundColor="White">
+                                        <Image Source="{Binding Icon}"
+                                           Aspect="AspectFit"
+                                           WidthRequest="24"
+                                           HeightRequest="24"
+                                           Margin="10"
+                                           />
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                        <BoxView WidthRequest="10"/>
+                    </StackLayout>
+
+                </ScrollView>
+
+            
+            
+            
+        </StackLayout>
+  </Frame.Content>
+</Frame>
