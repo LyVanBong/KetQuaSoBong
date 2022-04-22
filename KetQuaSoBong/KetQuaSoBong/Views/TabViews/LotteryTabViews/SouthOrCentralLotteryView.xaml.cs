@@ -21,18 +21,18 @@ using Xamarin.Forms.Xaml;
 namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NorthLotteryView : ContentView
+    public partial class SouthOrCentralLotteryView : ContentView
     {
         
-        public NorthLotteryView(DateTime date)
+        public SouthOrCentralLotteryView(DateTime date, string region)
         {
             InitializeComponent();
-            BindingContext = new NorthLoterryViewVM(date);
+            BindingContext = new SouthOrCentralLotteryViewVM(date, region);
         }
        
     }
 
-    internal class NorthLoterryViewVM : BindableBase
+    internal class SouthOrCentralLotteryViewVM : BindableBase
     {
         private DateTime _datetimeNow;
 
@@ -42,6 +42,22 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             set => SetProperty(ref _datetimeNow, value);
         }
 
+        private string _region; 
+        public string Region
+        {
+            get => _region;
+            set
+            {
+                Title = value == "central" ? "XSMT" : "XSMN";
+                SetProperty(ref _region, value);
+            }
+        }
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            set => SetProperty(ref _title, value);
+        }
         private bool _IsShowMore = false;
 
         public bool IsShowMore
@@ -50,17 +66,18 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             set => SetProperty(ref _IsShowMore, value);
         }
 
-        private LotteryResult _northLottery;
-        public LotteryResult NorthLottery
+        private LotteryCollectionResult _lottery;
+        public LotteryCollectionResult Lottery
         {
-            get => _northLottery;
-            set => SetProperty(ref _northLottery, value);
+            get => _lottery;
+            set => SetProperty(ref _lottery, value);
         }
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public NorthLoterryViewVM(DateTime date)
+        public SouthOrCentralLotteryViewVM(DateTime date, string region)
         {
             DateTimeNow = date;
+            Region = region;
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
              {
@@ -87,34 +104,37 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, errors) => { return true; };
             client = new HttpClient(httpClientHandler);
-            string url = "https://api.tructiepketqua.net/api/lottery/northern/"+DateTimeNow.ToString("d-M-yyyy");
+            
+            string url = "https://api.tructiepketqua.net/api/lottery/"+Region+"/"+DateTimeNow.ToString("d-M-yyyy");
             client.BaseAddress = new Uri(url);
+            var lotteryCollectionResults = new LotteryCollectionResult();
             HttpResponseMessage response = await client.GetAsync("");
-
             if(response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                if(content.StartsWith("{"))
+                if (content.StartsWith("{"))
                 {
-                    var lotteryResults = new LotteryResult();
-                    lotteryResults = JsonConvert.DeserializeObject<LotteryResult>(content);
-                    NorthLottery = lotteryResults;
-                    NorthLottery.IsRefresh = true;
+                    var lotteryResults = new LotteryCollectionResult();
+                    lotteryResults = JsonConvert.DeserializeObject<LotteryCollectionResult>(content);
+                    Lottery = lotteryResults;
+                    Lottery.Datas.ForEach(data => data.IsRefresh = true);
+                    if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
                 }
                 else
                 {
-                    var lotteryResults = new List<LotteryResult>();
-                    lotteryResults = JsonConvert.DeserializeObject<List<LotteryResult>>(content);
-                    NorthLottery = lotteryResults[0];
-                    NorthLottery.IsRefresh = true;
+                    var lotteryResults = new List<LotteryCollectionResult>();
+                    lotteryResults = JsonConvert.DeserializeObject<List<LotteryCollectionResult>>(content);
+                    Lottery = lotteryResults[0];
+                    Lottery.Datas.ForEach(data => data.IsRefresh = true);
+                    if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
                 }
-                
             }
             else if(response.StatusCode == HttpStatusCode.BadRequest)
             {
                 Debug.Write("nhảy vào đây");
-                NorthLottery = new LotteryResult();
-                NorthLottery.IsRefresh = false;
+                Lottery = new LotteryCollectionResult();
+                Lottery.Datas.ForEach(data => data.IsRefresh = false);
+                Lottery.IsLoading = false;
             }
            
             

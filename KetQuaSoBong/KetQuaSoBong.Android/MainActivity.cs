@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using System.Net;
 
 namespace KetQuaSoBong.Droid
 {
@@ -18,6 +19,7 @@ namespace KetQuaSoBong.Droid
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            ServicePointManager.ServerCertificateValidationCallback += (o, cert, chain, errors) => true;
             LoadApplication(new App(new AndroidInitializer()));
         }
 
