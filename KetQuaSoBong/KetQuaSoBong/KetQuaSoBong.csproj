@@ -294,6 +294,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Plugin.XCalendar" Version="2.1.0" />
     <PackageReference Include="RestSharp" Version="107.3.0" />
@@ -305,6 +306,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\TabViews\LotteryTabViews\SouthOrCentralLotteryView.xaml.cs">
+      <DependentUpon>SouthOrCentralLotteryView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\TabViews\LotteryTabViews\NorthLotteryView.xaml.cs">
       <DependentUpon>NorthLotteryView.xaml</DependentUpon>
     </Compile>

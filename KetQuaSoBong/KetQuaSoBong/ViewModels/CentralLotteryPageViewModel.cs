@@ -1,7 +1,10 @@
 ﻿using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.Views.Popups;
+using KetQuaSoBong.Views.TabViews.LotteryTabViews;
 using Prism.Mvvm;
+using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 
@@ -9,11 +12,40 @@ namespace KetQuaSoBong.ViewModels
 {
     public class CentralLotteryPageViewModel : BindableBase
     {
-        public ObservableCollection<LotteryCollectionResult> CentralLotteryResults { get; set; }
-
-        public CentralLotteryPageViewModel()
+        private bool _isVisible = false;
+        public bool IsVisible
         {
-            CentralLotteryResults = App.CentralLotteryResults;
+            get { return _isVisible; }
+            set { SetProperty(ref _isVisible, value); }
+        }
+        public CentralLotteryPageViewModel(Page page)
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    try
+                    {
+                        DateTime now = DateTime.Now;
+                        TimeSpan time = new TimeSpan(10, 0, 0, 0);
+                        DateTime beforeDate = now.Subtract(time);
+                        Debug.Write(beforeDate.ToString());
+                        for (DateTime i = now.Subtract(new TimeSpan(1, 0, 0, 0)); i > beforeDate; i = i.Subtract(new TimeSpan(1, 0, 0, 0)))
+                        {
+                            page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(i, "central"));
+                        }
+                        IsVisible = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.Write(ex.Message);
+                    }
+
+
+
+                });
+                return false;
+            });
             ShowDialog = new Command(() =>
             {
                 Application.Current.MainPage.Navigation.ShowPopup(new CalendarPopup());

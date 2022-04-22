@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using KetQuaSoBong.ViewModels;
+using Xamarin.Forms;
 
 namespace KetQuaSoBong.Views
 {
@@ -7,6 +8,7 @@ namespace KetQuaSoBong.Views
         public NorthLotteryPage()
         {
             InitializeComponent();
+            BindingContext = new NorthLotteryPageViewModel(this);
         }
     }
 }
