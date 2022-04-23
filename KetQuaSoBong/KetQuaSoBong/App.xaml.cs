@@ -721,6 +721,8 @@ namespace KetQuaSoBong
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
             Preferences.Set("Date", DateTime.Now.ToString("dd/MM/yyyy"));
+            Preferences.Set("IsLogin", false);
+            Preferences.Set("S", "rdNam");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

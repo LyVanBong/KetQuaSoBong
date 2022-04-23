@@ -3,6 +3,7 @@ using KetQuaSoBong.Views;
 using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
@@ -14,6 +15,7 @@ namespace KetQuaSoBong.ViewModels
 
         public MainPageFlyoutViewModel(INavigationService navigationService, Page page) : base(navigationService)
         {
+            IsLogin = Preferences.Get("IsLogin", true);
             ListItem = new ObservableCollection<MainPageFlyoutMenuItem>()
             {
                 new MainPageFlyoutMenuItem {Id = 0, Title="Xổ số miền Bắc", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bac.png")},
@@ -78,7 +80,12 @@ namespace KetQuaSoBong.ViewModels
                 (page.Parent as FlyoutPage).IsPresented = false;
             });
         }
-
+        private bool _isLogin;
+        public bool IsLogin
+        {
+            get => _isLogin;
+            set => SetProperty(ref _isLogin, value);
+        }
         public DelegateCommand CollapseMenuCommand { get; }
         public Command SelectedMenuItemCommand { get; }
         public DelegateCommand ShowUserProfilePage { get; }

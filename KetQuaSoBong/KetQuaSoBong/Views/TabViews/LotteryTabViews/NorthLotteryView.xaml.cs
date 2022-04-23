@@ -72,7 +72,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             }
         }
 
-        private LotteryResult _northLottery;
+        private LotteryResult _northLottery = new LotteryResult();
         public LotteryResult NorthLottery
         {
             get => _northLottery;
@@ -81,9 +81,9 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public ObservableCollection<LotteryResult> Items { get; set; }
 
         public NorthLoterryViewVM(DateTime date, bool isDetailPage)
-        {   
+        {
             IsDetailPage = isDetailPage;
-            if (date.Hour>17)
+            if (date.Hour>18)
             {
                 DateTimeNow = date;
             }
@@ -91,7 +91,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             {
                 DateTimeNow = date.Subtract(TimeSpan.FromDays(1));
             }
-
+            Debug.Write(DateTimeNow.ToString("HH:mm:ss"));
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
              {
@@ -125,20 +125,31 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             if(response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                if(content.StartsWith("{"))
+                if(content.Length>2)
                 {
-                    var lotteryResults = new LotteryResult();
-                    lotteryResults = JsonConvert.DeserializeObject<LotteryResult>(content);
-                    NorthLottery = lotteryResults;
-                    NorthLottery.IsRefresh = true;
+                    if (content.StartsWith("{"))
+                    {
+                        var lotteryResults = new LotteryResult();
+                        lotteryResults = JsonConvert.DeserializeObject<LotteryResult>(content);
+                        NorthLottery = lotteryResults;
+                        NorthLottery.IsRefresh = true;
+                    }
+                    else if (content.StartsWith("["))
+                    {
+                        var lotteryResults = new List<LotteryResult>();
+                        lotteryResults = JsonConvert.DeserializeObject<List<LotteryResult>>(content);
+                        NorthLottery = lotteryResults[0];
+                        NorthLottery.IsRefresh = true;
+                    }
                 }
                 else
                 {
-                    var lotteryResults = new List<LotteryResult>();
-                    lotteryResults = JsonConvert.DeserializeObject<List<LotteryResult>>(content);
-                    NorthLottery = lotteryResults[0];
-                    NorthLottery.IsRefresh = true;
+                    Debug.Write("nhảy vào đây");
+                    NorthLottery = new LotteryResult();
+                    NorthLottery.IsRefresh = false;
                 }
+                
+                
                 
             }
             else if(response.StatusCode == HttpStatusCode.BadRequest)

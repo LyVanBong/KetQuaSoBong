@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using KetQuaSoBong.ViewModels;
+using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.Views
@@ -10,6 +11,8 @@ namespace KetQuaSoBong.Views
         public SignUpPage()
         {
             InitializeComponent();
+            BindingContext = new SignUpPageViewModel(this);
+
         }
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
