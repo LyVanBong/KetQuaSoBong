@@ -16,5 +16,9 @@ namespace KetQuaSoBong.Views.MainPageViews
             InitializeComponent();
             BindingContext = new MainPageFlyoutViewModel(navigation, this);
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 }

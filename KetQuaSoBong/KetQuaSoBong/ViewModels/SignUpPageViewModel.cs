@@ -1,33 +1,52 @@
-﻿using KetQuaSoBong.Views.Popups;
+﻿using KetQuaSoBong.Models;
+using KetQuaSoBong.Views;
+using KetQuaSoBong.Views.Popups;
+using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Text;
+using System.Text.RegularExpressions;
 using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
 {
     public class SignUpPageViewModel : BindableBase
     {
-        private bool _isFailFormatUN;
+        private bool _isVisible = true;
+        public bool IsVisible
+        {
+            get { return _isVisible; }
+            set { SetProperty(ref _isVisible, value); }
+        }
+        private bool _isFailFormatUN = false;
         public bool IsFailFormatUN
         {
             get { return _isFailFormatUN; }
             set { SetProperty(ref _isFailFormatUN, value); }
         }
-        private bool _isFailFormatPW;
+        private bool _isFailFormatPW = false;
         public bool IsFailFormatPW
         {
             get { return _isFailFormatPW; }
             set { SetProperty(ref _isFailFormatPW, value); }
         }
-        private bool _isFailFormatRP;
-        public bool IsFailFormatRP
+        private bool _isFailFormatN = false;
+        public bool IsFailFormatN
         {
-            get { return _isFailFormatRP; }
-            set { SetProperty(ref _isFailFormatRP, value); }
+            get { return _isFailFormatN; }
+            set { SetProperty(ref _isFailFormatN, value); }
+        }
+        private bool _isFailFormatEM = false;
+        public bool IsFailFormatEM
+        {
+            get { return _isFailFormatEM; }
+            set { SetProperty(ref _isFailFormatEM, value); }
         }
         private string _s = "Giới tính";
         public string S
@@ -41,11 +60,17 @@ namespace KetQuaSoBong.ViewModels
             get { return _phone; }
             set { SetProperty(ref _phone, value); }
         }
-        private string _repass;
-        public string Repass
+        private string _email;
+        public string Email
         {
-            get { return _repass; }
-            set { SetProperty(ref _repass, value); }
+            get { return _email; }
+            set { SetProperty(ref _email, value); }
+        }
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set { SetProperty(ref _name, value); }
         }
         private string _password;
         public string Password
@@ -69,14 +94,16 @@ namespace KetQuaSoBong.ViewModels
             InputUsernameChanged = new Command(() =>
             {
                 IsFailFormatUN = UserName.Length < 6 ? true : false;
-                IsFailFormatRP = !Password.ToLower().Equals(Repass.ToLower()) ? true : false;
+                
             });
-            InputRepassChanged = new Command(() =>
+            InputNameChanged = new Command(() =>
             {
-                if(!string.IsNullOrEmpty(Password))
-                {
-                    IsFailFormatRP = !Repass.ToLower().Equals(Password.ToLower()) ? true : false;
-                }
+                IsFailFormatN = Name.Length == 0 ? true : false;
+            });
+            InputEmailChanged = new Command(() =>
+            {
+                Regex reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+                IsFailFormatEM = !reg.IsMatch(Email) ? true : false;
             });
             DialogSCommand = new DelegateCommand(async () =>
             {  
@@ -90,11 +117,58 @@ namespace KetQuaSoBong.ViewModels
                 }
                 
             });
+            SignupCommand = new Command(async () =>
+            {   
+                if(IsFailFormatUN == true || IsFailFormatN == true || IsFailFormatPW == true || IsFailFormatEM == true || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Phone))               
+                {
+                    IsVisible = true;
+                    await page.DisplayAlert("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
+                }
+                else
+                {
+                    Register res = new Register()
+                    {
+                        UserName = UserName,
+                        Passwd = Password,
+                        Email = Email,
+                        Name = Name,
+                        NumberPhone = Phone,
+                        Sex = (S != "Giới tính") ? (S == "Nam" ? 0 : (S == "Nữ" ? 1 : 2)) : 0
+                    };
+                    string url = "https://api.tructiepketqua.net/api/User/register";
+                    HttpClient cient = new HttpClient();
+                    string jsonData = JsonConvert.SerializeObject(res);
+                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await cient.PostAsync(url, content);
+                    string result = await response.Content.ReadAsStringAsync();
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        IsVisible = false;
+                        Preferences.Set("IsLogin", true);
+                        Preferences.Set("User", res.Name + "," + res.NumberPhone + "," + res.Email + "," + res.Sex);
+                        await page.Navigation.PushAsync(new MainPage());
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        IsVisible = true;
+                        await page.DisplayAlert("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
+                    }
+                    else
+                    {
+                        Debug.Write(response.StatusCode);
+                    }
+
+                }
+                
+
+            });
 
         }
         public Command InputPasswordChanged { get; set; }
         public Command InputUsernameChanged { get; set; }
-        public Command InputRepassChanged { get; set; }
+        public Command InputNameChanged { get; set; }
+        public Command InputEmailChanged { get; set; }
+        public Command SignupCommand { get; set; }
         public DelegateCommand DialogSCommand { get; set; }
     }
 }

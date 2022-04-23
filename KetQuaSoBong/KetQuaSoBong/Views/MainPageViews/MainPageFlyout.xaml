@@ -48,7 +48,7 @@
                         <TapGestureRecognizer Command="{Binding ShowUserProfilePage}" />
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Label Text="Tài khoản người dùng"
+                <Label Text="{Binding Name}"
                     Grid.Row="2"
                     VerticalOptions="Center"
                     FontSize="Body"
@@ -67,6 +67,11 @@
                     Padding="0,0,0,3"
                     FontSize="Default"
                     FontFamily="RM">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding IsLogin}" Value="True">
+                            <Setter Property="Text" Value="Đăng xuất"/>
+                        </DataTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
             <StackLayout
