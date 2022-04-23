@@ -7,7 +7,7 @@
            xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
            x:Class="KetQuaSoBong.Views.Popups.CalendarPopup"
            x:DataType="popups:CalendarPopupVM"
-              tk:CornerRadiusEffect.CornerRadius="10"
+           tk:CornerRadiusEffect.CornerRadius="10"
            Size="265,275">
     <xct:Popup.Resources>
         <ResourceDictionary>
@@ -140,4 +140,7 @@
             </CollectionView>
         </Grid>
     </xct:Popup.Content>
+    <xct:Popup.Behaviors>
+        <tk:EventToCommandBehavior EventName="Dismissed" Command="{Binding DismissedCommand}"/>
+    </xct:Popup.Behaviors>
 </xct:Popup>

@@ -24,10 +24,10 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
     public partial class SouthOrCentralLotteryView : ContentView
     {
         
-        public SouthOrCentralLotteryView(DateTime date, string region)
+        public SouthOrCentralLotteryView(DateTime date, string region, bool isDetailPage)
         {
             InitializeComponent();
-            BindingContext = new SouthOrCentralLotteryViewVM(date, region);
+            BindingContext = new SouthOrCentralLotteryViewVM(date, region, isDetailPage);
         }
        
     }
@@ -65,6 +65,28 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
+        private bool _isButtonVisible = true;
+
+        public bool IsButtonVisible
+        {
+            get => _isButtonVisible;
+            set => SetProperty(ref _isButtonVisible, value);
+        }
+        private bool _isDetailPage = false;
+
+        public bool IsDetailPage
+        {
+            get => _isDetailPage;
+            set
+            {   
+                if(value == true)
+                {
+                    IsShowMore = true;
+                    IsButtonVisible = false;
+                }
+                SetProperty(ref _isDetailPage, value);
+            } 
+        }
 
         private LotteryCollectionResult _lottery;
         public LotteryCollectionResult Lottery
@@ -74,9 +96,18 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         }
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public SouthOrCentralLotteryViewVM(DateTime date, string region)
-        {
-            DateTimeNow = date;
+        public SouthOrCentralLotteryViewVM(DateTime date, string region, bool isDetailPage)
+        {   
+            IsDetailPage = isDetailPage;
+            if((date.Hour > 15 && region == "south") || (date.Hour > 16 && region == "central"))
+            {
+                DateTimeNow = date;
+            }
+            else
+            {
+                DateTimeNow = date.Subtract(TimeSpan.FromDays(1));
+            }
+           
             Region = region;
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>

@@ -22,20 +22,15 @@ namespace KetQuaSoBong.ViewModels
 
         public NorthLotteryPageViewModel(Page page)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {  
                     try
                     {
-                        DateTime now = DateTime.Now;
-                        TimeSpan time = new TimeSpan(10, 0, 0, 0);
-                        DateTime beforeDate = now.Subtract(time);
-                        Debug.Write(beforeDate.ToString());
-                        for (DateTime i = now.Subtract(new TimeSpan(1, 0, 0, 0)); i > beforeDate; i = i.Subtract(new TimeSpan(1, 0, 0, 0)))
-                        {
-                            page.FindByName<StackLayout>("ListResult").Children.Add(new NorthLotteryView(i));
-                        }
+                        
+                        page.FindByName<StackLayout>("ListResult").Children.Add(new NorthLotteryView(DateTime.Now, true));
+                       
                         IsVisible = true;
                     }
                     catch (Exception ex)
@@ -48,16 +43,26 @@ namespace KetQuaSoBong.ViewModels
                 });
                 return false;
              });
-            ShowDialog = new Command(() =>
+            ShowDialog = new Command(async () =>
             {
-                Application.Current.MainPage.Navigation.ShowPopup(new CalendarPopup());
+                try
+                {
+                    Date = (DateTime) await Application.Current.MainPage.Navigation.ShowPopupAsync(new CalendarPopup());
+                }
+                catch (Exception ex)
+                {
+                    Debug.Write(ex.Message);
+                }
+
+                page.FindByName<StackLayout>("ListResult").Children.Clear();
+                page.FindByName<StackLayout>("ListResult").Children.Add(new NorthLotteryView(Date, true));
             });
 
         }
 
-        private string _date;
+        private DateTime _date = DateTime.Now;
 
-        public string Date
+        public DateTime Date
         {
             get => _date;
             set => SetProperty(ref _date, value);

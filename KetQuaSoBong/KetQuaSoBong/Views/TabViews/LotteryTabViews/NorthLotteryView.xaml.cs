@@ -24,10 +24,10 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
     public partial class NorthLotteryView : ContentView
     {
         
-        public NorthLotteryView(DateTime date)
+        public NorthLotteryView(DateTime date, bool isDetailPage)
         {
             InitializeComponent();
-            BindingContext = new NorthLoterryViewVM(date);
+            BindingContext = new NorthLoterryViewVM(date, isDetailPage);
         }
        
     }
@@ -49,6 +49,28 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             get => _IsShowMore;
             set => SetProperty(ref _IsShowMore, value);
         }
+        private bool _isButtonVisible = true;
+
+        public bool IsButtonVisible
+        {
+            get => _isButtonVisible;
+            set => SetProperty(ref _isButtonVisible, value);
+        }
+        private bool _isDetailPage = true;
+
+        public bool IsDetailPage
+        {
+            get => _isDetailPage;
+            set
+            {
+                if (value == true)
+                {
+                    IsShowMore = true;
+                    IsButtonVisible = false;
+                }
+                SetProperty(ref _isDetailPage, value);
+            }
+        }
 
         private LotteryResult _northLottery;
         public LotteryResult NorthLottery
@@ -58,9 +80,18 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         }
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public NorthLoterryViewVM(DateTime date)
-        {
-            DateTimeNow = date;
+        public NorthLoterryViewVM(DateTime date, bool isDetailPage)
+        {   
+            IsDetailPage = isDetailPage;
+            if (date.Hour>17)
+            {
+                DateTimeNow = date;
+            }
+            else
+            {
+                DateTimeNow = date.Subtract(TimeSpan.FromDays(1));
+            }
+
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
              {
