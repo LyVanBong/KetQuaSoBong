@@ -21,20 +21,15 @@ namespace KetQuaSoBong.ViewModels
 
         public SouthLotteryPageViewModel(Page page)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     try
                     {
-                        DateTime now = DateTime.Now;
-                        TimeSpan time = new TimeSpan(10, 0, 0, 0);
-                        DateTime beforeDate = now.Subtract(time);
-                        Debug.Write(beforeDate.ToString());
-                        for (DateTime i = now.Subtract(new TimeSpan(1, 0, 0, 0)); i > beforeDate; i = i.Subtract(new TimeSpan(1, 0, 0, 0)))
-                        {
-                            page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(i, "south"));
-                        }
+                        
+                        page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(DateTime.Now, "south", true));
+
                         IsVisible = true;
                     }
                     catch (Exception ex)
@@ -47,16 +42,26 @@ namespace KetQuaSoBong.ViewModels
                 });
                 return false;
             });
-            ShowDialog = new Command(() =>
-            {
-                Application.Current.MainPage.Navigation.ShowPopup(new CalendarPopup());
+            ShowDialog = new Command(async () =>
+            {  
+                try
+                {
+                    Date = (DateTime)await Application.Current.MainPage.Navigation.ShowPopupAsync(new CalendarPopup());
+                }
+                catch(Exception ex)
+                {
+                    Debug.Write(ex.Message);
+                }
+               
+               page.FindByName<StackLayout>("ListResult").Children.Clear();
+               page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(Date, "south", true));
             });
 
         }
 
-        private string _date;
+        private DateTime _date = DateTime.Now;
 
-        public string Date
+        public DateTime Date
         {
             get => _date;
             set => SetProperty(ref _date, value);

@@ -20,6 +20,11 @@ namespace KetQuaSoBong.Views.Popups
             InitializeComponent();
             BindingContext = new CalendarPopupVM(this);
         }
+
+        private void Popup_Dismissed(object sender, PopupDismissedEventArgs e)
+        {
+
+        }
     }
 
     internal class CalendarPopupVM : BindableBase
@@ -65,11 +70,19 @@ namespace KetQuaSoBong.Views.Popups
             get => _dateTimeResult;
             set => SetProperty(ref _dateTimeResult, value);
         }
+        private DateTime _dateTemp;
+
+        public DateTime DateTemp
+        {
+            get => _dateTemp;
+            set => SetProperty(ref _dateTemp, value);
+        }
 
         public CalendarPopupVM(Popup popup)
         {
             string[] tmp = Preferences.Get("Date", DateTimeResult).Split('/');
             DateTime date = new DateTime(int.Parse(tmp[2]), int.Parse(tmp[1]), int.Parse(tmp[0]));
+            DateTemp = date;
             SetDayMonthYear(date.Day, date.Month, date.Year);
             Calendar = c.InitCalendar(int.Parse(Day), int.Parse(Month), int.Parse(Year));
             SelectDateCommand = new Command((x) =>
@@ -84,9 +97,10 @@ namespace KetQuaSoBong.Views.Popups
                         i.IsChecked = false;
                     }
                 }
-                DateTimeResult = Day + "/" + Month + "/" + Year;
+                DateTemp = new DateTime(int.Parse(Year), int.Parse(Month), int.Parse(Day), 19, 0, 0);
+                DateTimeResult = DateTemp.ToString("dd/MM/yyyy");
                 Preferences.Set("Date", DateTimeResult);
-                popup.Dismiss(DateTimeResult);
+                popup.Dismiss(DateTemp);
             });
             PrevMonthCommand = new Command(() =>
             {
@@ -122,11 +136,13 @@ namespace KetQuaSoBong.Views.Popups
                 SetDayMonthYear(day, month, year);
                 Calendar = c.InitCalendar(int.Parse(Day), int.Parse(Month), int.Parse(Year));
             });
+          
         }
 
         public Command SelectDateCommand { get; set; }
         public Command PrevMonthCommand { get; set; }
         public Command NextMonthCommand { get; set; }
+        public Command DismissedCommand { get; set; }
 
         public void SetDayMonthYear(int day, int month, int year)
         {

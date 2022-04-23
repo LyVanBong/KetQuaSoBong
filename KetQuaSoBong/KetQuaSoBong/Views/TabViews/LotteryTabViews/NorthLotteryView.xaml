@@ -1120,98 +1120,7 @@
                         
                         
                     </Grid>
-                    <Grid HeightRequest="120"
-                              Grid.Row="4"
-                      BackgroundColor="{StaticResource placeholderColor}"
-                      RowDefinitions="*,*,*"
-                      ColumnDefinitions="*,*"
-                      RowSpacing="0">
-                    <Label Text="XEM THÊM:"
-                           Grid.Row="0"
-                           TextColor="Black"
-                           FontSize="20"
-                           FontFamily="RBo"
-                           LineHeight="1"
-                           Margin="10,0,0,0"
-                           HorizontalOptions="Start"
-                           VerticalOptions="EndAndExpand" />
-                    <StackLayout VerticalOptions="Center"
-                                 Grid.Column="0"
-                                 Grid.Row="1"
-                                 Margin="10,0,0,0"
-                                 Orientation="Horizontal">
-                        <Frame
-                              WidthRequest="15"
-                              HeightRequest="15"
-                               Padding="2"
-                              BackgroundColor="Transparent"
-                              BorderColor="CornflowerBlue">
-                            <Image Source="{StaticResource MLottery}"
-                               WidthRequest="20"
-                               HeightRequest="20" />
-                        </Frame>
-                        <Label Text="Xổ số miền Trung"
-                               FontSize="14"
-                               TextColor="CornflowerBlue" />
-                    </StackLayout>
-                    <StackLayout VerticalOptions="Center"
-                                 Grid.Column="1"
-                                 Grid.Row="1"
-                                 Margin="10,0,0,0"
-                                 Orientation="Horizontal">
-                        <Frame
-                              WidthRequest="15"
-                              HeightRequest="15"
-                               Padding="2"
-                              BackgroundColor="Transparent"
-                              BorderColor="CornflowerBlue">
-                            <Image Source="{StaticResource SLottery}"
-                               WidthRequest="20"
-                               HeightRequest="20" />
-                        </Frame>
-                        <Label Text="Xổ số miền Nam"
-                               FontSize="14"
-                               TextColor="CornflowerBlue" />
-                    </StackLayout>
-                    <StackLayout VerticalOptions="Center"
-                                 Grid.Column="0"
-                                 Grid.Row="2"
-                                 Margin="10,0,0,0"
-                                 Orientation="Horizontal">
-                        <Frame
-                              WidthRequest="15"
-                              HeightRequest="15"
-                               Padding="2"
-                              BackgroundColor="Transparent"
-                              BorderColor="CornflowerBlue">
-                            <Image Source="{StaticResource LotteryBall}"
-                               WidthRequest="20"
-                               HeightRequest="20" />
-                        </Frame>
-                        <Label Text="Soi cầu mỗi ngày"
-                               FontSize="14"
-                               TextColor="CornflowerBlue" />
-                    </StackLayout>
-                    <StackLayout VerticalOptions="Center"
-                                 Grid.Column="1"
-                                 Grid.Row="2"
-                                 Margin="10,0,0,0"
-                                 Orientation="Horizontal">
-                        <Frame
-                              WidthRequest="15"
-                              HeightRequest="15"
-                               Padding="2"
-                              BackgroundColor="Transparent"
-                              BorderColor="CornflowerBlue">
-                            <Image Source="{StaticResource Calendar}"
-                               WidthRequest="20"
-                               HeightRequest="20" />
-                        </Frame>
-                        <Label Text="Thống kê 30 ngày"
-                               FontSize="14"
-                               TextColor="CornflowerBlue" />
-                    </StackLayout>
-                </Grid>
+                  
             </StackLayout>
                 
             </StackLayout>
@@ -1224,7 +1133,8 @@
                    VerticalOptions="Center"
                    CornerRadius="15"
                    HasShadow="False"
-                   BorderColor="Transparent">
+                   BorderColor="Transparent"
+                   IsVisible="{Binding IsButtonVisible}">
                 <StackLayout HorizontalOptions="Center"
                              Orientation="Horizontal"
                              VerticalOptions="Center"
