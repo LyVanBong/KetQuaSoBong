@@ -109,6 +109,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             }
            
             Region = region;
+            Debug.Write(DateTimeNow.ToString("d-MM-yyyy"));
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
              {
@@ -143,21 +144,31 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             if(response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                if (content.StartsWith("{"))
+                if (content.Length > 2)
                 {
-                    var lotteryResults = new LotteryCollectionResult();
-                    lotteryResults = JsonConvert.DeserializeObject<LotteryCollectionResult>(content);
-                    Lottery = lotteryResults;
-                    Lottery.Datas.ForEach(data => data.IsRefresh = true);
-                    if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
+                    if (content.StartsWith("{"))
+                    {
+                        var lotteryResults = new LotteryCollectionResult();
+                        lotteryResults = JsonConvert.DeserializeObject<LotteryCollectionResult>(content);
+                        Lottery = lotteryResults;
+                        Lottery.Datas.ForEach(data => data.IsRefresh = true);
+                        if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
+                    }
+                    else if (content.StartsWith("["))
+                    {
+                        var lotteryResults = new List<LotteryCollectionResult>();
+                        lotteryResults = JsonConvert.DeserializeObject<List<LotteryCollectionResult>>(content);
+                        Lottery = lotteryResults[0];
+                        Lottery.Datas.ForEach(data => data.IsRefresh = true);
+                        if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
+                    }
                 }
                 else
                 {
-                    var lotteryResults = new List<LotteryCollectionResult>();
-                    lotteryResults = JsonConvert.DeserializeObject<List<LotteryCollectionResult>>(content);
-                    Lottery = lotteryResults[0];
-                    Lottery.Datas.ForEach(data => data.IsRefresh = true);
-                    if (string.IsNullOrEmpty(Lottery.Datas[0].DacBiet)) { Lottery.IsLoading = true; }
+                    Debug.Write("nhảy vào đây");
+                    Lottery = new LotteryCollectionResult();
+                    Lottery.Datas.ForEach(data => data.IsRefresh = false);
+                    Lottery.IsLoading = false;
                 }
             }
             else if(response.StatusCode == HttpStatusCode.BadRequest)

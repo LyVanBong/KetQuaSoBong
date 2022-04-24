@@ -22,7 +22,7 @@
                 <RowDefinition Height="7*" />
             </Grid.RowDefinitions>
             <Grid Grid.Row="0"
-              RowDefinitions="10,6*,2*,2*,10">
+              RowDefinitions="10,6*,2*,2.5*,10">
                 <Image Source="{StaticResource Layer}"
                     Aspect="AspectFill"
                     Grid.RowSpan="5" />
@@ -48,7 +48,7 @@
                         <TapGestureRecognizer Command="{Binding ShowUserProfilePage}" />
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Label Text="US_013123"
+                <Label Text="{Binding Name}"
                     Grid.Row="2"
                     VerticalOptions="Center"
                     FontSize="Body"
@@ -61,12 +61,17 @@
                     HorizontalOptions="Center"
                     BackgroundColor="White"
                     CornerRadius="40"
-                    Text="Đăng ký"
-                    Command="{Binding ShowSignUpPage}"
+                    Text="Đăng nhập"
+                    Command="{prism:NavigateTo 'NavigationPage/LoginPage'}"
                     TextColor="{StaticResource primaryColor}"
                     Padding="0,0,0,3"
                     FontSize="Default"
                     FontFamily="RM">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding IsLogin}" Value="True">
+                            <Setter Property="Text" Value="Đăng xuất"/>
+                        </DataTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
             <StackLayout

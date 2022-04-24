@@ -3,9 +3,10 @@
              xmlns:prism="http://prismlibrary.com"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews" xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels" x:DataType="viewmodels:SignUpPageViewModel"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="KetQuaSoBong.Views.SignUpPage"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
              BackgroundColor="{StaticResource placeholderColor}">
     <NavigationPage.TitleView>
         <Grid>
@@ -50,74 +51,133 @@
         </ControlTemplate>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never">
-            <Grid>
-                <Frame Padding="0"
-               Margin="10"
-               HasShadow="False"
-               CornerRadius="10">
-
-                    <AbsoluteLayout>
+        <Grid>
+           
+            <ScrollView VerticalScrollBarVisibility="Never"
+                    IsVisible="{Binding IsVisible}">
+                <Frame>
+                    <StackLayout>
                         <Image HorizontalOptions="Center"
                            Source="{StaticResource Logo}"
                            WidthRequest="150"
-                           HeightRequest="150"
-                           AbsoluteLayout.LayoutBounds="0.5,50"
-                           AbsoluteLayout.LayoutFlags="XProportional" />
+                           HeightRequest="150"/>
 
-                        <Frame
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,40,30,10"
-                       HasShadow="False"
-                        AbsoluteLayout.LayoutBounds="0.5,200,1,105"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                        <Frame CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           HeightRequest="55"
+                           Margin="30,40,30,10"
+                           HasShadow="False">
+                            <customView:CustomEntry Placeholder="Tên người dùng"
+                                                Text="{Binding Name}"
+                                            FontSize="14"
+                                            FontFamily="RSeBo"
+                                            Margin="10,2,0,0">
+                                <customView:CustomEntry.Behaviors>
+                                    <xct:EventToCommandBehavior EventName="TextChanged" Command="{Binding InputNameChanged}"/>
+                                </customView:CustomEntry.Behaviors>
+                            </customView:CustomEntry>
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsFailFormatN}" Value="True">
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
+                        </Frame>
+                        <Label Text="* Tên người dùng không được bỏ trống."
+                           Margin="35,0,0,10"
+                           FontFamily="RI"
+                           TextColor="Red"
+                           IsVisible="{Binding IsFailFormatN}"/>
+
+                        <Frame CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           HeightRequest="55"
+                           Margin="30,5,30,10"
+                           HasShadow="False">
                             <customView:CustomEntry Placeholder="Tên đăng nhập"
+                                                Text="{Binding UserName}"
                                             FontSize="14"
                                             FontFamily="RSeBo"
                                             Margin="10,2,0,0">
+                                <customView:CustomEntry.Behaviors>
+                                    <xct:EventToCommandBehavior EventName="TextChanged" Command="{Binding InputUsernameChanged}"/>
+                                </customView:CustomEntry.Behaviors>
                             </customView:CustomEntry>
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsFailFormatUN}" Value="True">
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
                         </Frame>
+                        <Label Text="* Tên đăng nhập trên 6 kí tự."
+                           Margin="35,0,0,10"
+                           FontFamily="RI"
+                           TextColor="Red"
+                           IsVisible="{Binding IsFailFormatUN}"/>
+
                         <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="0.5,310,1,65"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                           CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           Margin="30,0,30,10"
+                           HasShadow="False">
                             <customView:CustomEntry Placeholder="Mật khẩu"
+                                                Text="{Binding Password}"
                                             FontSize="14"
                                             FontFamily="RSeBo"
                                                 IsPassword="True"
                                             Margin="10,2,0,0">
+                                <customView:CustomEntry.Behaviors>
+                                    <xct:EventToCommandBehavior EventName="TextChanged" Command="{Binding InputPasswordChanged}"/>
+                                </customView:CustomEntry.Behaviors>
                             </customView:CustomEntry>
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsFailFormatPW}" Value="True">
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
                         </Frame>
+                        <Label Text="* Mật khẩu tối thiểu 6 kí tự."
+                           Margin="35,0,0,10"
+                           FontFamily="RI"
+                           TextColor="Red"
+                           IsVisible="{Binding IsFailFormatPW}"/>
                         <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="0.5,380,1,65"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
-                            <customView:CustomEntry Placeholder="Nhập lại mật khẩu"
+                           CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           Margin="30,0,30,10"
+                           HasShadow="False">
+                            <customView:CustomEntry Placeholder="Email"
+                                            Text="{Binding Email}"
                                             FontSize="14"
+                                                Keyboard="Email"
                                             FontFamily="RSeBo"
-                                                IsPassword="True"
                                             Margin="10,2,0,0">
+                                <customView:CustomEntry.Behaviors>
+                                    <xct:EventToCommandBehavior EventName="TextChanged" Command="{Binding InputEmailChanged}"/>
+                                </customView:CustomEntry.Behaviors>
                             </customView:CustomEntry>
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsFailFormatEM}" Value="True">
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
                         </Frame>
+                        <Label Text="* Email không đúng định dạng."
+                           Margin="35,0,0,10"
+                           FontFamily="RI"
+                           TextColor="Red"
+                           IsVisible="{Binding IsFailFormatEM}"/>
                         <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="0.5,450,1,65"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                           CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           Margin="30,0,30,10"
+                           HasShadow="False">
                             <customView:CustomEntry Placeholder="Số điện thoại"
+                                                Text="{Binding Phone}"
                                             FontSize="14"
                                             FontFamily="RSeBo"
                                                 Keyboard="Telephone"
@@ -125,15 +185,13 @@
                             </customView:CustomEntry>
                         </Frame>
                         <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="0.5,520,1,65"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                           CornerRadius="10"
+                           BorderColor="LightGray"
+                           Padding="0"
+                           Margin="30,0,30,10"
+                           HasShadow="False">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Giới tính"
+                                <Label Text="{Binding S}"
                                             FontSize="14"
                                             FontFamily="RSeBo"
                                             Margin="10,0,0,0"
@@ -141,120 +199,74 @@
                                    HorizontalOptions="StartAndExpand"
                                    TextColor="DarkGray">
                                 </Label>
-                                <Image Source="{StaticResource IconUp}"
+                                <Image Source="{StaticResource IconDown}"
                                    WidthRequest="15"
                                    HeightRequest="15"
                                    Margin="0,0,20,0"
                                    HorizontalOptions="End"
                                    VerticalOptions="Center">
-                                    <Image.Triggers>
-                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutGt}, Path=IsVisible}" Value="False">
-                                            <Setter Property="Source" Value="{StaticResource IconDown}" />
-                                        </DataTrigger>
-                                    </Image.Triggers>
+
                                 </Image>
                             </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding DialogSCommand}"/>
+                            </Frame.GestureRecognizers>
                         </Frame>
 
                         <Button Margin="30,10"
-                            HeightRequest="75"
+                            HeightRequest="55"
                             BackgroundColor="{StaticResource primaryColor}"
+                            Command="{Binding SignupCommand}"
                             CornerRadius="10"
                             TextColor="White"
                             Text="ĐĂNG KÝ"
                             FontFamily="RB"
-                            FontSize="16"
-                              AbsoluteLayout.LayoutBounds="0.5,580,1,75"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                            FontSize="16">
                         </Button>
-                        <Frame HeightRequest="55"
-                       CornerRadius="0"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           x:Name="layoutGt"
-                           IsVisible="False"
-                           AbsoluteLayout.LayoutBounds="0.5,578,1,150"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
-                            <StackLayout Spacing="0">
-                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         IsChecked="True"
-                                         x:Name="rdNam"
-                                         ClassId="rdNam">
-                                    <RadioButton.Content>
-                                        <Label Text="Nam"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
-                                            <Label.Triggers>
-                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdNam}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="TextColor" Value="White" />
-                                                </DataTrigger>
-                                            </Label.Triggers>
-                                        </Label>
-                                    </RadioButton.Content>
-                                    <RadioButton.GestureRecognizers>
-                                    </RadioButton.GestureRecognizers>
-                                </RadioButton>
-                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         x:Name="rdNu"
-                                         ClassId="rdNu">
-                                    <RadioButton.Content>
-                                        <Label Text="Nữ"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
-                                            <Label.Triggers>
-                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdNu}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="TextColor" Value="White" />
-                                                </DataTrigger>
-                                            </Label.Triggers>
-                                        </Label>
-                                    </RadioButton.Content>
-                                    <RadioButton.GestureRecognizers>
-                                    </RadioButton.GestureRecognizers>
-                                </RadioButton>
-                                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         x:Name="rdKhac"
-                                         ClassId="rdKhac">
-                                    <RadioButton.Content>
-                                        <Label Text="Khác"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
-                                            <Label.Triggers>
-                                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdKhac}, Path=IsChecked}" Value="True">
-                                                    <Setter Property="TextColor" Value="White" />
-                                                </DataTrigger>
-                                            </Label.Triggers>
-                                        </Label>
-                                    </RadioButton.Content>
-                                    <RadioButton.GestureRecognizers>
-                                    </RadioButton.GestureRecognizers>
-                                </RadioButton>
-                            </StackLayout>
-                        </Frame>
-                        <Label AbsoluteLayout.LayoutBounds="0.5,670"
-                               AbsoluteLayout.LayoutFlags="XProportional">
+
+                        <Label HorizontalOptions="Center"
+                           Margin="0,10,0,10">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Đã có tài khoản? " />
-                                    <Span Text="Đăng nhập" TextColor="{StaticResource primaryColor}" FontFamily="RBo"
+                                    <Span Text="Quay lại trang chủ"
+                                          TextColor="{StaticResource primaryColor}" FontFamily="RBo"
                                           TextDecorations="Underline">
                                         <Span.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                            <TapGestureRecognizer Command="{prism:NavigateTo 'MainPage'}" />
                                         </Span.GestureRecognizers>
                                     </Span>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    </AbsoluteLayout>
+
+                    </StackLayout>
                 </Frame>
-            </Grid>
-        </ScrollView>
+
+            </ScrollView>
+            <Frame HeightRequest="90"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   CornerRadius="10"
+                   IsVisible="{Binding IsVisible, Converter={xct:InvertedBoolConverter}}">
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             Spacing="10">
+                    <ActivityIndicator Color="{StaticResource primaryColor}"
+                                       WidthRequest="20"
+                                       HeightRequest="20"
+                                       IsRunning="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                    <Label Text="Đang đăng nhập..."
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="16"
+                           FontFamily="RBo"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

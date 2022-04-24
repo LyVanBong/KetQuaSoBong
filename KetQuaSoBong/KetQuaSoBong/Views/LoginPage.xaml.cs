@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using KetQuaSoBong.ViewModels;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace KetQuaSoBong.Views
 {
@@ -7,6 +9,11 @@ namespace KetQuaSoBong.Views
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = new LoginPageViewModel(this);
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }
