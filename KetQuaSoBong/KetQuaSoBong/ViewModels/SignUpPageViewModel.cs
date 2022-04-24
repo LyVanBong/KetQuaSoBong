@@ -145,7 +145,7 @@ namespace KetQuaSoBong.ViewModels
                     {
                         IsVisible = false;
                         Preferences.Set("IsLogin", true);
-                        Preferences.Set("User", res.Name + "," + res.NumberPhone + "," + res.Email + "," + res.Sex);
+                        Preferences.Set("User", res.Name + "," + res.NumberPhone + "," + res.Email + "," + res.Sex + "," + res.UserName);
                         await page.Navigation.PushAsync(new MainPage());
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
