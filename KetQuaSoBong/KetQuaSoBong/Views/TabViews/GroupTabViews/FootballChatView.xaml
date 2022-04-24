@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:md="clr-namespace:KetQuaSoBong.Models"
-             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews" 
+             xmlns:grouptabviews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews" 
+             x:DataType="grouptabviews:FootballChatViewVM"
              x:Class="KetQuaSoBong.Views.TabViews.GroupTabViews.FootballChatView">
     <ContentView.Resources>
         <DataTemplate x:DataType="md:ItemChat" x:Key="myChatTemplate">
@@ -18,7 +20,7 @@
                            Margin="{Binding MarginThickness}"
                            Grid.RowSpan="2">
 
-                    <Label Text="{Binding Content}"
+                    <Label Text="{Binding Message}"
                                    FontSize="14"
                                    FontFamily="RM"
                                    TextColor="White" />
@@ -41,13 +43,13 @@
                            Grid.Column="1"
                            Grid.RowSpan="2">
                         <StackLayout>
-                            <Label Text="{Binding NameUser}"
+                            <Label Text="{Binding Name}"
                                    TextColor="{StaticResource primaryColor}"
                                    FontSize="14"
                                    FontFamily="RBo"
                                    HorizontalTextAlignment="Start"
                                    IsVisible="{Binding NameVisible}" />
-                            <Label Text="{Binding Content}"
+                            <Label Text="{Binding Message}"
                                    FontSize="14"
                                    FontFamily="RM"
                                    TextColor="Black" />
@@ -58,7 +60,7 @@
                            Padding="0"
                            CornerRadius="40"
                            IsVisible="{Binding AvatarVisible}">
-                        <Image Source="{Binding Icon}"
+                        <Image Source="{Binding Image}"
                                Aspect="AspectFill" />
                     </Frame>
                 </Grid>
@@ -115,13 +117,19 @@
                                HasShadow="False"
                                CornerRadius="10">
                         <customView:CustomEntry HorizontalOptions="Fill"
+                                                x:Name="entryChat"
 
                                Text="{Binding ContentChat}"
                                        Placeholder="Nhập tại đây..."
                                        FontFamily="RM"
                                        PlaceholderColor="Black"
                                        FontSize="14"
-                                       Margin="10,0,10,0" />
+                                       Margin="10,0,10,0"
+                                      >
+                            <customView:CustomEntry.Behaviors>
+                                <xct:EventToCommandBehavior EventName="Focused" Command="{Binding FocusCommand}"/>
+                            </customView:CustomEntry.Behaviors>
+                        </customView:CustomEntry>
                     </Frame>
                     <Button Text="Gửi"
                                     Grid.Column="1"

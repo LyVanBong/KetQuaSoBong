@@ -1,4 +1,5 @@
 ﻿using KetQuaSoBong.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace KetQuaSoBong.Views.CustomViews
@@ -10,8 +11,16 @@ namespace KetQuaSoBong.Views.CustomViews
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            string name = (item as ItemChat).NameUser;
-            return name == "Admin" ? MyChat : YourChat;
+            string name = (item as ItemChat).UserName;
+            if(Preferences.Get("IsLogin",true) == true)
+            {
+               return name == Preferences.Get("User", "").Split(',')[4] ? MyChat : YourChat;
+            } 
+            else
+            {
+                return YourChat;
+            }
+                
         }
     }
 }

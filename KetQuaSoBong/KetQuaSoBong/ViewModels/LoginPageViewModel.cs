@@ -86,7 +86,7 @@ namespace KetQuaSoBong.ViewModels
                         
                         user = JsonConvert.DeserializeObject<Register>(result);
                         Preferences.Set("IsLogin", true);
-                        Preferences.Set("User", user.Name + "," + user.NumberPhone + "," + user.Email + "," + user.Sex);
+                        Preferences.Set("User", user.Name + "," + user.NumberPhone + "," + user.Email + "," + user.Sex + "," +user.UserName);
                        
                         await page.Navigation.PushModalAsync(new MainPage());
                     }
