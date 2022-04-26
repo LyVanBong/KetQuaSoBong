@@ -31,7 +31,7 @@ namespace KetQuaSoBong.Views.MainPageViews
         {
             CurrentPageChangedCommand = new Command(async () =>
             {
-                if (p.Children.IndexOf(p.CurrentPage) == 3 && Preferences.Get("IsLogin", true) == false)
+                if (p.Children.IndexOf(p.CurrentPage) == 3 && Preferences.Get("IsLogin", false) == false)
                 {
                     bool b = await p.DisplayAlert("Thông báo", "Để tham gia trò chuyện bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
                     if (b)

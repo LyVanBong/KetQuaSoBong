@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:prism="http://prismlibrary.com"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews" xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels" x:DataType="viewmodels:UserProfilePageViewModel"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="KetQuaSoBong.Views.UserProfilePage"
              BackgroundColor="{StaticResource placeholderColor}">
@@ -36,69 +36,126 @@
                            Margin="0,50,0,0"
                            HasShadow="False"
                            BackgroundColor="#B02019">
+                            <Image Source="https://vnn-imgs-f.vgcloud.vn/2022/03/01/11/ronaldo-mu.jpg"
+                                   Aspect="AspectFill"
+                                   />
                         </Frame>
-                        <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="40,40,40,10"
-                       HasShadow="False">
-                            <customView:CustomEntry Placeholder="Tên đăng nhập"
-                                            FontSize="14"
-                                            FontFamily="RSeBo"
-                                            Margin="10,2,0,0">
-                            </customView:CustomEntry>
-                        </Frame>
-                        <Frame HeightRequest="55"
-                       CornerRadius="10"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="40,0,40,10"
-                       HasShadow="False">
-                            <customView:CustomEntry Placeholder="Ngày sinh"
-                                            FontSize="14"
-                                            FontFamily="RSeBo"
-                                            Margin="10,2,0,0">
-                            </customView:CustomEntry>
-                        </Frame>
+                        <Label Text="Tên tài khoản:"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="{StaticResource primaryColor}"
+                               Margin="40,40,0,5"/>
                         <Frame HeightRequest="55"
                        CornerRadius="10"
                        BorderColor="LightGray"
                        Padding="0"
                        Margin="40,0,40,10"
                        HasShadow="False">
-                            <customView:CustomEntry Placeholder="Số điện thoại"
-                                            FontSize="14"
-                                            FontFamily="RSeBo"
+                            <Label Text="{Binding User.Name}"
+                                            FontFamily="R"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
                                             Margin="10,2,0,0">
-                            </customView:CustomEntry>
+                            </Label>
                         </Frame>
+                        <Label Text="Tên đăng nhập:"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="{StaticResource primaryColor}"
+                               Margin="40,0,0,5"/>
                         <Frame HeightRequest="55"
                        CornerRadius="10"
                        BorderColor="LightGray"
                        Padding="0"
                        Margin="40,0,40,10"
                        HasShadow="False">
-                            <customView:CustomEntry Placeholder="Email"
-                                            FontSize="14"
-                                            FontFamily="RSeBo"
+                            <Label Text="{Binding User.UserName}"
+                                             FontFamily="R"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
                                             Margin="10,2,0,0">
-                            </customView:CustomEntry>
+                            </Label>
+                        </Frame>
+                        <Label Text="Giới tính:"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="{StaticResource primaryColor}"
+                               Margin="40,0,0,5"/>
+                        <Frame HeightRequest="55"
+                       CornerRadius="10"
+                       BorderColor="LightGray"
+                       Padding="0"
+                       Margin="40,0,40,10"
+                       HasShadow="False">
+                            <Label Text="{Binding User.StrSex}"
+                                             FontFamily="R"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                            Margin="10,2,0,0">
+                            </Label>
+                        </Frame>
+                        <Label Text="Số điện thoại:"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="{StaticResource primaryColor}"
+                               Margin="40,0,0,5"/>
+                        <Frame HeightRequest="55"
+                               CornerRadius="10"
+                               BorderColor="LightGray"
+                               Padding="0"
+                               Margin="40,0,40,10"
+                               HasShadow="False">
+                            <Label Text="{Binding User.NumberPhone}"
+                                            FontFamily="R"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                            Margin="10,2,0,0">
+                            </Label>
+                        </Frame>
+                        <Label Text="Email:"
+                               FontSize="16"
+                               FontFamily="RBo"
+                               TextColor="{StaticResource primaryColor}"
+                               Margin="40,0,0,5"/>
+                        <Frame HeightRequest="55"
+                               CornerRadius="10"
+                               BorderColor="LightGray"
+                               Padding="0"
+                               Margin="40,0,40,10"
+                               HasShadow="False">
+                            <Label Text="{Binding User.Email}"
+                                             FontFamily="R"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                            Margin="10,2,0,0">
+                            </Label>
                         </Frame>
                         <Button Margin="40,10"
-                            HeightRequest="55"
-                            BackgroundColor="{StaticResource primaryColor}"
-                            CornerRadius="10"
-                            TextColor="White"
-                            Text="CẬP NHẬT"
-                            FontFamily="RB"
-                            FontSize="16">
+                                HeightRequest="55"
+                                BackgroundColor="{StaticResource primaryColor}"
+                                CornerRadius="10"
+                                TextColor="White"
+                                Text="CẬP NHẬT"
+                                FontFamily="RB"
+                                FontSize="16"
+                                IsVisible="False">
                         </Button>
                         <Label HorizontalOptions="End"
-                           Text="Bạn có thể đổi mật khẩu?"
-                           Margin="40,0,40,50"
-                           FontFamily="R"
-                           FontSize="14">
+                               Text="Bạn có thể đổi mật khẩu?"
+                               Margin="40,0,40,50"
+                               FontFamily="R"
+                               FontSize="14"
+                               IsVisible="False">
                         </Label>
                     </StackLayout>
                 </Frame>

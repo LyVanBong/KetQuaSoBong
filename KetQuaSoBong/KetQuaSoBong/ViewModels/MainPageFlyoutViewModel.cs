@@ -15,7 +15,7 @@ namespace KetQuaSoBong.ViewModels
 
         public MainPageFlyoutViewModel(INavigationService navigationService, Page page) : base(navigationService)
         {
-            IsLogin = Preferences.Get("IsLogin", true);
+            IsLogin = Preferences.Get("IsLogin", false);
             ListItem = new ObservableCollection<MainPageFlyoutMenuItem>()
             {
                 new MainPageFlyoutMenuItem {Id = 0, Title="Xổ số miền Bắc", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bac.png")},
@@ -70,9 +70,13 @@ namespace KetQuaSoBong.ViewModels
                 }
             });
             ShowUserProfilePage = new DelegateCommand(async () =>
-            {
-                await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new UserProfilePage());
-                (page.Parent as FlyoutPage).IsPresented = false;
+            { 
+                if(Preferences.Get("IsLogin", false) == true)
+                {
+                    await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new UserProfilePage());
+                    (page.Parent as FlyoutPage).IsPresented = false;
+                }
+                
             });
             ShowSignUpPage = new DelegateCommand(async () =>
             {

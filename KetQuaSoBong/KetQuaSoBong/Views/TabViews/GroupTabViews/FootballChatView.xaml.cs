@@ -55,8 +55,11 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
             });
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                if ((ItemChats.Count > 0))
+                {
+                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
 
+                }
                 return false;
             });
 
@@ -102,7 +105,7 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
             });
             FocusCommand = new Command(async () =>
             {
-                if (Preferences.Get("IsLogin", true) == false)
+                if (Preferences.Get("IsLogin", false) == false)
                 {
 
                     bool b = await (contentView.Parent.Parent.Parent as Page).DisplayAlert("Thông báo", "Để tham gia trò chuyện bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
