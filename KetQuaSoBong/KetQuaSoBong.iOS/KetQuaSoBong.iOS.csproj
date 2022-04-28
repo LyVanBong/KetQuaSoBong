@@ -99,6 +99,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BaseUrl_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -109,6 +110,13 @@
     <Compile Include="MyOwnNetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\loading.json" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\common\config.json" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\com\com.less" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\com\index.less" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\com\popup.less" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\fonts\iconfont.ttf" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\V3\global\diff.less" />
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\txt\timeGmt.shtml" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\Contents.json">
@@ -230,6 +238,360 @@
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>KetQuaSoBong</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.0dad0675ac893.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.1c6ee18104b2c.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.1f8c5fee74bc7.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.36732a4f618ab.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.42aa2470dbb5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.45c60ce9857e1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.521abcf5eaf82.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.565254f89f146.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.631e178824f07.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.84b3c94ba4bd6.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.9b3267f626528.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.cd7e9c003d933.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.d141d0e57a089.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.ddf9547bfe547.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.e63a8981c5033.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.ec1f1b74a7972.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\_DataURI\data.f51680d48b7e8.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\fonts.googleapis.com\css.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\hm.baidu.com\hm-fd35eddd70443.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\hm.baidu.com\hm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\hm.baidu.com\hm.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.google-analytics.com\analytics.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.google-analytics.com\collect.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.googletagmanager.com\gtag\js.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\cms\layer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\cms\sweetalert2.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\Content\fonts\iconfont.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\bf_us.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\foreignindexmatchcount.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-077fc35824f9c.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-0a80c7b9dddaa.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-1d36e9fb77b84.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-3d7e40ac850b9.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-6972be39c6b25.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-6c6621974906.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-7c57c13a5ea9.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-902e9f878bc25.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-9507f60787c44.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-95ada46f7862b.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-9ae3fac29ef5c.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-9f1b2f0df57b2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-9fd2f8313c03c.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-a2ac2a276a4a7.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-ac028c2616547.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-bdbfb01933ddc.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-da25b163fb168.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8-e3f058759d79a.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\ch_goal8.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\data\odds\en\goal8.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-031b395fa0708.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-2a0e0f947b1d.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-3af30a622af57.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-3ec04e6804d7e.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-49756ec71a8de.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-7534072bbe2c9.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-76eee6290f06a.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-7f111a79c925f.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-7f5fbdb4fc3aa.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-87fb3ced6483b.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-8d1ec4b26c433.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-9f6f84b20790c.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-b5e31267dfa5f.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-b659c51fcca9e.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-b84eaeb5eedbb.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-c908ada820ca5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-d86be99c108de.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange-fb126f4468e3b.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\gf\phone\livechange.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\com\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\com\newsDef.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\1-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\10-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\101-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\103-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\105-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\119-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\160-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\21-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\34-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\37-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\38-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\44-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\49-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\52-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\53-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\55-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\6-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\72-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\87-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\89-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\90-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\91-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\98-flag-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\country\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\global\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\share\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\share\TikTok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\images\share\Twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\jquery.lazyload.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\locModelUtil.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\cms\login.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\cms\tool\layer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\cms\tool\sweetalert2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\cms\tool\theme\default\layer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\common\BomHelper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\common\popup.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\common\pushNote.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\common\settingUtil.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\common\viewutil.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\soccer\score.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\soccer\scoreFilter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\soccer\scoreutil.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\V3\global\ad.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\scripts\V3\global\comDiff.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\www.nowgoal.com\www.nowgoal.com\templatedata\publishnote.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

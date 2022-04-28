@@ -1,0 +1,458 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id  */
+    src: url('iconfont.ttf?t=1640246553155') format('truetype');
+    font-display: swap;
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font-events-exit:before {
+    content: "\e611";
+}
+
+.icon-font-events-enter:before {
+    content: "\e612";
+}
+
+.icon-font-events-red:before {
+    content: "\e613";
+}
+
+.icon-font-setup:before {
+    content: "\e617";
+}
+
+.icon-font-becareful:before {
+    content: "\e61b";
+}
+
+.icon-font-dialogue:before {
+    content: "\e61d";
+}
+
+.icon-font-connect:before {
+    content: "\e61e";
+}
+
+.icon-font-diamonds2:before {
+    content: "\e61f";
+}
+
+.icon-font-diamonds:before {
+    content: "\e620";
+}
+
+.icon-font-doubt:before {
+    content: "\e621";
+}
+
+.icon-font-expert:before {
+    content: "\e622";
+}
+
+.icon-font-open-on:before {
+    content: "\e623";
+}
+
+.icon-font-open-off:before {
+    content: "\e624";
+}
+
+.icon-font-picture:before {
+    content: "\e625";
+}
+
+.icon-font-opinion:before {
+    content: "\e626";
+}
+
+.icon-font-signin:before {
+    content: "\e627";
+}
+
+.icon-font-signin2:before {
+    content: "\e628";
+}
+
+.icon-font-setup2:before {
+    content: "\e629";
+}
+
+.icon-font-collect-off:before {
+    content: "\e62a";
+}
+
+.icon-font-mail:before {
+    content: "\e62b";
+}
+
+.icon-font-more:before {
+    content: "\e62c";
+}
+
+.icon-font-adduser:before {
+    content: "\e62d";
+}
+
+.icon-font-return:before {
+    content: "\e62e";
+}
+
+.icon-font-returnon:before {
+    content: "\e62f";
+}
+
+.icon-font-collect-on:before {
+    content: "\e630";
+}
+
+.icon-font-proaganda:before {
+    content: "\e631";
+}
+
+.icon-font-small-administrators:before {
+    content: "\e632";
+}
+
+.icon-font-small-display:before {
+    content: "\e633";
+}
+
+.icon-font-small-lock:before {
+    content: "\e634";
+}
+
+.icon-font-small-reply:before {
+    content: "\e635";
+}
+
+.icon-font-small-document:before {
+    content: "\e636";
+}
+
+.icon-font-small-support-on:before {
+    content: "\e637";
+}
+
+.icon-font-username:before {
+    content: "\e638";
+}
+
+.icon-font-small-support-off:before {
+    content: "\e639";
+}
+
+.icon-font-password:before {
+    content: "\e63a";
+}
+
+.icon-font-choice:before {
+    content: "\e63b";
+}
+
+.icon-font-homepage-on:before {
+    content: "\e63c";
+}
+
+.icon-font-homepage-off:before {
+    content: "\e63d";
+}
+
+.icon-font-change:before {
+    content: "\e63e";
+}
+
+.icon-font-change_new:before {
+    content: "\e63f";
+}
+
+.icon-font-top:before {
+    content: "\e640";
+}
+
+.icon-font-small-support-off1:before {
+    content: "\e641";
+}
+
+.icon-font-small-support-on1:before {
+    content: "\e642";
+}
+
+.icon-font-open-off1:before {
+    content: "\e643";
+}
+
+.icon-font-open-on1:before {
+    content: "\e644";
+}
+
+.icon-font-refresh:before {
+    content: "\e645";
+}
+
+.icon-font-basketballclass:before {
+    content: "\e646";
+}
+
+.icon-font-class:before {
+    content: "\e647";
+}
+
+.icon-font-screen:before {
+    content: "\e648";
+}
+
+.icon-font-calendar:before {
+    content: "\e649";
+}
+
+.icon-font-search:before {
+    content: "\e64a";
+}
+
+.icon-font-setup1:before {
+    content: "\e64b";
+}
+
+.icon-font-live:before {
+    content: "\e64c";
+}
+
+.icon-font-lineup:before {
+    content: "\e64d";
+}
+
+.icon-font-reduce:before {
+    content: "\e64e";
+}
+
+.icon-font-plus:before {
+    content: "\e64f";
+}
+
+.icon-font-footballclass:before {
+    content: "\e650";
+}
+
+.icon-font-sendont:before {
+    content: "\e651";
+}
+
+.icon-font-esports:before {
+    content: "\e652";
+}
+
+.icon-font-topping:before {
+    content: "\e653";
+}
+
+.icon-font-hide:before {
+    content: "\e654";
+}
+
+.icon-font-bonus:before {
+    content: "\e655";
+}
+
+.icon-font-analysis:before {
+    content: "\e656";
+}
+
+.icon-font-camera:before {
+    content: "\e657";
+}
+
+.icon-font-delete:before {
+    content: "\e658";
+}
+
+.icon-font-follow:before {
+    content: "\e659";
+}
+
+.icon-font-hit:before {
+    content: "\e65a";
+}
+
+.icon-font-hot:before {
+    content: "\e65b";
+}
+
+.icon-font-emailver:before {
+    content: "\e65c";
+}
+
+.icon-font-profile-email:before {
+    content: "\e65d";
+}
+
+.icon-font-membershipchengyuanguanli:before {
+    content: "\e65e";
+}
+
+.icon-font-post:before {
+    content: "\e65f";
+}
+
+.icon-font-manypeople:before {
+    content: "\e660";
+}
+
+.icon-font-profile-password:before {
+    content: "\e661";
+}
+
+.icon-font-profile-withdrawalaccount:before {
+    content: "\e662";
+}
+
+.icon-font-report2:before {
+    content: "\e663";
+}
+
+.icon-font-index:before {
+    content: "\e664";
+}
+
+.icon-font-report:before {
+    content: "\e665";
+}
+
+.icon-font-improper:before {
+    content: "\e666";
+}
+
+.icon-font-time:before {
+    content: "\e667";
+}
+
+.icon-font-sharearticel:before {
+    content: "\e668";
+}
+
+.icon-font-record:before {
+    content: "\e669";
+}
+
+.icon-font-subscribe:before {
+    content: "\e66a";
+}
+
+.icon-font-wifi:before {
+    content: "\e66b";
+}
+
+.icon-font-wallet:before {
+    content: "\e66c";
+}
+
+.icon-icon_help:before {
+    content: "\e66d";
+}
+
+.icon-baseball:before {
+    content: "\e66e";
+}
+
+.icon-font-forbidden:before {
+    content: "\e66f";
+}
+
+.icon-font-subscribe2:before {
+    content: "\e670";
+}
+
+.icon-matchdata:before {
+    content: "\e671";
+}
+
+.icon-analysis:before {
+    content: "\e672";
+}
+
+.icon-odds:before {
+    content: "\e673";
+}
+
+.icon-t5:before {
+    content: "\e674";
+}
+
+.icon-font-share:before {
+    content: "\e675";
+}
+
+.icon-font-pk:before {
+    content: "\e676";
+}
+
+.icon-font-live1:before {
+    content: "\e677";
+}
+
+.icon-font-live2:before {
+    content: "\e678";
+}
+
+.icon-font-report21:before {
+    content: "\e679";
+}
+
+.icon-font-report3:before {
+    content: "\e67a";
+}
+
+.icon-cricbat:before {
+    content: "\e67b";
+}
+
+.icon-criball:before {
+    content: "\e67c";
+}
+
+.icon-cricket:before {
+    content: "\e67d";
+}
+
+.icon-warning:before {
+    content: "\e67e";
+}
+
+.icon-font-Telep:before {
+    content: "\e67f";
+}
+
+.icon-fond-add:before {
+    content: "\e680";
+}
+
+.icon-font-ID:before {
+    content: "\e681";
+}
+
+.icon-font-number:before {
+    content: "\e682";
+}
+
+.icon-font-charge:before {
+    content: "\e683";
+}
+
+.icon-font-index1:before {
+    content: "\e684";
+}
+
+.icon-font-injured:before {
+    content: "\e685";
+}
+
+.icon-font-Assists:before {
+    content: "\e686";
+}

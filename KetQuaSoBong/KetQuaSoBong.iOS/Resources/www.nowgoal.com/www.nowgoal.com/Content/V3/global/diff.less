@@ -1,0 +1,21 @@
+/* 自动响应PC */
+
+@media screen and (min-width: 710px) {
+  .filterBar .tabs {
+    width: 500px;
+  }
+}
+/* 自动响应320 */
+
+@media screen and (max-width: 710px) {
+  .filterBar .tabs {
+    overflow-x: auto;
+  }
+  .filterBar .tabs .tab {
+    min-width: 78px;
+    padding: 0 5px;
+  }
+  .oddsTabs .tab {
+    min-width: 93px !important;
+  }
+}

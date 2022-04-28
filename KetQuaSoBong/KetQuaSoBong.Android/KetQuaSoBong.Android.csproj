@@ -88,6 +88,7 @@
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseUrl_Android.cs" />
     <Compile Include="MyEditorRenderer.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="MainActivity.cs" />
@@ -121,6 +122,88 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\loading.json" />
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\font-awesome\4.7.0\fonts\fontawesome-webfont.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\simple-line-icons\2.4.1\fonts\Simple-Line-Icons.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.gstatic.com\s\roboto\v29\KFOlCnqEu92Fr1MmEU9fBBc4.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.gstatic.com\s\roboto\v29\KFOlCnqEu92Fr1MmSU5fBBc4.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.gstatic.com\s\roboto\v29\KFOlCnqEu92Fr1MmWUlfBBc4.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.gstatic.com\s\roboto\v29\KFOmCnqEu92Fr1Mu4mxK.woff2" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_alert.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_badge.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_breadcrumb.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_button-group.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_buttons.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_card.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_carousel.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_close.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_code.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_custom-forms.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_dropdown.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_forms.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_grid.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_images.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_input-group.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_jumbotron.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_list-group.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_media.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_modal.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_nav.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_navbar.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_pagination.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_popover.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_print.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_progress.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_reboot.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_root.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_spinners.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_tables.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_toasts.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_tooltip.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_transitions.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\_type.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\bootstrap.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_alert.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_background-variant.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_badge.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_border-radius.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_breakpoints.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_buttons.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_caret.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_clearfix.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_forms.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_gradients.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_grid-framework.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_grid.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_hover.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_image.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_list-group.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_lists.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_nav-divider.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_pagination.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_reset-text.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_screen-reader.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_table-row.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_text-hide.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_text-truncate.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\mixins\_transition.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_align.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_background.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_borders.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_display.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_embed.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_flex.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_float.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_overflow.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_position.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_screenreaders.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_shadows.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_sizing.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_spacing.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_stretched-link.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_text.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\utilities\_visibility.scss" />
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\scss\vendor\_rfs.scss" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +244,321 @@
     <AndroidResource Include="Resources\xml\network_security_config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.0fc0c2b43d091.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.11ecd0d6a9322.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.22be57818715.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.37743aec8be9.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.3a0d2ec71f2b4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.444b3a8e1702a.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.5257ad9c82ab5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.7b3cc03b933c8.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.8177bb8aacca3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.8dfa66cfb2184.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.a5762cf5b710c.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.a63696a22ed8e.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.b05bd5ade7d78.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.ef557697c2d8f.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.fbcfcf2bda6a.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\_DataURI\data.image.svg.xml.24bcd2538b819.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\ajax.googleapis.com\ajax\libs\jquery\3.4.1\jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.cookielaw.org\scripttemplates\otSDKStub.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.cookielaw.org\scripttemplates\6.9.0\otBannerSdk.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\img\svg\logo_negative_bold.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\img\svg\logo_orange_bold.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\js\bet.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\js\theme_switch.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\style\bundle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn.scorespro.com\style\mc2.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn1.scorespro.com\js\theme_sel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn1.scorespro.com\js\feed\soccer2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn2.scorespro.com\js\bundle.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdn2.scorespro.com\js\ads\com\soccer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\css\flag-icon.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\am.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ar.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\at.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\au.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\bg.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\br.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\cl.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\co.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\cr.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\cy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\cz.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\de.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\dk.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ec.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ee.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\eg.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\es.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\eu.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\gb-eng.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\gb-nir.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\gb-sct.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\gi.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\gt.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\in.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\iq.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\is.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\jm.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\jo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\kz.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\lt.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ma.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\mx.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ng.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\nl.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\no.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\pl.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\py.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ro.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\rs.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\se.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\sk.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\sy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\un.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\us.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\uy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\uz.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\flag-icon-css\3.3.0\flags\1x1\ve.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\font-awesome\4.7.0\css\font-awesome.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\simple-line-icons\2.4.1\css\simple-line-icons.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\cdnjs.cloudflare.com\ajax\libs\simple-line-icons\2.4.1\css\simple-line-icons.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.googleapis.com\css-ab748a29df85f.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\fonts.googleapis.com\css.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\securepubads.g.doubleclick.net\gpt\pubads_impl_2022042101.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\securepubads.g.doubleclick.net\tag\js\gpt.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\4.4.1\css\bootstrap.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\4.4.1\css\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\4.4.1\css\dist\css\bootstrap.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\4.4.1\js\bootstrap.bundle.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\alert.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\button.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\carousel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\collapse.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\dropdown.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\modal.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\popover.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\scrollspy.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\tab.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\toast.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\tooltip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\util.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\js\src\tools\sanitizer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\stackpath.bootstrapcdn.com\bootstrap\node_modules\popper.js\dist\esm\popper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\www.google-analytics.com\analytics.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\www.googletagmanager.com\gtag\js.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\www.scorespro.com\www.scorespro.com\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

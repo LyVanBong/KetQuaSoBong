@@ -1,0 +1,1 @@
+No Content: https://cdn2.scorespro.com/js/ads/com/soccer.js

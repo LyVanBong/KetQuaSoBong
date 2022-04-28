@@ -101,7 +101,11 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                         Debug.Write(response.StatusCode);
                     }
                     ContentChat = "";
-                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                    if ((ItemChats.Count > 0))
+                    {
+                        contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+
+                    }
                 }
             });
             FocusCommand = new Command(async () =>
@@ -138,8 +142,12 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                 string content = await response.Content.ReadAsStringAsync();
                 List<ItemChat> chats = JsonConvert.DeserializeObject<List<ItemChat>>(content);
                 ItemChats = new ObservableCollection<ItemChat>(chats);
-                contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
-                ItemChats.ForEach(x => x.ListAllChat = chats);
+                if ((ItemChats.Count > 0))
+                {
+                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                    ItemChats.ForEach(x => x.ListAllChat = chats);
+                }
+                
             }
             else
             {

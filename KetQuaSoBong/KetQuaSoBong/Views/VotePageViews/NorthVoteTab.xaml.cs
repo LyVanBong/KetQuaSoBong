@@ -176,17 +176,21 @@ namespace KetQuaSoBong.Views.VotePageViews
             {
                 string content = await response.Content.ReadAsStringAsync();
                 voteList = JsonConvert.DeserializeObject<List<VoteItem>>(content);
-                Debug.Write(voteList.Count);
-                foreach (VoteItem v in voteList)
+                if(voteList.Count > 0)
                 {
-                    foreach (string str1 in votes)
+                    Debug.Write(voteList.Count);
+                    foreach (VoteItem v in voteList)
                     {
-                        if (v.Number.Equals(str1))
+                        foreach (string str1 in votes)
                         {
-                            ResultVotes.Add(v);
+                            if (v.Number.Equals(str1))
+                            {
+                                ResultVotes.Add(v);
+                            }
                         }
                     }
                 }
+              
                
             }
             

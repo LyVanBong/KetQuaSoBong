@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" id="viewport" />
+    <title>Football Livescore, Soccer Live Score, Result & Fixture - NowGoal.com</title>
+
+    <meta name="description" content="NowGoal.com updates the fastest live scores, results, fixtures of football Leagues such as Premier League, Bundesliga, UEFA CL etc." />
+    <link rel="canonical" href="https://www.nowgoal.com/" />
+
+    <link rel="alternate" hreflang="en" href="https://www.nowgoal.com/football/" />
+    <link rel="alternate" hreflang="es" href="https://es.nowgoal.com/" />
+    <link rel="alternate" hreflang="pt" href="https://br.nowgoal.com/" />
+    <link rel="alternate" hreflang="ru" href="https://ru.nowgoal.com/" />
+    <meta property="og:url" content="https://www.nowgoal.com/">
+    <meta name="twitter:url" class="share_url" content="https://www.nowgoal.com/">
+    <meta name="fb:url" class="fb_share_url" content="https://www.nowgoal.com/" />
+    <link rel="apple-touch-icon-precomposed" href="https://www.nowgoal.com/images/Global/m-icon.png?v=2" />
+    <meta name="og:title" class="share_title" content="Football Livescore, Soccer Live Score, Result & Fixture - NowGoal.com" />
+    <meta name="fb:title" class="fb_share_title" content="Football Livescore, Soccer Live Score, Result & Fixture - NowGoal.com" />
+    <meta property="og:site_name" content="//www.nowgoal.com">
+    <meta property="og:description" content="NowGoal.com updates the fastest live scores, results, fixtures of football Leagues such as Premier League, Bundesliga, UEFA CL etc.">
+    <meta property="og:image" class="share_Img" content="https://www.nowgoal.com/images/Global/m-icon.png?v=2" />
+    <meta property="twitter:image" class="share_Img" content="https://www.nowgoal.com/images/Global/m-icon.png?v=2" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/Content/fonts/iconfont.css?v=1" media="none" onload="this.media='all'">
+    <base id="openWindow" />
+
+    <link href="/Content/com/popup.less?v=637865582620000000" rel="stylesheet" />
+    <link href="/Content/com/index.less?v=637865582620000000" rel="stylesheet" />
+    <link href="/Content/com/com.less?v=637865582620000000" rel="stylesheet" />
+    <link href="/Content/V3/global/diff.less?v=637865582620000000" rel="stylesheet" />
+
+
+
+</head>
+
+<body id="Football">
+
+    <div id="container">
+
+        <div id="pushMsg"></div>
+
+
+
+
+        <script src="/scripts/jquery.min.js?v=637811424410000000"></script>
+        <script src="/scripts/cms/login.js?v=637865582510000000"></script>
+        <script src="/scripts/cms/tool/sweetalert2.min.js?v=637841637700000000"></script>
+        <script src="/scripts/cms/tool/layer.js?v=637865582510000000"></script>
+
+        <link href="/Content/cms/sweetalert2.min.css?v=637841637700000000" rel="stylesheet" />
+        <link href="/Content/cms/layer.css?v=637865582510000000" rel="stylesheet" />
+
+        <div class="header">
+            <div class="container">
+                <a class="logo" href="/">
+<img src="/images/global/logo.png" width="145" height="43" />
+<i>US</i>
+</a>
+                <div class="select" id="ballTypeNav">
+                    <span id="ballTypeNavBtn" class="icon iconfont icon-font-class"></span>
+                    <ul class="GameList">
+                        <li class="predictions">
+                            <a href="/predictions/" onclick="toggleBallType()" target="_self">
+                        <span class="icon iconfont icon-font-report2"></span>
+                        <span class="name">Predictions</span>
+                        <div class="btn icon iconfont icon-font-homepage-off"></div>
+                    </a>
+                        </li>
+                        <li class="football on">
+                            <a href="/football/" onclick="toggleBallType()" target="_self">
+                        <span class="icon iconfont icon-font-footballclass"></span>
+                        <span class="name">Football</span>
+                        <div class="btn icon iconfont icon-font-homepage-off"></div>
+                    </a>
+                        </li>
+                        <li class="basketball">
+                            <a href="/basketball/" onclick="toggleBallType()" target="_self">
+                        <span class="icon iconfont icon-font-basketballclass"></span>
+                        <span class="name">Basketball</span>
+                        <div class="btn icon iconfont icon-font-homepage-off"></div>
+                    </a>
+                        </li>
+                        <li class="baseball">
+                            <a href="/baseball/" onclick="toggleBallType()" target="_self">
+                        <span class="icon iconfont icon-baseball"></span>
+                        <span class="name">Baseball</span>
+                        <div class="btn icon iconfont icon-font-homepage-off"></div>
+                    </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="userIcon" class="ddl" onclick="LOGIN.show(1)"></div>
+                <div class="ddl" id="switchLanguages">
+                    <div class="tpl">
+                        <img src="/Images/country/world.png" alt="" width="24" height="16">
+                        <!-- <i class="expIcon tri "></i> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="ddl" id="languages" style="display:none;">
+                <ul>
+
+                    <li class=on>
+                        <a href="https://www.nowgoal.com/football/?from=ng" target="_self">
+                        <img class="lazy" data-original="/Images/country/world.png" src="/images/com/newsDef.jpg" alt="English/International" />
+                        <div class="c_name">
+                            English/International
+                        </div>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="https://es.nowgoal.com/?from=ng" target="_self">
+                        <img class="lazy" data-original="/images/country/Spain_m.jpg" src="/images/com/newsDef.jpg" alt="Español" />
+                        <div class="c_name">
+                            Español
+                        </div>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="https://br.nowgoal.com/?from=ng" target="_self">
+                        <img class="lazy" data-original="/images/country/Portugal_m.jpeg" src="/images/com/newsDef.jpg" alt="Português" />
+                        <div class="c_name">
+                            Português
+                        </div>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="https://ru.nowgoal.com/?from=ng" target="_self">
+                        <img class="lazy" data-original="/images/country/Russia.jpeg" src="/images/com/newsDef.jpg" alt="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;" />
+                        <div class="c_name">
+                            &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="left">
+
+                <div class="ad ad_min" name="zqToolTopMinAd" data-arr="arrZQTootTopMinImages"></div>
+                <h1 class="sportType">
+                    <span><span class="icon iconfont icon-font-footballclass"></span> Football</span>
+                    <span class="icon iconfont icon-font-setup2 setting" onclick="toSetting()"></span>
+                </h1>
+                <div class="liveTools">
+                    <div class="tabs">
+                        <a href="/football/" class="tab on" target="_self">Scores</a>
+                        <a href="/football/favourites" class="tab " target="_self">Favourites</a>
+                        <a href="/football/predictions" class="tab " target="_self">Predictions</a>
+                        <a href="/football/leagues" class="tab " target="_self">Leagues</a>
+                    </div>
+                </div>
+
+                <div class="filterBar">
+                    <div class="tabs mini fl">
+
+                        <a href="/football/" class="tab on" target="_self">All</a>
+                        <a href="/football/live" class="tab " target="_self">Live</a>
+                        <a href="/football/results" class="tab  long" target="_self">Finished</a>
+                        <a href="/football/schedule" class="tab  long" target="_self">Schedule</a>
+
+                    </div>
+                    <span class="icon iconfont icon-font-screen" onclick="sFilter.nav()"></span>
+                </div>
+
+
+
+                <div id="matchList" class="matchList">
+                    <div id="hideCountBar" class="dayrow" style="display:none;">
+                        Hidden <span id='hiddenCount' class='red'>0</span> ,
+                        <span class="btn-link" onclick="FilterByOption(0)" style="cursor: pointer;text-decoration: underline;color: #0054a6;">
+                    show all
+                </span>
+                    </div>
+                    <div id="gameList">
+                        <div id="spnLoading" class="spnLoading">
+                            <div class="loaddingBox" id="subSpnLoading">
+                                <img src="/Images/com/loading.gif" width="30" height="30">Loading...
+                                <div class="loaddingMsg">NowGoal Livescore</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="scoreRight" class="right">
+
+                <div class="panel">
+                    <h2 id="c_title">Hot Leagues</h2>
+                    <ul class="list">
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/93' title=''>
+                            <img class="hotLeague lazy" data-original="/mn/20220328094457.jpg?v=1" src="/images/com/newsDef.jpg" alt="Africa Cup of Nations"/>
+                            <span class="name">Africa Cup of Nations</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/949' title='Nigerian Premier League'>
+                            <img class="hotLeague lazy" data-original="/mn/20210616112146.jpg?v=1" src="/images/com/newsDef.jpg" alt="NPFL"/>
+                            <span class="name">NPFL</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/103' title='UEFA Champions League'>
+                            <img class="hotLeague lazy" data-original="/mn/20210616112452.jpg?v=1" src="/images/com/newsDef.jpg" alt="UEFA Champions League"/>
+                            <span class="name">UEFA Champions League</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/113' title='UEFA Europa League'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104421.jpg?v=1" src="/images/com/newsDef.jpg" alt="UEFA Europa League"/>
+                            <span class="name">UEFA Europa League</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/36' title='English Premier League'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104531.png?v=1" src="/images/com/newsDef.jpg" alt="Premier League"/>
+                            <span class="name">Premier League</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/37' title='England Championship'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104641.jpg?v=1" src="/images/com/newsDef.jpg" alt="Championship"/>
+                            <span class="name">Championship</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/34' title='Italian Serie A'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104733.png?v=1" src="/images/com/newsDef.jpg" alt="Serie A"/>
+                            <span class="name">Serie A</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/31' title='Spanish La Liga'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104828.jpg?v=1" src="/images/com/newsDef.jpg" alt="La Liga"/>
+                            <span class="name">La Liga</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/8' title='German Bundesliga'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104104916.png?v=1" src="/images/com/newsDef.jpg" alt="Bundesliga"/>
+                            <span class="name">Bundesliga</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/9' title='German Bundesliga 2'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105011.png?v=1" src="/images/com/newsDef.jpg" alt="2nd Bundesliga"/>
+                            <span class="name">2nd Bundesliga</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/11' title='France Ligue 1'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105416.png?v=1" src="/images/com/newsDef.jpg" alt="Ligue 1"/>
+                            <span class="name">Ligue 1</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/12' title='France Ligue 2'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105502.jpg?v=1" src="/images/com/newsDef.jpg" alt="Ligue 2"/>
+                            <span class="name">Ligue 2</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/23' title='Portugal Primeira Liga'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105554.png?v=1" src="/images/com/newsDef.jpg" alt="Primeira Liga"/>
+                            <span class="name">Primeira Liga</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/29' title='Scottish Premier League'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105703.jpg?v=1" src="/images/com/newsDef.jpg" alt="Scotland Premiership"/>
+                            <span class="name">Scotland Premiership</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/16' title='Holland Eredivisie'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105813.png?v=1" src="/images/com/newsDef.jpg" alt="Eredivisie"/>
+                            <span class="name">Eredivisie</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/5' title='Belgian Pro League'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104105920.png?v=1" src="/images/com/newsDef.jpg" alt="Jupiler League"/>
+                            <span class="name">Jupiler League</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/26' title='Swedish Allsvenskan'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110032.jpg?v=1" src="/images/com/newsDef.jpg" alt="Allsvenskan"/>
+                            <span class="name">Allsvenskan</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/13' title='Finland Veikkausliga'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110137.png?v=1" src="/images/com/newsDef.jpg" alt="Veikkausliga"/>
+                            <span class="name">Veikkausliga</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/7' title='Denmark Superligaen'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110223.jpg?v=1" src="/images/com/newsDef.jpg" alt="Superligaen"/>
+                            <span class="name">Superligaen</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/21' title='USA Major League Soccer'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110320.png?v=1" src="/images/com/newsDef.jpg" alt="MLS"/>
+                            <span class="name">MLS</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/4' title='Brazil Serie A'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110406.png?v=1" src="/images/com/newsDef.jpg" alt="Brazil Serie A"/>
+                            <span class="name">Brazil Serie A</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/2' title='Argentine Division 1'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110530.png?v=1" src="/images/com/newsDef.jpg" alt="Argentine Division 1"/>
+                            <span class="name">Argentine Division 1</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href='https://www.nowgoal.com/football/league/89' title='Copa Libertadores'>
+                            <img class="hotLeague lazy" data-original="/mn/20220104110624.jpg?v=1" src="/images/com/newsDef.jpg" alt="Copa Libertadores"/>
+                            <span class="name">Copa Libertadores</span>
+                        </a>
+                        </li>
+                        <div class="ad ad_max" name="zqRfMaxAd" data-arr="arrZQRFMaxImages"></div>
+
+                    </ul>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        if ($("#selectLeagues").length > 0) {
+                            $("#c_title").hide();
+                        }
+                        showScoreRight();
+                    })
+                </script>
+            </div>
+        </div>
+
+        <div id="popLayer" onclick="hidePopup('popLayer')" style="display:none;">
+            <div id="ppDiv"></div>
+            <div id="ppRedDiv"></div>
+        </div>
+
+        <div id="sounds" style="display:none">
+            <div id="soundsHome" style="display:none"></div>
+            <div id="soundsAway" style="display:none"></div>
+            <div id="soundsRed" style="display:none"></div>
+            <div id="soundsError" style="display:none"></div>
+        </div>
+
+
+
+        <div id="returnTop" style="bottom:108px;">
+
+            <span class="tl dl icon iconfont icon-font-open-on" onclick="javascript:window.scroll(0,0);" style=""></span>
+        </div>
+
+
+        <span id="bfData">
+    <script language="javascript" type="text/javascript" defer="defer"></script>
+</span>
+
+
+
+
+
+        <div id="footer">
+            <div class="msg">
+                <div class="webdesc">
+                    www.nowogal.com is a professional information platform with real-time scores, match stats and head to head analysis. Covering 2000+ soccer/football and basketball leagues, cups and tournaments (English Premier League/EPL, Nigerian Professional Football
+                    League/NPFL and UEFA Champions League, NBA etc.). nowgoal.com offers live scores, results, fixture/schedules, in-depth analysis and detailed match statistics, standings and lineups. You must be at least 18 years of age to use our info
+                    and must comply with laws and regulation in your own country.
+                    <div class="showALL">
+                        Show All
+                    </div>
+                </div>
+            </div>
+            <div class="webid">
+                <a href="/">nowgoal.com</a><span class="li"></span><a href="https://www.goaloo.com/">Goaloo.com</a>
+            </div>
+            <div class="logoBar">
+                <a class="logo" href="Javascript:void(0);" id="switchPc" onclick="switchResponsive(0)" style="display:none;" target="_self">
+            <img class="lazy" width="22 " height="22" data-original="/Images/com/pc.png" src="/images/com/newsDef.jpg" alt="Switch to Desktop" />
+            Switch to Desktop
+        </a>
+
+                <a class="logo" href="Javascript:void(0);" id="switchMobile" onclick="switchResponsive(1)" style="display:none;" target="_self">
+            <img class="lazy" width="22" height="22" data-original="/Images/com/iphone.png" src="/images/com/newsDef.jpg" alt="Switch to Mobile" />
+            Switch to Mobile
+        </a>
+            </div>
+            <!-- <div class="logoBar">
+        <a class="logo" href="/soccer/">
+            <img width="22" src="/Images/com/football.png"> Football
+        </a> <a class="logo" href="/basketball/">
+            <img width="22" src="/Images/com/Basketball.png"> Basketball
+        </a>
+    </div> -->
+            <div class="FMenu">
+                <a href="/about/us">About us</a> &nbsp;|&nbsp;
+                <a href="/about/Privacy">Privacy</a> &nbsp;|&nbsp;
+                <a href="/about/feedback">Feedback</a> &nbsp;|&nbsp;
+                <a href="/about/freescore">Free LiveScore</a> &nbsp;|&nbsp;
+                <a href="/about/linkexchange">Link Exchange</a>
+            </div>
+            <div class="network">
+                <a target="_blank" href="https://www.facebook.com/goaloong" rel="nofollow"><img src="/images/share/facebook.png"><span>Facebook</span></a>
+                <a target="_blank" href="https://twitter.com/RealGoalooNG" rel="nofollow"><img src="/images/share/Twitter.png"><span>Twitter</span></a>
+                <a targer="_blank" href="https://www.tiktok.com/@goaloong.net"><img src="/images/share/TikTok.png"><span>TikTok</span></a>
+            </div>
+            <div class="msg2">
+                <span>© 2022 <a href='/'>Nowgoal.com</a> All Rights Reserved.</span>
+                <span>Global Pacific Electronic Technology Limited</span>
+            </div>
+
+            <div class="links">
+                <span>Parners:</span>
+                <a href="https://www.nowgoal5.com/" target="_blank">Nowgoal Livescore</a> &nbsp;|&nbsp; <a href="https://www.flashscore.com.ng/soccer/nigeria/npfl/" target="_blank">NPFL Live Scores</a> &nbsp;|&nbsp; <a href="https://www.oddsportal.com/soccer/nigeria/npfl/"
+                    target="_blank">NPFL Betting Odds</a> &nbsp;|&nbsp; <a href="https://www.injuriesandsuspensions.com" target="_blank">Injuries and Suspensions</a> &nbsp;|&nbsp; <a href="https://www.winonbetonline.com" target="_blank">Winonbetonline</a>                &nbsp;|&nbsp; <a href="https://www.tipsfame.com/" target="_blank">Accurate football prediction</a> &nbsp;|&nbsp; <a href="https://replaymatches.com" target="_blank">Full Match Replay</a> &nbsp;|&nbsp; <a href="https://footballnews.net/"
+                    target="_blank">Football News</a> &nbsp;|&nbsp; <a href="https://www.r2bet.com/" target="_blank">Bet of the day</a> &nbsp;|&nbsp; <a href="https://www.victorspredict.com" target="_blank">Victor Prediction</a> &nbsp;|&nbsp; <a href="https://confirmbets.com/"
+                    target="_blank">confirmbets.com</a>
+            </div>
+        </div>
+
+        <br style="clear:both;" />
+    </div>
+    <script type="text/javascript">
+        var _locModel = {};
+        _locModel.T = {
+            T_HT: 'HT',
+            T_Ex_Min: 'Min',
+            T_Ex_Ot: 'Ot',
+            T_Ex_Pen: 'Pen',
+            T_Ex_TwoRounds: 'Two Rounds',
+            T_Ex_Win: 'Win',
+            T_MSG_FilteringNoMatches: 'No record, please change the filter condiction.',
+            T_MSG_NoMatchToday: 'No Match Today !',
+            T_ISee: 'I see',
+            T_ReadMore: 'Read More',
+            T_Handicap: 'Handicap',
+            T_OverUnder: 'Total',
+            T_NoOdds: 'No Odds',
+            T_SearchHot: 'HOT',
+            T_SearchCount: '{0} Record Found',
+            T_S_HTScore: 'HT',
+            T_MyLeagues: 'My Leagues',
+            T_HotLeagues: '',
+            T_NoLiveMatch: 'No game is being played right now.',
+            T_HDP: 'AH',
+            T_OTH_S_AH_HomeWin: '1',
+            T_OTH_S_AH_AwayWin: '2',
+            T_Total: 'Total',
+            T_OTH_S_OU_Over: 'O',
+            T_OTH_S_OU_Under: 'U',
+            T_OTH_S_OP_HomeWin: '1',
+            T_OTH_S_OP_Draw: 'X',
+            T_OTH_S_OP_AwayWin: '2',
+            T_OK: 'OK',
+            T_Cancel: 'Cancel',
+            T_MSG_OnlyTwoOddsType: 'Only two kinds of odds can be shown at one time!',
+            T_Settings: 'Settings',
+            T_Account_Msg1: 'Incomplete information',
+            T_Account_Msg2: 'Incorrect email address',
+            T_Account_Msg5: 'Successful',
+            T_Account_Msg6: 'Please verify your email',
+            T_Account_Msg7: 'Your password is reset, relogin please',
+            T_Account_Msg8: 'Please enter your email',
+            T_Account_Resend: 'Resend',
+            T_Account_VerifyEmailText1: 'Verify your email(Only in this way can reset your password)',
+            T_Account_VerifyEmailText2: 'Verify later',
+            T_Box_Comfirm: 'Comfirm',
+            T_Sunday: 'Sunday',
+            T_Monday: 'Monday',
+            T_Tuesday: 'Tuesday',
+            T_Wednesday: 'Wednesday',
+            T_Thursday: 'Thursday',
+            T_Friday: 'Friday',
+            T_Saturday: 'Saturday',
+            T_January: 'January',
+            T_February: 'February',
+            T_March: 'March',
+            T_April: 'April',
+            T_May: 'May',
+            T_June: 'June',
+            T_July: 'July',
+            T_August: 'August',
+            T_September: 'September',
+            T_October: 'October',
+            T_November: 'November',
+            T_December: 'December',
+            T_S_January: 'Jan',
+            T_S_February: 'Feb',
+            T_S_March: 'Mar',
+            T_S_April: 'Apr',
+            T_S_May: 'May',
+            T_S_June: 'Jun',
+            T_S_July: 'Jul',
+            T_S_August: 'Aug',
+            T_S_September: 'Sep',
+            T_S_October: 'Oct',
+            T_S_November: 'Nov',
+            T_S_December: 'Dec',
+            T_Stat_S_Part1: 'Part1',
+            T_Stat_S_Part2: 'Part2',
+            T_Stat_S_Pen: 'Pen',
+            T_Stat_S_OverTime: 'Ot',
+            T_Stat_S_Cancel: 'Cancel',
+            T_Stat_S_Pending: 'Pend.',
+            T_Stat_S_Abd: 'Abd',
+            T_Stat_S_Pause: 'Pause',
+            T_Stat_Postp: 'Postp.',
+            T_Stat_FT: 'FT',
+            T_Stat_S_ToBeStart: '&nbsp;',
+            T_Stat_ToBeStart: 'Upcoming'
+        };
+        var _appModule = 'global';
+    </script>
+
+    <div id="popContainer"></div>
+    <script type="text/template" id="tplPop">
+        <div class="popupBox" id="popupBox" onclick="javascript:popUtil.closePopup(1)">
+            <div class="popupBox--info" onclick="cancelBubble(event)">
+                <div class="popupBox--title" {$showTitle}>{$title}</div>
+                <div class="popupBox--body" onclick="cancelBubble(event)" {$bodyStyle}>
+                    {$body}
+                </div>
+                <div class="popupBox--footer" onclick="cancelBubble(event)" {$showFoot}>
+                    {$footer}
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tplPop_btn">
+        <div class="{$btnCss} inline btn popbtn" onclick="javascript:{$func}">{$title}</div>
+    </script>
+
+    <script type="text/template" id="tplMsgBox">
+        <div id="spnLoading">
+            <div id="subSpnLoading">
+                {$message}
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tplLoaddingBox">
+        <div id="spnLoading" class="spnLoading">
+            <div class="loaddingBox" id="subSpnLoading">
+                <img src="/Images/com/loading.gif" width="30" height="30">Loading...
+                <div class="loaddingMsg">NowGoal Livescore</div>
+            </div>
+        </div>
+    </script>
+    <script src="/scripts/locModelUtil.js?v=637709369900000000"></script>
+    <script src="/scripts/common/BomHelper.js?v=637865582620000000"></script>
+    <script src="/scripts/common/popup.js?v=637865582510000000"></script>
+    <script src="/scripts/V3/global/comDiff.js?v=637865582620000000"></script>
+
+    <script src="/scripts/jquery.min.js?v=637811424410000000"></script>
+    <script src="/scripts/jquery.lazyload.min.js?v=637709369900000000"></script>
+
+    <script src="/scripts/common/viewutil.js?v=637865582620000000"></script>
+
+
+
+    <script type="text/javascript">
+        var _isFree = 0;
+    </script>
+
+    <script type="text/template" id="tplLeaHeader">
+        <div class="group-title {$expcCss}" id="expc_{$lId}" data-leaId="{$lId}" data-lidx="{$index}" onclick="expandleague({$lId})">
+            <img class="cImg lazy" data-original="{$pic}" src="{$defPic}" />
+            <span class="leaRow" onclick="toLink(this)" data-link="{$href}" {$target}>{$fullName}</span>
+            <div name="sImg_{$lId}" class="{$topCss}" onclick="MarkTopLea({$lId},event,1)"></div>
+            <div class="odds">
+                {$oddsTitle}
+            </div>
+            <i id="expl_{$lId}" style="{$explShow}" class="expIcon tri {$explCss}"></i>
+            <span class="leaNum {$leaNumCss}" id="leaNum_{$lId}">{$mNum}</span>
+        </div>
+        {$mTags}
+    </script>
+
+    <script type="text/template" id="teamTpl">
+        <div class="group-title {$expcCss}" id="expc_{$tId}" data-leaId="{$tId}" data-lidx="{$index}" onclick="expandTeam({$tId})">
+            <div class="cImgIcon">
+                <img class="cImg" src="{$pic}">
+            </div>
+            <span class="leaRow" onclick="toTeamInfo({$tId})">{$fullName}</span>
+            <div name="sImg_{$tId}" class="{$topCss}" onclick="markTeam({$tId}, this, event)"></div>
+            <div class="odds">
+                {$oddsTitle}
+            </div>
+            <i id="expl_{$tId}" style="{$explShow}" class="expIcon tri {$explCss}"></i>
+            <span class="leaNum {$leaNumCss}" id="leaNum_{$tId}">{$mNum}</span>
+        </div>
+        {$mTags}
+    </script>
+
+    <script type="text/template" id="rowTplByLea">
+        <div id="tb_{$mId}" onclick="toAnalys({$mId})" class="item {$rowcss}" data-mlId="{$lId}" {$expCss}>
+            <div class="team {$scoreCss}">
+                <div class="status">
+                    {$vote}
+                    <span class="time" id="mt_{$mId}">
+                    {$mtime}
+                </span>
+                    <span class="s" id="state_s_{$mId}">{$mstate}</span> {$lineupClass}
+
+                </div>
+
+                <div class="teamInfo">
+                    <div id="rht_{$mId}" class="homeTeam">
+                        <span id="ht_{$mId}" class="name">{$hstar}{$hname}</span>
+                        <i>{$hrank}</i>
+                        <i id="hR_{$mId}" class="redCard">{$hred}</i>
+                        <i id="hY_{$mId}" class="yellowCard">{$hyellow}</i>
+                    </div>
+                    <div class="score" id="stat_{$mId}">
+                        <i id="state_{$mId}">{$mstate}</i>
+                        <span class="homeS" id="hsc_{$mId}">{$hscore}</span>
+                        <span class="vs">-</span>
+                        <span class="guestS" id="gsc_{$mId}">{$gscore}</span>
+                    </div>
+                    <div class="guestTeam">
+                        <span id="gt_{$mId}" class="name">{$gstar}{$gname}</span>
+                        <i>{$grank}</i>
+                        <i id="gR_{$mId}" class="redCard">{$gred}</i>
+                        <i id="gY_{$mId}" class="yellowCard">{$gyellow}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="timeScore fb">
+                <i id="htit_{$mId}">{$htit}</i>
+                <div class="home"><span class="odd htScore" id="hht_{$mId}">{$hhscore}</span></div>
+                <span class="vs">-</span>
+                <div class="guest"><span class="odd htScore" id="ght_{$mId}">{$ghscore}</span></div>
+            </div>
+
+            <div class="odds">
+                <i></i>
+                <div class="hOdds {$oddsName0}">
+                    {$oddsTpl}
+                </div>
+            </div>
+            <div id="tImg_{$mId}" class="{$topCss}" onclick="MarkTop({$mId},event,1)"></div>
+            <div id="exList_{$mId}" class="exbar" style="display:{$showEx}">
+                {$explain}
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="tplOddsAh">
+        <span class="pan" style="{$o2_show}"><i>AH</i><span id="o2_{$mId}">{$o2}</span></span>
+        <span style="{$o1_show}"><i>1</i><span id="o1_{$mId}">{$o1}</span></span>
+        <span style="{$o3_show}"><i>2</i><span id="o3_{$mId}">{$o3}</span></span>
+    </script>
+
+    <script type="text/template" id="tplOddsOu">
+        <span class="pan" style="{$o2_show}"><i>Total</i><span id="o2_{$mId}">{$o2}</span></span>
+        <span style="{$o1_show}"><i>O</i><span id="o1_{$mId}">{$o1}</span></span>
+        <span style="{$o3_show}"><i>U</i><span id="o3_{$mId}">{$o3}</span></span>
+    </script>
+
+    <script type="text/template" id="tplOddsOp">
+        <span style="{$o1_show}"><i>1</i><span id="o1_{$mId}">{$o1_sp}{$o1}</span></span>
+        <span style="{$o2_show}"><i>X</i><span id="o2_{$mId}">{$o2_sp}{$o2}</span></span>
+        <span style="{$o3_show}"><i>2</i><span id="o3_{$mId}">{$o3_sp}{$o3}</span></span>
+    </script>
+
+    <script type="text/template" id="resultRowTpl">
+    </script>
+
+    <script type="text/template" id="adTpl">
+        <div class="ad ad_min" name="zqMatchAd" data-arr="arrZQMatchImages" style="display:none;"></div>
+    </script>
+    <script type="text/template" id="adTxtTpl">
+        <div class="ad ad_max ad_txt" name="zqMatchTxtAd" data-arr="arrZQMatchTxts" style="display:none;"></div>
+    </script>
+    <script type="text/template" id="popRedTpl">
+        <div class='ballInBox'>
+            <div class='timeBox'>{$mstate}</div>
+            <div class='teamBox'>
+                <div class='team home'>
+                    <div class='name {$hnClass}'>{$hname}</div>
+                    <span class='redCard' style='{$hsCss}'><i>{$hRed}</i></span>
+                </div>
+                <div class='team guest'>
+                    <div class='name {$gnClass}'>{$gname}</div>
+                    <span class='redCard' style='{$gsCss}'><i>{$gRed}</i></span>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="popTpl">
+        <div class='ballInBox'>
+            <div class='timeBox'>{$mstate}</div>
+            <div class='teamBox'>
+                <div class='team home'>
+                    <div class='name'>{$hname}</div>
+                    <span class='{$hsCss}'>{$hscore}</span>
+                </div>
+                <div class='team guest'>
+                    <div class='name'>{$gname}</div>
+                    <span class='{$gsCss}'>{$gscore}</span>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script id="filterNavTpl" type="text/template">
+        <div class="title">
+            <span>Filter</span>
+            <div class="close" onclick="sFilter.hide()"></div>
+        </div>
+        <div class="info">
+            <ul>
+                <li onclick="sFilter.toView(1)">
+                    <div class="name">Filter By Leagues</div>
+                    <i class="more"></i>
+                </li>
+                <li onclick="sFilter.toView(2)">
+                    <div class="name">Filter By Countries</div>
+                    <i class="more"></i>
+                </li>
+                <li {$hotshow} onclick="sFilter.action(1,'hotmatch')">
+                    <div class="name">Show Hot Matches ({$hotCount})</div>
+                    <i class="more"></i>
+                </li>
+                <li {$favleashow} onclick="sFilter.action(2,'favlea')">
+                    <div class="name">Favourite Leagues Matches ({$favLeaCount})</div>
+                    <i class="more"></i>
+                </li>
+                <li {$favshow} onclick="sFilter.action(3,'fav')">
+                    <div class="name">Favourite Matches ({$favCount})</div>
+                    <i class="more"></i>
+                </li>
+                <li>
+                    <div class="name">Show Only Odds</div>
+                    <div class="selectLabel">
+                        <label class="switch">
+                        <input type="checkbox" {$onlyOddsChecked} id="cb_only_odds" onclick="sFilter.action(4,'oOdds',event)">
+                        <span class="switch-style"></span>
+                    </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">Matches&#39; Order</div>
+
+                    <ul class="setList" id="set_sorting">
+                        <li data-opt="0" onclick="sFilter.action(5, 'bytime')" class="{$ob_timeCls}"><span class="ro"></span>By Time</li>
+                        <li data-opt="1" onclick="sFilter.action(6, 'bylea')" class="{$ob_leaCls}"><span class="ro"></span>By League</li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </script>
+
+
+    <script id="filterTypesTpl" type="text/template">
+        <div class="title">
+            <div class="HTabs">
+                <span class="tab" onclick="toggleFilterPop(1)" id="btnLeague">Leagues</span>
+                <span class="tab" onclick="toggleFilterPop(2)" id="btnCountry">Countries</span>
+                <span class="tab" id="btnGoalOdds" style="display:none;"></span>
+            </div>
+            <div class="close" onclick="sFilter.hide()"></div>
+        </div>
+
+        <div style="padding-bottom: 100px;" class="info">
+            <div class="dbList">
+                <div class="msg">
+                    Total：<span class="red" id="mTotal">0</span> , Selected : <span class='red' id='visibleCount'>0</span>
+                </div>
+                <ul id="leaFilter_list"></ul>
+                <ul id="countryFilter_list"></ul>
+                <div style="display:none;">
+                    <ul id="oddsFilter_list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="button" id="toolSimp" onclick="quickSelect(2)">Hot</div>
+            <div class="button" onclick="quickSelect(0)">Select All</div>
+            <div class="button" onclick="quickSelect(1)">Clear All</div>
+            <div class="button on" onclick="ConfirmFilter()">OK</div>
+        </div>
+    </script>
+
+    <script id="fplrowTpl" type="text/template">
+        <li id="fBtn_{$Id}" class="{$onCls}" onclick="checkFilterItem({$Id}, this)" data-id="{$Id}" data-mnum="{$mNum}" data-onum="{$oNum}">
+            <span class="cb"></span>{$name}
+            <i id="fBtn_num_{$Id}">({$con})</i>
+            <div id="fp_sImg_{$Id}" class="icon iconfont icon-font-collect-off {$topCls}" onclick="MarkTopLea({$Id},event,1)"></div>
+        </li>
+    </script>
+    <script type="text/template" id="tpl_search">
+        <div class="searchItem" onclick="toAnalys({$mId})">
+            <span class="{$topcss}" onclick="markTopOnSearch({$mId}, this ,event,1)"></span>
+            <span class="time">{$mtime}</span>
+            <span class="status blue">{$mstate}</span>
+            <span class="homeName teamName">{$hname}</span>
+            <span class="totalScore blue">{$hscore}-{$gscore}</span>
+            <span class="guestName teamName">{$gname}</span>
+        </div>
+    </script>
+
+    <script src="/scripts/common/pushNote.js?v=637835613850000000"></script>
+
+    <script src="/scripts/soccer/scoreutil.js?v=637865582620000000"></script>
+    <script src="/scripts/soccer/scoreFilter.js?v=637709369900000000"></script>
+    <script src="/scripts/soccer/score.js?v=637865582620000000"></script>
+    <script src="/scripts/common/settingUtil.js?v=637709369900000000"></script>
+    <script src="/scripts/V3/global/ad.js?v=637804502790000000"></script>
+
+    <script type="text/javascript">
+        function loadAd() {
+            getAd("zqToolTopMinAd");
+            getAd("zqToolBottomMinAd");
+            getAd("zqToolBottomMaxAd");
+            getAd("zqRfMaxAd");
+            getAd("zqMatchAd");
+            getAd("zqMatchTxtAd");
+        }
+        var _ScoreOnly = 0;
+        var _scoreTxtForMatch = "bf_us1";
+        var _scoreTxt = "bf_us";
+        var _tvLiveTxt = "";
+        var _LiveOnly = 0;
+        loadData();
+        loadAd();
+    </script>
+
+    <div style="display:none">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207537988-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-207537988-1');
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?5e57a19f98fab5a2a034f00fdaf64fb6";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </div>
+</body>
+
+</html>

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:footballTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+             xmlns:tabviews="clr-namespace:KetQuaSoBong.Views.TabViews"
+             x:DataType="tabviews:FootballTabViewModel"
              x:Class="KetQuaSoBong.Views.TabViews.FootballTab"
              BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
@@ -52,9 +54,15 @@
                 </Grid>
                 <StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
                              AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
-                    <footballTabViews:LeagueView />
+                    <WebView VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             HeightRequest="10500"
+                             Source="{Binding WebSource}">
+                        
+                    </WebView>
+                    <!--<footballTabViews:LeagueView />
                     <footballTabViews:MathPlaying />
-                    <footballTabViews:UpdateScoreView />
+                    <footballTabViews:UpdateScoreView />-->
                 </StackLayout>
             </AbsoluteLayout>
         </ScrollView>
