@@ -624,7 +624,8 @@ namespace KetQuaSoBong
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
             Preferences.Set("Date", DateTime.Now.ToString("dd/MM/yyyy"));
-            if(Preferences.Get("NumLog",0)==null)
+            Preferences.Set("NumLog", 1);
+            if (Preferences.Get("NumLog", 0) == 0)
             {
                 
                     Preferences.Set("IsLogin", false);
