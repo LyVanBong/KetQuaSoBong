@@ -47,22 +47,20 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
         public FootballChatViewVM(ContentView contentView)
         {
             GetAllChatAsync(contentView);
-            
+            if ((ItemChats.Count > 0))
+            {
+                contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+
+            }
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                CheckNewAsync(contentView);
-                return true;
-            });
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-                if ((ItemChats.Count > 0))
+                Device.BeginInvokeOnMainThread(() =>
                 {
-                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                    CheckNewAsync(contentView);
+                });
+                return true;
 
-                }
-                return false;
             });
-
             SendCommand = new Command(async () =>
             {
                 if (ContentChat != "")
@@ -85,8 +83,10 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     HttpResponseMessage response = await cient.PostAsync(url, content);
                     string result = await response.Content.ReadAsStringAsync();
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
+                    {   
+                        ItemChats.Add(chat);
                         GetAllChatAsync(contentView);
+                        ContentChat = "";
                         Debug.Write("OK");
 
                        
@@ -100,7 +100,11 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                         Debug.Write(response.StatusCode);
                     }
                     ContentChat = "";
-                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                    if ((ItemChats.Count > 0))
+                    {
+                        contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+
+                    }
                 }
             });
             FocusCommand = new Command(async () =>
@@ -125,6 +129,7 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
         public async void GetAllChatAsync(ContentView contentView)
         {
             string url = "https://api.tructiepketqua.net/api/Chats/BongDa";
+            ItemChats = new ObservableCollection<ItemChat>();
             HttpClient client;
             var httpClientHandler = new HttpClientHandler();
             httpClientHandler.ServerCertificateCustomValidationCallback =
@@ -137,7 +142,11 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                 string content = await response.Content.ReadAsStringAsync();
                 List<ItemChat> chats = JsonConvert.DeserializeObject<List<ItemChat>>(content);
                 ItemChats = new ObservableCollection<ItemChat>(chats);
-                contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+                if ((ItemChats.Count > 0))
+                {
+                    contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
+
+                }
                 ItemChats.ForEach(x => x.ListAllChat = chats);
             }
             else
@@ -147,7 +156,7 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
 
         }
 
-        public async Task CheckNewAsync(ContentView cv)
+        public async void CheckNewAsync(ContentView cv)
         {
             string url = "https://api.tructiepketqua.net/api/Chats/BongDa";
             HttpClient client;
