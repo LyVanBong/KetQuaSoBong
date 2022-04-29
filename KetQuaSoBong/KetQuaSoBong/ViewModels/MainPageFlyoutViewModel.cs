@@ -21,10 +21,7 @@ namespace KetQuaSoBong.ViewModels
                 new MainPageFlyoutMenuItem {Id = 0, Title="Xổ số miền Bắc", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bac.png")},
                 new MainPageFlyoutMenuItem {Id = 1, Title="Xổ số miền Trung", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.trung.png")},
                 new MainPageFlyoutMenuItem {Id = 2, Title="Xổ số miền Nam", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.nam.png")},
-                new MainPageFlyoutMenuItem {Id = 3, Title="Soi cầu", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.soi_cau.png")},
                 new MainPageFlyoutMenuItem {Id = 4, Title="Bình chọn", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_vote.png")},
-                new MainPageFlyoutMenuItem {Id = 5, Title="Điện toán", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.dien_toan.png")},
-                new MainPageFlyoutMenuItem {Id = 6, Title="Hướng dẫn", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.huong_dan.png")}
             };
             CollapseMenuCommand = new DelegateCommand(() =>
             {
