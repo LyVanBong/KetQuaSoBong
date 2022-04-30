@@ -8,7 +8,7 @@
     <ContentPage.Resources>
         <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_fb.png" x:Key="Facebook" />
         <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_zalo.png" x:Key="Zalo" />
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_call.png" x:Key="Call" />
+        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_telegram.png" x:Key="Telegram" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
@@ -55,11 +55,12 @@
                              VerticalOptions="Center"
                              Spacing="0"
                              Grid.Column="2">
-                        <Image Source="{StaticResource Call}"
+                        <Image Source="{StaticResource Telegram}"
                            HeightRequest="60"
                            WidthRequest="60"
+                               Aspect="AspectFit"
                            HorizontalOptions="Center" />
-                        <Label Text="Số điện thoại"
+                        <Label Text="Telegram"
                            FontSize="16"
                            TextColor="Black"
                            FontFamily="RBo"
@@ -79,7 +80,7 @@
                            Margin="10,0,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Tên tài khoản: " />
+                                    <Span Text="Tên người dùng: " />
                                     <Span Text="*" TextColor="Red" />
                                 </FormattedString>
                             </Label.FormattedText>
@@ -89,7 +90,51 @@
                            BorderColor="Black"
                            Margin="10,0"
                            HasShadow="False">
-                            <customView:CustomEntry Placeholder="Nhập tên tài khoản...."
+                            <customView:CustomEntry Placeholder="Nhập tên người dùng...."
+                                                FontSize="14">
+                            </customView:CustomEntry>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                           FontFamily="RBo"
+                           FontSize="14"
+                           Margin="10,0,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Tên đăng nhập: " />
+                                    <Span Text="*" TextColor="Red" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Frame HeightRequest="50"
+                           Padding="10,0"
+                           BorderColor="Black"
+                           Margin="10,0"
+                           HasShadow="False">
+                            <customView:CustomEntry Placeholder="Nhập tên đăng nhập của bạn...."
+                                                FontSize="14">
+                            </customView:CustomEntry>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                           FontFamily="RBo"
+                           FontSize="14"
+                           Margin="10,0,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Số điện thoại: " />
+                                    <Span Text="*" TextColor="Red" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Frame HeightRequest="50"
+                           Padding="10,0"
+                           BorderColor="Black"
+                           Margin="10,0"
+                           HasShadow="False">
+                            <customView:CustomEntry Placeholder="Nhập số điện thoại của bạn...."
                                                 FontSize="14">
                             </customView:CustomEntry>
                         </Frame>
@@ -143,7 +188,7 @@
                 <Frame HeightRequest="50"
                            Padding="10,0"
                        BackgroundColor="{StaticResource primaryColor}"
-                           Margin="10,0"
+                           Margin="10,0,10,20"
                            HasShadow="False">
                     <Label
                            FontFamily="RBo"
@@ -158,6 +203,9 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendSupport}"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
             </StackLayout>
         </ScrollView>
