@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="KetQuaSoBong.Views.VotePage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    xmlns:votePageViews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="{StaticResource placeholderColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:votePageViews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="KetQuaSoBong.Views.TabViews.VotePage"
+             BackgroundColor="{StaticResource placeholderColor}">
     <NavigationPage.TitleView>
         <Grid>
             <Label

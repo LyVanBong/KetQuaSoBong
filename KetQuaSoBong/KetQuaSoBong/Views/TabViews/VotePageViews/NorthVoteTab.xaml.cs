@@ -79,24 +79,25 @@ namespace KetQuaSoBong.Views.VotePageViews
             SelectCommand = new Command((x) =>
             {
                 var btn = x as Button;
-
-                if (btn.ClassId == "0")
-                {
-                    if (_count < 3)
+                
+                    if (btn.ClassId == "0")
                     {
-                        _count++;
-                        btn.ClassId = "1";
-                        NumbersSelected.Add(btn.Text);
+                        if (_count < 2)
+                        {
+                            _count++;
+                            btn.ClassId = "1";
+                            NumbersSelected.Add(btn.Text);
+                            StrNumbers = string.Join(",", NumbersSelected.ToArray());
+                        }
+                    }
+                    else
+                    {
+                        _count--;
+                        btn.ClassId = "0";
+                        NumbersSelected.Remove(btn.Text);
                         StrNumbers = string.Join(",", NumbersSelected.ToArray());
                     }
-                }
-                else
-                {
-                    _count--;
-                    btn.ClassId = "0";
-                    NumbersSelected.Remove(btn.Text);
-                    StrNumbers = string.Join(",", NumbersSelected.ToArray());
-                }
+               
             });
             ShowHideResultCommand = new Command(() =>
             {
