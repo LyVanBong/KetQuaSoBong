@@ -15,7 +15,7 @@
             <StackLayout IsVisible="{Binding IsVisibleResult}">
                 <Label HorizontalTextAlignment="Center"
 
-                    Text="HÃY BÌNH CHỌN 2 CON SỐ"
+                    Text="HÃY DỰ ĐOÁN 2 CON SỐ"
                               FontSize="16"
                               TextColor="{StaticResource primaryColor}"
                               FontFamily="RBo" />
@@ -81,7 +81,7 @@
             <StackLayout IsVisible="{Binding IsVisibleResult, Converter={xct:InvertedBoolConverter}}">
                 <Label HorizontalTextAlignment="Center"
 
-                    Text="KẾT QUẢ TỔNG SỐ NGƯỜI BÌNH CHỌN HÔM NAY:"
+                    Text="KẾT QUẢ TỔNG SỐ NGƯỜI CÓ CÙNG DỰ ĐOÁN VỚI BẠN HÔM NAY:"
                               FontSize="16"
                               TextColor="{StaticResource primaryColor}"
                               FontFamily="RBo" />
