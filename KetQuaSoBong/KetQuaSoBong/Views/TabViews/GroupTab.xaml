@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:groupTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
-             x:Class="KetQuaSoBong.Views.TabViews.GroupTab"
-             BackgroundColor="{StaticResource placeholderColor}">
+<ContentPage
+    x:Class="KetQuaSoBong.Views.TabViews.GroupTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:groupTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
+    BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
         <ControlTemplate x:Key="FrameRadioTemplate">
-            <Frame Padding="0" HasShadow="False" CornerRadius="8" VerticalOptions="Start"
-               HeightRequest="40" WidthRequest="150" HorizontalOptions="Start">
+            <Frame
+                Padding="0"
+                CornerRadius="8"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="150">
+                <Grid Margin="4" WidthRequest="100">
+                    <ContentPresenter />
+                </Grid>
 
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CheckedStates">
@@ -25,45 +35,52 @@
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
-
-                <Grid Margin="4" WidthRequest="100">
-                    <ContentPresenter />
-                </Grid>
             </Frame>
         </ControlTemplate>
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <Grid RowDefinitions="60,Auto">
-                <StackLayout Orientation="Horizontal"
-                         Spacing="10"
-                         Margin="10"
-                         Grid.Row="0">
-                    <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                             x:Name="rdXS"
-                             IsChecked="True">
+                <StackLayout
+                    Grid.Row="0"
+                    Margin="10"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <RadioButton
+                        x:Name="rdXS"
+                        ControlTemplate="{StaticResource FrameRadioTemplate}"
+                        IsChecked="True">
                         <RadioButton.Content>
-                            <Label Text="Xổ số" TextColor="White"
-                               FontFamily="RBo"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center">
+                            <Label
+                                FontFamily="RBo"
+                                HorizontalOptions="Center"
+                                Text="Xổ số"
+                                TextColor="White"
+                                VerticalOptions="Center">
                                 <Label.Triggers>
-                                    <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdXS}, Path=IsChecked}" Value="False">
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rdXS}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="False">
                                         <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                     </DataTrigger>
                                 </Label.Triggers>
                             </Label>
                         </RadioButton.Content>
                     </RadioButton>
-                    <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                             x:Name="rdBD">
+                    <RadioButton x:Name="rdBD" ControlTemplate="{StaticResource FrameRadioTemplate}">
                         <RadioButton.Content>
-                            <Label Text="Bóng đá" TextColor="White"
-                               FontFamily="RBo"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center">
+                            <Label
+                                FontFamily="RBo"
+                                HorizontalOptions="Center"
+                                Text="Bóng đá"
+                                TextColor="White"
+                                VerticalOptions="Center">
                                 <Label.Triggers>
-                                    <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdBD}, Path=IsChecked}" Value="False">
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference rdBD}, Path=IsChecked}"
+                                        TargetType="Label"
+                                        Value="False">
                                         <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                     </DataTrigger>
                                 </Label.Triggers>
@@ -71,10 +88,8 @@
                         </RadioButton.Content>
                     </RadioButton>
                 </StackLayout>
-                <groupTabViews:LotteryChatView Grid.Row="1"
-                                           IsVisible="{Binding Source={x:Reference rdXS}, Path=IsChecked}" />
-                <groupTabViews:FootballChatView Grid.Row="1"
-                                           IsVisible="{Binding Source={x:Reference rdBD}, Path=IsChecked}" />
+                <groupTabViews:LotteryChatView Grid.Row="1" IsVisible="{Binding Source={x:Reference rdXS}, Path=IsChecked}" />
+                <groupTabViews:FootballChatView Grid.Row="1" IsVisible="{Binding Source={x:Reference rdBD}, Path=IsChecked}" />
             </Grid>
         </ScrollView>
     </ContentPage.Content>

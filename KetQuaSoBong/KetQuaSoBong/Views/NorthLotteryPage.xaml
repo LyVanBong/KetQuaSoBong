@@ -1,28 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:prism="http://prismlibrary.com"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:lmd="clr-namespace:KetQuaSoBong.Models.LotteryModel"
-             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
-             x:DataType="viewmodels:NorthLotteryPageViewModel"
-             xmlns:lv="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KetQuaSoBong.Views.NorthLotteryPage">
+<ContentPage
+    x:Class="KetQuaSoBong.Views.NorthLotteryPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:NorthLotteryPageViewModel">
     <NavigationPage.TitleView>
         <Grid>
-            <Label Text="XỔ SỐ MIỀN BẮC"
-                   TextColor="White"
-                   FontFamily="R"
-                   FontSize="18"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   Margin="-50,0,0,0" />
-            <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_calendar_3.png}"
-                   HeightRequest="20"
-                   WidthRequest="20"
-                   HorizontalOptions="End"
-                   Margin="0,0,10,0">
+            <Label
+                Margin="-50,0,0,0"
+                FontFamily="R"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="XỔ SỐ MIỀN BẮC"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Image
+                Margin="0,0,10,0"
+                HeightRequest="20"
+                HorizontalOptions="End"
+                Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.ic_calendar_3.png}"
+                WidthRequest="20">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ShowDialog}" />
                 </Image.GestureRecognizers>
@@ -31,19 +32,22 @@
     </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" x:Key="MLottery" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar" />
+            <xct:ImageResource x:Key="IconUp" Id="KetQuaSoBong.Resources.Images.ic_up.png" />
+            <xct:ImageResource x:Key="IconDown" Id="KetQuaSoBong.Resources.Images.ic_down.png" />
+            <xct:ImageResource x:Key="Uncheck" Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" />
+            <xct:ImageResource x:Key="Checked" Id="KetQuaSoBong.Resources.Images.ic_checked.png" />
+            <xct:ImageResource x:Key="MLottery" Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" />
+            <xct:ImageResource x:Key="SLottery" Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" />
+            <xct:ImageResource x:Key="LotteryBall" Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" />
+            <xct:ImageResource x:Key="Calendar" Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" />
             <ControlTemplate x:Key="RadioButton">
-                <Frame Padding="0"
-                       VerticalOptions="Start"
-                       BackgroundColor="Transparent"
-                       HeightRequest="30" WidthRequest="70" HorizontalOptions="Start">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    WidthRequest="70">
                     <Grid Margin="4" WidthRequest="70">
                         <ContentPresenter />
                     </Grid>
@@ -53,18 +57,17 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
-        <ActivityIndicator HeightRequest="30"
-                           WidthRequest="30"
-                           IsRunning="True"
-                           Color="{StaticResource primaryColor}"
-                           IsVisible="{Binding IsVisible, Converter={xct:InvertedBoolConverter}}"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
-        <ScrollView IsVisible="{Binding IsVisible}">
-            <StackLayout x:Name="ListResult">
-                
-            </StackLayout>
-        </ScrollView>
+            <ActivityIndicator
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                IsRunning="True"
+                IsVisible="{Binding IsVisible, Converter={xct:InvertedBoolConverter}}"
+                VerticalOptions="Center"
+                WidthRequest="30"
+                Color="{StaticResource primaryColor}" />
+            <ScrollView IsVisible="{Binding IsVisible}">
+                <StackLayout x:Name="ListResult" />
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

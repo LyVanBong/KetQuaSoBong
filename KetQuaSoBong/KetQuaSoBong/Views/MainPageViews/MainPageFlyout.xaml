@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:prism="http://prismlibrary.com"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:md="clr-namespace:KetQuaSoBong.Models"
-             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
-             x:Class="KetQuaSoBong.Views.MainPageViews.MainPageFlyout"
-             x:DataType="viewmodels:MainPageFlyoutViewModel"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             Title="Flyout">
+<ContentPage
+    x:Class="KetQuaSoBong.Views.MainPageViews.MainPageFlyout"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:md="clr-namespace:KetQuaSoBong.Models"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="Flyout"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:MainPageFlyoutViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.layer.png" x:Key="Layer" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.back-btn.png" x:Key="Back" />
+            <xct:ImageResource x:Key="Layer" Id="KetQuaSoBong.Resources.Images.layer.png" />
+            <xct:ImageResource x:Key="Back" Id="KetQuaSoBong.Resources.Images.back-btn.png" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView VerticalScrollBarVisibility="Never">
@@ -21,85 +22,95 @@
                 <RowDefinition Height="200" />
                 <RowDefinition Height="7*" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0"
-              RowDefinitions="10,6*,2*,2.5*,10">
-                <Image Source="{StaticResource Layer}"
+            <Grid Grid.Row="0" RowDefinitions="10,6*,2*,2.5*,10">
+                <Image
+                    Grid.RowSpan="5"
                     Aspect="AspectFill"
-                    Grid.RowSpan="5" />
-                <Image Source="{StaticResource Back}"
-                       Aspect="AspectFit"
-                       WidthRequest="20"
-                       HeightRequest="18"
-                       Margin="10,15,10,10"
-                       HorizontalOptions="EndAndExpand"
-                       VerticalOptions="Start"
-                       Grid.RowSpan="5">
+                    Source="{StaticResource Layer}" />
+                <Image
+                    Grid.RowSpan="5"
+                    Margin="10,15,10,10"
+                    Aspect="AspectFit"
+                    HeightRequest="18"
+                    HorizontalOptions="EndAndExpand"
+                    Source="{StaticResource Back}"
+                    VerticalOptions="Start"
+                    WidthRequest="20">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding CollapseMenuCommand}" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Frame Padding="0"
-                   CornerRadius="100"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   Grid.Row="1">
+                <Frame
+                    Grid.Row="1"
+                    Padding="0"
+                    CornerRadius="100"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
                     <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-1.png}" />
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ShowUserProfilePage}" />
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Label Text="{Binding Name}"
+                <Label
                     Grid.Row="2"
-                    VerticalOptions="Center"
+                    FontFamily="RM"
                     FontSize="Body"
-                   FontFamily="RM"
-                   TextColor="White"
-                   HorizontalOptions="Center" />
-                <Button Grid.Row="3"
-                    HeightRequest="80"
-                    WidthRequest="180"
                     HorizontalOptions="Center"
-                    BackgroundColor="White"
-                    CornerRadius="40"
-                    Text="Đăng nhập"
-                    Command="{prism:NavigateTo 'NavigationPage/LoginPage'}"
-                    TextColor="{StaticResource primaryColor}"
+                    Text="{Binding Name}"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Row="3"
                     Padding="0,0,0,3"
+                    BackgroundColor="White"
+                    Command="{prism:NavigateTo 'NavigationPage/LoginPage'}"
+                    CornerRadius="40"
+                    FontFamily="RM"
                     FontSize="Default"
-                    FontFamily="RM">
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    Text="Đăng nhập"
+                    TextColor="{StaticResource primaryColor}"
+                    WidthRequest="180">
                     <Button.Triggers>
-                        <DataTrigger TargetType="Button" Binding="{Binding IsLogin}" Value="True">
-                            <Setter Property="Text" Value="Đăng xuất"/>
+                        <DataTrigger
+                            Binding="{Binding IsLogin}"
+                            TargetType="Button"
+                            Value="True">
+                            <Setter Property="Text" Value="Đăng xuất" />
                         </DataTrigger>
                     </Button.Triggers>
                 </Button>
             </Grid>
             <StackLayout
-            Grid.Row="1"
                 x:Name="ListItem"
-            BindableLayout.ItemsSource="{Binding ListItem}"
-            Spacing="0">
+                Grid.Row="1"
+                BindableLayout.ItemsSource="{Binding ListItem}"
+                Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:MainPageFlyoutMenuItem">
                         <StackLayout
-                        Spacing="0"
-                        Padding="0,5,0,5"
-                            x:Name="MenuItem">
-                            <Grid ColumnDefinitions="40,*"
-                              HeightRequest="40"
-                              Margin="10,0,0,10">
-                                <Image Source="{Binding Icon}"
-                                   Grid.Column="0"
-                                   WidthRequest="40"
-                                   HeightRequest="40"
-                                   Aspect="AspectFill" />
-                                <Label Text="{Binding Title}"
-                                   Grid.Column="1"
-                                   VerticalOptions="Center"
-                                   FontSize="Body"
-                                   FontFamily="RM"
-                                   TextColor="Black"
-                                   Margin="10,0,0,0" />
+                            x:Name="MenuItem"
+                            Padding="0,5,0,5"
+                            Spacing="0">
+                            <Grid
+                                Margin="10,0,0,10"
+                                ColumnDefinitions="40,*"
+                                HeightRequest="40">
+                                <Image
+                                    Grid.Column="0"
+                                    Aspect="AspectFill"
+                                    HeightRequest="40"
+                                    Source="{Binding Icon}"
+                                    WidthRequest="40" />
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    FontFamily="RM"
+                                    FontSize="Body"
+                                    Text="{Binding Title}"
+                                    TextColor="Black"
+                                    VerticalOptions="Center" />
                             </Grid>
                             <BoxView HeightRequest="0.5" Color="Gray" />
                             <StackLayout.GestureRecognizers>

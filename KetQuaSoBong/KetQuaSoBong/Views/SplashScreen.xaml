@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:prism="http://prismlibrary.com"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
-             x:DataType="viewmodels:SplashScreenViewModel"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KetQuaSoBong.Views.SplashScreen">
+<ContentPage
+    x:Class="KetQuaSoBong.Views.SplashScreen"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:DataType="viewmodels:SplashScreenViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label" x:Key="lblLoadingStyle">
+            <Style x:Key="lblLoadingStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
@@ -19,17 +20,19 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.layer.png}"
-               Aspect="Fill" />
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center"
-                     Margin="0,0,0,70">
-            <Image Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-slash.png}"
-                           WidthRequest="120"
-                           HeightRequest="120" />
-            <Label TextColor="White"
-                           Margin="0,10,0,10"
-                           Style="{StaticResource lblLoadingStyle}">
+        <Image Aspect="Fill" Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.layer.png}" />
+        <StackLayout
+            Margin="0,0,0,70"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Image
+                HeightRequest="120"
+                Source="{xct:ImageResource Id=KetQuaSoBong.Resources.Images.logo-slash.png}"
+                WidthRequest="120" />
+            <Label
+                Margin="0,10,0,10"
+                Style="{StaticResource lblLoadingStyle}"
+                TextColor="White">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Đang tải" />

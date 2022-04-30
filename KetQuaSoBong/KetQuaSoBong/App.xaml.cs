@@ -30,6 +30,7 @@ namespace KetQuaSoBong
     public partial class App
     {
         public static string ApiUrl = "https://tructiepketqua.net/api/";
+
         public static string[] NorthLotteryResultTest
         {
             get => new string[] { "98819", "44179", "96294", "96108", "61368", "22973", "51191", "28270", "11119", "11461", "6484", "4112", "0063", "8515", "4555", "2238", "0157", "5358", "6076", "8185", "957", "130", "489", "17", "45", "96", "10" };
@@ -584,8 +585,6 @@ namespace KetQuaSoBong
             }
         };
 
-        
-
         public static ObservableCollection<LotteryCheckItem> LotteryCheckItems = new ObservableCollection<LotteryCheckItem>()
         {
             new LotteryCheckItem() { Number = "10", Time=1},
@@ -611,8 +610,6 @@ namespace KetQuaSoBong
             new LotteryCheckItem() { Number = "89", Time=1}
         };
 
-        
-       
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -627,11 +624,9 @@ namespace KetQuaSoBong
             Preferences.Set("NumLog", 1);
             if (Preferences.Get("NumLog", 0) == 0)
             {
-                
-                    Preferences.Set("IsLogin", false);
-                
+                Preferences.Set("IsLogin", false);
             }
-           
+
             Preferences.Set("S", "rdNam");
         }
 

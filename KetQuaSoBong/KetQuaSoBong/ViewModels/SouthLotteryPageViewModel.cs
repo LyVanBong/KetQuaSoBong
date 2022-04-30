@@ -1,9 +1,7 @@
-﻿using KetQuaSoBong.Models.LotteryModel;
-using KetQuaSoBong.Views.Popups;
+﻿using KetQuaSoBong.Views.Popups;
 using KetQuaSoBong.Views.TabViews.LotteryTabViews;
 using Prism.Mvvm;
 using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
@@ -13,6 +11,7 @@ namespace KetQuaSoBong.ViewModels
     public class SouthLotteryPageViewModel : BindableBase
     {
         private bool _isVisible = false;
+
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -27,7 +26,6 @@ namespace KetQuaSoBong.ViewModels
                 {
                     try
                     {
-                        
                         page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(DateTime.Now, "south", true));
 
                         IsVisible = true;
@@ -36,27 +34,23 @@ namespace KetQuaSoBong.ViewModels
                     {
                         Debug.Write(ex.Message);
                     }
-
-
-
                 });
                 return false;
             });
             ShowDialog = new Command(async () =>
-            {  
+            {
                 try
                 {
                     Date = (DateTime)await Application.Current.MainPage.Navigation.ShowPopupAsync(new CalendarPopup());
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Debug.Write(ex.Message);
                 }
-               
-               page.FindByName<StackLayout>("ListResult").Children.Clear();
-               page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(Date, "south", true));
-            });
 
+                page.FindByName<StackLayout>("ListResult").Children.Clear();
+                page.FindByName<StackLayout>("ListResult").Children.Add(new SouthOrCentralLotteryView(Date, "south", true));
+            });
         }
 
         private DateTime _date = DateTime.Now;

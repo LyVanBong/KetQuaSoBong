@@ -213,16 +213,16 @@
       <Version>107.3.0</Version>
     </PackageReference>
     <PackageReference Include="SolrNet.Core">
-      <Version>1.0.19</Version>
+      <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfTabView">
-      <Version>20.1.0.47</Version>
+      <Version>20.1.0.51</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.CommunityToolkit">
       <Version>2.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.2" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>

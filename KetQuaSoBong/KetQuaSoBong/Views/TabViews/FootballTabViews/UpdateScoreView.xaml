@@ -1,68 +1,75 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Frame xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-       xmlns:md="clr-namespace:KetQuaSoBong.Models"
-       xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
-       x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.UpdateScoreView"
-       x:DataType="footballtabviews:UpdateScoreViewVM"
-
-             Padding="0">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame
+    x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.UpdateScoreView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+    xmlns:md="clr-namespace:KetQuaSoBong.Models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Padding="0"
+    x:DataType="footballtabviews:UpdateScoreViewVM">
     <Frame.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nc_premier.png" x:Key="PL" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nc_laliga.png" x:Key="Laliga" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nc_serieA.png" x:Key="SerieA" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nc_league1.png" x:Key="League1" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nc_bunesliga.png" x:Key="Bunesliga" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up_2.png" x:Key="IconUp" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down_2.png" x:Key="IconDown" />
+            <xct:ImageResource x:Key="PL" Id="KetQuaSoBong.Resources.Images.ic_nc_premier.png" />
+            <xct:ImageResource x:Key="Laliga" Id="KetQuaSoBong.Resources.Images.ic_nc_laliga.png" />
+            <xct:ImageResource x:Key="SerieA" Id="KetQuaSoBong.Resources.Images.ic_nc_serieA.png" />
+            <xct:ImageResource x:Key="League1" Id="KetQuaSoBong.Resources.Images.ic_nc_league1.png" />
+            <xct:ImageResource x:Key="Bunesliga" Id="KetQuaSoBong.Resources.Images.ic_nc_bunesliga.png" />
+            <xct:ImageResource x:Key="IconUp" Id="KetQuaSoBong.Resources.Images.ic_up_2.png" />
+            <xct:ImageResource x:Key="IconDown" Id="KetQuaSoBong.Resources.Images.ic_down_2.png" />
         </ResourceDictionary>
     </Frame.Resources>
     <Frame.Content>
-        <StackLayout
-            Spacing="0"
-            Padding="0,0,0,10">
-            <StackLayout Orientation="Horizontal"
-                         BackgroundColor="Gold"
-                         HeightRequest="50">
-                <Label Text="TỶ SỐ CẬP NHẬT"
-                 Margin="10"
-                       FontSize="16"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="White"
-                       VerticalOptions="Center"
-                 FontFamily="RB" />
+        <StackLayout Padding="0,0,0,10" Spacing="0">
+            <StackLayout
+                BackgroundColor="Gold"
+                HeightRequest="50"
+                Orientation="Horizontal">
+                <Label
+                    Margin="10"
+                    FontFamily="RB"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="TỶ SỐ CẬP NHẬT"
+                    TextColor="White"
+                    VerticalOptions="Center" />
             </StackLayout>
             <StackLayout Spacing="0">
-                <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
-                <StackLayout Orientation="Horizontal"
-                             Margin="12,0,10,0"
-                         HeightRequest="50">
-                    <Image Source="{StaticResource PL}"
-                           WidthRequest="50"
-                           HeightRequest="50" />
-                    <Label Text="Ngoại hạng Anh"
-                           Margin="10"
-                           FontSize="14"
-                           HorizontalOptions="Start"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontFamily="RBo" />
-                    <Label Text="{Binding PremierScores.Count, StringFormat='({0})'}"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                           FontFamily="RB" />
-                    <Image Source="{StaticResource IconUp}"
-                           WidthRequest="15"
-                           HeightRequest="15"
-                           Margin="0,2,0,0"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
+                <BoxView HeightRequest="0.5" Color="LightGray" />
+                <StackLayout
+                    Margin="12,0,10,0"
+                    HeightRequest="50"
+                    Orientation="Horizontal">
+                    <Image
+                        HeightRequest="50"
+                        Source="{StaticResource PL}"
+                        WidthRequest="50" />
+                    <Label
+                        Margin="10"
+                        FontFamily="RBo"
+                        FontSize="14"
+                        HorizontalOptions="Start"
+                        Text="Ngoại hạng Anh"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Label
+                        FontFamily="RB"
+                        HorizontalOptions="EndAndExpand"
+                        Text="{Binding PremierScores.Count, StringFormat='({0})'}"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Image
+                        Margin="0,2,0,0"
+                        HeightRequest="15"
+                        HorizontalOptions="End"
+                        Source="{StaticResource IconUp}"
+                        VerticalOptions="Center"
+                        WidthRequest="15">
                         <Image.Triggers>
-                            <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutPremier}, Path=IsVisible}" Value="False">
+                            <DataTrigger
+                                Binding="{Binding Source={x:Reference layoutPremier}, Path=IsVisible}"
+                                TargetType="Image"
+                                Value="False">
                                 <Setter Property="Source" Value="{StaticResource IconDown}" />
                             </DataTrigger>
                         </Image.Triggers>
@@ -72,47 +79,51 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
-                <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
-                <StackLayout BindableLayout.ItemsSource="{Binding PremierScores}"
-                             Spacing="0"
-                             x:Name="layoutPremier">
+                <BoxView HeightRequest="0.5" Color="LightGray" />
+                <StackLayout
+                    x:Name="layoutPremier"
+                    BindableLayout.ItemsSource="{Binding PremierScores}"
+                    Spacing="0">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="md:Match">
-                            <Frame HeightRequest="80"
-                                   Margin="10,5"
-                                   Padding="0"
-                                   HasShadow="False"
-                                   CornerRadius="5"
-                                   BackgroundColor="{StaticResource placeholderColor}">
-                                <Grid ColumnDefinitions="*,60,*"
-                                      ColumnSpacing="0">
-                                    <StackLayout Grid.Column="0"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="EndAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                            <Frame
+                                Margin="10,5"
+                                Padding="0"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                CornerRadius="5"
+                                HasShadow="False"
+                                HeightRequest="80">
+                                <Grid ColumnDefinitions="*,60,*" ColumnSpacing="0">
+                                    <StackLayout
+                                        Grid.Column="0"
+                                        HorizontalOptions="EndAndExpand"
+                                        Orientation="Vertical"
+                                        Spacing="5"
+                                        VerticalOptions="Center"
+                                        WidthRequest="120">
 
-                                        <Image Source="{Binding Team1.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                        <Label Text="{Binding Team1.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                        <Image
+                                            HeightRequest="40"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding Team1.Logo}"
+                                            WidthRequest="40" />
+                                        <Label
+                                            FontFamily="RM"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding Team1.Name}" />
                                     </StackLayout>
-                                    <StackLayout Grid.Column="1"
-                               VerticalOptions="Center"
-                                     Spacing="3">
-                                        <Label FontSize="15"
-                                   FontFamily="RBo"
-                                   VerticalOptions="Center"
-                                   TextColor='Black'
-                                   HorizontalTextAlignment="Center">
+                                    <StackLayout
+                                        Grid.Column="1"
+                                        Spacing="3"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="15"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="Black"
+                                            VerticalOptions="Center">
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <Span Text="{Binding PointT1}" />
@@ -122,30 +133,31 @@
                                             </Label.FormattedText>
                                         </Label>
                                         <Label
-                                Text="{Binding NoteMatch}"
-                               FontSize="13"
-                               FontFamily="RI"
-                               HorizontalTextAlignment="Center">
-                                        </Label>
+                                            FontFamily="RI"
+                                            FontSize="13"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding NoteMatch}" />
                                     </StackLayout>
 
-                                    <StackLayout Grid.Column="2"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="StartAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                                    <StackLayout
+                                        Grid.Column="2"
+                                        HorizontalOptions="StartAndExpand"
+                                        Orientation="Vertical"
+                                        Spacing="5"
+                                        VerticalOptions="Center"
+                                        WidthRequest="120">
 
-                                        <Image Source="{Binding Team2.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                        <Label Text="{Binding Team2.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                        <Image
+                                            HeightRequest="40"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding Team2.Logo}"
+                                            WidthRequest="40" />
+                                        <Label
+                                            FontFamily="RM"
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding Team2.Name}" />
                                     </StackLayout>
                                 </Grid>
                             </Frame>
@@ -153,37 +165,44 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </StackLayout>
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
+            <BoxView HeightRequest="0.5" Color="LightGray" />
 
-            <StackLayout Orientation="Horizontal"
-                             Margin="10,0,10,0"
-                         HeightRequest="50">
+            <StackLayout
+                Margin="10,0,10,0"
+                HeightRequest="50"
+                Orientation="Horizontal">
 
-                <Image Source="{StaticResource League1}"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                       Margin="0,10" />
-                <Label Text="Giải hạng nhất nước Pháp"
-                           Margin="10"
-                           FontSize="14"
-                           HorizontalOptions="Start"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontFamily="RBo" />
-                <Label Text="{Binding League1Scores.Count, StringFormat='({0})'}"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                           FontFamily="RB" />
-                <Image Source="{StaticResource IconUp}"
-                           WidthRequest="15"
-                           HeightRequest="15"
-                           Margin="0,2,0,0"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
+                <Image
+                    Margin="0,10"
+                    HeightRequest="50"
+                    Source="{StaticResource League1}"
+                    WidthRequest="50" />
+                <Label
+                    Margin="10"
+                    FontFamily="RBo"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    Text="Giải hạng nhất nước Pháp"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="RB"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding League1Scores.Count, StringFormat='({0})'}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Margin="0,2,0,0"
+                    HeightRequest="15"
+                    HorizontalOptions="End"
+                    Source="{StaticResource IconUp}"
+                    VerticalOptions="Center"
+                    WidthRequest="15">
                     <Image.Triggers>
-                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutLeague1}, Path=IsVisible}" Value="False">
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference layoutLeague1}, Path=IsVisible}"
+                            TargetType="Image"
+                            Value="False">
                             <Setter Property="Source" Value="{StaticResource IconDown}" />
                         </DataTrigger>
                     </Image.Triggers>
@@ -192,48 +211,51 @@
                     <TapGestureRecognizer Command="{Binding ShowHideLayoutCommand}" CommandParameter="{x:Reference layoutLeague1}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
-            <StackLayout BindableLayout.ItemsSource="{Binding League1Scores}"
-
-                             Spacing="0"
-                         x:Name="layoutLeague1">
+            <BoxView HeightRequest="0.5" Color="LightGray" />
+            <StackLayout
+                x:Name="layoutLeague1"
+                BindableLayout.ItemsSource="{Binding League1Scores}"
+                Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:Match">
-                        <Frame HeightRequest="80"
-                                   Margin="10,5"
-                                   Padding="0"
-                                   HasShadow="False"
-                                   CornerRadius="5"
-                                   BackgroundColor="{StaticResource placeholderColor}">
-                            <Grid ColumnDefinitions="*,60,*"
-                                      ColumnSpacing="0">
-                                <StackLayout Grid.Column="0"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="EndAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                        <Frame
+                            Margin="10,5"
+                            Padding="0"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HeightRequest="80">
+                            <Grid ColumnDefinitions="*,60,*" ColumnSpacing="0">
+                                <StackLayout
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team1.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team1.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team1.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team1.Name}" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1"
-                               VerticalOptions="Center"
-                                     Spacing="3">
-                                    <Label FontSize="15"
-                                   FontFamily="RBo"
-                                   VerticalOptions="Center"
-                                   TextColor='Black'
-                                   HorizontalTextAlignment="Center">
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Spacing="3"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontFamily="RBo"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding PointT1}" />
@@ -243,30 +265,31 @@
                                         </Label.FormattedText>
                                     </Label>
                                     <Label
-                                Text="{Binding NoteMatch}"
-                               FontSize="13"
-                               FontFamily="RI"
-                               HorizontalTextAlignment="Center">
-                                    </Label>
+                                        FontFamily="RI"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding NoteMatch}" />
                                 </StackLayout>
 
-                                <StackLayout Grid.Column="2"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="StartAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                                <StackLayout
+                                    Grid.Column="2"
+                                    HorizontalOptions="StartAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team2.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team2.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team2.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team2.Name}" />
                                 </StackLayout>
                             </Grid>
                         </Frame>
@@ -274,37 +297,44 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
 
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
+            <BoxView HeightRequest="0.5" Color="LightGray" />
 
-            <StackLayout Orientation="Horizontal"
-                             Margin="10,0,10,0"
-                         HeightRequest="50">
+            <StackLayout
+                Margin="10,0,10,0"
+                HeightRequest="50"
+                Orientation="Horizontal">
 
-                <Image Source="{StaticResource Laliga}"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                       Margin="0,10" />
-                <Label Text="Vô địch quốc gia Tây Ban Nha"
-                           Margin="10"
-                           FontSize="14"
-                           HorizontalOptions="Start"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontFamily="RBo" />
-                <Label Text="{Binding LaligaScores.Count, StringFormat='({0})'}"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                           FontFamily="RB" />
-                <Image Source="{StaticResource IconUp}"
-                           WidthRequest="15"
-                           HeightRequest="15"
-                           Margin="0,2,0,0"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
+                <Image
+                    Margin="0,10"
+                    HeightRequest="50"
+                    Source="{StaticResource Laliga}"
+                    WidthRequest="50" />
+                <Label
+                    Margin="10"
+                    FontFamily="RBo"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    Text="Vô địch quốc gia Tây Ban Nha"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="RB"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding LaligaScores.Count, StringFormat='({0})'}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Margin="0,2,0,0"
+                    HeightRequest="15"
+                    HorizontalOptions="End"
+                    Source="{StaticResource IconUp}"
+                    VerticalOptions="Center"
+                    WidthRequest="15">
                     <Image.Triggers>
-                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutLaliga}, Path=IsVisible}" Value="False">
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference layoutLaliga}, Path=IsVisible}"
+                            TargetType="Image"
+                            Value="False">
                             <Setter Property="Source" Value="{StaticResource IconDown}" />
                         </DataTrigger>
                     </Image.Triggers>
@@ -313,47 +343,51 @@
                     <TapGestureRecognizer Command="{Binding ShowHideLayoutCommand}" CommandParameter="{x:Reference layoutLaliga}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
-            <StackLayout BindableLayout.ItemsSource="{Binding LaligaScores}"
-                             Spacing="0"
-                         x:Name="layoutLaliga">
+            <BoxView HeightRequest="0.5" Color="LightGray" />
+            <StackLayout
+                x:Name="layoutLaliga"
+                BindableLayout.ItemsSource="{Binding LaligaScores}"
+                Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:Match">
-                        <Frame HeightRequest="80"
-                                   Margin="10,5"
-                                   Padding="0"
-                                   HasShadow="False"
-                                   CornerRadius="5"
-                                   BackgroundColor="{StaticResource placeholderColor}">
-                            <Grid ColumnDefinitions="*,60,*"
-                                      ColumnSpacing="0">
-                                <StackLayout Grid.Column="0"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="EndAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                        <Frame
+                            Margin="10,5"
+                            Padding="0"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HeightRequest="80">
+                            <Grid ColumnDefinitions="*,60,*" ColumnSpacing="0">
+                                <StackLayout
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team1.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team1.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team1.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team1.Name}" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1"
-                               VerticalOptions="Center"
-                                     Spacing="3">
-                                    <Label FontSize="15"
-                                   FontFamily="RBo"
-                                   VerticalOptions="Center"
-                                   TextColor='Black'
-                                   HorizontalTextAlignment="Center">
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Spacing="3"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontFamily="RBo"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding PointT1}" />
@@ -363,30 +397,31 @@
                                         </Label.FormattedText>
                                     </Label>
                                     <Label
-                                Text="{Binding NoteMatch}"
-                               FontSize="13"
-                               FontFamily="RI"
-                               HorizontalTextAlignment="Center">
-                                    </Label>
+                                        FontFamily="RI"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding NoteMatch}" />
                                 </StackLayout>
 
-                                <StackLayout Grid.Column="2"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="StartAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                                <StackLayout
+                                    Grid.Column="2"
+                                    HorizontalOptions="StartAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team2.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team2.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team2.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team2.Name}" />
                                 </StackLayout>
                             </Grid>
                         </Frame>
@@ -394,37 +429,44 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
 
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
+            <BoxView HeightRequest="0.5" Color="LightGray" />
 
-            <StackLayout Orientation="Horizontal"
-                             Margin="10,0,10,0"
-                         HeightRequest="50">
+            <StackLayout
+                Margin="10,0,10,0"
+                HeightRequest="50"
+                Orientation="Horizontal">
 
-                <Image Source="{StaticResource Bunesliga}"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                       Margin="0,10" />
-                <Label Text="Vô địch quốc gia Đức"
-                           Margin="10"
-                           FontSize="14"
-                           HorizontalOptions="Start"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontFamily="RBo" />
-                <Label Text="{Binding BunesligaScores.Count, StringFormat='({0})'}"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                           FontFamily="RB" />
-                <Image Source="{StaticResource IconUp}"
-                           WidthRequest="15"
-                           HeightRequest="15"
-                           Margin="0,2,0,0"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
+                <Image
+                    Margin="0,10"
+                    HeightRequest="50"
+                    Source="{StaticResource Bunesliga}"
+                    WidthRequest="50" />
+                <Label
+                    Margin="10"
+                    FontFamily="RBo"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    Text="Vô địch quốc gia Đức"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="RB"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding BunesligaScores.Count, StringFormat='({0})'}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Margin="0,2,0,0"
+                    HeightRequest="15"
+                    HorizontalOptions="End"
+                    Source="{StaticResource IconUp}"
+                    VerticalOptions="Center"
+                    WidthRequest="15">
                     <Image.Triggers>
-                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutBunesliga}, Path=IsVisible}" Value="False">
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference layoutBunesliga}, Path=IsVisible}"
+                            TargetType="Image"
+                            Value="False">
                             <Setter Property="Source" Value="{StaticResource IconDown}" />
                         </DataTrigger>
                     </Image.Triggers>
@@ -433,48 +475,51 @@
                     <TapGestureRecognizer Command="{Binding ShowHideLayoutCommand}" CommandParameter="{x:Reference layoutBunesliga}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
-            <StackLayout BindableLayout.ItemsSource="{Binding BunesligaScores}"
-
-                             Spacing="0"
-                         x:Name="layoutBunesliga">
+            <BoxView HeightRequest="0.5" Color="LightGray" />
+            <StackLayout
+                x:Name="layoutBunesliga"
+                BindableLayout.ItemsSource="{Binding BunesligaScores}"
+                Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:Match">
-                        <Frame HeightRequest="80"
-                                   Margin="10,5"
-                                   Padding="0"
-                                   HasShadow="False"
-                                   CornerRadius="5"
-                                   BackgroundColor="{StaticResource placeholderColor}">
-                            <Grid ColumnDefinitions="*,60,*"
-                                      ColumnSpacing="0">
-                                <StackLayout Grid.Column="0"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="EndAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                        <Frame
+                            Margin="10,5"
+                            Padding="0"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HeightRequest="80">
+                            <Grid ColumnDefinitions="*,60,*" ColumnSpacing="0">
+                                <StackLayout
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team1.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team1.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team1.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team1.Name}" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1"
-                               VerticalOptions="Center"
-                                     Spacing="3">
-                                    <Label FontSize="15"
-                                   FontFamily="RBo"
-                                   VerticalOptions="Center"
-                                   TextColor='Black'
-                                   HorizontalTextAlignment="Center">
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Spacing="3"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontFamily="RBo"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding PointT1}" />
@@ -484,30 +529,31 @@
                                         </Label.FormattedText>
                                     </Label>
                                     <Label
-                                Text="{Binding NoteMatch}"
-                               FontSize="13"
-                               FontFamily="RI"
-                               HorizontalTextAlignment="Center">
-                                    </Label>
+                                        FontFamily="RI"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding NoteMatch}" />
                                 </StackLayout>
 
-                                <StackLayout Grid.Column="2"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="StartAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                                <StackLayout
+                                    Grid.Column="2"
+                                    HorizontalOptions="StartAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team2.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team2.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team2.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team2.Name}" />
                                 </StackLayout>
                             </Grid>
                         </Frame>
@@ -515,37 +561,44 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
 
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
+            <BoxView HeightRequest="0.5" Color="LightGray" />
 
-            <StackLayout Orientation="Horizontal"
-                             Margin="10,0,10,0"
-                         HeightRequest="50">
+            <StackLayout
+                Margin="10,0,10,0"
+                HeightRequest="50"
+                Orientation="Horizontal">
 
-                <Image Source="{StaticResource SerieA}"
-                           WidthRequest="50"
-                           HeightRequest="50"
-                       Margin="0,10" />
-                <Label Text="Vô địch quốc gia Ý"
-                           Margin="10"
-                           FontSize="14"
-                           HorizontalOptions="Start"
-                           TextColor="Black"
-                           VerticalOptions="Center"
-                           FontFamily="RBo" />
-                <Label Text="{Binding SerieAScores.Count, StringFormat='({0})'}"
-                           HorizontalOptions="EndAndExpand"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                           FontFamily="RB" />
-                <Image Source="{StaticResource IconUp}"
-                           WidthRequest="15"
-                           HeightRequest="15"
-                           Margin="0,2,0,0"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
+                <Image
+                    Margin="0,10"
+                    HeightRequest="50"
+                    Source="{StaticResource SerieA}"
+                    WidthRequest="50" />
+                <Label
+                    Margin="10"
+                    FontFamily="RBo"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    Text="Vô địch quốc gia Ý"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="RB"
+                    HorizontalOptions="EndAndExpand"
+                    Text="{Binding SerieAScores.Count, StringFormat='({0})'}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Margin="0,2,0,0"
+                    HeightRequest="15"
+                    HorizontalOptions="End"
+                    Source="{StaticResource IconUp}"
+                    VerticalOptions="Center"
+                    WidthRequest="15">
                     <Image.Triggers>
-                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference layoutSerieA}, Path=IsVisible}" Value="False">
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference layoutSerieA}, Path=IsVisible}"
+                            TargetType="Image"
+                            Value="False">
                             <Setter Property="Source" Value="{StaticResource IconDown}" />
                         </DataTrigger>
                     </Image.Triggers>
@@ -554,45 +607,50 @@
                     <TapGestureRecognizer Command="{Binding ShowHideLayoutCommand}" CommandParameter="{x:Reference layoutSerieA}" />
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <StackLayout BindableLayout.ItemsSource="{Binding SerieAScores}"
-                             Spacing="0"
-                         x:Name="layoutSerieA">
+            <StackLayout
+                x:Name="layoutSerieA"
+                BindableLayout.ItemsSource="{Binding SerieAScores}"
+                Spacing="0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="md:Match">
-                        <Frame HeightRequest="80"
-                                   Margin="10,5"
-                                   Padding="0"
-                                   HasShadow="False"
-                                   CornerRadius="5"
-                                   BackgroundColor="{StaticResource placeholderColor}">
-                            <Grid ColumnDefinitions="*,60,*"
-                                      ColumnSpacing="0">
-                                <StackLayout Grid.Column="0"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="EndAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                        <Frame
+                            Margin="10,5"
+                            Padding="0"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            HeightRequest="80">
+                            <Grid ColumnDefinitions="*,60,*" ColumnSpacing="0">
+                                <StackLayout
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team1.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team1.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team1.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team1.Name}" />
                                 </StackLayout>
-                                <StackLayout Grid.Column="1"
-                               VerticalOptions="Center"
-                                     Spacing="3">
-                                    <Label FontSize="15"
-                                   FontFamily="RBo"
-                                   VerticalOptions="Center"
-                                   TextColor='Black'
-                                   HorizontalTextAlignment="Center">
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Spacing="3"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontFamily="RBo"
+                                        FontSize="15"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        VerticalOptions="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding PointT1}" />
@@ -602,38 +660,38 @@
                                         </Label.FormattedText>
                                     </Label>
                                     <Label
-                                Text="{Binding NoteMatch}"
-                               FontSize="13"
-                               FontFamily="RI"
-                               HorizontalTextAlignment="Center">
-                                    </Label>
+                                        FontFamily="RI"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding NoteMatch}" />
                                 </StackLayout>
 
-                                <StackLayout Grid.Column="2"
-                                     Orientation="Vertical"
-                                     HorizontalOptions="StartAndExpand"
-                                     VerticalOptions="Center"
-                                     Spacing="5"
-                                     WidthRequest="120">
+                                <StackLayout
+                                    Grid.Column="2"
+                                    HorizontalOptions="StartAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="5"
+                                    VerticalOptions="Center"
+                                    WidthRequest="120">
 
-                                    <Image Source="{Binding Team2.Logo}"
-                                   HeightRequest="40"
-                                   WidthRequest="40"
-                                   HorizontalOptions="Center" />
-                                    <Label Text="{Binding Team2.Name}"
-
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   FontFamily="RM" />
+                                    <Image
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Team2.Logo}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FontFamily="RM"
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Team2.Name}" />
                                 </StackLayout>
                             </Grid>
                         </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <BoxView HeightRequest="0.5"
-                         Color="LightGray" />
+            <BoxView HeightRequest="0.5" Color="LightGray" />
         </StackLayout>
     </Frame.Content>
 </Frame>

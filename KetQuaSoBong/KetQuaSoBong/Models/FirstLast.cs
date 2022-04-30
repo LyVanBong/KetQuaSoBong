@@ -1,7 +1,6 @@
 ﻿using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace KetQuaSoBong.Models
 {
@@ -9,6 +8,7 @@ namespace KetQuaSoBong.Models
     {
         public string Id { get; set; }
         private List<string> _strArr;
+
         public List<string> StrArr
         {
             get => _strArr;
@@ -18,7 +18,9 @@ namespace KetQuaSoBong.Models
                 SetProperty(ref _strArr, value);
             }
         }
+
         private string _str;
+
         public string Str
         {
             get => _str;

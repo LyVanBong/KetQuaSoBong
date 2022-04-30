@@ -1,120 +1,133 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Frame xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:md="clr-namespace:KetQuaSoBong.Models"
-       xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
-       x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.MathPlaying"
-       x:DataType="footballtabviews:MatchPlayingVM"
-
-             Padding="0"
-             BackgroundColor="Transparent">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame
+    x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.MathPlaying"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+    xmlns:md="clr-namespace:KetQuaSoBong.Models"
+    Padding="0"
+    x:DataType="footballtabviews:MatchPlayingVM"
+    BackgroundColor="Transparent">
     <Frame.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal"
-                         BackgroundColor="Gold"
-                         HeightRequest="50">
-                <Label Text="ĐANG DIỄN RA"
-                 Margin="10"
-                       FontSize="16"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="White"
-                       VerticalOptions="Center"
-                 FontFamily="RB" />
+            <StackLayout
+                BackgroundColor="Gold"
+                HeightRequest="50"
+                Orientation="Horizontal">
+                <Label
+                    Margin="10"
+                    FontFamily="RB"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="ĐANG DIỄN RA"
+                    TextColor="White"
+                    VerticalOptions="Center" />
             </StackLayout>
-            <ScrollView Orientation="Horizontal"
-                        HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal"
-                             Margin="0,0,0,10">
+            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+                <StackLayout Margin="0,0,0,10" Orientation="Horizontal">
                     <BoxView WidthRequest="10" />
-                    <StackLayout Orientation="Horizontal"
-                                 BindableLayout.ItemsSource="{Binding MacthPlayings}"
-                                 Spacing="10">
+                    <StackLayout
+                        BindableLayout.ItemsSource="{Binding MacthPlayings}"
+                        Orientation="Horizontal"
+                        Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="md:Match">
-                                <Frame HeightRequest="210"
-                                       WidthRequest="180"
-                                       Padding="0"
-                                       Margin="0,10"
-                                       CornerRadius="10"
-                                       HasShadow="False"
-                                       BackgroundColor="White">
+                                <Frame
+                                    Margin="0,10"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    CornerRadius="10"
+                                    HasShadow="False"
+                                    HeightRequest="210"
+                                    WidthRequest="180">
                                     <StackLayout>
-                                        <StackLayout Orientation="Horizontal"
-                                                     Margin="10">
-                                            <Label Text="{Binding TimePlaying}"
-                                                   FontFamily="RBo"
-                                                   TextColor="Black" />
-                                            <Label Text="{Binding TimePlus, StringFormat='+{0}'}"
-                                                   FontFamily="RBo">
+                                        <StackLayout Margin="10" Orientation="Horizontal">
+                                            <Label
+                                                FontFamily="RBo"
+                                                Text="{Binding TimePlaying}"
+                                                TextColor="Black" />
+                                            <Label FontFamily="RBo" Text="{Binding TimePlus, StringFormat='+{0}'}">
                                                 <Label.Triggers>
-                                                    <DataTrigger TargetType="Label" Binding="{Binding TimePlus}" Value="0">
+                                                    <DataTrigger
+                                                        Binding="{Binding TimePlus}"
+                                                        TargetType="Label"
+                                                        Value="0">
                                                         <Setter Property="IsVisible" Value="False" />
                                                     </DataTrigger>
                                                 </Label.Triggers>
                                             </Label>
-                                            <Label Text="'"
-                                                   FontFamily="RBo"
-                                                   TextColor="Black" />
-                                            <Frame HeightRequest="20"
-                                                   Padding="0"
-                                                   WidthRequest="50"
-                                                   CornerRadius="5"
-                                                   HasShadow="False"
-                                                   HorizontalOptions="EndAndExpand">
-                                                <StackLayout Orientation="Horizontal"
-                                                             HorizontalOptions="EndAndExpand"
-                                                             Spacing="0">
-                                                    <Label Text="Live"
-                                                       FontFamily="RBo"
-                                                       TextColor="Black"
-                                                       FontSize="13" />
-                                                    <Image Source="{Binding StatusLightSource}"
-                                                           WidthRequest="9"
-                                                           Margin="5,0"
-                                                           HeightRequest="5" />
+                                            <Label
+                                                FontFamily="RBo"
+                                                Text="'"
+                                                TextColor="Black" />
+                                            <Frame
+                                                Padding="0"
+                                                CornerRadius="5"
+                                                HasShadow="False"
+                                                HeightRequest="20"
+                                                HorizontalOptions="EndAndExpand"
+                                                WidthRequest="50">
+                                                <StackLayout
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Orientation="Horizontal"
+                                                    Spacing="0">
+                                                    <Label
+                                                        FontFamily="RBo"
+                                                        FontSize="13"
+                                                        Text="Live"
+                                                        TextColor="Black" />
+                                                    <Image
+                                                        Margin="5,0"
+                                                        HeightRequest="5"
+                                                        Source="{Binding StatusLightSource}"
+                                                        WidthRequest="9" />
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
-                                        <StackLayout Orientation="Horizontal"
-                                                     Margin="10,0">
-                                            <Image Source="{Binding Team1.Logo}"
-                                                   WidthRequest="50"
-                                                   HeightRequest="50"
-                                                   Margin="10"
-                                                   Aspect="AspectFit"
-                                                   HorizontalOptions="StartAndExpand" />
-                                            <Image Source="{Binding Team2.Logo}"
-                                                   WidthRequest="50"
-                                                   HeightRequest="50"
-                                                   Margin="10"
-                                                   Aspect="AspectFit"
-                                                   HorizontalOptions="EndAndExpand" />
+                                        <StackLayout Margin="10,0" Orientation="Horizontal">
+                                            <Image
+                                                Margin="10"
+                                                Aspect="AspectFit"
+                                                HeightRequest="50"
+                                                HorizontalOptions="StartAndExpand"
+                                                Source="{Binding Team1.Logo}"
+                                                WidthRequest="50" />
+                                            <Image
+                                                Margin="10"
+                                                Aspect="AspectFit"
+                                                HeightRequest="50"
+                                                HorizontalOptions="EndAndExpand"
+                                                Source="{Binding Team2.Logo}"
+                                                WidthRequest="50" />
                                         </StackLayout>
-                                        <Label Text="{Binding NoteMatch}"
-                                                   FontFamily="RMI"
-                                                   FontSize="10"
-                                               HorizontalOptions="Center" />
-                                        <StackLayout Margin="20,0"
-                                                     Orientation="Horizontal">
-                                            <Label Text="{Binding Team1.Name}"
-                                                   FontFamily="RBo"
-                                                   FontSize="13"
-                                                   HorizontalOptions="StartAndExpand" />
-                                            <Label Text="{Binding PointT1}"
-                                                   FontFamily="RBo"
-                                                   FontSize="15"
-                                                   HorizontalOptions="End" />
+                                        <Label
+                                            FontFamily="RMI"
+                                            FontSize="10"
+                                            HorizontalOptions="Center"
+                                            Text="{Binding NoteMatch}" />
+                                        <StackLayout Margin="20,0" Orientation="Horizontal">
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="13"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding Team1.Name}" />
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="15"
+                                                HorizontalOptions="End"
+                                                Text="{Binding PointT1}" />
                                         </StackLayout>
-                                        <StackLayout Margin="20,0"
-                                                     Orientation="Horizontal">
-                                            <Label Text="{Binding Team2.Name}"
-                                                   FontFamily="RBo"
-                                                   FontSize="13"
-                                                   HorizontalOptions="StartAndExpand" />
-                                            <Label Text="{Binding PointT2}"
-                                                   FontFamily="RBo"
-                                                   FontSize="15"
-                                                   HorizontalOptions="End" />
+                                        <StackLayout Margin="20,0" Orientation="Horizontal">
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="13"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding Team2.Name}" />
+                                            <Label
+                                                FontFamily="RBo"
+                                                FontSize="15"
+                                                HorizontalOptions="End"
+                                                Text="{Binding PointT2}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

@@ -3,7 +3,6 @@
     x:Class="KetQuaSoBong.Views.TabViews.FootballTab"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:footballTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
@@ -18,7 +17,7 @@
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="50" />
+                    <RowDefinition Height="85" />
                     <RowDefinition Height="30000" />
                 </Grid.RowDefinitions>
                 <WebView
@@ -70,7 +69,6 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-
             </Grid>
             <!--<StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
                              AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">

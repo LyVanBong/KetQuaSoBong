@@ -1,54 +1,61 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:views="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
-             x:Class="KetQuaSoBong.Views.TabViews.LotteryTab"
-             BackgroundColor="{StaticResource placeholderColor}">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="KetQuaSoBong.Views.TabViews.LotteryTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{StaticResource placeholderColor}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.img_banner.png" x:Key="Banner" />
+            <xct:ImageResource x:Key="Banner" Id="KetQuaSoBong.Resources.Images.img_banner.png" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
             <AbsoluteLayout>
-                <Grid AbsoluteLayout.LayoutBounds="0,0,1,200"
-                      AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
-                    <Image Source="{StaticResource Banner}"
-                       Grid.Row="0"
-                       Aspect="AspectFill" />
-                    <Label TextColor="White"
-                           VerticalOptions="EndAndExpand"
-                           Margin="10,0,0,30"
-                           LineHeight="1.1">
+                <Grid AbsoluteLayout.LayoutBounds="0,0,1,200" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                    <Image
+                        Grid.Row="0"
+                        Aspect="AspectFill"
+                        Source="{StaticResource Banner}" />
+                    <Label
+                        Margin="10,0,0,30"
+                        LineHeight="1.1"
+                        TextColor="White"
+                        VerticalOptions="EndAndExpand">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="XỔ SỐ KIẾN THIẾT" FontFamily="RBo" FontSize="Large" />
+                                <Span
+                                    FontFamily="RBo"
+                                    FontSize="Large"
+                                    Text="XỔ SỐ KIẾN THIẾT" />
                                 <Span Text="&#x0a;" />
-                                <Span Text="{Binding DateTimeNow}" FontFamily="RL" />
+                                <Span FontFamily="RL" Text="{Binding DateTimeNow}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </Grid>
-                <StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
-                             AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                             Padding="0,0,0,10">
-                        <Frame Margin="10"
-                               CornerRadius="10"
-                               Padding="0"
-                               x:Name="NorthLayout"/>
-                        <Frame Margin="10"
-                               CornerRadius="10"
-                               Padding="0"
-                               x:Name="CentralLayout"/>
-                        <Frame Margin="10"
-                               CornerRadius="10"
-                               Padding="0"
-                               x:Name="SouthLayout"/>
-                    </StackLayout>
-
+                <StackLayout
+                    Padding="0,0,0,10"
+                    AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
+                    AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                    <Frame
+                        x:Name="NorthLayout"
+                        Margin="10"
+                        Padding="0"
+                        CornerRadius="10" />
+                    <Frame
+                        x:Name="CentralLayout"
+                        Margin="10"
+                        Padding="0"
+                        CornerRadius="10" />
+                    <Frame
+                        x:Name="SouthLayout"
+                        Margin="10"
+                        Padding="0"
+                        CornerRadius="10" />
+                </StackLayout>
             </AbsoluteLayout>
         </ScrollView>
     </ContentPage.Content>

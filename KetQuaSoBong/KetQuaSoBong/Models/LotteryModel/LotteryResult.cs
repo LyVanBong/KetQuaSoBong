@@ -1,10 +1,8 @@
 ﻿using ImTools;
-using KetQuaSoBong.Extensions;
 using Newtonsoft.Json;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -12,13 +10,12 @@ namespace KetQuaSoBong.Models.LotteryModel
 {
     public class LotteryResult : BindableBase
     {
-        
         public LotteryResult()
         {
             ChangeDisplayNumberCommand = new Command((x) =>
             {
                 var button = (x as RadioButton);
-                if(IsRefresh == true)
+                if (IsRefresh == true)
                 {
                     switch (button.ClassId)
                     {
@@ -27,10 +24,11 @@ namespace KetQuaSoBong.Models.LotteryModel
                         case "3Num": Set3NumberDisplay(); break;
                     }
                 }
-               
             });
         }
+
         public Command ChangeDisplayNumberCommand { get; set; }
+
         [JsonProperty("ngayQuay")]
         public string NgayQuay { get; set; }
 
@@ -39,69 +37,57 @@ namespace KetQuaSoBong.Models.LotteryModel
 
         [JsonProperty("dacBiet")]
         private string _dacBiet;
-        public string DacBiet 
-        { 
+
+        public string DacBiet
+        {
             get => _dacBiet;
             set
-            {   
-                if(!string.IsNullOrEmpty(value)) { StrDacBiet = value; }
+            {
+                if (!string.IsNullOrEmpty(value)) { StrDacBiet = value; }
                 SetProperty(ref _dacBiet, value);
             }
         }
-        
 
         [JsonProperty("kyHieu")]
         public string KyHieu { get; set; }
 
         [JsonProperty("g1")]
-
         public string G1 { get; set; }
 
         [JsonProperty("g2_1")]
-
         public string G21 { get; set; }
 
         [JsonProperty("g2_2")]
-
         public string G22 { get; set; }
 
         [JsonProperty("g3_1")]
-
         public string G31 { get; set; }
 
         [JsonProperty("g3_2")]
-
         public string G32 { get; set; }
 
         [JsonProperty("g3_3")]
-
         public string G33 { get; set; }
 
         [JsonProperty("g3_4")]
-
         public string G34 { get; set; }
 
         [JsonProperty("g3_5")]
         public string G35 { get; set; }
 
         [JsonProperty("g3_6")]
-
         public string G36 { get; set; }
 
         [JsonProperty("g4_1")]
-
         public string G41 { get; set; }
 
         [JsonProperty("g4_2")]
-
         public string G42 { get; set; }
 
         [JsonProperty("g4_3")]
-
         public string G43 { get; set; }
 
         [JsonProperty("g4_4")]
-
         public string G44 { get; set; }
 
         [JsonProperty("g4_5")]
@@ -117,58 +103,46 @@ namespace KetQuaSoBong.Models.LotteryModel
         public string G51 { get; set; }
 
         [JsonProperty("g5_2")]
-
         public string G52 { get; set; }
 
         [JsonProperty("g5_3")]
-
         public string G53 { get; set; }
 
         [JsonProperty("g5_4")]
-
         public string G54 { get; set; }
 
         [JsonProperty("g5_5")]
-
         public string G55 { get; set; }
 
         [JsonProperty("g5_6")]
-
         public string G56 { get; set; }
 
         [JsonProperty("g6_1")]
-
         public string G61 { get; set; }
 
         [JsonProperty("g6_2")]
-
         public string G62 { get; set; }
 
         [JsonProperty("g6_3")]
-
         public string G63 { get; set; }
 
         [JsonProperty("g7_1")]
-
         public string G71 { get; set; }
 
         [JsonProperty("g7_2")]
-
         public string G72 { get; set; }
 
         [JsonProperty("g7_3")]
-
         public string G73 { get; set; }
 
         [JsonProperty("g7_4")]
-
         public string G74 { get; set; }
 
         [JsonProperty("g8")]
         public string G8 { get; set; }
 
-
         private string _strDacBiet;
+
         public string StrDacBiet
         {
             get => _strDacBiet;
@@ -179,6 +153,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG1;
+
         public string StrG1
         {
             get => _strG1;
@@ -187,7 +162,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG1, value);
             }
         }
+
         private string _strG21;
+
         public string StrG21
         {
             get => _strG21;
@@ -196,7 +173,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG21, value);
             }
         }
+
         private string _strG22;
+
         public string StrG22
         {
             get => _strG22;
@@ -205,7 +184,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG22, value);
             }
         }
+
         private string _strG31;
+
         public string StrG31
         {
             get => _strG31;
@@ -214,7 +195,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG31, value);
             }
         }
+
         private string _strG32;
+
         public string StrG32
         {
             get => _strG32;
@@ -225,6 +208,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG33;
+
         public string StrG33
         {
             get => _strG33;
@@ -235,6 +219,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG34;
+
         public string StrG34
         {
             get => _strG34;
@@ -245,6 +230,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG35;
+
         public string StrG35
         {
             get => _strG35;
@@ -253,7 +239,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG35, value);
             }
         }
+
         private string _strG36;
+
         public string StrG36
         {
             get => _strG36;
@@ -264,6 +252,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG41;
+
         public string StrG41
         {
             get => _strG41;
@@ -272,7 +261,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG41, value);
             }
         }
+
         private string _strG42;
+
         public string StrG42
         {
             get => _strG42;
@@ -283,6 +274,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG43;
+
         public string StrG43
         {
             get => _strG43;
@@ -293,6 +285,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG44;
+
         public string StrG44
         {
             get => _strG44;
@@ -303,6 +296,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG45;
+
         public string StrG45
         {
             get => _strG45;
@@ -311,7 +305,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG45, value);
             }
         }
+
         private string _strG46;
+
         public string StrG46
         {
             get => _strG46;
@@ -320,7 +316,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG46, value);
             }
         }
+
         private string _strG47;
+
         public string StrG47
         {
             get => _strG47;
@@ -331,6 +329,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG51;
+
         public string StrG51
         {
             get => _strG51;
@@ -339,7 +338,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG51, value);
             }
         }
+
         private string _strG52;
+
         public string StrG52
         {
             get => _strG52;
@@ -350,6 +351,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG53;
+
         public string StrG53
         {
             get => _strG53;
@@ -360,6 +362,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG54;
+
         public string StrG54
         {
             get => _strG54;
@@ -370,6 +373,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG55;
+
         public string StrG55
         {
             get => _strG55;
@@ -378,7 +382,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG55, value);
             }
         }
+
         private string _strG56;
+
         public string StrG56
         {
             get => _strG56;
@@ -389,6 +395,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG61;
+
         public string StrG61
         {
             get => _strG61;
@@ -397,7 +404,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG61, value);
             }
         }
+
         private string _strG62;
+
         public string StrG62
         {
             get => _strG62;
@@ -408,6 +417,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG63;
+
         public string StrG63
         {
             get => _strG63;
@@ -416,7 +426,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG63, value);
             }
         }
+
         private bool _isLoading = true;
+
         public bool IsLoading
         {
             get { return _isLoading; }
@@ -425,23 +437,26 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _isLoading, value);
             }
         }
+
         private bool _isRefresh = false;
+
         public bool IsRefresh
         {
             get { return _isRefresh; }
-            set 
-            {   
-               
-                if(value == true)
+            set
+            {
+                if (value == true)
                 {
                     Set2NumberDisplay();
                     SetAllNumberDisplay();
                 }
-                
+
                 SetProperty(ref _isRefresh, value);
             }
         }
+
         private string _strG71;
+
         public string StrG71
         {
             get => _strG71;
@@ -450,7 +465,9 @@ namespace KetQuaSoBong.Models.LotteryModel
                 SetProperty(ref _strG71, value);
             }
         }
+
         private string _strG72;
+
         public string StrG72
         {
             get => _strG72;
@@ -461,6 +478,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG73;
+
         public string StrG73
         {
             get => _strG73;
@@ -471,6 +489,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG74;
+
         public string StrG74
         {
             get => _strG74;
@@ -481,6 +500,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         }
 
         private string _strG8;
+
         public string StrG8
         {
             get => _strG8;
@@ -496,19 +516,18 @@ namespace KetQuaSoBong.Models.LotteryModel
         public string[] LastNum { get => _lastNum; set => SetProperty(ref _lastNum, value); }
         public string[] NumberTemp { get => new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }; }
         private string[] _arrLoto;
+
         public string[] ArrLoto
         {
             get => _arrLoto;
             set
             {
-               
                 SetProperty(ref _arrLoto, value);
             }
         }
+
         private string[] _arrAll;
         public string[] ArrAll { get => _arrAll; set => SetProperty(ref _arrAll, value); }
-
-     
 
         private string[] StandardArray(string[] arr, int type)
         {
@@ -534,8 +553,8 @@ namespace KetQuaSoBong.Models.LotteryModel
         {
             StrDacBiet = DacBiet;
             StrG1 = G1;
-            StrG21= G21;
-            StrG22= G22;
+            StrG21 = G21;
+            StrG22 = G22;
             StrG31 = G31;
             StrG32 = G32;
             StrG33 = G33;
@@ -563,8 +582,8 @@ namespace KetQuaSoBong.Models.LotteryModel
             StrG73 = G73;
             StrG74 = G74;
             StrG8 = G8;
-            
         }
+
         public void Set2NumberDisplay()
         {
             StrDacBiet = To2Character(DacBiet);
@@ -638,7 +657,6 @@ namespace KetQuaSoBong.Models.LotteryModel
             List<double> temp = new List<double>();
             for (int i = 0; i < str.Length; i++)
             {
-
                 temp.Add(double.Parse(str[i].Trim()));
             }
 
@@ -652,7 +670,6 @@ namespace KetQuaSoBong.Models.LotteryModel
                 FirstNum[int.Parse(str[i].Substring(1, 1))] = String.IsNullOrEmpty(FirstNum[int.Parse(str[i].Substring(1, 1))]) ? FirstNum[int.Parse(str[i].Substring(1, 1))] += str[i].Substring(0, 1) : FirstNum[int.Parse(str[i].Substring(1, 1))] += ", " + str[i].Substring(0, 1);
             }
             //
-
         }
 
         public void Set3NumberDisplay()
@@ -685,21 +702,20 @@ namespace KetQuaSoBong.Models.LotteryModel
             StrG73 = To3Character(G73);
             StrG74 = To3Character(G74);
             StrG8 = To3Character(G8);
-
-
         }
 
         public string To2Character(string x)
         {
-            if(!string.IsNullOrEmpty(x))
+            if (!string.IsNullOrEmpty(x))
             {
-                return x.Length > 2 ? x.Substring(x.Length-2, 2) : x;
+                return x.Length > 2 ? x.Substring(x.Length - 2, 2) : x;
             }
             else
             {
                 return "";
             }
         }
+
         public string To3Character(string x)
         {
             if (!string.IsNullOrEmpty(x))
@@ -711,7 +727,5 @@ namespace KetQuaSoBong.Models.LotteryModel
                 return "";
             }
         }
-
     }
-
 }

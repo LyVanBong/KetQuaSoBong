@@ -26,7 +26,6 @@ namespace KetQuaSoBong.ViewModels
                 new MainPageFlyoutMenuItem {Id = 6, Title="Tin tức", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.tintuc.png")},
                 new MainPageFlyoutMenuItem {Id = 7, Title="Group", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.group_chat.png")},
                 new MainPageFlyoutMenuItem {Id = 8, Title="Hỗ trợ", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ho_tro.png")},
-
             };
             CollapseMenuCommand = new DelegateCommand(() =>
             {
@@ -72,7 +71,7 @@ namespace KetQuaSoBong.ViewModels
                         break;
 
                     case 5:
-                        
+
                         t.CurrentPage = t.Children[1];
 
                         break;
@@ -91,18 +90,15 @@ namespace KetQuaSoBong.ViewModels
                         t.CurrentPage = t.Children[4];
 
                         break;
-
-                   
                 }
             });
             ShowUserProfilePage = new DelegateCommand(async () =>
-            { 
-                if(Preferences.Get("IsLogin", false) == true)
+            {
+                if (Preferences.Get("IsLogin", false) == true)
                 {
                     await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new UserProfilePage());
                     (page.Parent as FlyoutPage).IsPresented = false;
                 }
-                
             });
             ShowSignUpPage = new DelegateCommand(async () =>
             {
@@ -110,24 +106,27 @@ namespace KetQuaSoBong.ViewModels
                 (page.Parent as FlyoutPage).IsPresented = false;
             });
         }
+
         private bool _isLogin = false;
+
         public bool IsLogin
         {
             get => _isLogin;
             set
-            {   
-                if(value == true) { Name = Preferences.Get("User", "").Split(',')[0]; }
+            {
+                if (value == true) { Name = Preferences.Get("User", "").Split(',')[0]; }
                 SetProperty(ref _isLogin, value);
-            } 
-                
-               
+            }
         }
+
         private string _name = "Tài khoản người dùng";
+
         public string Name
         {
             get => _name;
             set => SetProperty(ref _name, value);
         }
+
         public DelegateCommand CollapseMenuCommand { get; }
         public Command SelectedMenuItemCommand { get; }
         public DelegateCommand ShowUserProfilePage { get; }

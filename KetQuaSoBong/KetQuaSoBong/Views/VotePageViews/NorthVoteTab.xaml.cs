@@ -1,14 +1,11 @@
-﻿using ImTools;
-using KetQuaSoBong.Models;
+﻿using KetQuaSoBong.Models;
 using Newtonsoft.Json;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,17 +33,20 @@ namespace KetQuaSoBong.Views.VotePageViews
             get => _isVisibleResult;
             set => SetProperty(ref _isVisibleResult, value);
         }
+
         private List<string> _numbersSelected = new List<string>();
+
         public List<string> NumbersSelected
         {
             get => _numbersSelected;
             set
             {
-                
                 SetProperty(ref _numbersSelected, value);
             }
         }
+
         public ObservableCollection<VoteItem> _resultVotes = new ObservableCollection<VoteItem>();
+
         public ObservableCollection<VoteItem> ResultVotes
         {
             get => _resultVotes;
@@ -57,6 +57,7 @@ namespace KetQuaSoBong.Views.VotePageViews
         }
 
         private string _strNumbers = "";
+
         public string StrNumbers
         {
             get => _strNumbers;
@@ -78,42 +79,41 @@ namespace KetQuaSoBong.Views.VotePageViews
             SelectCommand = new Command((x) =>
             {
                 var btn = x as Button;
-                
-                    if (btn.ClassId == "0")
+
+                if (btn.ClassId == "0")
+                {
+                    if (_count < 3)
                     {
-                        if (_count < 3)
-                        {
-                            _count++;
-                            btn.ClassId = "1";
-                            NumbersSelected.Add(btn.Text);
-                            StrNumbers = string.Join(",", NumbersSelected.ToArray());
-                        }
-                    }
-                    else
-                    {
-                        _count--;
-                        btn.ClassId = "0";
-                        NumbersSelected.Remove(btn.Text);
+                        _count++;
+                        btn.ClassId = "1";
+                        NumbersSelected.Add(btn.Text);
                         StrNumbers = string.Join(",", NumbersSelected.ToArray());
                     }
-               
+                }
+                else
+                {
+                    _count--;
+                    btn.ClassId = "0";
+                    NumbersSelected.Remove(btn.Text);
+                    StrNumbers = string.Join(",", NumbersSelected.ToArray());
+                }
             });
             ShowHideResultCommand = new Command(() =>
             {
                 Vote(view);
-
             });
             GoBackCommand = new Command(() =>
               {
                   IsVisibleResult = true;
               });
         }
+
         public async void Vote(ContentView view)
         {
-            if(StrNumbers.Length > 0)
+            if (StrNumbers.Length > 0)
             {
                 if (Preferences.Get("IsLogin", false) == true)
-                {   
+                {
                     HttpClient client = new HttpClient();
                     string url = "https://api.tructiepketqua.net/api/Voted/voted/" + Preferences.Get("User", "").Split(',')[4] + "?nums=" + StrNumbers;
                     HttpResponseMessage response = await client.PostAsync(url, null);
@@ -122,7 +122,7 @@ namespace KetQuaSoBong.Views.VotePageViews
                         IsVisibleResult = false;
                         Debug.Write(NumbersSelected.Count);
                         SetListVoteAsync(NumbersSelected);
-                        
+
                         //SetListVote
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
@@ -133,8 +133,6 @@ namespace KetQuaSoBong.Views.VotePageViews
                     {
                         Debug.Write(response.StatusCode);
                     }
-
-
                 }
                 else
                 {
@@ -153,8 +151,6 @@ namespace KetQuaSoBong.Views.VotePageViews
             {
                 await (view.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent as Page).DisplayAlert("Thông báo", "Vui lòng chọn ít nhất 1 con số.", "Trở lại");
             }
-            
-            
         }
 
         public async void SetListVoteAsync(List<string> votes)
@@ -187,10 +183,9 @@ namespace KetQuaSoBong.Views.VotePageViews
                         }
                     }
                 }
-               
             }
-            
         }
+
         public Command SelectCommand { get; set; }
         public Command ShowHideResultCommand { get; set; }
         public Command GoBackCommand { get; set; }

@@ -1,82 +1,95 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
-             x:Class="KetQuaSoBong.Views.TabViews.SupportTab"
-             BackgroundColor="{StaticResource placeholderColor}">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="KetQuaSoBong.Views.TabViews.SupportTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_fb.png" x:Key="Facebook" />
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_zalo.png" x:Key="Zalo" />
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_call.png" x:Key="Call" />
+        <xct:ImageResource x:Key="Facebook" Id="KetQuaSoBong.Resources.Images.ic_fb.png" />
+        <xct:ImageResource x:Key="Zalo" Id="KetQuaSoBong.Resources.Images.ic_zalo.png" />
+        <xct:ImageResource x:Key="Call" Id="KetQuaSoBong.Resources.Images.ic_call.png" />
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Liên hệ với chúng tôi qua:"
-                   FontFamily="RBo"
-                   FontSize="16"
-                   HorizontalOptions="Center"
-                   Margin="10" />
-                <Grid ColumnDefinitions="*,*,*"
-                ColumnSpacing="0"
-                  HeightRequest="80">
-                    <StackLayout HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Spacing="0"
-                             Grid.Column="0">
-                        <Image Source="{StaticResource Facebook}"
-                           HeightRequest="60"
-                           WidthRequest="60"
-                           HorizontalOptions="Center" />
-                        <Label Text="Fanpage"
-                           FontSize="16"
-                           TextColor="Black"
-                           FontFamily="RBo"
-                           HorizontalOptions="Center" />
+                <Label
+                    Margin="10"
+                    FontFamily="RBo"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Liên hệ với chúng tôi qua:" />
+                <Grid
+                    ColumnDefinitions="*,*,*"
+                    ColumnSpacing="0"
+                    HeightRequest="80">
+                    <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Spacing="0"
+                        VerticalOptions="Center">
+                        <Image
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Source="{StaticResource Facebook}"
+                            WidthRequest="60" />
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Fanpage"
+                            TextColor="Black" />
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Spacing="0"
-                             Grid.Column="1">
-                        <Image Source="{StaticResource Zalo}"
-                           HeightRequest="60"
-                           WidthRequest="60"
-                           HorizontalOptions="Center" />
-                        <Label Text="Zalo"
-                           FontSize="16"
-                           TextColor="Black"
-                           FontFamily="RBo"
-                           HorizontalOptions="Center" />
+                    <StackLayout
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Spacing="0"
+                        VerticalOptions="Center">
+                        <Image
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Source="{StaticResource Zalo}"
+                            WidthRequest="60" />
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Zalo"
+                            TextColor="Black" />
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="Center"
-                             VerticalOptions="Center"
-                             Spacing="0"
-                             Grid.Column="2">
-                        <Image Source="{StaticResource Call}"
-                           HeightRequest="60"
-                           WidthRequest="60"
-                           HorizontalOptions="Center" />
-                        <Label Text="Số điện thoại"
-                           FontSize="16"
-                           TextColor="Black"
-                           FontFamily="RBo"
-                           HorizontalOptions="Center" />
+                    <StackLayout
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        Spacing="0"
+                        VerticalOptions="Center">
+                        <Image
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Source="{StaticResource Call}"
+                            WidthRequest="60" />
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Số điện thoại"
+                            TextColor="Black" />
                     </StackLayout>
                 </Grid>
-                <Label Text="Hoặc gửi thư cho chúng tôi:"
-                   FontFamily="R"
-                   HorizontalOptions="Center"
-                   TextColor="Black"
-                   Margin="10" />
+                <Label
+                    Margin="10"
+                    FontFamily="R"
+                    HorizontalOptions="Center"
+                    Text="Hoặc gửi thư cho chúng tôi:"
+                    TextColor="Black" />
                 <StackLayout>
                     <StackLayout>
                         <Label
-                           FontFamily="RBo"
-                           FontSize="14"
-                           Margin="10,0,0,0">
+                            Margin="10,0,0,0"
+                            FontFamily="RBo"
+                            FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Tên tài khoản: " />
@@ -84,21 +97,20 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Frame HeightRequest="50"
-                           Padding="10,0"
-                           BorderColor="Black"
-                           Margin="10,0"
-                           HasShadow="False">
-                            <customView:CustomEntry Placeholder="Nhập tên tài khoản...."
-                                                FontSize="14">
-                            </customView:CustomEntry>
+                        <Frame
+                            Margin="10,0"
+                            Padding="10,0"
+                            BorderColor="Black"
+                            HasShadow="False"
+                            HeightRequest="50">
+                            <customView:CustomEntry FontSize="14" Placeholder="Nhập tên tài khoản...." />
                         </Frame>
                     </StackLayout>
                     <StackLayout>
                         <Label
-                           FontFamily="RBo"
-                           FontSize="14"
-                           Margin="10,0,0,0">
+                            Margin="10,0,0,0"
+                            FontFamily="RBo"
+                            FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Email: " />
@@ -106,22 +118,21 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Frame HeightRequest="50"
-                           Padding="10,0"
-                           BorderColor="Black"
-                           Margin="10,0"
-                           HasShadow="False">
-                            <customView:CustomEntry Placeholder="Nhập email của bạn...."
-                                                FontSize="14">
-                            </customView:CustomEntry>
+                        <Frame
+                            Margin="10,0"
+                            Padding="10,0"
+                            BorderColor="Black"
+                            HasShadow="False"
+                            HeightRequest="50">
+                            <customView:CustomEntry FontSize="14" Placeholder="Nhập email của bạn...." />
                         </Frame>
                     </StackLayout>
 
                     <StackLayout>
                         <Label
-                           FontFamily="RBo"
-                           FontSize="14"
-                           Margin="10,0,0,0">
+                            Margin="10,0,0,0"
+                            FontFamily="RBo"
+                            FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Góp ý của bạn: " />
@@ -129,29 +140,29 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Frame HeightRequest="100"
-                           Padding="10,0"
-                           BorderColor="Black"
-                           Margin="10,0"
-                           HasShadow="False">
-                            <customView:CustomEditor Placeholder="Nhập tên tài khoản...."
-                                                FontSize="14">
-                            </customView:CustomEditor>
+                        <Frame
+                            Margin="10,0"
+                            Padding="10,0"
+                            BorderColor="Black"
+                            HasShadow="False"
+                            HeightRequest="100">
+                            <customView:CustomEditor FontSize="14" Placeholder="Nhập tên tài khoản...." />
                         </Frame>
                     </StackLayout>
                 </StackLayout>
-                <Frame HeightRequest="50"
-                           Padding="10,0"
-                       BackgroundColor="{StaticResource primaryColor}"
-                           Margin="10,0"
-                           HasShadow="False">
+                <Frame
+                    Margin="10,0"
+                    Padding="10,0"
+                    BackgroundColor="{StaticResource primaryColor}"
+                    HasShadow="False"
+                    HeightRequest="50">
                     <Label
-                           FontFamily="RBo"
-                           FontSize="16"
-                            TextColor="White"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                           Margin="10,0,0,0">
+                        Margin="10,0,0,0"
+                        FontFamily="RBo"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        TextColor="White"
+                        VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Gửi " />

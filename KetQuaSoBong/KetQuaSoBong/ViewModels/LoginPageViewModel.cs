@@ -13,43 +13,52 @@ namespace KetQuaSoBong.ViewModels
     public class LoginPageViewModel : BindableBase
     {
         private bool _isVisible = true;
+
         public bool IsVisible
         {
             get { return _isVisible; }
             set { SetProperty(ref _isVisible, value); }
         }
+
         private bool _isFailFormatUN;
+
         public bool IsFailFormatUN
         {
             get { return _isFailFormatUN; }
             set { SetProperty(ref _isFailFormatUN, value); }
         }
+
         private bool _isFailFormatPW;
+
         public bool IsFailFormatPW
         {
             get { return _isFailFormatPW; }
             set { SetProperty(ref _isFailFormatPW, value); }
         }
+
         private string _password;
+
         public string Password
         {
             get { return _password; }
             set { SetProperty(ref _password, value); }
         }
+
         private string _userName;
+
         public string UserName
         {
             get { return _userName; }
             set { SetProperty(ref _userName, value); }
         }
-       
+
         public LoginPageViewModel(Page page)
         {
             Preferences.Set("IsLogin", false);
             Preferences.Clear("User");
             InputPasswordChanged = new Command(() =>
             {
-                IsFailFormatPW = Password.Length < 6 ? true: false;
+                IsFailFormatPW = Password.Length < 6 ? true : false;
             });
             InputUsernameChanged = new Command(() =>
             {
@@ -62,7 +71,6 @@ namespace KetQuaSoBong.ViewModels
                 {
                     IsVisible = true;
                     await page.DisplayAlert("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
-                    
                 }
                 else
                 {
@@ -71,7 +79,6 @@ namespace KetQuaSoBong.ViewModels
                     {
                         Username = UserName,
                         Password = Password
-
                     };
                     var user = new Register();
                     HttpClient cient = new HttpClient();
@@ -83,19 +90,18 @@ namespace KetQuaSoBong.ViewModels
                     {
                         IsVisible = false;
                         Debug.Write("OK");
-                        
+
                         user = JsonConvert.DeserializeObject<Register>(result);
                         Preferences.Set("IsLogin", true);
                         Preferences.Set("NumLog", 0);
-                        Preferences.Set("User", user.Name + "," + user.NumberPhone + "," + user.Email + "," + user.Sex + "," +user.UserName);
-                       
+                        Preferences.Set("User", user.Name + "," + user.NumberPhone + "," + user.Email + "," + user.Sex + "," + user.UserName);
+
                         await page.Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                     {
                         IsVisible = true;
                         await page.DisplayAlert("Thông báo", "Tài khoản hoặc mật khẩu không chính xác.", "Trở lại");
-                        
                     }
                     else
                     {
@@ -104,6 +110,7 @@ namespace KetQuaSoBong.ViewModels
                 }
             });
         }
+
         public Command LoginCommand { get; set; }
         public Command InputPasswordChanged { get; set; }
         public Command InputUsernameChanged { get; set; }

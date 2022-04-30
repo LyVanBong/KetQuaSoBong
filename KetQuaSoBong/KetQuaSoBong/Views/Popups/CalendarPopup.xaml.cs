@@ -23,7 +23,6 @@ namespace KetQuaSoBong.Views.Popups
 
         private void Popup_Dismissed(object sender, PopupDismissedEventArgs e)
         {
-
         }
     }
 
@@ -70,6 +69,7 @@ namespace KetQuaSoBong.Views.Popups
             get => _dateTimeResult;
             set => SetProperty(ref _dateTimeResult, value);
         }
+
         private DateTime _dateTemp;
 
         public DateTime DateTemp
@@ -136,7 +136,6 @@ namespace KetQuaSoBong.Views.Popups
                 SetDayMonthYear(day, month, year);
                 Calendar = c.InitCalendar(int.Parse(Day), int.Parse(Month), int.Parse(Year));
             });
-          
         }
 
         public Command SelectDateCommand { get; set; }
