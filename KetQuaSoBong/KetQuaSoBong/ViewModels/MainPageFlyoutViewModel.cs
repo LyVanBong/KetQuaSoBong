@@ -79,18 +79,15 @@ namespace KetQuaSoBong.ViewModels
                         t.CurrentPage = t.Children[4];
 
                         break;
-
-                   
                 }
             });
             ShowUserProfilePage = new DelegateCommand(async () =>
-            { 
-                if(Preferences.Get("IsLogin", false) == true)
+            {
+                if (Preferences.Get("IsLogin", false) == true)
                 {
                     await (page.Parent as FlyoutPage).Detail.Navigation.PushAsync(new UserProfilePage());
                     (page.Parent as FlyoutPage).IsPresented = false;
                 }
-                
             });
             ShowSignUpPage = new DelegateCommand(async () =>
             {
@@ -98,24 +95,27 @@ namespace KetQuaSoBong.ViewModels
                 (page.Parent as FlyoutPage).IsPresented = false;
             });
         }
+
         private bool _isLogin = false;
+
         public bool IsLogin
         {
             get => _isLogin;
             set
-            {   
-                if(value == true) { Name = Preferences.Get("User", "").Split(',')[0]; }
+            {
+                if (value == true) { Name = Preferences.Get("User", "").Split(',')[0]; }
                 SetProperty(ref _isLogin, value);
-            } 
-                
-               
+            }
         }
+
         private string _name = "Tài khoản người dùng";
+
         public string Name
         {
             get => _name;
             set => SetProperty(ref _name, value);
         }
+
         public DelegateCommand CollapseMenuCommand { get; }
         public Command SelectedMenuItemCommand { get; }
         public DelegateCommand ShowUserProfilePage { get; }

@@ -12,15 +12,14 @@ namespace KetQuaSoBong.Views.CustomViews
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
             string name = (item as ItemChat).UserName;
-            if(Preferences.Get("IsLogin",false) == true)
+            if (Preferences.Get("IsLogin", false) == true)
             {
-               return name == Preferences.Get("User", "").Split(',')[4] ? MyChat : YourChat;
-            } 
+                return name == Preferences.Get("User", "").Split(',')[4] ? MyChat : YourChat;
+            }
             else
             {
                 return YourChat;
             }
-                
         }
     }
 }

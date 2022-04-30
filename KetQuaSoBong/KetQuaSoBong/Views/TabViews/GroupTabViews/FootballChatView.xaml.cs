@@ -1,15 +1,12 @@
 ﻿using KetQuaSoBong.Models;
-using KetQuaSoBong.ViewModels;
 using Newtonsoft.Json;
 using Prism.Mvvm;
-using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -20,7 +17,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FootballChatView : ContentView
     {
-
         public FootballChatView()
         {
             InitializeComponent();
@@ -28,14 +24,16 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
         }
     }
 
-    internal class FootballChatViewVM : BindableBase 
+    internal class FootballChatViewVM : BindableBase
     {
         private ObservableCollection<ItemChat> _itemChats = new ObservableCollection<ItemChat>();
-        public ObservableCollection<ItemChat> ItemChats 
+
+        public ObservableCollection<ItemChat> ItemChats
         {
             get => _itemChats;
             set => SetProperty(ref _itemChats, value);
         }
+
         private string _contentChat = "";
 
         public string ContentChat
@@ -50,7 +48,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
             if ((ItemChats.Count > 0))
             {
                 contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
-
             }
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -59,7 +56,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     CheckNewAsync(contentView);
                 });
                 return true;
-
             });
             SendCommand = new Command(async () =>
             {
@@ -68,7 +64,7 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     string[] user = Preferences.Get("User", "").Split(',');
                     string userName = user[4];
                     string name = user[0];
-                    string url = "https://api.tructiepketqua.net/api/Chats/BongDa/"+ userName + "/" + name + "?message=" + ContentChat;
+                    string url = "https://api.tructiepketqua.net/api/Chats/BongDa/" + userName + "/" + name + "?message=" + ContentChat;
                     ItemChat chat = new ItemChat()
                     {
                         UserName = userName,
@@ -83,13 +79,11 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     HttpResponseMessage response = await cient.PostAsync(url, content);
                     string result = await response.Content.ReadAsStringAsync();
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {   
+                    {
                         ItemChats.Add(chat);
                         GetAllChatAsync(contentView);
                         ContentChat = "";
                         Debug.Write("OK");
-
-                       
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                     {
@@ -103,7 +97,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     if ((ItemChats.Count > 0))
                     {
                         contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
-
                     }
                 }
             });
@@ -111,7 +104,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
             {
                 if (Preferences.Get("IsLogin", false) == false)
                 {
-
                     bool b = await (contentView.Parent.Parent.Parent as Page).DisplayAlert("Thông báo", "Để tham gia trò chuyện bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
                     if (b)
                     {
@@ -121,7 +113,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                     {
                         contentView.FindByName<Entry>("entryChat").Unfocus();
                     }
-
                 }
             });
         }
@@ -145,7 +136,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                 if ((ItemChats.Count > 0))
                 {
                     contentView.FindByName<ListView>("listChat").ScrollTo(ItemChats[ItemChats.Count - 1], ScrollToPosition.End, false);
-
                 }
                 ItemChats.ForEach(x => x.ListAllChat = chats);
             }
@@ -153,7 +143,6 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
             {
                 Debug.Write(response.StatusCode);
             }
-
         }
 
         public async void CheckNewAsync(ContentView cv)
@@ -176,6 +165,7 @@ namespace KetQuaSoBong.Views.TabViews.GroupTabViews
                 }
             }
         }
+
         public Command SendCommand { get; set; }
         public Command FocusCommand { get; set; }
     }

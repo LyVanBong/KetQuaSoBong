@@ -3,23 +3,24 @@
     x:Class="KetQuaSoBong.Views.MainPageViews.MainPageDetail"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     xmlns:local="clr-namespace:KetQuaSoBong.Views.TabViews"
-    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
-    xmlns:mainpageviews="clr-namespace:KetQuaSoBong.Views.MainPageViews" 
-    x:DataType="mainpageviews:MainPageDetailVM"
+    xmlns:mainpageviews="clr-namespace:KetQuaSoBong.Views.MainPageViews"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Title="Kết quả số bóng"
-    android:TabbedPage.ToolbarPlacement="Bottom"
+    android:TabbedPage.IsSmoothScrollEnabled="False"
     android:TabbedPage.IsSwipePagingEnabled="False"
-    android:TabbedPage.IsSmoothScrollEnabled="False">
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    x:DataType="mainpageviews:MainPageDetailVM">
     <TabbedPage.Behaviors>
-        <xct:EventToCommandBehavior EventName="CurrentPageChanged" Command="{Binding CurrentPageChangedCommand}"/>
+        <xct:EventToCommandBehavior Command="{Binding CurrentPageChangedCommand}" EventName="CurrentPageChanged" />
     </TabbedPage.Behaviors>
     <NavigationPage.TitleView>
-        <Label Text="Kết quả số bóng"
-               FontSize="20"
-               TextColor="White"
-               FontFamily="RBo" />
+        <Label
+            FontFamily="RBo"
+            FontSize="20"
+            Text="Kết quả số bóng"
+            TextColor="White" />
     </NavigationPage.TitleView>
     <TabbedPage.Resources>
         <ResourceDictionary>

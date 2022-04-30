@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace KetQuaSoBong.Models
 {
@@ -25,6 +22,6 @@ namespace KetQuaSoBong.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string StrSex => Sex == 0 ? "Nam" : (Sex == 1 ? "Nữ" : "Khác"); 
+        public string StrSex => Sex == 0 ? "Nam" : (Sex == 1 ? "Nữ" : "Khác");
     }
 }

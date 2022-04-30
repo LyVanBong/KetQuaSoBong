@@ -1,9 +1,4 @@
 ﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -19,9 +14,9 @@ namespace KetQuaSoBong.Views.Popups
             InitializeComponent();
             BindingContext = new SDialogVM(this);
         }
-        
     }
-    class SDialogVM : BindableBase
+
+    internal class SDialogVM : BindableBase
     {
         public SDialogVM(Popup p)
         {
@@ -29,7 +24,7 @@ namespace KetQuaSoBong.Views.Popups
             SSelectedCommand = new Command((x) =>
             {
                 RadioButton btn = x as RadioButton;
-                switch(btn.ClassId)
+                switch (btn.ClassId)
                 {
                     case "rdNam": p.Dismiss("Nam"); Preferences.Set("S", "rdNam"); break;
                     case "rdNu": p.Dismiss("Nữ"); Preferences.Set("S", "rdNu"); break;
@@ -37,7 +32,7 @@ namespace KetQuaSoBong.Views.Popups
                 }
             });
         }
-        public Command SSelectedCommand { get; set; } 
-        
+
+        public Command SSelectedCommand { get; set; }
     }
 }

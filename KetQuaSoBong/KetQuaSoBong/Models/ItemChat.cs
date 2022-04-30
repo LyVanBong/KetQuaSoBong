@@ -17,6 +17,7 @@ namespace KetQuaSoBong.Models
 
         [JsonProperty("userName")]
         private string _userName;
+
         public string UserName
         {
             get => _userName;
@@ -37,11 +38,13 @@ namespace KetQuaSoBong.Models
         public string Message { get; set; }
 
         private List<ItemChat> _listAllChat;
+
         public List<ItemChat> ListAllChat
         {
             get => _listAllChat;
             set => SetProperty(ref _listAllChat, value);
         }
+
         public DateTime DateTimeUpdate { get; set; }
         private Thickness _thickness = new Thickness(10);
 
@@ -50,6 +53,7 @@ namespace KetQuaSoBong.Models
             get => _thickness;
             set => SetProperty(ref _thickness, value);
         }
+
         public LayoutOptions LayoutOptions
         {
             get
@@ -61,6 +65,7 @@ namespace KetQuaSoBong.Models
                 }
             }
         }
+
         private bool _nameVisible = true;
         public bool NameVisible { get => _nameVisible; set => SetProperty(ref _nameVisible, value); }
         private bool _avatarVisible = true;

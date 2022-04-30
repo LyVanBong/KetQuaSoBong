@@ -8,14 +8,15 @@ namespace KetQuaSoBong.ViewModels
     public class UserProfilePageViewModel : BindableBase
     {
         private Register _user;
+
         public Register User
         {
             get { return _user; }
             set { SetProperty(ref _user, value); }
         }
+
         public UserProfilePageViewModel()
         {
-            
             string[] user = Preferences.Get("User", "").Split(',');
             User = new Register()
             {

@@ -1,24 +1,29 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:newsTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.NewsTabViews"
-             x:Class="KetQuaSoBong.Views.TabViews.NewsTab">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="KetQuaSoBong.Views.TabViews.NewsTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:newsTabViews="clr-namespace:KetQuaSoBong.Views.TabViews.NewsTabViews"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource placeholderColor}">
-            <xct:TabView IsSwipeEnabled="False"
-                    TabStripBackgroundColor="{StaticResource placeholderColor}"
-                    TabIndicatorColor="{StaticResource primaryColor}">
-                <xct:TabViewItem
-                        x:Name="tabBongDa">
+            <xct:TabView
+                IsSwipeEnabled="False"
+                TabIndicatorColor="{StaticResource primaryColor}"
+                TabStripBackgroundColor="{StaticResource placeholderColor}">
+                <xct:TabViewItem x:Name="tabBongDa">
                     <xct:TabViewItem.ControlTemplate>
                         <ControlTemplate>
-                            <Label Text="Bóng đá"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"
-                                       FontFamily="RBo">
+                            <Label
+                                FontFamily="RBo"
+                                HorizontalOptions="Center"
+                                Text="Bóng đá"
+                                VerticalOptions="Center">
                                 <Label.Triggers>
-                                    <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabBongDa}, Path=IsSelected}" Value="True">
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference tabBongDa}, Path=IsSelected}"
+                                        TargetType="Label"
+                                        Value="True">
                                         <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                     </DataTrigger>
                                 </Label.Triggers>
@@ -27,18 +32,20 @@
                     </xct:TabViewItem.ControlTemplate>
                     <newsTabViews:FootballNewsTab />
                 </xct:TabViewItem>
-                <xct:TabViewItem
-                        x:Name="tabXoSo"
-                        IsSelected="True">
+                <xct:TabViewItem x:Name="tabXoSo" IsSelected="True">
                     <xct:TabViewItem.ControlTemplate>
                         <ControlTemplate>
                             <Grid Padding="0">
-                                <Label Text="Xổ số"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"
-                                       FontFamily="RBo">
+                                <Label
+                                    FontFamily="RBo"
+                                    HorizontalOptions="Center"
+                                    Text="Xổ số"
+                                    VerticalOptions="Center">
                                     <Label.Triggers>
-                                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference tabXoSo}, Path=IsSelected}" Value="True">
+                                        <DataTrigger
+                                            Binding="{Binding Source={x:Reference tabXoSo}, Path=IsSelected}"
+                                            TargetType="Label"
+                                            Value="True">
                                             <Setter Property="TextColor" Value="{StaticResource primaryColor}" />
                                         </DataTrigger>
                                     </Label.Triggers>

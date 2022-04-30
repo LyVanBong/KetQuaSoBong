@@ -3,8 +3,8 @@
     x:Class="KetQuaSoBong.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
     xmlns:pages="clr-namespace:KetQuaSoBong.Views.MainPageViews"
+    xmlns:viewmodels="clr-namespace:KetQuaSoBong.ViewModels"
     x:DataType="viewmodels:MainPageFlyoutViewModel"
     NavigationPage.HasNavigationBar="False">
     <FlyoutPage.Flyout>
@@ -13,7 +13,7 @@
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <pages:MainPageDetail x:Name="contentPage"/>
+                <pages:MainPageDetail x:Name="contentPage" />
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

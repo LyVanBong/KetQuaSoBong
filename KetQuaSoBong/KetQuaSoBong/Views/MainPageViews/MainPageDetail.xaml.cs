@@ -16,17 +16,19 @@ namespace KetQuaSoBong.Views.MainPageViews
 
         private void TabbedPage_CurrentPageChanged(object sender, System.EventArgs e)
         {
-
         }
     }
-    class MainPageDetailVM : BindableBase
+
+    internal class MainPageDetailVM : BindableBase
     {
         private int _currentIndex = 0;
+
         public int CurrentIndex
         {
             get => _currentIndex;
             set => SetProperty(ref _currentIndex, value);
         }
+
         public MainPageDetailVM(TabbedPage p)
         {
             CurrentPageChangedCommand = new Command(async () =>
@@ -38,10 +40,10 @@ namespace KetQuaSoBong.Views.MainPageViews
                     {
                         await p.Navigation.PushAsync(new LoginPage());
                     }
-
                 }
             });
         }
+
         public Command CurrentPageChangedCommand { get; set; }
     }
 }

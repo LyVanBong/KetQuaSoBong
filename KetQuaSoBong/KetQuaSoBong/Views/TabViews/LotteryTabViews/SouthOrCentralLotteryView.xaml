@@ -1,28 +1,31 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-       xmlns:lotterytabviews="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
-       x:Class="KetQuaSoBong.Views.TabViews.LotteryTabViews.SouthOrCentralLotteryView"
-             x:DataType="lotterytabviews:SouthOrCentralLotteryViewVM"
-             xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel"
-             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
-       >
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="KetQuaSoBong.Views.TabViews.LotteryTabViews.SouthOrCentralLotteryView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:lotterytabviews="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
+    xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="lotterytabviews:SouthOrCentralLotteryViewVM">
     <ContentView.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up.png" x:Key="IconUp" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down.png" x:Key="IconDown" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" x:Key="Uncheck" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_checked.png" x:Key="Checked" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" x:Key="MLottery" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" x:Key="SLottery" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" x:Key="LotteryBall" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" x:Key="Calendar" />
+            <xct:ImageResource x:Key="IconUp" Id="KetQuaSoBong.Resources.Images.ic_up.png" />
+            <xct:ImageResource x:Key="IconDown" Id="KetQuaSoBong.Resources.Images.ic_down.png" />
+            <xct:ImageResource x:Key="Uncheck" Id="KetQuaSoBong.Resources.Images.ic_uncheck.png" />
+            <xct:ImageResource x:Key="Checked" Id="KetQuaSoBong.Resources.Images.ic_checked.png" />
+            <xct:ImageResource x:Key="MLottery" Id="KetQuaSoBong.Resources.Images.ic_trung_2.png" />
+            <xct:ImageResource x:Key="SLottery" Id="KetQuaSoBong.Resources.Images.ic_nam_2.png" />
+            <xct:ImageResource x:Key="LotteryBall" Id="KetQuaSoBong.Resources.Images.ic_soi_cau_2.png" />
+            <xct:ImageResource x:Key="Calendar" Id="KetQuaSoBong.Resources.Images.ic_calendar_1.png" />
             <ControlTemplate x:Key="RadioButton">
-                <Frame Padding="0"
-                       VerticalOptions="Start"
-                       BackgroundColor="Transparent"
-                       HeightRequest="30" WidthRequest="70" HorizontalOptions="Start">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    WidthRequest="70">
                     <Grid Margin="4" WidthRequest="70">
                         <ContentPresenter />
                     </Grid>
@@ -31,677 +34,747 @@
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
-        <StackLayout Spacing="0"
-                     Margin="0,0,0,10">
+        <StackLayout Margin="0,0,0,10" Spacing="0">
 
-            <Label HorizontalOptions="Fill"
-                   Padding="10,15,10,15"
-                   Margin="0,0,0,20"
-                   HorizontalTextAlignment="Center"
-                   BackgroundColor="Gold"
-                   FontSize="Default">
+            <Label
+                Margin="0,0,0,20"
+                Padding="10,15,10,15"
+                BackgroundColor="Gold"
+                FontSize="Default"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="{Binding Title} " FontFamily="RBo" TextColor="{StaticResource primaryColor}" />
-                        <Span Text=" "/>
-                        <Span Text="{Binding DateTimeNow, StringFormat='{0:ddd dd/MM/yyyy}'}" FontFamily="RM" TextColor="White" />
+                        <Span
+                            FontFamily="RBo"
+                            Text="{Binding Title}"
+                            TextColor="{StaticResource primaryColor}" />
+                        <Span Text=" " />
+                        <Span
+                            FontFamily="RM"
+                            Text="{Binding DateTimeNow, StringFormat='{0:ddd dd/MM/yyyy}'}"
+                            TextColor="White" />
                     </FormattedString>
                 </Label.FormattedText>
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SwitchToDetailPageCommand}"/>
+                    <TapGestureRecognizer Command="{Binding SwitchToDetailPageCommand}" />
                 </Label.GestureRecognizers>
             </Label>
-            <Grid BackgroundColor="Gray"
-                  Margin="5,0,5,0">
+            <Grid Margin="5,0,5,0" BackgroundColor="Gray">
 
-                <Grid ColumnDefinitions="50,*"
-                              RowDefinitions="45,45,45,137,45,321,91,45,45,50"
-                              Grid.Row="0"
-                      Margin="1"
-                              ColumnSpacing="1"
-                              RowSpacing="1">
-                    <Frame Grid.Column="0"
-                                   Grid.Row="0"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   Padding="0">
+                <Grid
+                    Grid.Row="0"
+                    Margin="1"
+                    ColumnDefinitions="50,*"
+                    ColumnSpacing="1"
+                    RowDefinitions="45,45,45,137,45,321,91,45,45,50"
+                    RowSpacing="1">
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeholderColor}"
+                        CornerRadius="0"
+                        HasShadow="False" />
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G8"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="1"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="White"
-                                   Padding="0">
-                        <Label Text="G8"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeholderColor}"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G7"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="2"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   Padding="0">
-                        <Label Text="G7"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G6"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="3"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="White"
-                                   Padding="0">
-                        <Label Text="G6"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16"/>
+                    <Frame
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeholderColor}"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G5"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="4"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   Padding="0">
-                        <Label Text="G5"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G4"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="5"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="White"
-                                   Padding="0">
-                        <Label Text="G4"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeholderColor}"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G3"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="6"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   Padding="0">
-                        <Label Text="G3"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G2"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="7"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="White"
-                                   Padding="0">
-                        <Label Text="G2"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16" />
+                    <Frame
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="{StaticResource placeholderColor}"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="G1"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="8"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   Padding="0">
-                        <Label Text="G1"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16"/>
+                    <Frame
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Label
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="ĐB"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
-                    <Frame Grid.Column="0"
-                                   Grid.Row="9"
-                                   HasShadow="False"
-                                   CornerRadius="0"
-                                   BackgroundColor="White"
-                                   Padding="0">
-                        <Label Text="ĐB"
-                               FontFamily="RBo"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               FontSize="16"/>
-                    </Frame>
-                    <!--RefreshLayout-->
-                   <Grid RowDefinitions="45,45,45,137,45,321,91,45,45,50"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          ColumnSpacing="1"
-                          RowSpacing="1"
-                          IsVisible="{Binding Lottery.IsLoading}">
+                    <!--  RefreshLayout  -->
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        ColumnSpacing="1"
+                        IsVisible="{Binding Lottery.IsLoading}"
+                        RowDefinitions="45,45,45,137,45,321,91,45,45,50"
+                        RowSpacing="1">
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="0"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="1"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="2"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
-                        <Frame  Grid.Column="0"
-                                   Grid.Row="3"
-                                   Grid.ColumnSpan="4"
-                                CornerRadius="0">
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
+                        <Frame
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            CornerRadius="0">
                             <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                RepeatMode="Infinite"
                                 Scale="0.5"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                                VerticalOptions="FillAndExpand" />
                         </Frame>
-                       
+
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="4"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
-                        <Frame  Grid.Column="0"
-                                   Grid.Row="5"
-                                   Grid.ColumnSpan="4"
-                                CornerRadius="0">
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
+                        <Frame
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            CornerRadius="0">
                             <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                RepeatMode="Infinite"
                                 Scale="0.4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                                VerticalOptions="FillAndExpand" />
                         </Frame>
-                        <Frame  Grid.Column="0"
-                                   Grid.Row="6"
-                                   Grid.ColumnSpan="4"
-                                CornerRadius="0">
+                        <Frame
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            CornerRadius="0">
                             <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                RepeatMode="Infinite"
                                 Scale="0.95"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                                VerticalOptions="FillAndExpand" />
                         </Frame>
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="7"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="{StaticResource placeholderColor}"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="8"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
                         <forms:AnimationView
-                                   Animation="loading.json"
-                                   BackgroundColor="White"
-                                   AnimationSource="AssetOrBundle"
-                                   RepeatMode="Infinite"
-                                   Grid.Column="0"
-                                   Grid.Row="9"
-                                   Grid.ColumnSpan="4"
-                                   VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand" />
-                        
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Animation="loading.json"
+                            AnimationSource="AssetOrBundle"
+                            BackgroundColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            RepeatMode="Infinite"
+                            VerticalOptions="FillAndExpand" />
                     </Grid>
 
-                    <CollectionView ItemsSource="{Binding Lottery.Datas}"
-                                    Grid.Column="1"
-                                    Grid.RowSpan="10"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Fill"
-                                    IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}">
+                    <CollectionView
+                        Grid.RowSpan="10"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}"
+                        ItemsSource="{Binding Lottery.Datas}"
+                        VerticalOptions="Fill">
                         <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Vertical"
-                                             Span="{Binding Lottery.Datas.Count}"
-                                             HorizontalItemSpacing="1"/>
+                            <GridItemsLayout
+                                HorizontalItemSpacing="1"
+                                Orientation="Vertical"
+                                Span="{Binding Lottery.Datas.Count}" />
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="md:Data">
                                 <StackLayout Spacing="1">
-                                    <Label Text="{Binding TenTinhThanh}"
-                                               FontFamily="RBo"
-                                               TextColor="CornflowerBlue"
-                                           TextDecorations="Underline"
-                                               HorizontalTextAlignment="Center"
-                                               VerticalTextAlignment="Center"
-                                               FontSize="14"
-                                               Grid.Column="0"
-                                           HeightRequest="45"
-                                               BackgroundColor="{StaticResource placeholderColor}"/>
-                                       
-                                    <!--G8-->
+                                    <Label
+                                        Grid.Column="0"
+                                        BackgroundColor="{StaticResource placeholderColor}"
+                                        FontFamily="RBo"
+                                        FontSize="14"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding TenTinhThanh}"
+                                        TextColor="CornflowerBlue"
+                                        TextDecorations="Underline"
+                                        VerticalTextAlignment="Center" />
 
-                                    <Label Text="{Binding StrG8}"
+                                    <!--  G8  -->
+
+                                    <Label
+                                        BackgroundColor="White"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrG8}"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center" />
+
+                                    <!--  G7  -->
+
+                                    <Label
+                                        BackgroundColor="{StaticResource placeholderColor}"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrG71}"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center" />
+
+                                    <!--  G6  -->
+                                    <StackLayout BackgroundColor="White" Spacing="1">
+                                        <Label
                                             FontFamily="RBo"
-                                            TextColor="Black"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
                                             FontSize="16"
                                             HeightRequest="45"
-                                            BackgroundColor="White"/>
-
-                                    <!--G7-->
-
-                                    <Label Text="{Binding StrG71}"
-                                            FontFamily="RBo"
-                                            TextColor="Black"
                                             HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
+                                            Text="{Binding StrG61}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
                                             FontSize="16"
                                             HeightRequest="45"
-                                            BackgroundColor="{StaticResource placeholderColor}"/>
-
-                                    <!--G6-->
-                                    <StackLayout Spacing="1"
-                                                 BackgroundColor="White">
-                                        <Label Text="{Binding StrG61}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG62}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG63}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG62}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG63}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
                                     </StackLayout>
 
-                                    <!--G5-->
+                                    <!--  G5  -->
 
-                                    <Label Text="{Binding StrG51}"
+                                    <Label
+                                        BackgroundColor="{StaticResource placeholderColor}"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrG51}"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center" />
+
+                                    <!--  G4  -->
+                                    <StackLayout BackgroundColor="White" Spacing="1">
+                                        <Label
                                             FontFamily="RBo"
-                                            TextColor="Black"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
                                             FontSize="16"
                                             HeightRequest="45"
-                                            BackgroundColor="{StaticResource placeholderColor}"/>
-
-                                    <!--G4-->
-                                    <StackLayout Spacing="1"
-                                                 BackgroundColor="White">
-                                        <Label Text="{Binding StrG41}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG42}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG43}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG44}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG45}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG46}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG47}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG41}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG42}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG43}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG44}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG45}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG46}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG47}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
                                     </StackLayout>
 
-                                    <!--G3-->
-                                    <StackLayout Spacing="1"
-                                                 BackgroundColor="{StaticResource placeholderColor}">
-                                        <Label Text="{Binding StrG31}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
-                                        <Label Text="{Binding StrG32}"
-                                                FontFamily="RBo"
-                                                TextColor="Black"
-                                                HorizontalTextAlignment="Center"
-                                                VerticalTextAlignment="Center"
-                                                FontSize="16"
-                                                HeightRequest="45"/>
+                                    <!--  G3  -->
+                                    <StackLayout BackgroundColor="{StaticResource placeholderColor}" Spacing="1">
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG31}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="45"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding StrG32}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
                                     </StackLayout>
 
-                                    <!--G2-->
+                                    <!--  G2  -->
 
-                                    <Label Text="{Binding StrG21}"
-                                            FontFamily="RBo"
-                                            TextColor="Black"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
-                                            FontSize="16"
-                                            HeightRequest="45"
-                                            BackgroundColor="White"/>
+                                    <Label
+                                        BackgroundColor="White"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrG21}"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center" />
 
-                                    <!--G1-->
+                                    <!--  G1  -->
 
-                                    <Label Text="{Binding StrG1}"
-                                            FontFamily="RBo"
-                                            TextColor="Black"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
-                                            FontSize="16"
-                                            HeightRequest="45"
-                                            BackgroundColor="{StaticResource placeholderColor}"/>
+                                    <Label
+                                        BackgroundColor="{StaticResource placeholderColor}"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrG1}"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center" />
 
-                                    <!--DB-->
+                                    <!--  DB  -->
 
-                                    <Label Text="{Binding StrDacBiet}"
-                                            FontFamily="RBo"
-                                            TextColor="{StaticResource primaryColor}"
-                                            HorizontalTextAlignment="Center"
-                                            VerticalTextAlignment="Center"
-                                            FontSize="16"
-                                            HeightRequest="50"
-                                            BackgroundColor="White"/>
-
+                                    <Label
+                                        BackgroundColor="White"
+                                        FontFamily="RBo"
+                                        FontSize="16"
+                                        HeightRequest="50"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding StrDacBiet}"
+                                        TextColor="{StaticResource primaryColor}"
+                                        VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </Grid>
-                
             </Grid>
             <StackLayout IsVisible="{Binding IsShowMore}">
-                <StackLayout Orientation="Horizontal"
-                                     Padding="5"
-                                     Grid.Row="2"
-                                     BackgroundColor="Red"
-                                     Spacing="0"
-                             Margin="5,0"
-                             IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}">
-                    <RadioButton x:Name="rdAllNum"
-                                         ClassId="AllNum"
-                                         ControlTemplate="{StaticResource RadioButton}"
-                                         IsChecked="True">
+                <StackLayout
+                    Grid.Row="2"
+                    Margin="5,0"
+                    Padding="5"
+                    BackgroundColor="Red"
+                    IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <RadioButton
+                        x:Name="rdAllNum"
+                        ClassId="AllNum"
+                        ControlTemplate="{StaticResource RadioButton}"
+                        IsChecked="True">
                         <RadioButton.Content>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{StaticResource Uncheck}"
-                                               WidthRequest="13"
-                                               HeightRequest="13"
-                                               HorizontalOptions="Start">
+                                <Image
+                                    HeightRequest="13"
+                                    HorizontalOptions="Start"
+                                    Source="{StaticResource Uncheck}"
+                                    WidthRequest="13">
                                     <Image.Triggers>
-                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rdAllNum}, Path=IsChecked}" Value="True">
+                                        <DataTrigger
+                                            Binding="{Binding Source={x:Reference rdAllNum}, Path=IsChecked}"
+                                            TargetType="Image"
+                                            Value="True">
                                             <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
-                                <Label Text="Đầy đủ"
-                                               TextColor="White"
-                                               FontFamily="RM"
-                                               Margin="0,2,0,0"
-                                               FontSize="13" />
+                                <Label
+                                    Margin="0,2,0,0"
+                                    FontFamily="RM"
+                                    FontSize="13"
+                                    Text="Đầy đủ"
+                                    TextColor="White" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rdAllNum}"/>
+                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rdAllNum}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
-                    <RadioButton x:Name="rd2Num"
-                                 ClassId="2Num"
-                             ControlTemplate="{StaticResource RadioButton}">
+                    <RadioButton
+                        x:Name="rd2Num"
+                        ClassId="2Num"
+                        ControlTemplate="{StaticResource RadioButton}">
                         <RadioButton.Content>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{StaticResource Uncheck}"
-                                               WidthRequest="13"
-                                               HeightRequest="13"
-                                               HorizontalOptions="Start">
+                                <Image
+                                    HeightRequest="13"
+                                    HorizontalOptions="Start"
+                                    Source="{StaticResource Uncheck}"
+                                    WidthRequest="13">
                                     <Image.Triggers>
-                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd2Num}, Path=IsChecked}" Value="True">
+                                        <DataTrigger
+                                            Binding="{Binding Source={x:Reference rd2Num}, Path=IsChecked}"
+                                            TargetType="Image"
+                                            Value="True">
                                             <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
-                                <Label Text="2 số"
-                                   TextColor="White"
-                                   FontFamily="RM"
-                                   Margin="0,2,0,0"
-                                   FontSize="13" />
+                                <Label
+                                    Margin="0,2,0,0"
+                                    FontFamily="RM"
+                                    FontSize="13"
+                                    Text="2 số"
+                                    TextColor="White" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd2Num}"/>
+                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd2Num}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
-                    <RadioButton x:Name="rd3Num"
-                                         ClassId="3Num"
-                                         ControlTemplate="{StaticResource RadioButton}">
+                    <RadioButton
+                        x:Name="rd3Num"
+                        ClassId="3Num"
+                        ControlTemplate="{StaticResource RadioButton}">
                         <RadioButton.Content>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{StaticResource Uncheck}"
-                                               WidthRequest="13"
-                                               HeightRequest="13"
-                                               HorizontalOptions="Start">
+                                <Image
+                                    HeightRequest="13"
+                                    HorizontalOptions="Start"
+                                    Source="{StaticResource Uncheck}"
+                                    WidthRequest="13">
                                     <Image.Triggers>
-                                        <DataTrigger TargetType="Image" Binding="{Binding Source={x:Reference rd3Num}, Path=IsChecked}" Value="True">
+                                        <DataTrigger
+                                            Binding="{Binding Source={x:Reference rd3Num}, Path=IsChecked}"
+                                            TargetType="Image"
+                                            Value="True">
                                             <Setter Property="Source" Value="{StaticResource Checked}" />
                                         </DataTrigger>
                                     </Image.Triggers>
                                 </Image>
-                                <Label Text="3 số"
-                                   TextColor="White"
-                                   FontFamily="RM"
-                                   Margin="0,2,0,0"
-                                   FontSize="13" />
+                                <Label
+                                    Margin="0,2,0,0"
+                                    FontFamily="RM"
+                                    FontSize="13"
+                                    Text="3 số"
+                                    TextColor="White" />
                             </StackLayout>
                         </RadioButton.Content>
                         <RadioButton.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd3Num}"/>
+                            <TapGestureRecognizer Command="{Binding Lottery.ChangeDisplayNumberCommand}" CommandParameter="{x:Reference rd3Num}" />
                         </RadioButton.GestureRecognizers>
                     </RadioButton>
-                    <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="EndAndExpand">
-                        <Switch Margin="0"
-                                ThumbColor="White"
-                                OnColor="Yellow"></Switch>
-                        <Label Text="Thông báo"
-                                   TextColor="White"
-                                   FontFamily="RM"
-                                   Margin="0,1,0,0"
-                                   FontSize="13"
-                               Padding="0"
-                               HorizontalOptions="Start"
-                               VerticalOptions="Center" />
+                    <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                        <Switch
+                            Margin="0"
+                            OnColor="Yellow"
+                            ThumbColor="White" />
+                        <Label
+                            Margin="0,1,0,0"
+                            Padding="0"
+                            FontFamily="RM"
+                            FontSize="13"
+                            HorizontalOptions="Start"
+                            Text="Thông báo"
+                            TextColor="White"
+                            VerticalOptions="Center" />
                     </StackLayout>
-
                 </StackLayout>
 
-                <Grid HeightRequest="455"
-                          BackgroundColor="White"
-                  Margin="5,10"
-                      IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}">
-                    <Grid Margin="0,0,0,10"
-                              BackgroundColor="Gray"
-                              ColumnDefinitions="60,*"
-                              RowDefinitions="40,*"
-                              RowSpacing="1"
-                              ColumnSpacing="1">
-                        <Label Text="Đầu"
-                                FontFamily="RBo"
-                                TextColor="Black"
-                                HorizontalOptions="Fill"
-                                HeightRequest="40"
-                                   Grid.Column="0"       
-                                   Grid.Row="0"
-                                HorizontalTextAlignment="Center"
-                                VerticalTextAlignment="Center"
-                                FontSize="16"
-                                   Margin="1,1,0,0"
-                                BackgroundColor="{StaticResource placeholderColor}"/>
-                        <ListView ItemsSource="{Binding Lottery.NumberTemp}"
-                                      Grid.Column="0"
-                                      Grid.Row="1"
-                                      Margin="1,0,0,0"
-                                      RowHeight="40"
-                                      SeparatorColor="Gray"
-                                      SelectionMode="None"
-                                      IsEnabled="False"
-                                      >
+                <Grid
+                    Margin="5,10"
+                    BackgroundColor="White"
+                    HeightRequest="455"
+                    IsVisible="{Binding Lottery.IsLoading, Converter={xct:InvertedBoolConverter}}">
+                    <Grid
+                        Margin="0,0,0,10"
+                        BackgroundColor="Gray"
+                        ColumnDefinitions="60,*"
+                        ColumnSpacing="1"
+                        RowDefinitions="40,*"
+                        RowSpacing="1">
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="1,1,0,0"
+                            BackgroundColor="{StaticResource placeholderColor}"
+                            FontFamily="RBo"
+                            FontSize="16"
+                            HeightRequest="40"
+                            HorizontalOptions="Fill"
+                            HorizontalTextAlignment="Center"
+                            Text="Đầu"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                        <ListView
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="1,0,0,0"
+                            IsEnabled="False"
+                            ItemsSource="{Binding Lottery.NumberTemp}"
+                            RowHeight="40"
+                            SelectionMode="None"
+                            SeparatorColor="Gray">
 
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="x:String">
                                     <ViewCell>
-                                        <Label Text="{Binding .}"
-                                               FontFamily="RBo"
-                                               TextColor="{StaticResource primaryColor}"
-                                               HorizontalOptions="Fill"
-                                               HeightRequest="40"
-                                               HorizontalTextAlignment="Center"
-                                               VerticalTextAlignment="Center"
-                                               FontSize="16"
-                                               BackgroundColor="White"/>
+                                        <Label
+                                            BackgroundColor="White"
+                                            FontFamily="RBo"
+                                            FontSize="16"
+                                            HeightRequest="40"
+                                            HorizontalOptions="Fill"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding .}"
+                                            TextColor="{StaticResource primaryColor}"
+                                            VerticalTextAlignment="Center" />
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <CollectionView ItemsSource="{Binding Lottery.Datas}"
-                                    Grid.Column="1"
-                                    Grid.RowSpan="2"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Fill"
-                                    Margin="0,1,1,1"
-                                    HeightRequest="452">
+                        <CollectionView
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Margin="0,1,1,1"
+                            HeightRequest="452"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding Lottery.Datas}"
+                            VerticalOptions="Fill">
                             <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Vertical"
-                                             Span="{Binding Lottery.Datas.Count}"
-                                             HorizontalItemSpacing="1"/>
+                                <GridItemsLayout
+                                    HorizontalItemSpacing="1"
+                                    Orientation="Vertical"
+                                    Span="{Binding Lottery.Datas.Count}" />
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="md:Data">
-                                    <Grid RowDefinitions="39,*"
-                                             HeightRequest="443"
-                                      RowSpacing="1">
-                                        <Label Text="{Binding TenTinhThanh}"
-                                               FontFamily="RBo"
-                                               TextColor="CornflowerBlue"
-                                           TextDecorations="Underline"
-                                               HorizontalTextAlignment="Center"
-                                               VerticalTextAlignment="Center"
-                                               FontSize="14"
-                                               Grid.Column="0"
-                                           HeightRequest="39"
-                                               BackgroundColor="{StaticResource placeholderColor}"/>
-                                        <ListView ItemsSource="{Binding LastNum}"
-                                          
+                                    <Grid
+                                        HeightRequest="443"
+                                        RowDefinitions="39,*"
+                                        RowSpacing="1">
+                                        <Label
+                                            Grid.Column="0"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            FontFamily="RBo"
+                                            FontSize="14"
+                                            HeightRequest="39"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding TenTinhThanh}"
+                                            TextColor="CornflowerBlue"
+                                            TextDecorations="Underline"
+                                            VerticalTextAlignment="Center" />
+                                        <ListView
                                             Grid.Row="1"
-                                      RowHeight="40"
-                                      SeparatorColor="Gray"
-                                      SelectionMode="None"
-                                      IsEnabled="False"
-                                      >
+                                            IsEnabled="False"
+                                            ItemsSource="{Binding LastNum}"
+                                            RowHeight="40"
+                                            SelectionMode="None"
+                                            SeparatorColor="Gray">
 
                                             <ListView.ItemTemplate>
                                                 <DataTemplate x:DataType="x:String">
                                                     <ViewCell>
-                                                        <Label Text="{Binding .}"
-                                               FontFamily="RBo"
-                                               TextColor="Black"
-                                               HorizontalOptions="Fill"
-                                               HeightRequest="40"
-                                               HorizontalTextAlignment="Start"
-                                               VerticalTextAlignment="Center"
-                                               Padding="10,0,0,0"
-                                               FontSize="16"
-                                               BackgroundColor="White"/>
+                                                        <Label
+                                                            Padding="10,0,0,0"
+                                                            BackgroundColor="White"
+                                                            FontFamily="RBo"
+                                                            FontSize="16"
+                                                            HeightRequest="40"
+                                                            HorizontalOptions="Fill"
+                                                            HorizontalTextAlignment="Start"
+                                                            Text="{Binding .}"
+                                                            TextColor="Black"
+                                                            VerticalTextAlignment="Center" />
                                                     </ViewCell>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -712,39 +785,48 @@
                         </CollectionView>
                     </Grid>
                 </Grid>
-
             </StackLayout>
-            <Frame BackgroundColor="{StaticResource primaryColor}"
-                   WidthRequest="150"
-                   HeightRequest="40"
-                   Padding="0"
-                   Margin="0,10,0,0"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   CornerRadius="15"
-                   HasShadow="False"
-                   BorderColor="Transparent"
-                   IsVisible="{Binding IsButtonVisible}">
-                <StackLayout HorizontalOptions="Center"
-                             Orientation="Horizontal"
-                             VerticalOptions="Center"
-                             Margin="10,0,0,0">
-                    <Label Text="Mở rộng"
-                           TextColor="White"
-                           FontFamily="RBo">
+            <Frame
+                Margin="0,10,0,0"
+                Padding="0"
+                BackgroundColor="{StaticResource primaryColor}"
+                BorderColor="Transparent"
+                CornerRadius="15"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsButtonVisible}"
+                VerticalOptions="Center"
+                WidthRequest="150">
+                <StackLayout
+                    Margin="10,0,0,0"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <Label
+                        FontFamily="RBo"
+                        Text="Mở rộng"
+                        TextColor="White">
                         <Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding IsShowMore}" Value="True">
+                            <DataTrigger
+                                Binding="{Binding IsShowMore}"
+                                TargetType="Label"
+                                Value="True">
                                 <Setter Property="Text" Value="Thu gọn" />
                                 <Setter Property="TextColor" Value="Black" />
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
-                    <Image Source="{StaticResource IconDown}"
-                           WidthRequest="15"
-                           Aspect="AspectFill"
-                           HeightRequest="15">
+                    <Image
+                        Aspect="AspectFill"
+                        HeightRequest="15"
+                        Source="{StaticResource IconDown}"
+                        WidthRequest="15">
                         <Image.Triggers>
-                            <DataTrigger TargetType="Image" Binding="{Binding IsShowMore}" Value="True">
+                            <DataTrigger
+                                Binding="{Binding IsShowMore}"
+                                TargetType="Image"
+                                Value="True">
                                 <Setter Property="Source" Value="{StaticResource IconUp}" />
                             </DataTrigger>
                         </Image.Triggers>
@@ -752,7 +834,10 @@
                 </StackLayout>
 
                 <Frame.Triggers>
-                    <DataTrigger TargetType="Frame" Binding="{Binding IsShowMore}" Value="True">
+                    <DataTrigger
+                        Binding="{Binding IsShowMore}"
+                        TargetType="Frame"
+                        Value="True">
                         <Setter Property="BackgroundColor" Value="White" />
                         <Setter Property="BorderColor" Value="Black" />
                     </DataTrigger>
@@ -761,7 +846,6 @@
                     <TapGestureRecognizer Command="{Binding ShowMoreCommand}" />
                 </Frame.GestureRecognizers>
             </Frame>
-             
         </StackLayout>
     </ContentView.Content>
 </ContentView>

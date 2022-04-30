@@ -1,19 +1,27 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KetQuaSoBong.Views.Popups.SDialog"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
-           xmlns:popups="clr-namespace:KetQuaSoBong.Views.Popups"
-           x:DataType="popups:SDialogVM"
-           Size="200,135">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Popup
+    x:Class="KetQuaSoBong.Views.Popups.SDialog"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popups="clr-namespace:KetQuaSoBong.Views.Popups"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="popups:SDialogVM"
+    Size="200,135">
     <xct:Popup.Resources>
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.logo.png" x:Key="Logo" />
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_up_2.png" x:Key="IconUp" />
-        <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_down_2.png" x:Key="IconDown" />
+        <xct:ImageResource x:Key="Logo" Id="KetQuaSoBong.Resources.Images.logo.png" />
+        <xct:ImageResource x:Key="IconUp" Id="KetQuaSoBong.Resources.Images.ic_up_2.png" />
+        <xct:ImageResource x:Key="IconDown" Id="KetQuaSoBong.Resources.Images.ic_down_2.png" />
         <ControlTemplate x:Key="FrameRadioTemplate">
-            <Frame Padding="0" HasShadow="False" VerticalOptions="Start"
-               HeightRequest="40" HorizontalOptions="Fill"
-                   Margin="2,2">
+            <Frame
+                Margin="2,2"
+                Padding="0"
+                HasShadow="False"
+                HeightRequest="40"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Grid Margin="4" WidthRequest="100">
+                    <ContentPresenter />
+                </Grid>
 
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CheckedStates">
@@ -30,86 +38,97 @@
                         </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
-
-                <Grid Margin="4" WidthRequest="100">
-                    <ContentPresenter />
-                </Grid>
             </Frame>
         </ControlTemplate>
     </xct:Popup.Resources>
     <xct:Popup.Content>
-        <Frame HeightRequest="155"
-                       CornerRadius="0"
-                       BorderColor="LightGray"
-                       Padding="0"
-                       Margin="30,0,30,10"
-                       HasShadow="False"
-                           x:Name="layoutGt"
-                           IsVisible="true">
+        <Frame
+            x:Name="layoutGt"
+            Margin="30,0,30,10"
+            Padding="0"
+            BorderColor="LightGray"
+            CornerRadius="0"
+            HasShadow="False"
+            HeightRequest="155"
+            IsVisible="true">
             <StackLayout Spacing="0">
-                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         IsChecked="True"
-                                         x:Name="rdNam"
-                                         ClassId="rdNam">
+                <RadioButton
+                    x:Name="rdNam"
+                    ClassId="rdNam"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}"
+                    IsChecked="True">
                     <RadioButton.Content>
-                        <Label Text="Nam"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontSize="15"
+                            Text="Nam"
+                            TextColor="Black"
+                            VerticalOptions="Center">
                             <Label.Triggers>
-                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdNam}, Path=IsChecked}" Value="True">
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference rdNam}, Path=IsChecked}"
+                                    TargetType="Label"
+                                    Value="True">
                                     <Setter Property="TextColor" Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
                     </RadioButton.Content>
                     <RadioButton.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdNam}"/>
+                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdNam}" />
                     </RadioButton.GestureRecognizers>
                 </RadioButton>
-                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         x:Name="rdNu"
-                                         ClassId="rdNu">
+                <RadioButton
+                    x:Name="rdNu"
+                    ClassId="rdNu"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}">
                     <RadioButton.Content>
-                        <Label Text="Nữ"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontSize="15"
+                            Text="Nữ"
+                            TextColor="Black"
+                            VerticalOptions="Center">
                             <Label.Triggers>
-                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdNu}, Path=IsChecked}" Value="True">
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference rdNu}, Path=IsChecked}"
+                                    TargetType="Label"
+                                    Value="True">
                                     <Setter Property="TextColor" Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
                     </RadioButton.Content>
                     <RadioButton.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdNu}"/>
+                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdNu}" />
                     </RadioButton.GestureRecognizers>
                 </RadioButton>
-                <RadioButton ControlTemplate="{StaticResource FrameRadioTemplate}"
-                                         x:Name="rdKhac"
-                                         ClassId="rdKhac">
+                <RadioButton
+                    x:Name="rdKhac"
+                    ClassId="rdKhac"
+                    ControlTemplate="{StaticResource FrameRadioTemplate}">
                     <RadioButton.Content>
-                        <Label Text="Khác"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           Margin="10,0,0,0">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontSize="15"
+                            Text="Khác"
+                            TextColor="Black"
+                            VerticalOptions="Center">
                             <Label.Triggers>
-                                <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference rdKhac}, Path=IsChecked}" Value="True">
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference rdKhac}, Path=IsChecked}"
+                                    TargetType="Label"
+                                    Value="True">
                                     <Setter Property="TextColor" Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
                     </RadioButton.Content>
                     <RadioButton.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdKhac}"/>
+                        <TapGestureRecognizer Command="{Binding SSelectedCommand}" CommandParameter="{x:Reference rdKhac}" />
                     </RadioButton.GestureRecognizers>
                 </RadioButton>
             </StackLayout>
         </Frame>
-
     </xct:Popup.Content>
 </xct:Popup>
