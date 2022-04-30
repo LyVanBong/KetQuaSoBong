@@ -13,7 +13,7 @@
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <pages:MainPageDetail />
+                <pages:MainPageDetail x:Name="contentPage"/>
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>
