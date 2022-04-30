@@ -30,7 +30,10 @@
     <None Remove="Resources\Images\30_menu.png" />
     <None Remove="Resources\Images\bac.png" />
     <None Remove="Resources\Images\back-btn.png" />
+    <None Remove="Resources\Images\bongda.png" />
     <None Remove="Resources\Images\dien_toan.png" />
+    <None Remove="Resources\Images\group_chat.png" />
+    <None Remove="Resources\Images\ho_tro.png" />
     <None Remove="Resources\Images\huong-dan.png" />
     <None Remove="Resources\Images\huong_dan.png" />
     <None Remove="Resources\Images\ic_afc_cl.png" />
@@ -104,6 +107,7 @@
     <None Remove="Resources\Images\soi-cau.png" />
     <None Remove="Resources\Images\soi_cau.png" />
     <None Remove="Resources\Images\thong-ke.png" />
+    <None Remove="Resources\Images\tintuc.png" />
     <None Remove="Resources\Images\trung.png" />
   </ItemGroup>
 
@@ -123,6 +127,9 @@
     <EmbeddedResource Include="Resources\Images\11_down.png" />
     <EmbeddedResource Include="Resources\Images\12_Rectangle-696.png" />
     <EmbeddedResource Include="Resources\Images\13_signup-icon.png" />
+    <EmbeddedResource Include="Resources\Images\bongda.png" />
+    <EmbeddedResource Include="Resources\Images\group_chat.png" />
+    <EmbeddedResource Include="Resources\Images\ho_tro.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_android.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_ios.png" />
     <EmbeddedResource Include="Resources\Images\ic_next.png" />
@@ -140,7 +147,6 @@
     <EmbeddedResource Include="Resources\Images\bac.png" />
     <EmbeddedResource Include="Resources\Images\back-btn.png" />
     <EmbeddedResource Include="Resources\Images\dien_toan.png" />
-    <EmbeddedResource Include="Resources\Images\huong-dan.png" />
     <EmbeddedResource Include="Resources\Images\huong_dan.png" />
     <EmbeddedResource Include="Resources\Images\ic_afc_cl.png" />
     <EmbeddedResource Include="Resources\Images\ic_asian.png" />
@@ -207,6 +213,7 @@
     <EmbeddedResource Include="Resources\Images\soi-cau.png" />
     <EmbeddedResource Include="Resources\Images\soi_cau.png" />
     <EmbeddedResource Include="Resources\Images\thong-ke.png" />
+    <EmbeddedResource Include="Resources\Images\tintuc.png" />
     <EmbeddedResource Include="Resources\Images\trung.png" />
     <Resource Include="Resources\Images\dien_toan.png" />
     <Resource Include="Resources\Images\huong_dan.png" />
@@ -285,7 +292,6 @@
     <Resource Include="Resources\Images\30_menu.png" />
     <Resource Include="Resources\Images\img_banner.png" />
     <Resource Include="Resources\Images\back-btn.png" />
-    <Resource Include="Resources\Images\huong-dan.png" />
     <Resource Include="Resources\Images\ic_sub.png" />
     <Resource Include="Resources\Images\logo-1.png" />
     <Resource Include="Resources\Images\logo-slash.png" />

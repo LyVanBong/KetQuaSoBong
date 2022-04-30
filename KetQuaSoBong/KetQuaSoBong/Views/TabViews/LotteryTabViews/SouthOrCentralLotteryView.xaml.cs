@@ -128,7 +128,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
                 switch(region)
                 {
                     case "south": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new SouthLotteryPage()); break;
-                    case "central": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new CentralLotteryPage()); break;
+                    case "central": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new CentralLotteryPage ()); break;
                 }
             });
 
