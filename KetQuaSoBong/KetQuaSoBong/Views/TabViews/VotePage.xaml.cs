@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace KetQuaSoBong.Views
+namespace KetQuaSoBong.Views.TabViews
 {
     public partial class VotePage : ContentPage
     {

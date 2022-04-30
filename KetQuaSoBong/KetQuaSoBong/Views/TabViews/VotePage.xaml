@@ -5,7 +5,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:votePageViews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KetQuaSoBong.Views.VotePage"
+             x:Class="KetQuaSoBong.Views.TabViews.VotePage"
              BackgroundColor="{StaticResource placeholderColor}">
     <NavigationPage.TitleView>
         <Grid>

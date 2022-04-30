@@ -1,5 +1,6 @@
 ﻿using KetQuaSoBong.Models;
 using KetQuaSoBong.Views;
+using KetQuaSoBong.Views.TabViews;
 using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
@@ -21,11 +22,10 @@ namespace KetQuaSoBong.ViewModels
                 new MainPageFlyoutMenuItem {Id = 0, Title="Xổ số miền Bắc", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bac.png")},
                 new MainPageFlyoutMenuItem {Id = 1, Title="Xổ số miền Trung", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.trung.png")},
                 new MainPageFlyoutMenuItem {Id = 2, Title="Xổ số miền Nam", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.nam.png")},
+                new MainPageFlyoutMenuItem {Id = 3, Title="Bóng đá", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bongda.png")},
                 new MainPageFlyoutMenuItem {Id = 4, Title="Bình chọn", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ic_vote.png")},
-                new MainPageFlyoutMenuItem {Id = 5, Title="Bóng đá", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.bongda.png")},
-                new MainPageFlyoutMenuItem {Id = 6, Title="Tin tức", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.tintuc.png")},
-                new MainPageFlyoutMenuItem {Id = 7, Title="Group", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.group_chat.png")},
-                new MainPageFlyoutMenuItem {Id = 8, Title="Hỗ trợ", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ho_tro.png")},
+                new MainPageFlyoutMenuItem {Id = 5, Title="Group", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.group_chat.png")},
+                new MainPageFlyoutMenuItem {Id = 6, Title="Hỗ trợ", Icon=ImageSource.FromResource("KetQuaSoBong.Resources.Images.ho_tro.png")},
 
             };
             CollapseMenuCommand = new DelegateCommand(() =>
@@ -60,34 +60,22 @@ namespace KetQuaSoBong.ViewModels
                         break;
 
                     case 3:
-                        p.IsVisible = false;
-                        await p.Navigation.PushAsync(new LotteryCheckPage());
-
-                        break;
-
-                    case 4:
-                        p.IsVisible = false;
-                        await p.Navigation.PushAsync(new VotePage());
-
-                        break;
-
-                    case 5:
-                        
                         t.CurrentPage = t.Children[1];
 
                         break;
 
-                    case 6:
+                    case 4:
+                        
                         t.CurrentPage = t.Children[2];
 
                         break;
 
-                    case 7:
+                    case 5:
                         t.CurrentPage = t.Children[3];
 
                         break;
 
-                    case 8:
+                    //case 6:
                         t.CurrentPage = t.Children[4];
 
                         break;

@@ -41,6 +41,7 @@
     <None Remove="Resources\Images\ic_back_android.png" />
     <None Remove="Resources\Images\ic_back_ios.png" />
     <None Remove="Resources\Images\ic_bac_2.png" />
+    <None Remove="Resources\Images\ic_binh_chon.png" />
     <None Remove="Resources\Images\ic_bong_da_0.png" />
     <None Remove="Resources\Images\ic_bong_da_1.png" />
     <None Remove="Resources\Images\ic_caf.png" />
@@ -133,6 +134,7 @@
     <EmbeddedResource Include="Resources\Images\ho_tro.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_android.png" />
     <EmbeddedResource Include="Resources\Images\ic_back_ios.png" />
+    <EmbeddedResource Include="Resources\Images\ic_binh_chon.png" />
     <EmbeddedResource Include="Resources\Images\ic_next.png" />
     <EmbeddedResource Include="Resources\Images\ic_prev.png" />
     <EmbeddedResource Include="Resources\Images\ic_telegram.png" />
@@ -320,6 +322,12 @@
     <Compile Update="Views\TabViews\LotteryTabViews\NorthLotteryView.xaml.cs">
       <DependentUpon>NorthLotteryView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\TabViews\VotePage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TabViews\VotePageViews\NorthVoteTab.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="Views\VotePageViews\NorthVoteTab.xaml.cs">
       <DependentUpon>NorthVoteTab.xaml</DependentUpon>
     </Compile>
@@ -399,9 +407,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\VotePageViews\NorthVoteTab.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\VotePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\UserProfilePage.xaml">

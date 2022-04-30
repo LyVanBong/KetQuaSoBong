@@ -3,6 +3,7 @@ using KetQuaSoBong.Models.LotteryModel;
 using KetQuaSoBong.ViewModels;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.MainPageViews;
+using KetQuaSoBong.Views.TabViews;
 using Prism;
 using Prism.Ioc;
 using System;

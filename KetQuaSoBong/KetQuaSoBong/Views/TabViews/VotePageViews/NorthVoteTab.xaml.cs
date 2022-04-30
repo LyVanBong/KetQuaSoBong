@@ -13,7 +13,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace KetQuaSoBong.Views.TabViews.VotePageViews
+namespace KetQuaSoBong.Views.VotePageViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NorthVoteTab : ContentView

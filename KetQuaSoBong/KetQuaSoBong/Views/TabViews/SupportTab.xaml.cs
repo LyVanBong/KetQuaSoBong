@@ -26,7 +26,7 @@ namespace KetQuaSoBong.Views.TabViews
                 }
                 else
                 {
-                    bool b = await page.DisplayAlert("Thông báo", "Để tham gia trò chuyện bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
+                    bool b = await page.DisplayAlert("Thông báo", "Để gửi phản hồi bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
                     if (b)
                     {
                         await (page.Parent as Page).Navigation.PushAsync(new LoginPage());

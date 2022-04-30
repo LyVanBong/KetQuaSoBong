@@ -5,7 +5,7 @@
              xmlns:votepageviews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
              x:DataType="votepageviews:NorthVoteTabVM"
              xmlns:md="clr-namespace:KetQuaSoBong.Models"
-             x:Class="KetQuaSoBong.Views.TabViews.VotePageViews.NorthVoteTab">
+             x:Class="KetQuaSoBong.Views.VotePageViews.NorthVoteTab">
     <ContentView.Resources>
     </ContentView.Resources>
     <ContentView.Content>
@@ -19,13 +19,6 @@
                               FontSize="16"
                               TextColor="{StaticResource primaryColor}"
                               FontFamily="RBo" />
-                <Label Text="NHỮNG CON SỐ BẠN MUỐN DỰ ĐOÁN HÔM NÀY LÀ GÌ?"
-                              FontSize="11"
-                              FontFamily="R" />
-                <Label Text="(Nhấn 1 lần nữa để hủy)"
-                              FontSize="11"
-                              FontFamily="RI"
-                   HorizontalTextAlignment="Center" />
 
                 <Frame BackgroundColor="{StaticResource placeholderColor}"
                    HeightRequest="360"
