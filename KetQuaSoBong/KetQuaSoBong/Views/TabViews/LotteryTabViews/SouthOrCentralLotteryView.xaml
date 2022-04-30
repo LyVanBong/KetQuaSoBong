@@ -47,6 +47,9 @@
                         <Span Text="{Binding DateTimeNow, StringFormat='{0:ddd dd/MM/yyyy}'}" FontFamily="RM" TextColor="White" />
                     </FormattedString>
                 </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SwitchToDetailPageCommand}"/>
+                </Label.GestureRecognizers>
             </Label>
             <Grid BackgroundColor="Gray"
                   Margin="5,0,5,0">

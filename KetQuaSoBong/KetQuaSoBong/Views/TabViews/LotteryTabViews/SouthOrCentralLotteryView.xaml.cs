@@ -27,7 +27,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public SouthOrCentralLotteryView(DateTime date, string region, bool isDetailPage)
         {
             InitializeComponent();
-            BindingContext = new SouthOrCentralLotteryViewVM(date, region, isDetailPage);
+            BindingContext = new SouthOrCentralLotteryViewVM(date, region, isDetailPage, this);
         }
        
     }
@@ -96,7 +96,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         }
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public SouthOrCentralLotteryViewVM(DateTime date, string region, bool isDetailPage)
+        public SouthOrCentralLotteryViewVM(DateTime date, string region, bool isDetailPage, ContentView view)
         {   
             IsDetailPage = isDetailPage;
             if((date.Hour > 15 && region == "south") || (date.Hour > 16 && region == "central"))
@@ -123,10 +123,19 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             {
                 IsShowMore = !IsShowMore;
             });
-            
+            SwitchToDetailPageCommand = new Command(() =>
+            {  
+                switch(region)
+                {
+                    case "south": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new SouthLotteryPage()); break;
+                    case "central": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new CentralLotteryPage()); break;
+                }
+            });
+
         }
 
         public DelegateCommand ShowMoreCommand { get; set; }
+        public Command SwitchToDetailPageCommand { get; set; }
        
         public async void GetSourceAsync()
         {

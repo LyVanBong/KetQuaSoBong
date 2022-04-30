@@ -27,7 +27,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         public NorthLotteryView(DateTime date, bool isDetailPage)
         {
             InitializeComponent();
-            BindingContext = new NorthLoterryViewVM(date, isDetailPage);
+            BindingContext = new NorthLoterryViewVM(date, isDetailPage, this);
         }
        
     }
@@ -80,7 +80,7 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
         }
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public NorthLoterryViewVM(DateTime date, bool isDetailPage)
+        public NorthLoterryViewVM(DateTime date, bool isDetailPage, ContentView view)
         {
             IsDetailPage = isDetailPage;
             if (date.Hour>18)
@@ -105,10 +105,15 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
             {
                 IsShowMore = !IsShowMore;
             });
-            
+
+            SwitchToDetailPageCommand = new Command(() =>
+            {
+                (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new NorthLotteryPage());
+            });
         }
 
         public DelegateCommand ShowMoreCommand { get; set; }
+        public Command SwitchToDetailPageCommand { get; set; }
        
         public async void GetSourceAsync()
         {

@@ -639,7 +639,7 @@ namespace KetQuaSoBong.Models.LotteryModel
             for (int i = 0; i < str.Length; i++)
             {
 
-                temp.Add(double.Parse(str[i]));
+                temp.Add(double.Parse(str[i].Trim()));
             }
 
             //Sắp xếp danh sách
