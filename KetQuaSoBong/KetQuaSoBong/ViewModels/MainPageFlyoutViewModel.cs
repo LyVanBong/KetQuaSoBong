@@ -61,7 +61,6 @@ namespace KetQuaSoBong.ViewModels
 
                     case 3:
                         t.CurrentPage = t.Children[1];
-
                         break;
 
                     case 4:
