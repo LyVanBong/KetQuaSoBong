@@ -137,14 +137,24 @@ namespace KetQuaSoBong.Views.VotePageViews
                 }
                 else
                 {
-                    bool b = await (view.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent as Page).DisplayAlert("Thông báo", "Để tham gia bình chọn bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
-                    if (b)
+                    HttpClient client = new HttpClient();
+                    string url = "https://api.tructiepketqua.net/api/Voted/voted/client?nums=" + StrNumbers;
+                    HttpResponseMessage response = await client.PostAsync(url, null);
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        await (view.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new LoginPage());
+                        IsVisibleResult = false;
+                        Debug.Write(NumbersSelected.Count);
+                        SetListVoteAsync(NumbersSelected);
+
+                        //SetListVote
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        await (view.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent as Page).DisplayAlert("Thông báo", "Mạng lỗi, bình chọn không thành công.", "Trở lại");
                     }
                     else
                     {
-                        //ResetVote
+                        Debug.Write(response.StatusCode);
                     }
                 }
             }
