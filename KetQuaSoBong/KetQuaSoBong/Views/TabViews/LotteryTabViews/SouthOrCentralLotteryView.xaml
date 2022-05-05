@@ -212,127 +212,210 @@
                             VerticalTextAlignment="Center" />
                     </Frame>
                     <!--  RefreshLayout  -->
-                    <Grid
-                        Grid.Row="0"
+                    <CollectionView
+                        Grid.RowSpan="10"
                         Grid.Column="1"
-                        ColumnSpacing="1"
+                        HorizontalOptions="FillAndExpand"
                         IsVisible="{Binding Lottery.IsLoading}"
-                        RowDefinitions="45,45,45,137,45,321,91,45,45,50"
-                        RowSpacing="1">
-                        <forms:AnimationView
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="{StaticResource placeholderColor}"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <forms:AnimationView
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="White"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <forms:AnimationView
-                            Grid.Row="2"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="{StaticResource placeholderColor}"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <Frame
-                            Grid.Row="3"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            CornerRadius="0">
-                            <forms:AnimationView
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="White"
-                                HorizontalOptions="FillAndExpand"
-                                RepeatMode="Infinite"
-                                Scale="0.5"
-                                VerticalOptions="FillAndExpand" />
-                        </Frame>
+                        ItemsSource="{Binding Lottery.Datas}"
+                        VerticalOptions="Fill">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                                HorizontalItemSpacing="1"
+                                Orientation="Vertical"
+                                Span="{Binding Lottery.Datas.Count}" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="md:Data">
+                                <StackLayout Spacing="1">
+                                    <Label
+                                        BackgroundColor="{StaticResource placeholderColor}"
+                                        FontFamily="RBo"
+                                        FontSize="14"
+                                        HeightRequest="45"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding TenTinhThanh}"
+                                        TextColor="CornflowerBlue"
+                                        TextDecorations="Underline"
+                                        VerticalTextAlignment="Center" />
 
-                        <forms:AnimationView
-                            Grid.Row="4"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="{StaticResource placeholderColor}"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <Frame
-                            Grid.Row="5"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            CornerRadius="0">
-                            <forms:AnimationView
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="White"
-                                HorizontalOptions="FillAndExpand"
-                                RepeatMode="Infinite"
-                                Scale="0.4"
-                                VerticalOptions="FillAndExpand" />
-                        </Frame>
-                        <Frame
-                            Grid.Row="6"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            CornerRadius="0">
-                            <forms:AnimationView
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="White"
-                                HorizontalOptions="FillAndExpand"
-                                RepeatMode="Infinite"
-                                Scale="0.95"
-                                VerticalOptions="FillAndExpand" />
-                        </Frame>
-                        <forms:AnimationView
-                            Grid.Row="7"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="White"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <forms:AnimationView
-                            Grid.Row="8"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="{StaticResource placeholderColor}"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                        <forms:AnimationView
-                            Grid.Row="9"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="4"
-                            Animation="loading.json"
-                            AnimationSource="AssetOrBundle"
-                            BackgroundColor="White"
-                            HorizontalOptions="FillAndExpand"
-                            RepeatMode="Infinite"
-                            VerticalOptions="FillAndExpand" />
-                    </Grid>
+                                    <!--  G8  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                    <!--  G7  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+
+                                    <!--  G6  -->
+                                    <StackLayout BackgroundColor="White" Spacing="1">
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                    </StackLayout>
+
+                                    <!--  G5  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+
+                                    <!--  G4  -->
+                                    <StackLayout BackgroundColor="White" Spacing="1">
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                    </StackLayout>
+
+                                    <!--  G3  -->
+                                    <StackLayout BackgroundColor="{StaticResource placeholderColor}" Spacing="1">
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                        <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+                                    </StackLayout>
+
+                                    <!--  G2  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+
+                                    <!--  G1  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="{StaticResource placeholderColor}"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="45"
+                                            VerticalOptions="FillAndExpand" />
+
+                                    <!--  DB  -->
+
+                                    <forms:AnimationView
+                                            Animation="loading.json"
+                                            AnimationSource="AssetOrBundle"
+                                            BackgroundColor="White"
+                                            HorizontalOptions="FillAndExpand"
+                                            RepeatMode="Infinite"
+                                            HeightRequest="50"
+                                            VerticalOptions="FillAndExpand" />
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
                     <CollectionView
                         Grid.RowSpan="10"
