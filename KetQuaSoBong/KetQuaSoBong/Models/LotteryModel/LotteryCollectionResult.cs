@@ -33,7 +33,7 @@ namespace KetQuaSoBong.Models.LotteryModel
         public List<Data> Datas { get; set; }
 
         public string[] NumberTemp { get => new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }; }
-        private bool _isLoading = true;
+        private bool _isLoading = false;
 
         public bool IsLoading
         {
