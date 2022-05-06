@@ -103,6 +103,7 @@
                             WidthRequest="60" />
                         <forms:AnimationView
                             Grid.Column="1"
+                            Grid.Row="0"
                             Animation="loading.json"
                             AnimationSource="AssetOrBundle"
                             BackgroundColor="{StaticResource placeholderColor}"
@@ -194,6 +195,17 @@
                             HeightRequest="45"
                             HorizontalOptions="FillAndExpand"
                             RowSpacing="1">
+                            <forms:AnimationView
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="{StaticResource placeholderColor}"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
 
                             <!--  21  -->
                             <Label
@@ -208,6 +220,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="{StaticResource placeholderColor}"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  22  -->
 
@@ -224,15 +246,16 @@
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
                             <forms:AnimationView
-                                Grid.Column="0"
-                                Grid.ColumnSpan="2"
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="{StaticResource placeholderColor}"
-                                HorizontalOptions="FillAndExpand"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
-                                RepeatMode="Infinite"
-                                VerticalOptions="FillAndExpand" />
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="{StaticResource placeholderColor}"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
                         </Grid>
                     </Grid>
                 </Frame>
@@ -262,20 +285,6 @@
                             HorizontalOptions="FillAndExpand"
                             RowDefinitions="45,45"
                             RowSpacing="1">
-                            <Frame
-                                Grid.RowSpan="2"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="3"
-                                BackgroundColor="White"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}">
-                                <forms:AnimationView
-                                    Animation="loading.json"
-                                    AnimationSource="AssetOrBundle"
-                                    HorizontalOptions="FillAndExpand"
-                                    RepeatMode="Infinite"
-                                    Scale="0.85"
-                                    VerticalOptions="FillAndExpand" />
-                            </Frame>
                             <!--  31  -->
 
                             <Label
@@ -290,6 +299,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  32  -->
 
@@ -305,6 +324,17 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
 
                             <!--  33  -->
 
@@ -320,6 +350,17 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="2"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
 
                             <!--  34  -->
 
@@ -336,6 +377,17 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
 
                             <!--  35  -->
 
@@ -352,6 +404,17 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
 
                             <!--  36  -->
 
@@ -368,6 +431,17 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="2"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
                         </Grid>
                     </Grid>
                 </Frame>
@@ -397,17 +471,7 @@
                             HorizontalOptions="FillAndExpand"
                             RowDefinitions="45"
                             RowSpacing="1">
-                            <forms:AnimationView
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="4"
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="{StaticResource placeholderColor}"
-                                HorizontalOptions="FillAndExpand"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
-                                RepeatMode="Infinite"
-                                VerticalOptions="FillAndExpand" />
+                           
                             <!--  41  -->
 
                             <Label
@@ -423,6 +487,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
 
                             <!--  42  -->
 
@@ -439,6 +513,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                             <!--  43  -->
 
                             <Label
@@ -454,6 +538,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                             <!--  44  -->
 
                             <Label
@@ -469,6 +563,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                         </Grid>
                     </Grid>
                 </Frame>
@@ -498,20 +602,7 @@
                             HorizontalOptions="FillAndExpand"
                             RowDefinitions="45,45"
                             RowSpacing="1">
-                            <Frame
-                                Grid.RowSpan="2"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="3"
-                                BackgroundColor="White"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}">
-                                <forms:AnimationView
-                                    Animation="loading.json"
-                                    AnimationSource="AssetOrBundle"
-                                    HorizontalOptions="FillAndExpand"
-                                    RepeatMode="Infinite"
-                                    Scale="0.85"
-                                    VerticalOptions="FillAndExpand" />
-                            </Frame>
+                            
 
                             <!--  51  -->
 
@@ -527,6 +618,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  52  -->
 
@@ -542,6 +643,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  53  -->
 
@@ -558,6 +669,17 @@
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
 
+                            <forms:AnimationView
+                                    Grid.Column="2"
+                                    Grid.Row="0"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
+
                             <!--  54  -->
 
                             <Label
@@ -573,6 +695,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  55  -->
 
@@ -589,6 +721,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
 
                             <!--  56  -->
 
@@ -605,6 +747,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                    Grid.Column="2"
+                                    Grid.Row="1"
+                                    Animation="loading.json"
+                                    AnimationSource="AssetOrBundle"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                    RepeatMode="Infinite"
+                                    VerticalOptions="FillAndExpand" />
                         </Grid>
                     </Grid>
                 </Frame>
@@ -634,16 +786,7 @@
                             HorizontalOptions="FillAndExpand"
                             RowDefinitions="45"
                             RowSpacing="1">
-                            <forms:AnimationView
-                                Grid.Column="0"
-                                Grid.ColumnSpan="3"
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="{StaticResource placeholderColor}"
-                                HorizontalOptions="FillAndExpand"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
-                                RepeatMode="Infinite"
-                                VerticalOptions="FillAndExpand" />
+                            
                             <!--  61  -->
 
                             <Label
@@ -658,6 +801,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
 
                             <!--  62  -->
 
@@ -673,6 +826,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
 
                             <!--  63  -->
 
@@ -688,6 +851,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="{StaticResource placeholderColor}"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                         </Grid>
                     </Grid>
                 </Frame>
@@ -727,17 +900,7 @@
                             HorizontalOptions="FillAndExpand"
                             RowDefinitions="45"
                             RowSpacing="1">
-                            <forms:AnimationView
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="4"
-                                Animation="loading.json"
-                                AnimationSource="AssetOrBundle"
-                                BackgroundColor="White"
-                                HorizontalOptions="FillAndExpand"
-                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
-                                RepeatMode="Infinite"
-                                VerticalOptions="FillAndExpand" />
+                         
                             <!--  71  -->
 
                             <Label
@@ -753,6 +916,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
 
                             <!--  72  -->
 
@@ -768,6 +941,16 @@
                                 Text="{Binding NorthLottery.StrG72}"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                             <!--  73  -->
 
                             <Label
@@ -783,6 +966,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                             <!--  74  -->
 
                             <Label
@@ -798,6 +991,16 @@
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                                 WidthRequest="50" />
+                            <forms:AnimationView
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                Animation="loading.json"
+                                AnimationSource="AssetOrBundle"
+                                BackgroundColor="White"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding NorthLottery.IsRefresh, Converter={xct:InvertedBoolConverter}}"
+                                RepeatMode="Infinite"
+                                VerticalOptions="FillAndExpand" />
                         </Grid>
                     </Grid>
                 </Frame>
