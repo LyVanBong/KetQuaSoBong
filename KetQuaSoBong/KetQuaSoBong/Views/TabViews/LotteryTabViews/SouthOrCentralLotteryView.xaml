@@ -4,10 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-    xmlns:lotterytabviews="clr-namespace:KetQuaSoBong.Views.TabViews.LotteryTabViews"
+    xmlns:viewModels="clr-namespace:KetQuaSoBong.ViewModels.Lottery"
     xmlns:md="clr-namespace:KetQuaSoBong.Models.LotteryModel"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:DataType="lotterytabviews:SouthOrCentralLotteryViewVM">
+    x:DataType="viewModels:SouthOrCentralLotteryViewVM">
     <ContentView.Resources>
         <ResourceDictionary>
             <xct:ImageResource x:Key="IconUp" Id="KetQuaSoBong.Resources.Images.ic_up.png" />

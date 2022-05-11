@@ -4,9 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:md="clr-namespace:KetQuaSoBong.Models"
-    xmlns:votepageviews="clr-namespace:KetQuaSoBong.Views.VotePageViews"
+    xmlns:viewModels="clr-namespace:KetQuaSoBong.ViewModels.NumberVoted"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:DataType="votepageviews:NorthVoteTabVM">
+    x:DataType="viewModels:NumberVotedVM">
     <ContentView.Resources />
     <ContentView.Content>
 

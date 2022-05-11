@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+    
+  <ItemGroup>
+    <Compile Remove="Views\TabViews\SupportTabViews\**" />
+    <EmbeddedResource Remove="Views\TabViews\SupportTabViews\**" />
+    <None Remove="Views\TabViews\SupportTabViews\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Resources\Fonts\Roboto-Black.ttf" />
@@ -340,9 +346,6 @@
     <EmbeddedResource Update="Views\LotteryCheckPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LotteryCheckPageViews\LotteryRessultView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -406,10 +409,6 @@
     <EmbeddedResource Update="Views\UserProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\TabViews\SupportTabViews\" />
   </ItemGroup>
 	
 
