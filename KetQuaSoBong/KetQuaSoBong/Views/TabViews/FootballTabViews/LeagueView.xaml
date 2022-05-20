@@ -3,11 +3,10 @@
     x:Class="KetQuaSoBong.Views.TabViews.FootballTabViews.LeagueView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:footballtabviews="clr-namespace:KetQuaSoBong.Views.TabViews.FootballTabViews"
+    xmlns:football="clr-namespace:KetQuaSoBong.ViewModels.Football"
     xmlns:md="clr-namespace:KetQuaSoBong.Models"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Padding="0"
-    x:DataType="footballtabviews:LeagueViewVM"
     BackgroundColor="Transparent"
     HasShadow="False">
     <Frame.Resources>
@@ -21,73 +20,7 @@
     </Frame.Resources>
     <Frame.Content>
         <StackLayout>
-            <StackLayout
-                BackgroundColor="Gold"
-                HeightRequest="50"
-                Orientation="Horizontal">
-                <Label
-                    Margin="10"
-                    FontFamily="RB"
-                    FontSize="16"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="GIẢI ĐẤU"
-                    TextColor="White"
-                    VerticalOptions="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Image
-                    Margin="10,6,0,0"
-                    HeightRequest="15"
-                    Source="{StaticResource Hearth}"
-                    WidthRequest="15" />
-                <Label
-                    Margin="0,5,10,0"
-                    FontFamily="RBo"
-                    FontSize="16"
-                    HorizontalOptions="Start"
-                    Text="Yêu thích"
-                    TextColor="Black" />
-                <Label
-                    Margin="0,5,10,0"
-                    FontFamily="RM"
-                    FontSize="16"
-                    HorizontalOptions="EndAndExpand"
-                    Text="Xem tất cả..."
-                    TextColor="{StaticResource primaryColor}" />
-            </StackLayout>
-
-            <ScrollView
-                HeightRequest="90"
-                HorizontalScrollBarVisibility="Never"
-                Orientation="Horizontal">
-                <StackLayout Margin="10" Orientation="Horizontal">
-                    <BoxView WidthRequest="5" />
-                    <StackLayout
-                        BindableLayout.ItemsSource="{Binding FavouriteLeagues}"
-                        Orientation="Horizontal"
-                        Spacing="10">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate x:DataType="md:League">
-                                <Frame
-                                    Padding="0"
-                                    BackgroundColor="White"
-                                    CornerRadius="80"
-                                    HasShadow="False"
-                                    HeightRequest="70"
-                                    WidthRequest="70">
-                                    <Image
-                                        Margin="10"
-                                        Aspect="AspectFit"
-                                        HeightRequest="24"
-                                        Source="{Binding Icon}"
-                                        WidthRequest="24" />
-                                </Frame>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
-                    <BoxView WidthRequest="10" />
-                </StackLayout>
-            </ScrollView>
+         
         </StackLayout>
     </Frame.Content>
 </Frame>

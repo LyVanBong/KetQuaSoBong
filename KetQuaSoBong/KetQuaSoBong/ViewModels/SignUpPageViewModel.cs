@@ -1,4 +1,5 @@
 ﻿using KetQuaSoBong.Models;
+using KetQuaSoBong.Services.Account.Signup;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.Popups;
 using Newtonsoft.Json;
@@ -18,7 +19,7 @@ namespace KetQuaSoBong.ViewModels
     public class SignUpPageViewModel : BindableBase
     {
         private bool _isVisible = true;
-
+        SignupService signupService = new SignupService();
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -152,28 +153,17 @@ namespace KetQuaSoBong.ViewModels
                         NumberPhone = Phone,
                         Sex = (S != "Giới tính") ? (S == "Nam" ? 0 : (S == "Nữ" ? 1 : 2)) : 0
                     };
-                    string url = "https://api.tructiepketqua.net/api/User/register";
-                    HttpClient cient = new HttpClient();
-                    string jsonData = JsonConvert.SerializeObject(res);
-                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await cient.PostAsync(url, content);
-                    string result = await response.Content.ReadAsStringAsync();
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    bool b = await signupService.SignUp(res);
+                    if( b == true )
                     {
                         IsVisible = false;
-                        Preferences.Set("IsLogin", true);
-                        Preferences.Set("User", res.Name + "," + res.NumberPhone + "," + res.Email + "," + res.Sex + "," + res.UserName);
                         await page.Navigation.PushAsync(new MainPage());
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                    {
-                        IsVisible = true;
-                        await page.DisplayAlert("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
                     }
                     else
                     {
-                        Debug.Write(response.StatusCode);
-                    }
+                        IsVisible = true;
+                        await page.DisplayAlert("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
+                    }    
                 }
             });
         }

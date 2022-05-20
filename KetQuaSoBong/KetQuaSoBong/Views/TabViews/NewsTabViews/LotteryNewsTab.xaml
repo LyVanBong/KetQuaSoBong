@@ -4,9 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:dataTemplate="clr-namespace:KetQuaSoBong.Views.CustomViews"
-    xmlns:md="clr-namespace:KetQuaSoBong.Models"
-    xmlns:newstabviews="clr-namespace:KetQuaSoBong.Views.TabViews.NewsTabViews"
-    x:DataType="newstabviews:LotteryNewsTabVM">
+    xmlns:md="clr-namespace:KetQuaSoBong.Models">
     <ContentView.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="itemTitle" x:DataType="md:NewsItem">
@@ -220,14 +218,6 @@
     </ContentView.Resources>
     <ContentView.Content>
 
-        <ListView
-            x:Name="listMenu"
-            BackgroundColor="White"
-            HasUnevenRows="True"
-            ItemTemplate="{StaticResource NewsItemTemplate}"
-            ItemsSource="{Binding LotteryNews}"
-            SelectionMode="None"
-            SeparatorVisibility="None"
-            VerticalScrollBarVisibility="Never" />
+      
     </ContentView.Content>
 </ContentView>
