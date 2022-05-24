@@ -1,9 +1,13 @@
 ﻿using KetQuaSoBong.Models;
+using KetQuaSoBong.Services.Account.Signup;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.Popups;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
+using Prism.Services;
+using Prism.Services.Dialogs;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
@@ -15,10 +19,12 @@ using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
 {
-    public class SignUpPageViewModel : BindableBase
+    public class SignUpPageViewModel : ViewModelBase
     {
         private bool _isVisible = true;
-
+        private ISignupService _signupService;
+        private IPageDialogService _pageDialogService;
+        private INavigationService _navigationService;
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -105,8 +111,11 @@ namespace KetQuaSoBong.ViewModels
             set { SetProperty(ref _userName, value); }
         }
 
-        public SignUpPageViewModel(Page page)
+        public SignUpPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ISignupService signupService, IDialogService dialogService) : base(navigationService)
         {
+            _navigationService = navigationService;
+            _pageDialogService = pageDialogService;
+            _signupService = signupService;
             InputPasswordChanged = new Command(() =>
             {
                 IsFailFormatPW = Password.Length < 6 ? true : false;
@@ -128,7 +137,7 @@ namespace KetQuaSoBong.ViewModels
             {
                 try
                 {
-                    S = (string)await page.Navigation.ShowPopupAsync(new SDialog());
+                    S = (string) await App.Current.MainPage.Navigation.ShowPopupAsync(new SDialog());
                 }
                 catch (Exception ex)
                 {
@@ -139,7 +148,7 @@ namespace KetQuaSoBong.ViewModels
                 if (IsFailFormatUN == true || IsFailFormatN == true || IsFailFormatPW == true || IsFailFormatEM == true || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Phone))
                 {
                     IsVisible = true;
-                    await page.DisplayAlert("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
+                    await _pageDialogService.DisplayAlertAsync("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
                 }
                 else
                 {
@@ -152,28 +161,17 @@ namespace KetQuaSoBong.ViewModels
                         NumberPhone = Phone,
                         Sex = (S != "Giới tính") ? (S == "Nam" ? 0 : (S == "Nữ" ? 1 : 2)) : 0
                     };
-                    string url = "https://api.tructiepketqua.net/api/User/register";
-                    HttpClient cient = new HttpClient();
-                    string jsonData = JsonConvert.SerializeObject(res);
-                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await cient.PostAsync(url, content);
-                    string result = await response.Content.ReadAsStringAsync();
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    bool b = await signupService.SignUp(res);
+                    if( b == true )
                     {
                         IsVisible = false;
-                        Preferences.Set("IsLogin", true);
-                        Preferences.Set("User", res.Name + "," + res.NumberPhone + "," + res.Email + "," + res.Sex + "," + res.UserName);
-                        await page.Navigation.PushAsync(new MainPage());
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                    {
-                        IsVisible = true;
-                        await page.DisplayAlert("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
+                        await _navigationService.NavigateAsync("MainPage");
                     }
                     else
                     {
-                        Debug.Write(response.StatusCode);
-                    }
+                        IsVisible = true;
+                        await _pageDialogService.DisplayAlertAsync("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
+                    }    
                 }
             });
         }

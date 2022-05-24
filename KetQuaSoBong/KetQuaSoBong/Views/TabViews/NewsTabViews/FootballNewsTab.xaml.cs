@@ -16,17 +16,9 @@ namespace KetQuaSoBong.Views.TabViews.NewsTabViews
         public FootballNewsTab()
         {
             InitializeComponent();
-            BindingContext = new FootballnewsTabVM(navigation, this);
+           
         }
     }
 
-    internal class FootballnewsTabVM : ViewModelBase
-    {
-        public ObservableCollection<NewsItem> FootballNews { get; set; }
-
-        public FootballnewsTabVM(INavigationService navigationService, ContentView contentView) : base(navigationService)
-        {
-            FootballNews = App.FootballNews;
-        }
-    }
+ 
 }

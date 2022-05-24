@@ -8,7 +8,6 @@ namespace KetQuaSoBong.Views
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginPageViewModel(this);
         }
 
         protected override void OnAppearing()

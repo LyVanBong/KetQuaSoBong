@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using Prism.Mvvm;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using KetQuaSoBong.ViewModels.Support;
 
 namespace KetQuaSoBong.Views.TabViews
 {
@@ -39,27 +40,5 @@ namespace KetQuaSoBong.Views.TabViews
                 Debug.WriteLine(exception.Message);
             }
         }
-    }
-    class SupportTabViewModel : BindableBase
-    {
-        public SupportTabViewModel(ContentPage page)
-        {
-            SendSupport = new Command(async () =>
-            {
-                if (Preferences.Get("IsLogin", false) == true)
-                {
-
-                }
-                else
-                {
-                    bool b = await page.DisplayAlert("Thông báo", "Để gửi phản hồi bạn phải đăng nhập tài khoản trước.", "Đăng nhập", "Bỏ qua");
-                    if (b)
-                    {
-                        await (page.Parent as Page).Navigation.PushAsync(new LoginPage());
-                    }
-                }
-            });
-        }
-        public Command SendSupport { get; set; }
     }
 }

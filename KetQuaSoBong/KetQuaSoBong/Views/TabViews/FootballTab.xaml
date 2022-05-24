@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -65,7 +66,7 @@
                                 Text="KẾT QUẢ BÓNG ĐÁ" />
                             <Span Text="&#x0a;" />
                             <Span FontFamily="RL" Text="      Cập nhật ngày: " />
-                            <Span FontFamily="RL" Text="{Binding DateTimeNow}" />
+                            <Span FontFamily="RL" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:dd/MM/yyyy}'}" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

@@ -16,17 +16,8 @@ namespace KetQuaSoBong.Views.TabViews.NewsTabViews
         public LotteryNewsTab()
         {
             InitializeComponent();
-            BindingContext = new LotteryNewsTabVM(navigation, this);
         }
     }
 
-    internal class LotteryNewsTabVM : ViewModelBase
-    {
-        public ObservableCollection<NewsItem> LotteryNews { get; set; }
-
-        public LotteryNewsTabVM(INavigationService navigationService, ContentView contentView) : base(navigationService)
-        {
-            LotteryNews = App.LotteryNews;
-        }
-    }
+  
 }

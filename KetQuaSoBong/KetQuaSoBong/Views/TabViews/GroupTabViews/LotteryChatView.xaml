@@ -4,10 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:customView="clr-namespace:KetQuaSoBong.Views.CustomViews"
-    xmlns:grouptabviews="clr-namespace:KetQuaSoBong.Views.TabViews.GroupTabViews"
+    xmlns:viewModels="clr-namespace:KetQuaSoBong.ViewModels.Group"
     xmlns:md="clr-namespace:KetQuaSoBong.Models"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:DataType="grouptabviews:LotteryChatViewVM">
+    x:DataType="viewModels:LotteryChatViewVM">
     <ContentView.Resources>
         <DataTemplate x:Key="myChatTemplate" x:DataType="md:ItemChat">
             <ViewCell>
