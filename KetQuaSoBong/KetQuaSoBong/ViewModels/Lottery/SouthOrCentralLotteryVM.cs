@@ -3,6 +3,7 @@ using KetQuaSoBong.Services.Lottery;
 using KetQuaSoBong.Views;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -81,13 +82,11 @@ namespace KetQuaSoBong.ViewModels.Lottery
             get => _lottery;
             set => SetProperty(ref _lottery, value);
         }
-        private SouthOrCentralLotteryService _southOrCentralLotteryService;
+        SouthOrCentralLotteryService _southOrCentralLotteryService = new SouthOrCentralLotteryService();
         public ObservableCollection<LotteryResult> Items { get; set; }
 
-        public SouthOrCentralLotteryViewVM(DateTime date, string region, bool isDetailPage, ContentView view, SouthOrCentralLotteryService southOrCentralLotteryService)
+        public SouthOrCentralLotteryViewVM(DateTime date, string region, bool isDetailPage, ContentView view)
         {
-            _southOrCentralLotteryService = southOrCentralLotteryService;
-            IsDetailPage = isDetailPage;
             if ((date.Hour > 15 && region == "south") || (date.Hour > 16 && region == "central"))
             {
                 DateTimeNow = date;
@@ -98,6 +97,8 @@ namespace KetQuaSoBong.ViewModels.Lottery
             }
 
             Region = region;
+            IsDetailPage = isDetailPage;
+
             Debug.Write(DateTimeNow.ToString("d-MM-yyyy"));
             GetSourceAsync();
             Device.StartTimer(TimeSpan.FromSeconds(30), () =>
@@ -113,7 +114,7 @@ namespace KetQuaSoBong.ViewModels.Lottery
             });
             SwitchToDetailPageCommand = new Command(() =>
             {
-                switch (region)
+                switch (Region)
                 {
                     case "south": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new SouthLotteryPage()); break;
                     case "central": (view.Parent.Parent.Parent.Parent.Parent as Page).Navigation.PushAsync(new CentralLotteryPage()); break;

@@ -1,9 +1,16 @@
 ﻿using KetQuaSoBong.Models;
 using KetQuaSoBong.Models.LotteryModel;
+using KetQuaSoBong.Services.Account.Login;
+using KetQuaSoBong.Services.Account.Signup;
+using KetQuaSoBong.Services.Lottery;
+using KetQuaSoBong.Services.NumberVoted;
 using KetQuaSoBong.ViewModels;
+using KetQuaSoBong.ViewModels.Lottery;
 using KetQuaSoBong.Views;
 using KetQuaSoBong.Views.MainPageViews;
+using KetQuaSoBong.Views.Popups;
 using KetQuaSoBong.Views.TabViews;
+using KetQuaSoBong.Views.TabViews.LotteryTabViews;
 using Prism;
 using Prism.Ioc;
 using System;
@@ -43,6 +50,7 @@ namespace KetQuaSoBong
         {
             InitializeComponent();
 
+
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
             Preferences.Set("Date", DateTime.Now.ToString("dd/MM/yyyy"));
             Preferences.Set("NumLog", 1);
@@ -57,7 +65,12 @@ namespace KetQuaSoBong
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
-
+            //Services
+            containerRegistry.Register<ILoginService, LoginService>();
+            containerRegistry.Register<ISignupService, SignupService>();
+            //Dialogs
+            containerRegistry.RegisterDialog<SDialog, SDialogVM>();
+            //ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SplashScreen, SplashScreenViewModel>();

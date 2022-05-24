@@ -18,11 +18,12 @@ namespace KetQuaSoBong.Views.TabViews.LotteryTabViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SouthOrCentralLotteryView : ContentView
     {
-        SouthOrCentralLotteryService service = new SouthOrCentralLotteryService();
+        ISouthOrCentralLotteryService _southOrCentralLotteryService;
         public SouthOrCentralLotteryView(DateTime date, string region, bool isDetailPage)
         {
             InitializeComponent();
-            BindingContext = new SouthOrCentralLotteryViewVM(date, region, isDetailPage, this, service);
+            BindingContext = new  SouthOrCentralLotteryViewVM(date, region, isDetailPage, this);
+
         }
     }
 

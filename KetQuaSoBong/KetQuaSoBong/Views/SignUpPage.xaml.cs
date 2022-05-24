@@ -11,12 +11,8 @@ namespace KetQuaSoBong.Views
         public SignUpPage()
         {
             InitializeComponent();
-            BindingContext = new SignUpPageViewModel(this);
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new LoginPage());
-        }
+       
     }
 }

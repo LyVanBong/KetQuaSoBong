@@ -3,6 +3,9 @@ using KetQuaSoBong.Services.Account.Login;
 using KetQuaSoBong.Views;
 using Newtonsoft.Json;
 using Prism.Mvvm;
+using Prism.Navigation;
+using Prism.Services;
+using Prism.Services.Dialogs;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
@@ -11,10 +14,13 @@ using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
 {
-    public class LoginPageViewModel : BindableBase
+    public class LoginPageViewModel : ViewModelBase
     {
         private bool _isVisible = true;
-        LoginService loginService = new LoginService();
+        private ILoginService _loginService;
+        private IPageDialogService _pageDialogService;
+        private INavigationService _navigationService;
+        private IDialogService _dialogService; 
 
         public bool IsVisible
         {
@@ -54,8 +60,11 @@ namespace KetQuaSoBong.ViewModels
             set { SetProperty(ref _userName, value); }
         }
 
-        public LoginPageViewModel(Page page)
+        public LoginPageViewModel(ILoginService loginService, IPageDialogService pageDialogService, INavigationService navigationService) : base(navigationService)
         {
+            _loginService = loginService;
+            _pageDialogService = pageDialogService;
+            _navigationService = navigationService;
             Preferences.Set("IsLogin", false);
             Preferences.Clear("User");
             InputPasswordChanged = new Command(() =>
@@ -72,7 +81,7 @@ namespace KetQuaSoBong.ViewModels
                 if (IsFailFormatUN == true || IsFailFormatPW == true || string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password))
                 {
                     IsVisible = true;
-                    await page.DisplayAlert("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
+                    await _pageDialogService.DisplayAlertAsync("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
                 }
                 else
                 {
@@ -80,12 +89,12 @@ namespace KetQuaSoBong.ViewModels
                     if(b == true)
                     {
                         IsVisible = false;
-                        await page.Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                        await _navigationService.NavigateAsync("MainPage");
                     }
                     else
                     {
                         IsVisible = true;
-                        await page.DisplayAlert("Thông báo", "Tài khoản hoặc mật khẩu không chính xác.", "Trở lại");
+                        await _pageDialogService.DisplayAlertAsync("Thông báo", "Tài khoản hoặc mật khẩu không chính xác.", "Trở lại");
                     }
                  }
             });

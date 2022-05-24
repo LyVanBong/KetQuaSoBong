@@ -5,6 +5,9 @@ using KetQuaSoBong.Views.Popups;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
+using Prism.Services;
+using Prism.Services.Dialogs;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
@@ -16,10 +19,12 @@ using Xamarin.Forms;
 
 namespace KetQuaSoBong.ViewModels
 {
-    public class SignUpPageViewModel : BindableBase
+    public class SignUpPageViewModel : ViewModelBase
     {
         private bool _isVisible = true;
-        SignupService signupService = new SignupService();
+        private ISignupService _signupService;
+        private IPageDialogService _pageDialogService;
+        private INavigationService _navigationService;
         public bool IsVisible
         {
             get { return _isVisible; }
@@ -106,8 +111,12 @@ namespace KetQuaSoBong.ViewModels
             set { SetProperty(ref _userName, value); }
         }
 
-        public SignUpPageViewModel(Page page)
+        public SignUpPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ISignupService signupService, IDialogService dialogService) : base(navigationService)
         {
+            _navigationService = navigationService;
+            _pageDialogService = pageDialogService;
+            _dialogService = dialogService;
+            _signupService = signupService;
             InputPasswordChanged = new Command(() =>
             {
                 IsFailFormatPW = Password.Length < 6 ? true : false;
@@ -129,7 +138,7 @@ namespace KetQuaSoBong.ViewModels
             {
                 try
                 {
-                    S = (string)await page.Navigation.ShowPopupAsync(new SDialog());
+                    S = (string) await App.Current.MainPage.Navigation.ShowPopupAsync(new SDialog());
                 }
                 catch (Exception ex)
                 {
@@ -140,7 +149,7 @@ namespace KetQuaSoBong.ViewModels
                 if (IsFailFormatUN == true || IsFailFormatN == true || IsFailFormatPW == true || IsFailFormatEM == true || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Phone))
                 {
                     IsVisible = true;
-                    await page.DisplayAlert("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
+                    await _pageDialogService.DisplayAlertAsync("Thông báo", "Vui lòng nhập đúng định dạng và đầy đủ thông tin.", "Trở lại");
                 }
                 else
                 {
@@ -157,12 +166,12 @@ namespace KetQuaSoBong.ViewModels
                     if( b == true )
                     {
                         IsVisible = false;
-                        await page.Navigation.PushAsync(new MainPage());
+                        await _navigationService.NavigateAsync("MainPage");
                     }
                     else
                     {
                         IsVisible = true;
-                        await page.DisplayAlert("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
+                        await _pageDialogService.DisplayAlertAsync("Thông báo", "Tên đăng nhập đã tồn tại vui lòng nhập tên đăng nhập khác.", "Trở lại");
                     }    
                 }
             });
