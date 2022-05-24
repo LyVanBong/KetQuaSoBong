@@ -115,7 +115,6 @@ namespace KetQuaSoBong.ViewModels
         {
             _navigationService = navigationService;
             _pageDialogService = pageDialogService;
-            _dialogService = dialogService;
             _signupService = signupService;
             InputPasswordChanged = new Command(() =>
             {
