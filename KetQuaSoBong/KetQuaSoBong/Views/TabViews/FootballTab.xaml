@@ -3,8 +3,8 @@
     x:Class="KetQuaSoBong.Views.TabViews.FootballTab"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     BackgroundColor="{StaticResource placeholderColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -19,14 +19,46 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="85" />
-                    <RowDefinition Height="30000" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <WebView
+                <!--<WebView
                     Grid.Row="1"
                     Grid.RowSpan="2"
                     HorizontalOptions="FillAndExpand"
                     Source="https://www.nowgoal.com/football/"
-                    VerticalOptions="FillAndExpand" />
+                    VerticalOptions="FillAndExpand" />-->
+                <StackLayout
+                    Grid.Row="2"
+                    BackgroundColor="{DynamicResource primaryColor}"
+                    Orientation="Vertical"
+                    Spacing="20">
+                    <BoxView HeightRequest="50" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="DangKy"
+                        HeightRequest="60"
+                        Source="dangky_vie.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="DangNhap"
+                        HeightRequest="60"
+                        Source="dangnhap_vie.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="KhuyenMai"
+                        HeightRequest="60"
+                        Source="khuyenmai_vie.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="LienHe"
+                        HeightRequest="60"
+                        Source="lienhe_vie.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="DaiLy"
+                        HeightRequest="60"
+                        Source="daily_vie.png" />
+                </StackLayout>
                 <Image
                     Grid.Row="0"
                     Grid.RowSpan="2"

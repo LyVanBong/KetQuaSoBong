@@ -15,6 +15,8 @@ using Prism;
 using Prism.Ioc;
 using System;
 using System.Collections.ObjectModel;
+using KetQuaSoBong.Services.Firebase;
+using MobileApp.Services.Database;
 using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
@@ -39,7 +41,7 @@ namespace KetQuaSoBong
     {
         public static string ApiUrl = "https://tructiepketqua.net/api/";
 
-      
+
 
         public App(IPlatformInitializer initializer)
             : base(initializer)
@@ -82,6 +84,8 @@ namespace KetQuaSoBong
             containerRegistry.RegisterForNavigation<VotePage, VotePageViewModel>();
             containerRegistry.RegisterForNavigation<SouthLotteryPage, SouthLotteryPageViewModel>();
             containerRegistry.RegisterForNavigation<CentralLotteryPage, CentralLotteryPageViewModel>();
+
+            containerRegistry.Register<IFirebaseDatabaseService, FirebaseDatabaseService>();
         }
     }
 }

@@ -32,7 +32,7 @@
         </ResourceDictionary>
     </TabbedPage.Resources>
     <local:LotteryTab Title="Xổ số" IconImageSource="{StaticResource XoSo}" />
-    <local:FootballTab Title="Bóng đá" IconImageSource="{StaticResource BongDa}" />
+    <local:FootballTab Title="Ole777" IconImageSource="{StaticResource BongDa}" />
     <local:VotePage Title="Dự đoán" IconImageSource="{StaticResource BinhChon}" />
     <local:GroupTab Title="Group" IconImageSource="{StaticResource Group}" />
     <local:SupportTab Title="Hỗ trợ" IconImageSource="{StaticResource HoTro}" />
