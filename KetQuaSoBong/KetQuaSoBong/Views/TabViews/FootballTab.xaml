@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    BackgroundColor="{StaticResource placeholderColor}">
+    BackgroundImageSource="bg.jpg">
     <ContentPage.Resources>
         <ResourceDictionary>
             <xct:ImageResource x:Key="Layer" Id="KetQuaSoBong.Resources.Images.layer.png" />
@@ -17,8 +17,7 @@
         <ScrollView VerticalScrollBarVisibility="Never">
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="85" />
+                    <RowDefinition Height="200" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <!--<WebView
@@ -27,9 +26,13 @@
                     HorizontalOptions="FillAndExpand"
                     Source="https://www.nowgoal.com/football/"
                     VerticalOptions="FillAndExpand" />-->
+                <Image
+                    Grid.Row="0"
+                    Aspect="AspectFit"
+                    Source="logo_512.png"
+                    VerticalOptions="Center" />
                 <StackLayout
-                    Grid.Row="2"
-                    BackgroundColor="{DynamicResource primaryColor}"
+                    Grid.Row="1"
                     Orientation="Vertical"
                     Spacing="20">
                     <BoxView HeightRequest="50" />
@@ -59,13 +62,13 @@
                         HeightRequest="60"
                         Source="daily_vie.png" />
                 </StackLayout>
-                <Image
+                <!--<Image
                     Grid.Row="0"
                     Grid.RowSpan="2"
                     Aspect="AspectFill"
-                    Source="{StaticResource Layer}" />
+                    Source="{StaticResource Layer}" />-->
 
-                <Image
+                <!--<Image
                     Grid.Row="0"
                     Grid.RowSpan="2"
                     Margin="50,0,0,0"
@@ -101,7 +104,7 @@
                             <Span FontFamily="RL" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:dd/MM/yyyy}'}" />
                         </FormattedString>
                     </Label.FormattedText>
-                </Label>
+                </Label>-->
             </Grid>
             <!--<StackLayout AbsoluteLayout.LayoutBounds="0,180,1,AutoSize"
                              AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">

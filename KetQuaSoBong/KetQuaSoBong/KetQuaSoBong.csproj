@@ -84,6 +84,7 @@
     <None Remove="Resources\Images\ic_nc_vleague.png" />
     <None Remove="Resources\Images\ic_next.png" />
     <None Remove="Resources\Images\ic_ofc.png" />
+    <None Remove="Resources\Images\ic_ole777.png" />
     <None Remove="Resources\Images\ic_pause.png" />
     <None Remove="Resources\Images\ic_play.png" />
     <None Remove="Resources\Images\ic_plus.png" />
@@ -142,6 +143,7 @@
     <EmbeddedResource Include="Resources\Images\ic_back_ios.png" />
     <EmbeddedResource Include="Resources\Images\ic_binh_chon.png" />
     <EmbeddedResource Include="Resources\Images\ic_next.png" />
+    <EmbeddedResource Include="Resources\Images\ic_ole777.png" />
     <EmbeddedResource Include="Resources\Images\ic_prev.png" />
     <EmbeddedResource Include="Resources\Images\ic_telegram.png" />
     <EmbeddedResource Include="Resources\Images\ic_vote.png" />

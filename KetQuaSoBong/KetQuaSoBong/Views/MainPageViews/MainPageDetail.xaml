@@ -24,11 +24,11 @@
     </NavigationPage.TitleView>
     <TabbedPage.Resources>
         <ResourceDictionary>
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_xo_so_0.png" x:Key="XoSo" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_bong_da_0.png" x:Key="BongDa" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_binh_chon.png" x:Key="BinhChon" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_group_0.png" x:Key="Group" />
-            <xct:ImageResource Id="KetQuaSoBong.Resources.Images.ic_ho_tro_0.png" x:Key="HoTro" />
+            <xct:ImageResource x:Key="XoSo" Id="KetQuaSoBong.Resources.Images.ic_xo_so_0.png" />
+            <xct:ImageResource x:Key="BongDa" Id="KetQuaSoBong.Resources.Images.ic_ole777.png" />
+            <xct:ImageResource x:Key="BinhChon" Id="KetQuaSoBong.Resources.Images.ic_binh_chon.png" />
+            <xct:ImageResource x:Key="Group" Id="KetQuaSoBong.Resources.Images.ic_group_0.png" />
+            <xct:ImageResource x:Key="HoTro" Id="KetQuaSoBong.Resources.Images.ic_ho_tro_0.png" />
         </ResourceDictionary>
     </TabbedPage.Resources>
     <local:LotteryTab Title="Xổ số" IconImageSource="{StaticResource XoSo}" />
