@@ -1,27 +1,19 @@
-# KetQuaSoBong
+# KetQuaSoBong Mobile App 📱
+> Ứng dụng theo dõi Kết quả Xổ số & Bóng đá trực tiếp trên điện thoại.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/LyVanBong/KetQuaSoBong)
-![GitHub issues](https://img.shields.io/github/issues/LyVanBong/KetQuaSoBong)
-![GitHub stars](https://img.shields.io/github/stars/LyVanBong/KetQuaSoBong)
 
 ## 📝 Giới Thiệu
-Ket Qua Xo So Bong
+**KetQuaSoBong** là ứng dụng di động đa nền tảng giúp người dùng cập nhật thông tin xổ số và bóng đá mọi lúc mọi nơi.
 
-Đây là một trong những dự án mã nguồn mở được phát triển và duy trì bởi **LyVanBong**. Mã nguồn được chia sẻ với mục đích học tập và đóng góp cho cộng đồng.
+## ✨ Tính Năng
+-   **Thông báo (Push Notification)**: Nhận kết quả ngay khi có giải về.
+-   **Xem lại kết quả**: Tra cứu lịch sử kết quả theo ngày.
+-   **Giao diện tối ưu**: Thiết kế thân thiện, dễ sử dụng trên Mobile.
 
-## 🚀 Tính Năng
-- [x] Đang cập nhật...
-- [ ] Tính năng nổi bật sẽ được liệt kê tại đây.
-
-## 🛠 Cài Đặt
-Hướng dẫn cài đặt và sử dụng sẽ sớm được cập nhật.
-
-```bash
-# Clone dự án
-git clone https://github.com/LyVanBong/KetQuaSoBong.git
-```
+## 🛠 Công Nghệ
+-   **Nền tảng**: Xamarin.Forms (Android & iOS).
+-   **Ngôn ngữ**: C# / XAML.
 
 ## 📞 Liên Hệ
-Nếu bạn có câu hỏi hoặc muốn đóng góp, vui lòng liên hệ:
-- **GitHub**: [LyVanBong](https://github.com/LyVanBong)
-- **Website**: [softty.net](https://softty.net)
+-   **GitHub**: [LyVanBong](https://github.com/LyVanBong)
